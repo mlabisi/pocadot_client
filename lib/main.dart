@@ -27,13 +27,13 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primaryColor: FigmaColors.primary500,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const Root(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class Root extends StatefulWidget {
+  const Root({super.key, required this.title});
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -47,12 +47,24 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<Root> createState() => _RootState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  final List<Widget> _screens = [
-    const SuggestionsContainer(),
+class _RootState extends State<Root> {
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  final _pages = [
+    const SuggestionsScreen(),
+    const ExploreScreen(),
+    const SavedScreen(),
+    const ProfileScreen(),
+    const MoreScreen()
   ];
 
   @override
@@ -64,128 +76,60 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: SuggestionsAppBar(),
-      body: Column(
-
-      ),
-      bottomNavigationBar: const CustomNavBar(),
-      // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
-}
-
-class SuggestionsAppBar extends StatelessWidget with PreferredSizeWidget {
-  @override
-  final Size preferredSize;
-
-  SuggestionsAppBar({Key? key})
-      : preferredSize = const Size.fromHeight(56.0),
-        super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return AppBar(
-        backgroundColor: FigmaColors.greyscale50,
-        elevation: 1,
-        title: const Text(
-          "Recommendations",
-          style: TextStyle(color: FigmaColors.primary500, fontFamily: 'Jua'),
-        ),
-        actions:[
-          IconButton(
-            icon: const Icon(IconlyLight.filter, color: FigmaColors.primary500),
-            onPressed: () {},
+        body: _pages[_selectedIndex],
+        bottomNavigationBar: BottomAppBar(
+          color: Colors.white,
+          child: SizedBox(
+            height: 56,
+            width: MediaQuery
+                .of(context)
+                .size
+                .width,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  IconBottomBar(
+                      icon: PocadotIcons.cards,
+                      activeIcon: PocadotIcons.cardsFilled,
+                      selected: _selectedIndex == 0,
+                      onPressed: () => _onItemTapped(0)),
+                  IconBottomBar(
+                      icon: IconlyLight.search,
+                      activeIcon: IconlyBold.search,
+                      selected: _selectedIndex == 1,
+                      onPressed: () => _onItemTapped(1)),
+                  IconBottomBar(
+                      icon: IconlyLight.heart,
+                      activeIcon: IconlyBold.heart,
+                      selected: _selectedIndex == 2,
+                      onPressed: () => _onItemTapped(2)),
+                  IconBottomBar(
+                      icon: IconlyLight.profile,
+                      activeIcon: IconlyBold.profile,
+                      selected: _selectedIndex == 3,
+                      onPressed: () => _onItemTapped(3)),
+                  IconBottomBar(
+                      icon: IconlyLight.more_circle,
+                      activeIcon: IconlyBold.more_circle,
+                      selected: _selectedIndex == 4,
+                      onPressed: () => _onItemTapped(4))
+                ],
+              ),
+            ),
           ),
-          IconButton(
-            icon: const Icon(IconlyLight.notification, color: FigmaColors.primary500),
-            onPressed: () {},
-          )
-        ]
-    );
-  }
-}
-class SuggestionsContainer extends StatefulWidget {
-  const SuggestionsContainer({super.key});
-
-  @override
-  State<SuggestionsContainer> createState() => _SuggestionsContainerState();
-}
-class _SuggestionsContainerState extends State<SuggestionsContainer> {
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Recommendations', style: TextStyle(color: FigmaColors.greyscale900)),
-    );
-  }
-}
-
-
-class CustomNavBar extends StatefulWidget {
-  const CustomNavBar({super.key});
-
-  @override
-  State<CustomNavBar> createState() => _CustomNavBarState();
-}
-class _CustomNavBarState extends State<CustomNavBar> {
-  int _selectedIndex = 0;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return BottomAppBar(
-      color: Colors.white,
-      child: SizedBox(
-        height: 56,
-        width: MediaQuery.of(context).size.width,
-        child: Padding(
-          padding: const EdgeInsets.only(left: 25.0, right: 25.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              IconBottomBar(
-                  icon: PocadotIcons.cards,
-                  activeIcon: PocadotIcons.cardsFilled,
-                  selected: _selectedIndex == 0,
-                  onPressed: () => _onItemTapped(0)),
-              IconBottomBar(
-                  icon: IconlyLight.search,
-                  activeIcon: IconlyBold.search,
-                  selected: _selectedIndex == 1,
-                  onPressed: () => _onItemTapped(1)),
-              IconBottomBar(
-                  icon: IconlyLight.heart,
-                  activeIcon: IconlyBold.heart,
-                  selected: _selectedIndex == 2,
-                  onPressed: () => _onItemTapped(2)),
-              IconBottomBar(
-                  icon: IconlyLight.profile,
-                  activeIcon: IconlyBold.profile,
-                  selected: _selectedIndex == 3,
-                  onPressed: () => _onItemTapped(3)),
-              IconBottomBar(
-                  icon: IconlyLight.more_circle,
-                  activeIcon: IconlyBold.more_circle,
-                  selected: _selectedIndex == 4,
-                  onPressed: () => _onItemTapped(4))
-            ],
-          ),
-        ),
-      ),
+        )
     );
   }
 }
 
 class IconBottomBar extends StatelessWidget {
-  const IconBottomBar(
-      {Key? key,
-        required this.activeIcon,
-        required this.icon,
-        required this.selected,
-        required this.onPressed})
+  const IconBottomBar({Key? key,
+    required this.activeIcon,
+    required this.icon,
+    required this.selected,
+    required this.onPressed})
       : super(key: key);
   final IconData activeIcon;
   final IconData icon;
@@ -209,3 +153,315 @@ class IconBottomBar extends StatelessWidget {
     );
   }
 }
+
+//#region SUGGESTIONS
+class SuggestionsAppBar extends StatelessWidget with PreferredSizeWidget {
+  @override
+  final Size preferredSize;
+
+  SuggestionsAppBar({Key? key})
+      : preferredSize = const Size.fromHeight(56.0),
+        super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+        backgroundColor: FigmaColors.greyscale50,
+        elevation: 1,
+        centerTitle: false,
+        title: const Text(
+          "Recommendations",
+          style: TextStyle(color: FigmaColors.primary500, fontFamily: 'Jua'),
+        ),
+        actions: [
+          IconButton(
+            icon: const Icon(IconlyLight.filter, color: FigmaColors.primary500),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: const Icon(
+                IconlyLight.notification, color: FigmaColors.primary500),
+            onPressed: () {},
+          )
+        ]
+    );
+  }
+}
+
+class SuggestionsContent extends StatefulWidget {
+  const SuggestionsContent({super.key});
+
+  @override
+  State<SuggestionsContent> createState() => _SuggestionsContentState();
+}
+
+class _SuggestionsContentState extends State<SuggestionsContent> {
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text(
+          'Recommendations', style: TextStyle(color: FigmaColors.greyscale900)),
+    );
+  }
+}
+
+class SuggestionsScreen extends StatelessWidget {
+  const SuggestionsScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: SuggestionsAppBar(),
+      body: const SuggestionsContent(),
+    );
+  }
+}
+//endregion
+
+//#region EXPLORE
+class ExploreAppBar extends StatelessWidget with PreferredSizeWidget {
+  @override
+  final Size preferredSize;
+
+  ExploreAppBar({Key? key})
+      : preferredSize = const Size.fromHeight(56.0),
+        super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+        backgroundColor: FigmaColors.greyscale50,
+        elevation: 1,
+        centerTitle: false,
+        title: const Text(
+          "Explore",
+          style: TextStyle(color: FigmaColors.primary500, fontFamily: 'Jua'),
+        ),
+        actions: [
+          IconButton(
+            icon: const Icon(IconlyLight.plus, color: FigmaColors.primary500),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: const Icon(
+                IconlyLight.notification, color: FigmaColors.primary500),
+            onPressed: () {},
+          )
+        ]
+    );
+  }
+}
+
+class ExploreContent extends StatefulWidget {
+  const ExploreContent({super.key});
+
+  @override
+  State<ExploreContent> createState() => _ExploreContentState();
+}
+
+class _ExploreContentState extends State<ExploreContent> {
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text('Explore', style: TextStyle(color: FigmaColors.greyscale900)),
+    );
+  }
+}
+
+class ExploreScreen extends StatelessWidget {
+  const ExploreScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: ExploreAppBar(),
+      body: const ExploreContent(),
+    );
+  }
+}
+//#endregion
+
+//#region SAVED
+class SavedAppBar extends StatelessWidget with PreferredSizeWidget {
+  @override
+  final Size preferredSize;
+
+  SavedAppBar({Key? key})
+      : preferredSize = const Size.fromHeight(56.0),
+        super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+        backgroundColor: FigmaColors.greyscale50,
+        elevation: 1,
+        centerTitle: false,
+        title: const Text(
+          "Saved",
+          style: TextStyle(color: FigmaColors.primary500, fontFamily: 'Jua'),
+        ),
+        actions: [
+          IconButton(
+            icon: const Icon(IconlyLight.edit_square, color: FigmaColors.primary500),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: const Icon(
+                IconlyLight.notification, color: FigmaColors.primary500),
+            onPressed: () {},
+          )
+        ]
+    );
+  }
+}
+
+class SavedContent extends StatefulWidget {
+  const SavedContent({super.key});
+
+  @override
+  State<SavedContent> createState() => _SavedContentState();
+}
+
+class _SavedContentState extends State<SavedContent> {
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text('Saved', style: TextStyle(color: FigmaColors.greyscale900)),
+    );
+  }
+}
+
+class SavedScreen extends StatelessWidget {
+  const SavedScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: SavedAppBar(),
+      body: const SavedContent(),
+    );
+  }
+}
+//#endregion
+
+//#region PROFILE
+class ProfileAppBar extends StatelessWidget with PreferredSizeWidget {
+  @override
+  final Size preferredSize;
+
+  ProfileAppBar({Key? key})
+      : preferredSize = const Size.fromHeight(56.0),
+        super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+        backgroundColor: FigmaColors.greyscale50,
+        elevation: 1,
+        centerTitle: false,
+        title: const Text(
+          "Profile",
+          style: TextStyle(color: FigmaColors.primary500, fontFamily: 'Jua'),
+        ),
+        actions: [
+          IconButton(
+            icon: const Icon(IconlyLight.edit_square, color: FigmaColors.primary500),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: const Icon(
+                IconlyLight.notification, color: FigmaColors.primary500),
+            onPressed: () {},
+          )
+        ]
+    );
+  }
+}
+
+class ProfileContent extends StatefulWidget {
+  const ProfileContent({super.key});
+
+  @override
+  State<ProfileContent> createState() => _ProfileContentState();
+}
+
+class _ProfileContentState extends State<ProfileContent> {
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text('Profile', style: TextStyle(color: FigmaColors.greyscale900)),
+    );
+  }
+}
+
+class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: ProfileAppBar(),
+      body: const ProfileContent(),
+    );
+  }
+}
+//#endregion
+
+//#region MORE
+class MoreAppBar extends StatelessWidget with PreferredSizeWidget {
+  @override
+  final Size preferredSize;
+
+  MoreAppBar({Key? key})
+      : preferredSize = const Size.fromHeight(56.0),
+        super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+        backgroundColor: FigmaColors.greyscale50,
+        elevation: 1,
+        centerTitle: false,
+        title: const Text(
+          "More",
+          style: TextStyle(color: FigmaColors.primary500, fontFamily: 'Jua'),
+        ),
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(
+                IconlyLight.notification, color: FigmaColors.primary500),
+            onPressed: () {},
+          )
+        ]
+    );
+  }
+}
+
+class MoreContent extends StatefulWidget {
+  const MoreContent({super.key});
+
+  @override
+  State<MoreContent> createState() => _MoreContentState();
+}
+
+class _MoreContentState extends State<MoreContent> {
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text('More', style: TextStyle(color: FigmaColors.greyscale900)),
+    );
+  }
+}
+
+class MoreScreen extends StatelessWidget {
+  const MoreScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: MoreAppBar(),
+      body: const MoreContent(),
+    );
+  }
+}
+//#endregion
