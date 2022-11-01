@@ -1,0 +1,15 @@
+{
+  "name": "Untitled GraphQL Schema",
+  "schemaPath": "lib/graphql/schema.graphql",
+  "extensions": {
+    "endpoints": {
+      "pocadot API": {
+        "url": "http://localhost:9002/graphql",
+        "headers": {
+          "user-agent": "golang GraphQL"
+        },
+        "introspect": false
+      }
+    }
+  }
+}
