@@ -1,7 +1,15 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
 schema {
     query: Query
     mutation: Mutation
 }
+
+directive @fake(locale: fake__Locale, options: fake__options = {dateFormat: "YYYY-MM-DDTHH:mm:ss[Z]", dateFrom: "2010-01-01", dateTo: "2030-01-01", baseColor: {red255: 0, green255: 0, blue255: 0}}, type: fake__Types!) on SCALAR | FIELD_DEFINITION
+
+directive @listLength(max: Int!, min: Int!) on FIELD_DEFINITION
+
+directive @examples(values: [examples__JSON]!) on SCALAR | FIELD_DEFINITION
 
 "A registered payment method for the user account"
 interface PaymentMethod {
@@ -11,21 +19,21 @@ interface PaymentMethod {
 
 "A musical talent in the database"
 interface Talent {
-    id: ID! @fake(type: uuid)
-    name: String! @fake(type: firstName)
+    id: ID!
+    name: String!
 }
 
 "Represents a monetary amount in the smallest unit (aka cents for USD)"
 type Amount {
-    amount: Int! @fake(type: money, options: {decimalPlaces: 0})
-    currency: String! @fake(type: currencyName)
+    amount: Int!
+    currency: String!
 }
 
 "A group in the database"
 type Group implements Talent {
     id: ID!
     idols: [Idol!]!
-    name: String! @fake(type: productName)
+    name: String!
 }
 
 type GroupFeed {
@@ -36,15 +44,15 @@ type GroupFeed {
 "An external social media user profile"
 type IdentityProvider {
     type: IdentityProviderType!
-    userId: ID! @fake(type: uuid)
+    userId: ID!
 }
 
 "An idol in the database"
 type Idol implements Talent {
     groups: [Group!]!
-    id: ID! @fake(type: uuid)
+    id: ID!
     isSolo: Boolean!
-    name: String! @fake(type: firstName, locale: ko)
+    name: String!
 }
 
 type IdolFeed {
@@ -54,17 +62,17 @@ type IdolFeed {
 
 "Represents a listing in the system"
 type Listing {
-    askingPrice: Int! @fake(type: money, options: {decimalPlaces: 0})
+    askingPrice: Int!
     condition: CardCondition!
-    description: String! @fake(type: lorem)
+    description: String!
     groups: [Group!]
-    id: ID! @fake(type: uuid)
+    id: ID!
     idols: [Idol!]!
     international: Boolean!
     isFeatured: Boolean!
     listedBy: UserAccount!
     offers: [Offer!]!
-    release: String! @fake(type: productName)
+    release: String!
     savedBy: [UserAccount!]!
     type: [ListingType!]!
 }
@@ -77,9 +85,9 @@ type ListingFeed {
 "A message sent from one user to another"
 type Message {
     author: UserAccount!
-    body: String! @fake(type: hackerPhrase)
+    body: String!
     recipient: UserAccount!
-    timestamp: Int! @fake(type: date, options: {dateFormat: "x"})
+    timestamp: Int!
 }
 
 type Mutation {
@@ -114,7 +122,7 @@ type Mutation {
 "Represents an offer made on a listing in the system"
 type Offer {
     conversation: [Message!]!
-    id: ID! @fake(type: uuid)
+    id: ID!
     listing: Listing!
     madeBy: UserAccount!
     status: OfferStatus!
@@ -148,21 +156,22 @@ type Query {
 "An external social media user profile"
 type SocialProfile {
     type: SocialProfileType!
-    username: String! @fake(type: firstName)
+    username: String!
 }
 
 """
+
 A credit/debit card registered through Stripe
 
 Upstream API(s):
 sharetribeCU - /v1/api/current_user/show
 """
 type StripePaymentMethod implements PaymentMethod {
-    cardBrand: String! @examples(values: ["Visa", "Amex", "Mastercard"])
-    expirationMonth: String! @fake(type: date, options: {dateFormat: "MMMM"})
-    expirationYear: String! @fake(type: date, options: {dateFormat: "YYYY"})
+    cardBrand: String!
+    expirationMonth: String!
+    expirationYear: String!
     isDefault: Boolean!
-    lastFour: String! @fake(type: number, options: {minNumber: 1000, maxNumber: 9999})
+    lastFour: String!
     type: PaymentMethodType!
 }
 
@@ -177,7 +186,7 @@ type Suggestion {
 type Transaction {
     amountCharged: Amount!
     amountEarned: Amount!
-    id: ID! @fake(type: uuid)
+    id: ID!
 }
 
 """
@@ -193,19 +202,19 @@ type UserAccount {
     banned: Boolean!
     biases: [Talent!]!
     connectedAccounts: [IdentityProvider!]!
-    country: String! @fake(type: country)
-    createdAt: String! @fake(type: date, options: {dateFormat: "x"})
+    country: String!
+    createdAt: String!
     createdListings: [Listing!]!
     deleted: Boolean!
-    email: String! @fake(type: email)
+    email: String!
     emailVerified: Boolean!
-    firstName: String! @fake(type: firstName)
+    firstName: String!
     generalNotifs: Boolean!
-    id: ID! @fake(type: uuid)
-    language: String! @fake(type: locale)
-    lastName: String! @fake(type: lastName)
+    id: ID!
+    language: String!
+    lastName: String!
     paymentMethods: [PaymentMethod!]!
-    pendingEmail: String @fake(type: email)
+    pendingEmail: String
     profile: UserProfile!
     savedListingNotifs: Boolean!
     savedListings: [Listing!]!
@@ -216,16 +225,17 @@ type UserAccount {
 }
 
 """
+
 A user profile in the system
 
 Upstream URL(s):
 sharetribe - /v1/api/users/show?id={uuid}
 """
 type UserProfile {
-    description: String! @fake(type: lorem)
-    profilePicId: ID! @fake(type: uuid)
+    description: String!
+    profilePicId: ID!
     socials: [SocialProfile!]!
-    username: String! @fake(type: firstName)
+    username: String!
 }
 
 "Used to classify photocard conditions"
@@ -273,6 +283,141 @@ enum SocialProfileType {
     INSTAGRAM
     TWITTER
 }
+
+enum fake__Locale {
+    az
+    cz
+    de
+    de_AT
+    de_CH
+    en
+    en_AU
+    en_BORK
+    en_CA
+    en_GB
+    en_IE
+    en_IND
+    en_US
+    en_au_ocker
+    es
+    es_MX
+    fa
+    fr
+    fr_CA
+    ge
+    id_ID
+    it
+    ja
+    ko
+    nb_NO
+    nep
+    nl
+    pl
+    pt_BR
+    ru
+    sk
+    sv
+    tr
+    uk
+    vi
+    zh_CN
+    zh_TW
+}
+
+enum fake__Types {
+    "An URL for an avatar"
+    avatarUrl
+    bankIdentifierCode
+    bitcoinAddress
+    city
+    "Configure color with option: `baseColor`"
+    colorHex
+    colorName
+    companyBS
+    companyCatchPhrase
+    companyName
+    country
+    countryCode
+    county
+    currencyCode
+    currencyName
+    currencySymbol
+    """
+
+    By default returns dates beetween 2000-01-01 and 2030-01-01.
+    Configure date format with options `dateFormat` `dateFrom` `dateTo`.
+    """
+    date
+    dbCollation
+    dbColumn
+    dbEngine
+    dbType
+    domainName
+    "Configure email provider with option: `emailProvider`"
+    email
+    fileExtension
+    filename
+    financeAccountName
+    financeTransactionType
+    firstName
+    fullName
+    "Configure date format with option `dateFormat`"
+    futureDate
+    hackerAbbreviation
+    hackerPhrase
+    "An image url. Configure image with options: `imageCategory`, `imageWidth`, `imageHeight` and `randomizeImageUrl`"
+    imageUrl
+    internationalBankAccountNumber
+    ipv4Address
+    ipv6Address
+    jobTitle
+    lastName
+    latitude
+    locale
+    longitude
+    "Lorem Ipsum text. Configure size with option `loremSize`"
+    lorem
+    macAddress
+    mimeType
+    "Sum of money. Configure with options `minMoney`/`maxMoney` and 'decimalPlaces'."
+    money
+    number
+    "Configure password with option `passwordLength`"
+    password
+    "Configure date format with option `dateFormat`"
+    pastDate
+    phoneNumber
+    product
+    productCategory
+    productMaterial
+    productName
+    "Configure date format with option `dateFormat`"
+    recentDate
+    secondaryAddress
+    semver
+    state
+    stateAbbr
+    "Configure address with option `useFullAddress`"
+    streetAddress
+    streetName
+    url
+    userAgent
+    uuid
+    word
+    words
+    zipCode
+}
+
+enum fake__loremSize {
+    paragraph
+    paragraphs
+    sentence
+    sentences
+    word
+    words
+}
+
+scalar examples__JSON
 
 "When adding a listing, all required fields must be specified"
 input AddListingInput {
@@ -428,4 +573,52 @@ input UserPreferencesInput {
     faveGroups: [ID!]
     faveIdols: [ID!]
     id: ID!
+}
+
+input fake__color {
+    blue255: Int = 0
+    green255: Int = 0
+    red255: Int = 0
+}
+
+input fake__imageSize {
+    height: Int!
+    width: Int!
+}
+
+input fake__options {
+    "Only for type `colorHex`. [Details here](https://stackoverflow.com/a/43235/4989887)"
+    baseColor: fake__color = {red255: 0, green255: 0, blue255: 0}
+    "Only for types `*Date`. Example value: `YYYY MM DD`. [Full Specification](http://momentjs.com/docs/#/displaying/format/)"
+    dateFormat: String = "YYYY-MM-DDTHH:mm:ss[Z]"
+    "Only for types `betweenDate`. Example value: `1986-11-02`."
+    dateFrom: String = "2010-01-01"
+    "Only for types `betweenDate`. Example value: `2038-01-19`."
+    dateTo: String = "2030-01-01"
+    "Only for type `money`"
+    decimalPlaces: Int
+    "Only for type `email`"
+    emailProvider: String
+    "Only for type `imageUrl`. Example value: `[\"nature\", \"water\"]`."
+    imageKeywords: [String!]
+    "Only for type `imageUrl`"
+    imageSize: fake__imageSize
+    "Only for type `lorem`"
+    loremSize: fake__loremSize
+    "Only for type `money`"
+    maxMoney: Float
+    "Only for type `number`"
+    maxNumber: Float
+    "Only for type `money`"
+    minMoney: Float
+    "Only for type `number`"
+    minNumber: Float
+    "Only for type `password`"
+    passwordLength: Int
+    "Only for type `number`"
+    precisionNumber: Float
+    "Only for type `imageUrl`"
+    randomizeImageUrl: Boolean
+    "Only for type `streetAddress`"
+    useFullAddress: Boolean
 }

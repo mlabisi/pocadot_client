@@ -1,5 +1,5 @@
 {
-  "name": "Untitled GraphQL Schema",
+  "name": "pocadot GraphQL Schema",
   "schemaPath": "lib/graphql/schema.graphql",
   "extensions": {
     "endpoints": {

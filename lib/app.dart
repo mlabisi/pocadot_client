@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:iconly/iconly.dart';
-import 'package:pocadot_client/explore/explore_screen.dart';
-import 'package:pocadot_client/more/more_screen.dart';
-import 'package:pocadot_client/profile/profile_screen.dart';
-import 'package:pocadot_client/saved/saved_screen.dart';
-import 'package:pocadot_client/suggestions/suggestions_screen.dart';
+import 'package:pocadot_client/domains/explore/explore_screen.dart';
+import 'package:pocadot_client/domains/more/more_screen.dart';
+import 'package:pocadot_client/domains/profile/my_profile_screen.dart';
+import 'package:pocadot_client/domains/saved/saved_screen.dart';
+import 'package:pocadot_client/domains/suggestions/suggestions_screen.dart';
 import 'package:pocadot_client/theme/colors.dart';
 import 'package:pocadot_client/theme/icons.dart';
 import 'package:provider/provider.dart';
