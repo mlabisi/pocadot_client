@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pocadot_client/theme/colors.dart';
-import 'package:pocadot_client/widgets/bias_choice_card.dart';
-import 'package:pocadot_client/widgets/square_card.dart';
+import 'package:pocadot_client/widgets/cards/bias_choice_card.dart';
+import 'package:pocadot_client/widgets/cards/listing_card.dart';
 import 'package:widgetbook/widgetbook.dart';
 
 class WidgetbookHotReload extends StatelessWidget {
@@ -9,7 +9,7 @@ class WidgetbookHotReload extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Widgetbook(
+    return Widgetbook.material(
       categories: [
         WidgetbookCategory(
           name: 'Widgets',
@@ -26,6 +26,28 @@ class WidgetbookHotReload extends StatelessWidget {
                             label: 'Image Path',
                             initialValue: 'assets/demo/stayc.png'),
                         onPressed: () => () {})),
+                WidgetbookUseCase(
+                    name: 'Listing Card',
+                    builder: (context) => ListingCard(
+                        featuredImage: context.knobs.text(
+                            label: 'Featured Image Path',
+                            initialValue: 'assets/demo/nayeon.png'),
+                        avatarImage: context.knobs.text(
+                            label: 'Avatar Image Path',
+                            initialValue: 'assets/demo/papagowon.png'),
+                        listingTag: context.knobs.text(
+                            label: 'Listing Type',
+                            initialValue: 'WTS/WTT'),
+                        artist: context.knobs.text(
+                            label: 'Artist Name',
+                            initialValue: 'Nayeon'),
+                        release: context.knobs.text(
+                            label: 'Release Name',
+                            initialValue: 'IM NAYEON'),
+                        username: context.knobs.text(
+                            label: 'Username',
+                            initialValue: 'papagowon'),
+                        onPressed: () => () {})),
               ],
             ),
           ],
@@ -36,7 +58,7 @@ class WidgetbookHotReload extends StatelessWidget {
         WidgetbookTheme(
           name: 'Custom',
           data: ThemeData(
-            primaryColor: FigmaColors.primary500,
+            primaryColor: PocadotColors.primary500,
           ),
         ),
         WidgetbookTheme(

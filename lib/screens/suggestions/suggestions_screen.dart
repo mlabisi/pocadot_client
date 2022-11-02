@@ -16,21 +16,21 @@ class SuggestionsAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-        backgroundColor: FigmaColors.greyscale50,
+        backgroundColor: PocadotColors.greyscale50,
         elevation: 1,
         centerTitle: false,
         title: const Text(
           "Recommendations",
-          style: TextStyle(color: FigmaColors.primary500, fontFamily: 'Jua'),
+          style: TextStyle(color: PocadotColors.primary500, fontFamily: 'Jua'),
         ),
         actions: [
           IconButton(
-            icon: const Icon(IconlyLight.filter, color: FigmaColors.primary500),
+            icon: const Icon(IconlyLight.filter, color: PocadotColors.primary500),
             onPressed: () {},
           ),
           IconButton(
             icon: const Icon(IconlyLight.notification,
-                color: FigmaColors.primary500),
+                color: PocadotColors.primary500),
             onPressed: () {},
           )
         ]);
@@ -49,7 +49,7 @@ class _SuggestionsContentState extends State<SuggestionsContent> {
   Widget build(BuildContext context) {
     return const Center(
       child: Text('Recommendations',
-          style: TextStyle(color: FigmaColors.greyscale900)),
+          style: TextStyle(color: PocadotColors.greyscale900)),
     );
   }
 }

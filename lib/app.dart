@@ -33,7 +33,7 @@ class App extends StatelessWidget {
       child: MaterialApp(
       title: 'pocadot',
       theme: ThemeData(
-        primaryColor: FigmaColors.primary500,
+        primaryColor: PocadotColors.primary500,
       ),
       home: const Root(),
       ),
@@ -135,7 +135,7 @@ class IconBottomBar extends StatelessWidget {
           icon: Icon(
             selected ? activeIcon : icon,
             size: 25,
-            color: selected ? FigmaColors.primary500 : Colors.black54,
+            color: selected ? PocadotColors.primary500 : Colors.black54,
           ),
         ),
       ],

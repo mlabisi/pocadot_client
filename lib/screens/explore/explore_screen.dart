@@ -16,21 +16,21 @@ class ExploreAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-        backgroundColor: FigmaColors.greyscale50,
+        backgroundColor: PocadotColors.greyscale50,
         elevation: 1,
         centerTitle: false,
         title: const Text(
           "Explore",
-          style: TextStyle(color: FigmaColors.primary500, fontFamily: 'Jua'),
+          style: TextStyle(color: PocadotColors.primary500, fontFamily: 'Jua'),
         ),
         actions: [
           IconButton(
-            icon: const Icon(IconlyLight.plus, color: FigmaColors.primary500),
+            icon: const Icon(IconlyLight.plus, color: PocadotColors.primary500),
             onPressed: () {},
           ),
           IconButton(
             icon: const Icon(IconlyLight.notification,
-                color: FigmaColors.primary500),
+                color: PocadotColors.primary500),
             onPressed: () {},
           )
         ]);

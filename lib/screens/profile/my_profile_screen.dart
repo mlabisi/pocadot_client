@@ -16,22 +16,22 @@ class ProfileAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-        backgroundColor: FigmaColors.greyscale50,
+        backgroundColor: PocadotColors.greyscale50,
         elevation: 1,
         centerTitle: false,
         title: const Text(
           "Profile",
-          style: TextStyle(color: FigmaColors.primary500, fontFamily: 'Jua'),
+          style: TextStyle(color: PocadotColors.primary500, fontFamily: 'Jua'),
         ),
         actions: [
           IconButton(
             icon: const Icon(IconlyLight.edit_square,
-                color: FigmaColors.primary500),
+                color: PocadotColors.primary500),
             onPressed: () {},
           ),
           IconButton(
             icon: const Icon(IconlyLight.notification,
-                color: FigmaColors.primary500),
+                color: PocadotColors.primary500),
             onPressed: () {},
           )
         ]);
@@ -65,7 +65,7 @@ class _ProfileContentState extends State<ProfileContent> {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text('Profile', style: TextStyle(color: FigmaColors.greyscale900)),
+      child: Text('Profile', style: TextStyle(color: PocadotColors.greyscale900)),
     );
   }
 }

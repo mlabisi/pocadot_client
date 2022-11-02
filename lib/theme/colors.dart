@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class FigmaColors {
-  const FigmaColors();
+class PocadotColors {
+  const PocadotColors();
 
   static const Color primary500 = Color(0xffa3b0ef);
   static const Color primary400 = Color(0xffb7c2f2);

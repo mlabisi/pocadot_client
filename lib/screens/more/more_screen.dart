@@ -16,17 +16,17 @@ class MoreAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-        backgroundColor: FigmaColors.greyscale50,
+        backgroundColor: PocadotColors.greyscale50,
         elevation: 1,
         centerTitle: false,
         title: const Text(
           "More",
-          style: TextStyle(color: FigmaColors.primary500, fontFamily: 'Jua'),
+          style: TextStyle(color: PocadotColors.primary500, fontFamily: 'Jua'),
         ),
         actions: <Widget>[
           IconButton(
             icon: const Icon(IconlyLight.notification,
-                color: FigmaColors.primary500),
+                color: PocadotColors.primary500),
             onPressed: () {},
           )
         ]);
@@ -60,7 +60,7 @@ class _MoreContentState extends State<MoreContent> {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text('More', style: TextStyle(color: FigmaColors.greyscale900)),
+      child: Text('More', style: TextStyle(color: PocadotColors.greyscale900)),
     );
   }
 }

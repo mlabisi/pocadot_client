@@ -61,10 +61,57 @@ flutter:
   fonts:
     - family: PocadotIcons
       fonts:
-        - asset: lib/theme/fonts/PocadotIcons.ttf
+        - asset: assets/fonts/PocadotIcons.ttf
     - family: Jua
       fonts:
-        - asset: lib/theme/fonts/Jua-Regular.ttf
+        - asset: assets/fonts/Jua-Regular.ttf
+    - family: Urbanist
+      fonts:
+        - asset: assets/fonts/Urbanist_100Thin.ttf
+          weight: 100
+        - asset: assets/fonts/Urbanist_100Thin_Italic.ttf
+          weight: 100
+          style: italic
+        - asset: assets/fonts/Urbanist_200ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/Urbanist_200ExtraLight_Italic.ttf
+          weight: 200
+          style: italic
+        - asset: assets/fonts/Urbanist_300Light.ttf
+          weight: 300
+        - asset: assets/fonts/Urbanist_300Light_Italic.ttf
+          weight: 300
+          style: italic
+        - asset: assets/fonts/Urbanist_400Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Urbanist_400Regular_Italic.ttf
+          weight: 400
+          style: italic
+        - asset: assets/fonts/Urbanist_500Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Urbanist_500Medium_Italic.ttf
+          weight: 500
+          style: italic
+        - asset: assets/fonts/Urbanist_600SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Urbanist_600SemiBold_Italic.ttf
+          weight: 600
+          style: italic
+        - asset: assets/fonts/Urbanist_700Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Urbanist_700Bold_Italic.ttf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/Urbanist_800ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Urbanist_800ExtraBold_Italic.ttf
+          weight: 800
+          style: italic
+        - asset: assets/fonts/Urbanist_900Black.ttf
+          weight: 900
+        - asset: assets/fonts/Urbanist_900Black_Italic.ttf
+          weight: 900
+          style: italic
 
   # To add assets to your application, add an assets section, like this:
   # assets:
