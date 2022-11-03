@@ -3,6 +3,7 @@ import 'package:pocadot_client/theme/colors.dart';
 import 'package:pocadot_client/widgets/cards/bias_choice_card.dart';
 import 'package:pocadot_client/widgets/cards/listing_card.dart';
 import 'package:pocadot_client/widgets/cards/recommendation_card.dart';
+import 'package:pocadot_client/widgets/offers/offer_chat_bubble.dart';
 import 'package:widgetbook/widgetbook.dart';
 
 class WidgetbookHotReload extends StatelessWidget {
@@ -60,6 +61,22 @@ class WidgetbookHotReload extends StatelessWidget {
                       onTapped: () => () {},
                       onLeft: () => () {},
                       onRight: () => () {}),
+                ),
+              ],
+            ),
+            WidgetbookComponent(
+              name: 'offer',
+              useCases: [
+                WidgetbookUseCase(
+                  name: 'Buy Offer Received',
+                  builder: (context) => OfferChatBubble(
+                      // label: context.knobs
+                      //     .text(label: 'Card Title', initialValue: 'STAYC'),
+                      // imagePath: context.knobs.text(
+                      //     label: 'Image Path',
+                      //     initialValue: 'assets/demo/stayc.png'),
+                      // onPressed: () => () {})
+                      ),
                 ),
               ],
             ),
