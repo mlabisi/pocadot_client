@@ -23,4 +23,5 @@ class PocadotIcons {
 
   static const IconData cards = IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData cardsFilled = IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData fingerHeart = IconData(0xe807, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }
