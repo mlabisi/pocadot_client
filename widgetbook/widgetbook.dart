@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pocadot_client/theme/colors.dart';
 import 'package:pocadot_client/widgets/cards/bias_choice_card.dart';
 import 'package:pocadot_client/widgets/cards/listing_card.dart';
+import 'package:pocadot_client/widgets/cards/recommendation_card.dart';
 import 'package:widgetbook/widgetbook.dart';
 
 class WidgetbookHotReload extends StatelessWidget {
@@ -47,6 +48,22 @@ class WidgetbookHotReload extends StatelessWidget {
                         username: context.knobs.text(
                             label: 'Username',
                             initialValue: 'papagowon'),
+                        onPressed: () => () {})),
+                WidgetbookUseCase(
+                    name: 'Recommendation Card',
+                    builder: (context) => RecommendationCard(
+                        imagePath: context.knobs.text(
+                            label: 'Featured Image Path',
+                            initialValue: 'assets/demo/nayeon.png'),
+                        artist: context.knobs.text(
+                            label: 'Artist Name',
+                            initialValue: 'Nayeon'),
+                        release: context.knobs.text(
+                            label: 'Release Name',
+                            initialValue: 'IM NAYEON'),
+                        listingTag: context.knobs.text(
+                            label: 'Listing Tag',
+                            initialValue: 'WTS/WTT'),
                         onPressed: () => () {})),
               ],
             ),
