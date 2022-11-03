@@ -68,15 +68,25 @@ class WidgetbookHotReload extends StatelessWidget {
               name: 'offer',
               useCases: [
                 WidgetbookUseCase(
-                  name: 'Buy Offer Received',
+                  name: 'Trade Offer Received',
                   builder: (context) => OfferChatBubble(
-                      // label: context.knobs
-                      //     .text(label: 'Card Title', initialValue: 'STAYC'),
-                      // imagePath: context.knobs.text(
-                      //     label: 'Image Path',
-                      //     initialValue: 'assets/demo/stayc.png'),
-                      // onPressed: () => () {})
-                      ),
+                    label: context.knobs.text(
+                        label: 'Offer Label',
+                        initialValue: 'papagowon wants to trade!'),
+                    message: context.knobs.text(
+                        label: 'Offer Message (optional)',
+                        initialValue:
+                            'I\'d love to trade you for this Gowon photocard!'),
+                    offerPrice: context.knobs.nullableText(
+                        label: 'Offer Price (optional)', initialValue: '\$45'),
+                    offeredListing: context.knobs.nullableText(
+                        label: 'Image Path',
+                        initialValue: 'assets/demo/nayeon.png'),
+                    listingNegotiated: context.knobs.boolean(
+                        label: 'Listing Negotiated?', initialValue: false),
+                    priceNegotiated: context.knobs.boolean(
+                        label: 'Price Negotiated?', initialValue: false),
+                  ),
                 ),
               ],
             ),
@@ -88,8 +98,7 @@ class WidgetbookHotReload extends StatelessWidget {
         WidgetbookTheme(
           name: 'Custom',
           data: ThemeData(
-            primaryColor: PocadotColors.primary500,
-          ),
+              primaryColor: PocadotColors.primary500, fontFamily: 'Urbanist'),
         ),
         WidgetbookTheme(
           name: 'Light',

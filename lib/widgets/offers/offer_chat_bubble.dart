@@ -1,9 +1,22 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pocadot_client/theme/colors.dart';
 
 class OfferChatBubble extends StatelessWidget {
-  const OfferChatBubble({super.key});
+  final String label;
+  final String message;
+  final String? offerPrice;
+  final String? offeredListing;
+  final bool priceNegotiated;
+  final bool listingNegotiated;
+
+  const OfferChatBubble(
+      {super.key,
+      required this.label,
+      required this.message,
+      this.offerPrice,
+      this.offeredListing,
+      this.priceNegotiated = false,
+      this.listingNegotiated = false});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +30,7 @@ class OfferChatBubble extends StatelessWidget {
             color: PocadotColors.primary500,
             width: 1,
           ),
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               color: PocadotColors.greyscale200,
               blurRadius: 60,
@@ -26,24 +39,23 @@ class OfferChatBubble extends StatelessWidget {
           ],
           color: PocadotColors.backgroundBlue,
         ),
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(24),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "papagowon wants to trade!",
-              style: TextStyle(
-                color: Color(0xff212121),
-                fontSize: 18,
-                fontFamily: 'Jua'
-              ),
+              label,
+              style: const TextStyle(
+                  color: PocadotColors.greyscale900,
+                  fontSize: 18,
+                  fontFamily: 'Jua'),
             ),
-            const Expanded(child: Spacer()),
+            const SizedBox(height: 10),
             Text(
-              "“Oops I meant to offer you \$25”",
-              style: TextStyle(
+              '"$message"',
+              style: const TextStyle(
                 color: PocadotColors.greyscale800,
                 fontSize: 14,
                 fontFamily: "Urbanist",
@@ -51,12 +63,107 @@ class OfferChatBubble extends StatelessWidget {
               ),
             ),
             const Expanded(child: Spacer()),
-            Divider(
+            const Divider(
                 thickness: 1,
-                indent: 16,
-                endIndent: 16,
+                indent: 0,
+                endIndent: 0,
                 color: PocadotColors.primary500),
-            Expanded(child: Spacer()),
+            const Expanded(child: Spacer()),
+            Wrap(spacing: 10, direction: Axis.horizontal, children: [
+              if (offerPrice?.isNotEmpty ?? false)
+                Container(
+                  width: 60,
+                  height: 60,
+                  child: Stack(
+                    children: [
+                      Container(
+                        width: 60,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16),
+                          border: Border.all(
+                            color: PocadotColors.primary500,
+                            width: 1,
+                          ),
+                          color: PocadotColors.othersWhite,
+                        ),
+                        padding: const EdgeInsets.all(10),
+                        child: Center(
+                          child: Text(
+                            offerPrice!,
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(
+                              color: PocadotColors.greyscale900,
+                            ),
+                          ),
+                        ),
+                      ),
+                      if (priceNegotiated)
+                        Container(
+                          width: 60,
+                          height: 60,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(16),
+                            border: Border.all(
+                              color: PocadotColors.othersRed,
+                              width: 1,
+                            ),
+                            color: PocadotColors.transparentRed,
+                          ),
+                        )
+                      else
+                        Container()
+                    ],
+                  ),
+                )
+              else
+                Container(),
+
+              if (offeredListing?.isNotEmpty ?? false)
+                Container(
+                  width: 60,
+                  height: 60,
+                  child: Stack(
+                    // alignment: Alignment.center,
+                    children: [
+                      Container(
+                        width: 60,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(10)),
+                          border: Border.all(
+                            color: PocadotColors.primary500,
+                            width: 1,
+                          ),
+                        ),
+                        clipBehavior: Clip.antiAlias,
+                        child: Image.asset(
+                          offeredListing!,
+                          fit: BoxFit.fitWidth,
+                        ),
+                      ),
+                      if (listingNegotiated)
+                        Container(
+                          width: 60,
+                          height: 60,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(
+                              color: PocadotColors.othersRed,
+                              width: 1,
+                            ),
+                            color: PocadotColors.transparentRed,
+                          ),
+                        )
+                      else
+                        Container(),
+                    ],
+                  ),
+                )
+              else
+                Container(),
+            ])
           ],
         ),
       );

@@ -34,6 +34,7 @@ class App extends StatelessWidget {
       title: 'pocadot',
       theme: ThemeData(
         primaryColor: PocadotColors.primary500,
+        fontFamily: 'Urbanist'
       ),
       home: const Root(),
       ),
