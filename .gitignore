@@ -53,6 +53,7 @@ app.*.map.json
 
 # NO TARGETS NEED MODIFICATION FOR THIS PROJECT
 /android/
+/ios/
 
 # Generated GraphQL files
 __generated__/
