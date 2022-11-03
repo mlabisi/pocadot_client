@@ -23,7 +23,6 @@ class OfferChatBubble extends StatelessWidget {
     return LayoutBuilder(builder: (context, constraints) {
       return Container(
         width: constraints.widthConstraints().maxWidth * 0.75,
-        height: constraints.widthConstraints().maxWidth * 0.5,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
@@ -62,13 +61,13 @@ class OfferChatBubble extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            const Expanded(child: Spacer()),
+            SizedBox(height: constraints.heightConstraints().maxHeight * 0.01),
             const Divider(
                 thickness: 1,
                 indent: 0,
                 endIndent: 0,
                 color: PocadotColors.primary500),
-            const Expanded(child: Spacer()),
+            SizedBox(height: constraints.heightConstraints().maxHeight * 0.01),
             Wrap(spacing: 10, direction: Axis.horizontal, children: [
               if (offerPrice?.isNotEmpty ?? false)
                 Container(
@@ -93,8 +92,8 @@ class OfferChatBubble extends StatelessWidget {
                             offerPrice!,
                             textAlign: TextAlign.center,
                             style: const TextStyle(
-                              color: PocadotColors.greyscale900,
-                            ),
+                                color: PocadotColors.greyscale900,
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
                       ),
@@ -118,7 +117,6 @@ class OfferChatBubble extends StatelessWidget {
                 )
               else
                 Container(),
-
               if (offeredListing?.isNotEmpty ?? false)
                 Container(
                   width: 60,

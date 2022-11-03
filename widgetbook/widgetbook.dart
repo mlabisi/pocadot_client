@@ -68,24 +68,138 @@ class WidgetbookHotReload extends StatelessWidget {
               name: 'offer',
               useCases: [
                 WidgetbookUseCase(
+                  name: 'Buy Offer Received',
+                  builder: (context) => OfferChatBubble(
+                    label: context.knobs.text(
+                        label: 'Offer Label',
+                        initialValue: 'papagowon wants to buy!'),
+                    message: context.knobs.text(
+                        label: 'Offer Message',
+                        initialValue:
+                            'I\'d love to buy your Momo photocard!'),
+                    offerPrice: context.knobs.text(
+                        label: 'Offer Price', initialValue: '\$45'),
+                  ),
+                ),
+                WidgetbookUseCase(
                   name: 'Trade Offer Received',
                   builder: (context) => OfferChatBubble(
                     label: context.knobs.text(
                         label: 'Offer Label',
                         initialValue: 'papagowon wants to trade!'),
                     message: context.knobs.text(
-                        label: 'Offer Message (optional)',
+                        label: 'Offer Message',
                         initialValue:
-                            'I\'d love to trade you for this Gowon photocard!'),
-                    offerPrice: context.knobs.nullableText(
-                        label: 'Offer Price (optional)', initialValue: '\$45'),
-                    offeredListing: context.knobs.nullableText(
+                            'I\'d love to trade you for this Nayeon photocard!'),
+                    offerPrice: context.knobs.text(
+                        label: 'Offer Price', initialValue: '\$45'),
+                    offeredListing: context.knobs.text(
                         label: 'Image Path',
                         initialValue: 'assets/demo/nayeon.png'),
-                    listingNegotiated: context.knobs.boolean(
-                        label: 'Listing Negotiated?', initialValue: false),
-                    priceNegotiated: context.knobs.boolean(
-                        label: 'Price Negotiated?', initialValue: false),
+                  ),
+                ),
+                WidgetbookUseCase(
+                  name: 'Received Offer Edited',
+                  builder: (context) => OfferChatBubble(
+                    label: context.knobs.text(
+                        label: 'Offer Label',
+                        initialValue: 'papagowon edited their offer!'),
+                    message: context.knobs.text(
+                        label: 'Offer Message',
+                        initialValue:
+                            'Oops, I meant to offer you \$25'),
+                    offerPrice: context.knobs.text(
+                        label: 'Offer Price', initialValue: '\$25'),
+                    offeredListing: context.knobs.text(
+                        label: 'Image Path',
+                        initialValue: 'assets/demo/nayeon.png'),
+                  ),
+                ),
+                WidgetbookUseCase(
+                  name: 'Sent Offer Negotiation',
+                  builder: (context) => OfferChatBubble(
+                    label: context.knobs.text(
+                        label: 'Offer Label',
+                        initialValue: 'You negotiated papagowon’s offer.'),
+                    message: context.knobs.text(
+                        label: 'Offer Message',
+                        initialValue:
+                            'I don\'t want a nayeon pc or \$25 😬'),
+                    offerPrice: context.knobs.text(
+                        label: 'Offer Price', initialValue: '\$25'),
+                    priceNegotiated: true,
+                    offeredListing: context.knobs.text(
+                        label: 'Image Path',
+                        initialValue: 'assets/demo/nayeon.png'),
+                    listingNegotiated: true,
+                  ),
+                ),
+
+                WidgetbookUseCase(
+                  name: 'Buy Offer Sent',
+                  builder: (context) => OfferChatBubble(
+                    label: context.knobs.text(
+                        label: 'Offer Label',
+                        initialValue: 'You offered to buy!'),
+                    message: context.knobs.text(
+                        label: 'Offer Message',
+                        initialValue:
+                            'I\'d love to buy your Momo photocard!'),
+                    offerPrice: context.knobs.text(
+                        label: 'Offer Price', initialValue: '\$45'),
+                  ),
+                ),
+                WidgetbookUseCase(
+                  name: 'Trade Offer Sent',
+                  builder: (context) => OfferChatBubble(
+                    label: context.knobs.text(
+                        label: 'Offer Label',
+                        initialValue: 'You offered to trade!'),
+                    message: context.knobs.text(
+                        label: 'Offer Message',
+                        initialValue:
+                            'I\'d love to trade you for this Nayeon photocard!'),
+                    offerPrice: context.knobs.text(
+                        label: 'Offer Price', initialValue: '\$45'),
+                    offeredListing: context.knobs.text(
+                        label: 'Image Path',
+                        initialValue: 'assets/demo/nayeon.png'),
+                  ),
+                ),
+                WidgetbookUseCase(
+                  name: 'Sent Offer Edited',
+                  builder: (context) => OfferChatBubble(
+                    label: context.knobs.text(
+                        label: 'Offer Label',
+                        initialValue: 'You edited your offer!'),
+                    message: context.knobs.text(
+                        label: 'Offer Message',
+                        initialValue:
+                            'Oops, I meant to offer you \$25'),
+                    offerPrice: context.knobs.text(
+                        label: 'Offer Price', initialValue: '\$25'),
+                    offeredListing: context.knobs.text(
+                        label: 'Image Path',
+                        initialValue: 'assets/demo/nayeon.png'),
+                  ),
+                ),
+                WidgetbookUseCase(
+                  name: 'Received Offer Negotiation',
+                  builder: (context) => OfferChatBubble(
+                    label: context.knobs.text(
+                        label: 'Offer Label',
+                        initialValue: 'foReVe negotiated your offer.'),
+                    message: context.knobs.text(
+                        label: 'Offer Message',
+                        initialValue:
+                            'I don\'t want a nayeon pc or \$25 😬Do you have anything else?'),
+                    offerPrice: context.knobs.text(
+                        label: 'Offer Price', initialValue: '\$25'),
+                    priceNegotiated: true,
+                    offeredListing: context.knobs.text(
+                        label: 'Image Path',
+                        initialValue: 'assets/demo/nayeon.png'),
+                    listingNegotiated: true,
                   ),
                 ),
               ],
