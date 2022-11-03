@@ -57,3 +57,4 @@ app.*.map.json
 
 # Generated GraphQL files
 __generated__/
+/ios/Build/Intermediates.noindex/Runner.build/
