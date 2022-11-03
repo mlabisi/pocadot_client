@@ -37,34 +37,30 @@ class WidgetbookHotReload extends StatelessWidget {
                             label: 'Avatar Image Path',
                             initialValue: 'assets/demo/papagowon.png'),
                         listingTag: context.knobs.text(
-                            label: 'Listing Type',
-                            initialValue: 'WTS/WTT'),
-                        artist: context.knobs.text(
-                            label: 'Artist Name',
-                            initialValue: 'Nayeon'),
+                            label: 'Listing Type', initialValue: 'WTS/WTT'),
+                        artist: context.knobs
+                            .text(label: 'Artist Name', initialValue: 'Nayeon'),
                         release: context.knobs.text(
-                            label: 'Release Name',
-                            initialValue: 'IM NAYEON'),
-                        username: context.knobs.text(
-                            label: 'Username',
-                            initialValue: 'papagowon'),
+                            label: 'Release Name', initialValue: 'IM NAYEON'),
+                        username: context.knobs
+                            .text(label: 'Username', initialValue: 'papagowon'),
                         onPressed: () => () {})),
                 WidgetbookUseCase(
-                    name: 'Recommendation Card',
-                    builder: (context) => RecommendationCard(
-                        imagePath: context.knobs.text(
-                            label: 'Featured Image Path',
-                            initialValue: 'assets/demo/nayeon.png'),
-                        artist: context.knobs.text(
-                            label: 'Artist Name',
-                            initialValue: 'Nayeon'),
-                        release: context.knobs.text(
-                            label: 'Release Name',
-                            initialValue: 'IM NAYEON'),
-                        listingTag: context.knobs.text(
-                            label: 'Listing Tag',
-                            initialValue: 'WTS/WTT'),
-                        onPressed: () => () {})),
+                  name: 'Recommendation Card',
+                  builder: (context) => RecommendationCard(
+                      imagePath: context.knobs.text(
+                          label: 'Featured Image Path',
+                          initialValue: 'assets/demo/nayeon.png'),
+                      artist: context.knobs
+                          .text(label: 'Artist Name', initialValue: 'Nayeon'),
+                      release: context.knobs.text(
+                          label: 'Release Name', initialValue: 'IM NAYEON'),
+                      listingTag: context.knobs
+                          .text(label: 'Listing Tag', initialValue: 'WTS/WTT'),
+                      onTapped: () => () {},
+                      onLeft: () => () {},
+                      onRight: () => () {}),
+                ),
               ],
             ),
           ],

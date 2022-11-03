@@ -8,14 +8,18 @@ class RecommendationCard extends StatelessWidget {
   final String artist;
   final String listingTag;
   final String release;
-  final Function() onPressed;
+  final Function() onTapped;
+  final Function() onLeft;
+  final Function() onRight;
 
   const RecommendationCard(
       {required this.imagePath,
       required this.artist,
       required this.release,
       required this.listingTag,
-      required this.onPressed,
+      required this.onTapped,
+      required this.onLeft,
+      required this.onRight,
       Key? key})
       : super(key: key);
 
@@ -93,7 +97,7 @@ class RecommendationCard extends StatelessWidget {
                         padding: const EdgeInsets.all(12),
                         backgroundColor: PocadotColors.alertsStatusError,
                         foregroundColor: PocadotColors.othersWhite),
-                    onPressed: () {},
+                    onPressed: () => onLeft,
                     child: const Icon(Icons.close,
                         size: 10, color: PocadotColors.othersWhite),
                   ),
@@ -104,7 +108,7 @@ class RecommendationCard extends StatelessWidget {
                         padding: const EdgeInsets.all(12),
                         backgroundColor: PocadotColors.primary500,
                         foregroundColor: PocadotColors.othersWhite),
-                    onPressed: () {},
+                    onPressed: () => onRight,
                     child: const Icon(
                       IconlyBold.heart,
                       size: 10,
@@ -116,7 +120,7 @@ class RecommendationCard extends StatelessWidget {
             ],
           ),
         )
-      ], onPressed: onPressed);
+      ], onPressed: onTapped);
     });
   }
 }
