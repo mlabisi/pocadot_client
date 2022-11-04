@@ -32,7 +32,9 @@ class ProfileAppBar extends StatelessWidget with PreferredSizeWidget {
           IconButton(
             icon: const Icon(IconlyLight.notification,
                 color: PocadotColors.primary500),
-            onPressed: () {},
+onPressed: () {
+            Navigator.pushNamed(context, '/notifications');
+          },
           )
         ]);
   }
