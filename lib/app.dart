@@ -5,6 +5,7 @@ import 'package:pocadot_client/screens/explore/explore_screen.dart';
 import 'package:pocadot_client/screens/more/more_screen.dart';
 import 'package:pocadot_client/screens/profile/my_profile_screen.dart';
 import 'package:pocadot_client/screens/saved/saved_screen.dart';
+import 'package:pocadot_client/screens/shared/notifications_screen.dart';
 import 'package:pocadot_client/screens/suggestions/preferences/suggestion_preferences_screen.dart';
 import 'package:pocadot_client/screens/suggestions/suggestions_screen.dart';
 import 'package:pocadot_client/theme/colors.dart';
@@ -41,6 +42,8 @@ class App extends StatelessWidget {
           switch (settings.name) {
             case '/suggestion-preferences':
               return MaterialPageRoute(builder: (_) => const SuggestionPreferencesScreen());
+            case '/notifications':
+              return MaterialPageRoute(builder: (_) => const NotificationsScreen());
             case '/':
             default:
               return MaterialPageRoute(builder: (_) => const Root());

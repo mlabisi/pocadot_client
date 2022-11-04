@@ -26,12 +26,16 @@ class SuggestionsAppBar extends StatelessWidget with PreferredSizeWidget {
         actions: [
           IconButton(
             icon: const Icon(IconlyLight.filter, color: PocadotColors.primary500),
-            onPressed: () {},
+            onPressed: () {
+                Navigator.pushNamed(context, '/suggestion-preferences');
+            },
           ),
           IconButton(
             icon: const Icon(IconlyLight.notification,
                 color: PocadotColors.primary500),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/notifications');
+            },
           )
         ]);
   }
