@@ -42,36 +42,45 @@ class App extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'pocadot',
-      theme: ThemeData(
-        primaryColor: PocadotColors.primary500,
-        fontFamily: 'Urbanist'
-      ),
+        theme: ThemeData(
+            primaryColor: PocadotColors.primary500, fontFamily: 'Urbanist'),
         onGenerateRoute: (settings) {
           switch (settings.name) {
             case '/suggestion-preferences':
-              return MaterialPageRoute(builder: (_) => const SuggestionPreferencesScreen());
+              return MaterialPageRoute(
+                  builder: (_) => const SuggestionPreferencesScreen());
             case '/notifications':
-              return MaterialPageRoute(builder: (_) => const NotificationsScreen());
+              return MaterialPageRoute(
+                  builder: (_) => const NotificationsScreen());
             case '/biases':
               return MaterialPageRoute(builder: (_) => const BiasesScreen());
             case '/add-listing':
-              return MaterialPageRoute(builder: (_) => const AddListingScreen());
+              return MaterialPageRoute(
+                  builder: (_) => const AddListingScreen());
             case '/collection':
-              return MaterialPageRoute(builder: (_) => const CollectionScreen());
+              return MaterialPageRoute(
+                  builder: (_) => const CollectionScreen());
             case '/search':
-              return MaterialPageRoute(builder: (_) => const SearchScreen());
+              return PageRouteBuilder(
+                pageBuilder: (_, __, ___) => const SearchScreen(),
+                transitionDuration: Duration.zero,
+                reverseTransitionDuration: Duration.zero,
+              );
             case '/filter-results':
-              return MaterialPageRoute(builder: (_) => const FilterResultsScreen());
+              return MaterialPageRoute(
+                  builder: (_) => const FilterResultsScreen());
             case '/all-listings':
-              return MaterialPageRoute(builder: (_) => const AllListingsScreen());
+              return MaterialPageRoute(
+                  builder: (_) => const AllListingsScreen());
             case '/view-listing':
-              return MaterialPageRoute(builder: (_) => const ViewListingScreen());
+              return MaterialPageRoute(
+                  builder: (_) => const ViewListingScreen());
             case '/':
             default:
               return MaterialPageRoute(builder: (_) => const Root());
           }
         },
-      home: const Root(),
+        home: const Root(),
       ),
     );
   }

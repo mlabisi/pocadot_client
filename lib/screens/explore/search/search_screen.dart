@@ -49,13 +49,10 @@ class _SearchContentState extends State<SearchContent> {
       child: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
-            child: GestureDetector(
-              onTapDown: (_) => Navigator.pushNamed(context, '/search'),
-              child: SearchBar(
-                textController: _textEditingController,
-                hintText: 'Search for groups and idols',
-                autofocus: true,
-              ),
+            child: SearchBar(
+              textController: _textEditingController,
+              hintText: 'Search for groups and idols',
+              autofocus: true,
             ),
           ),
         ],
