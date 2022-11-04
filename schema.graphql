@@ -140,7 +140,7 @@ type Query {
     profile(input: ID!): UserProfile!
     talent(input: TalentFilters!): [Talent!]!
     talentFeed: [Talent!]!
-    userSuggestions(input: ID!): [Listing!]!
+    userSuggestions: [Listing!]!
     users(input: UserFilters!): [UserProfile!]!
     usersFeed(page: Int!): ProfileFeed!
 }

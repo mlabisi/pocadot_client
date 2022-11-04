@@ -1,5 +1,5 @@
-query SuggestionsScreen($id: ID!) {
-    userSuggestions(input: $id) {
+query SuggestionsScreen {
+    userSuggestions {
         ...suggestion
     }
 }

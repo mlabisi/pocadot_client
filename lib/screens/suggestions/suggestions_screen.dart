@@ -1,4 +1,6 @@
+import 'package:appinio_swiper/appinio_swiper.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:pocadot_client/screens/suggestions/suggestions_provider.dart';
 import 'package:pocadot_client/screens/suggestions/~graphql/__generated__/suggestions_screen.query.graphql.dart';
 import 'package:pocadot_client/theme/colors.dart';
@@ -11,7 +13,7 @@ import 'package:provider/provider.dart';
 
 //#region SUGGESTIONS
 class SuggestionsContent extends StatefulWidget {
-  final Iterable<RecommendationCard> suggestionCards;
+  final List<RecommendationCard> suggestionCards;
 
   const SuggestionsContent({super.key, required this.suggestionCards});
 
@@ -28,21 +30,17 @@ class _SuggestionsContentState extends State<SuggestionsContent> {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Recommendations',
-          style: TextStyle(color: PocadotColors.greyscale900)),
+    return AppinioSwiper(
+        cards: widget.suggestionCards,
     );
   }
 }
 
-class SuggestionsScreen extends StatelessWidget {
+class SuggestionsScreen extends HookWidget {
   const SuggestionsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final suggestionsProvider = Provider.of<SuggestionsProvider>(context);
-    suggestionsProvider.setUserId(''); // from store or context?
-
     final suggestionsQuery = useQuery$SuggestionsScreen(
         Options$Query$SuggestionsScreen(
             variables: Variables$Query$SuggestionsScreen(id: '')));
@@ -60,7 +58,7 @@ class SuggestionsScreen extends StatelessWidget {
         listingTag: e.type.join('/'),
         onTapped: () {},
         onLeft: () {},
-        onRight: () {}));
+        onRight: () {})).toList();
 
     return AppScreen(
       appBar: TabAppBar(

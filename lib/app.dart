@@ -41,11 +41,11 @@ class App extends StatelessWidget {
     return GraphQLProvider(
       client: ValueNotifier(GraphQLClient(
         cache: GraphQLCache(store: HiveStore()),
-        link: HttpLink("http://localhost:9002/graphql/"),
+        link: HttpLink("http://127.0.0.1:9002/graphql"),
       )),
       child: MultiProvider(
         providers: [
-          ChangeNotifierProvider<SuggestionsProvider>(create: (context) => SuggestionsProvider(),)
+          // ChangeNotifierProvider<SuggestionsProvider>(create: (context) => SuggestionsProvider(),)
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
