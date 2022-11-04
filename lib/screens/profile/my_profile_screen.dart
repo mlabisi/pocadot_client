@@ -49,7 +49,9 @@ class ProfileScreen extends StatelessWidget {
         IconButton(
           icon: const Icon(IconlyLight.edit_square,
               color: PocadotColors.primary500),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, '/edit-profile');
+          },
         ),
         IconButton(
           icon: const Icon(IconlyLight.notification,

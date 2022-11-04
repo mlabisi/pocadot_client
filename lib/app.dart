@@ -6,15 +6,16 @@ import 'package:pocadot_client/screens/explore/collection/collection_screen.dart
 import 'package:pocadot_client/screens/explore/explore_screen.dart';
 import 'package:pocadot_client/screens/explore/search/search_screen.dart';
 import 'package:pocadot_client/screens/more/more_screen.dart';
+import 'package:pocadot_client/screens/profile/edit/edit_profile_screen.dart';
 import 'package:pocadot_client/screens/profile/my_profile_screen.dart';
 import 'package:pocadot_client/screens/saved/saved_screen.dart';
-import 'package:pocadot_client/screens/shared/add_listing_screen.dart';
+import 'package:pocadot_client/screens/shared/listings/add_listing_screen.dart';
 import 'package:pocadot_client/screens/shared/biases/biases_screen.dart';
-import 'package:pocadot_client/screens/shared/filter_results.dart';
-import 'package:pocadot_client/screens/shared/make_offer.dart';
+import 'package:pocadot_client/screens/shared/listings/filter_results.dart';
+import 'package:pocadot_client/screens/shared/listings/make_offer.dart';
 import 'package:pocadot_client/screens/shared/notifications/notifications_screen.dart';
-import 'package:pocadot_client/screens/shared/view_listing.dart';
-import 'package:pocadot_client/screens/shared/view_profile.dart';
+import 'package:pocadot_client/screens/shared/views/view_listing.dart';
+import 'package:pocadot_client/screens/shared/views/view_profile.dart';
 import 'package:pocadot_client/screens/suggestions/preferences/suggestion_preferences_screen.dart';
 import 'package:pocadot_client/screens/suggestions/suggestions_screen.dart';
 import 'package:pocadot_client/theme/colors.dart';
@@ -83,6 +84,9 @@ class App extends StatelessWidget {
             case '/make-offer':
               return MaterialPageRoute(
                   builder: (_) => const MakeOfferScreen());
+            case '/edit-profile':
+              return MaterialPageRoute(
+                  builder: (_) => const EditProfileScreen());
             case '/':
             default:
               return MaterialPageRoute(builder: (_) => const Root());
