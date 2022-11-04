@@ -27,6 +27,7 @@ import 'package:pocadot_client/screens/shared/settings/view_language_settings_sc
 import 'package:pocadot_client/screens/shared/views/view_listing_screen.dart';
 import 'package:pocadot_client/screens/shared/views/view_profile_screen.dart';
 import 'package:pocadot_client/screens/suggestions/preferences/suggestion_preferences_screen.dart';
+import 'package:pocadot_client/screens/suggestions/suggestions_provider.dart';
 import 'package:pocadot_client/screens/suggestions/suggestions_screen.dart';
 import 'package:pocadot_client/theme/colors.dart';
 import 'package:pocadot_client/theme/icons.dart';
@@ -42,100 +43,95 @@ class App extends StatelessWidget {
         cache: GraphQLCache(store: HiveStore()),
         link: HttpLink("http://localhost:9002/graphql/"),
       )),
-      // child: ChangeNotifierProvider<UsersProvider>(
-      //   create: (context) => UsersProvider(),
-      //   child: MaterialApp(
-      //   title: 'pocadot',
-      //   theme: ThemeData(
-      //     primaryColor: FigmaColors.primary500,
-      //   ),
-      //   home: const Root(),
-      // ),
-      // ),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'pocadot',
-        theme: ThemeData(
-            primaryColor: PocadotColors.primary500, fontFamily: 'Urbanist'),
-        onGenerateRoute: (settings) {
-          switch (settings.name) {
-            case '/suggestion-preferences':
-              return MaterialPageRoute(
-                  builder: (_) => const SuggestionPreferencesScreen());
-            case '/notifications':
-              return MaterialPageRoute(
-                  builder: (_) => const NotificationsScreen());
-            case '/biases':
-              return MaterialPageRoute(builder: (_) => const BiasesScreen());
-            case '/add-listing':
-              return MaterialPageRoute(
-                  builder: (_) => const AddListingScreen());
-            case '/collection':
-              return MaterialPageRoute(
-                  builder: (_) => const CollectionScreen());
-            case '/search':
-              return PageRouteBuilder(
-                pageBuilder: (_, __, ___) => const SearchScreen(),
-                transitionDuration: Duration.zero,
-                reverseTransitionDuration: Duration.zero,
-              );
-            case '/filter-results':
-              return MaterialPageRoute(
-                  builder: (_) => const FilterResultsScreen());
-            case '/all-listings':
-              return MaterialPageRoute(
-                  builder: (_) => const AllListingsScreen());
-            case '/view-listing':
-              return MaterialPageRoute(
-                  builder: (_) => const ViewListingScreen());
-            case '/view-profile':
-              return MaterialPageRoute(
-                  builder: (_) => const ViewProfileScreen());
-            case '/make-offer':
-              return MaterialPageRoute(
-                  builder: (_) => const MakeOfferScreen());
-            case '/edit-profile':
-              return MaterialPageRoute(
-                  builder: (_) => const EditProfileScreen());
-            case '/my-listings':
-              return MaterialPageRoute(
-                  builder: (_) => const MyListingsScreen());
-            case '/my-offers':
-              return MaterialPageRoute(
-                  builder: (_) => const MyOffersScreen());
-            case '/settings':
-              return MaterialPageRoute(
-                  builder: (_) => const SettingsScreen());
-            case '/push-notification-settings':
-              return MaterialPageRoute(
-                  builder: (_) => const PushNotificationSettingsScreen());
-            case '/payment-methods':
-              return MaterialPageRoute(
-                  builder: (_) => const PaymentMethodsScreen());
-            case '/connected-accounts':
-              return MaterialPageRoute(
-                  builder: (_) => const ConnectedAccountsScreen());
-            case '/language-settings':
-              return MaterialPageRoute(
-                  builder: (_) => const LanguageSettingsScreen());
-            case '/country-settings':
-              return MaterialPageRoute(
-                  builder: (_) => const CountrySettingsScreen());
-            case '/help-center':
-              return MaterialPageRoute(
-                  builder: (_) => const CountrySettingsScreen());
-            case '/change-password':
-              return MaterialPageRoute(
-                  builder: (_) => const ChangePasswordScreen());
-            case '/view-offer':
-              return MaterialPageRoute(
-                  builder: (_) => const ViewOfferScreen());
-            case '/':
-            default:
-              return MaterialPageRoute(builder: (_) => const Root());
-          }
-        },
-        home: const Root(),
+      child: MultiProvider(
+        providers: [
+          ChangeNotifierProvider<SuggestionsProvider>(create: (context) => SuggestionsProvider(),)
+        ],
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'pocadot',
+          theme: ThemeData(
+              primaryColor: PocadotColors.primary500, fontFamily: 'Urbanist'),
+          onGenerateRoute: (settings) {
+            switch (settings.name) {
+              case '/suggestion-preferences':
+                return MaterialPageRoute(
+                    builder: (_) => const SuggestionPreferencesScreen());
+              case '/notifications':
+                return MaterialPageRoute(
+                    builder: (_) => const NotificationsScreen());
+              case '/biases':
+                return MaterialPageRoute(builder: (_) => const BiasesScreen());
+              case '/add-listing':
+                return MaterialPageRoute(
+                    builder: (_) => const AddListingScreen());
+              case '/collection':
+                return MaterialPageRoute(
+                    builder: (_) => const CollectionScreen());
+              case '/search':
+                return PageRouteBuilder(
+                  pageBuilder: (_, __, ___) => const SearchScreen(),
+                  transitionDuration: Duration.zero,
+                  reverseTransitionDuration: Duration.zero,
+                );
+              case '/filter-results':
+                return MaterialPageRoute(
+                    builder: (_) => const FilterResultsScreen());
+              case '/all-listings':
+                return MaterialPageRoute(
+                    builder: (_) => const AllListingsScreen());
+              case '/view-listing':
+                return MaterialPageRoute(
+                    builder: (_) => const ViewListingScreen());
+              case '/view-profile':
+                return MaterialPageRoute(
+                    builder: (_) => const ViewProfileScreen());
+              case '/make-offer':
+                return MaterialPageRoute(
+                    builder: (_) => const MakeOfferScreen());
+              case '/edit-profile':
+                return MaterialPageRoute(
+                    builder: (_) => const EditProfileScreen());
+              case '/my-listings':
+                return MaterialPageRoute(
+                    builder: (_) => const MyListingsScreen());
+              case '/my-offers':
+                return MaterialPageRoute(
+                    builder: (_) => const MyOffersScreen());
+              case '/settings':
+                return MaterialPageRoute(
+                    builder: (_) => const SettingsScreen());
+              case '/push-notification-settings':
+                return MaterialPageRoute(
+                    builder: (_) => const PushNotificationSettingsScreen());
+              case '/payment-methods':
+                return MaterialPageRoute(
+                    builder: (_) => const PaymentMethodsScreen());
+              case '/connected-accounts':
+                return MaterialPageRoute(
+                    builder: (_) => const ConnectedAccountsScreen());
+              case '/language-settings':
+                return MaterialPageRoute(
+                    builder: (_) => const LanguageSettingsScreen());
+              case '/country-settings':
+                return MaterialPageRoute(
+                    builder: (_) => const CountrySettingsScreen());
+              case '/help-center':
+                return MaterialPageRoute(
+                    builder: (_) => const CountrySettingsScreen());
+              case '/change-password':
+                return MaterialPageRoute(
+                    builder: (_) => const ChangePasswordScreen());
+              case '/view-offer':
+                return MaterialPageRoute(
+                    builder: (_) => const ViewOfferScreen());
+              case '/':
+              default:
+                return MaterialPageRoute(builder: (_) => const Root());
+            }
+          },
+          home: const Root(),
+        ),
       ),
     );
   }
