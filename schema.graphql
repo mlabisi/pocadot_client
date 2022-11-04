@@ -57,16 +57,16 @@ type Listing {
     askingPrice: Int! @fake(type: money, options: {decimalPlaces: 0})
     condition: CardCondition!
     description: String! @fake(type: lorem)
-    groups: [Group!]
+    groups: [Group!] @listLength(min: 0, max: 1)
     id: ID! @fake(type: uuid)
-    idols: [Idol!]!
+    idols: [Idol!]! @listLength(min: 1, max: 2)
     international: Boolean!
     isFeatured: Boolean!
     listedBy: UserAccount!
     offers: [Offer!]!
     release: String! @fake(type: productName)
     savedBy: [UserAccount!]!
-    type: [ListingType!]!
+    type: [ListingType!]! @listLength(min: 1, max: 2)
 }
 
 type ListingFeed {

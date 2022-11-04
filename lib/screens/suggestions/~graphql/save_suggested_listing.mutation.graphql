@@ -1,0 +1,5 @@
+mutation SaveSuggestedListing($id: ID!) {
+    faveListing(input: $id) {
+        id
+    }
+}

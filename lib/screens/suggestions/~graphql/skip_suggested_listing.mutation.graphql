@@ -1,0 +1,5 @@
+mutation SkipSuggestedListing($id: ID!) {
+    skipSuggestedListing(input: $id) {
+        id
+    }
+}

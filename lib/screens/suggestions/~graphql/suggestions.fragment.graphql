@@ -1,0 +1,11 @@
+fragment suggestion on Listing {
+    id
+    type
+    release
+    idols {
+        name
+    }
+    groups {
+        name
+    }
+}

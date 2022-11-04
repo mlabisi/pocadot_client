@@ -1,0 +1,5 @@
+query SuggestionsScreen($id: ID!) {
+    userSuggestions(input: $id) {
+        ...suggestion
+    }
+}
