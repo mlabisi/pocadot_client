@@ -18,13 +18,14 @@ import 'package:pocadot_client/screens/profile/my_profile_screen.dart';
 import 'package:pocadot_client/screens/saved/saved_screen.dart';
 import 'package:pocadot_client/screens/shared/listings/add_listing_screen.dart';
 import 'package:pocadot_client/screens/shared/biases/biases_screen.dart';
-import 'package:pocadot_client/screens/shared/listings/filter_results.dart';
-import 'package:pocadot_client/screens/shared/listings/make_offer.dart';
+import 'package:pocadot_client/screens/shared/listings/filter_results_screen.dart';
+import 'package:pocadot_client/screens/shared/listings/make_offer_screen.dart';
+import 'package:pocadot_client/screens/shared/listings/view_offer_screen.dart';
 import 'package:pocadot_client/screens/shared/notifications/notifications_screen.dart';
-import 'package:pocadot_client/screens/shared/settings/country_settings.dart';
-import 'package:pocadot_client/screens/shared/settings/language_settings.dart';
-import 'package:pocadot_client/screens/shared/views/view_listing.dart';
-import 'package:pocadot_client/screens/shared/views/view_profile.dart';
+import 'package:pocadot_client/screens/shared/settings/view_country_settings_screen.dart';
+import 'package:pocadot_client/screens/shared/settings/view_language_settings_screen.dart';
+import 'package:pocadot_client/screens/shared/views/view_listing_screen.dart';
+import 'package:pocadot_client/screens/shared/views/view_profile_screen.dart';
 import 'package:pocadot_client/screens/suggestions/preferences/suggestion_preferences_screen.dart';
 import 'package:pocadot_client/screens/suggestions/suggestions_screen.dart';
 import 'package:pocadot_client/theme/colors.dart';
@@ -126,6 +127,9 @@ class App extends StatelessWidget {
             case '/change-password':
               return MaterialPageRoute(
                   builder: (_) => const ChangePasswordScreen());
+            case '/view-offer':
+              return MaterialPageRoute(
+                  builder: (_) => const ViewOfferScreen());
             case '/':
             default:
               return MaterialPageRoute(builder: (_) => const Root());
