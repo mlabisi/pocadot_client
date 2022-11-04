@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:iconly/iconly.dart';
+import 'package:pocadot_client/screens/explore/all_listings/all_listings_screen.dart';
 import 'package:pocadot_client/screens/explore/collection/collection_screen.dart';
 import 'package:pocadot_client/screens/explore/explore_screen.dart';
 import 'package:pocadot_client/screens/explore/search/search_screen.dart';
 import 'package:pocadot_client/screens/more/more_screen.dart';
 import 'package:pocadot_client/screens/profile/my_profile_screen.dart';
 import 'package:pocadot_client/screens/saved/saved_screen.dart';
-import 'package:pocadot_client/screens/shared/add_listings_screen.dart';
+import 'package:pocadot_client/screens/shared/add_listing_screen.dart';
 import 'package:pocadot_client/screens/shared/biases/biases_screen.dart';
 import 'package:pocadot_client/screens/shared/filter_results.dart';
 import 'package:pocadot_client/screens/shared/notifications/notifications_screen.dart';
@@ -60,6 +61,8 @@ class App extends StatelessWidget {
               return MaterialPageRoute(builder: (_) => const SearchScreen());
             case '/filter-results':
               return MaterialPageRoute(builder: (_) => const FilterResultsScreen());
+            case '/all-listings':
+              return MaterialPageRoute(builder: (_) => const AllListingsScreen());
             case '/':
             default:
               return MaterialPageRoute(builder: (_) => const Root());
