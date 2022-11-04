@@ -71,12 +71,16 @@ class ExploreScreen extends StatelessWidget {
       appBar: TabAppBar(title: 'Explore', actions: [
         IconButton(
           icon: const Icon(IconlyLight.plus, color: PocadotColors.primary500),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, '/add-listing');
+          },
         ),
         IconButton(
           icon: const Icon(IconlyLight.notification,
               color: PocadotColors.primary500),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, '/notifications');
+          },
         )
       ]),
       body: const ExploreContent(),
