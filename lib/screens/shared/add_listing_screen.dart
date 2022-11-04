@@ -29,7 +29,7 @@ class AddListingScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: StackAppBar(title: 'Add Listing',),
+      appBar: StackAppBar(title: 'Add Listing', backIcon: Icons.cancel,),
       body: const AddListingContent(),
     );
   }
