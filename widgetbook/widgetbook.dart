@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 import 'package:pocadot_client/theme/colors.dart';
 import 'package:pocadot_client/widgets/cards/bias_choice_card.dart';
 import 'package:pocadot_client/widgets/cards/listing_card.dart';
 import 'package:pocadot_client/widgets/cards/recommendation_card.dart';
+import 'package:pocadot_client/widgets/navigation/main_tab_app_bar.dart';
+import 'package:pocadot_client/widgets/navigation/stack_app_bar.dart';
 import 'package:pocadot_client/widgets/offers/offer_chat_bubble.dart';
 import 'package:widgetbook/widgetbook.dart';
 
@@ -75,10 +78,9 @@ class WidgetbookHotReload extends StatelessWidget {
                         initialValue: 'papagowon wants to buy!'),
                     message: context.knobs.text(
                         label: 'Offer Message',
-                        initialValue:
-                            'I\'d love to buy your Momo photocard!'),
-                    offerPrice: context.knobs.text(
-                        label: 'Offer Price', initialValue: '\$45'),
+                        initialValue: 'I\'d love to buy your Momo photocard!'),
+                    offerPrice: context.knobs
+                        .text(label: 'Offer Price', initialValue: '\$45'),
                   ),
                 ),
                 WidgetbookUseCase(
@@ -91,8 +93,8 @@ class WidgetbookHotReload extends StatelessWidget {
                         label: 'Offer Message',
                         initialValue:
                             'I\'d love to trade you for this Nayeon photocard!'),
-                    offerPrice: context.knobs.text(
-                        label: 'Offer Price', initialValue: '\$45'),
+                    offerPrice: context.knobs
+                        .text(label: 'Offer Price', initialValue: '\$45'),
                     offeredListing: context.knobs.text(
                         label: 'Image Path',
                         initialValue: 'assets/demo/nayeon.png'),
@@ -106,10 +108,9 @@ class WidgetbookHotReload extends StatelessWidget {
                         initialValue: 'papagowon edited their offer!'),
                     message: context.knobs.text(
                         label: 'Offer Message',
-                        initialValue:
-                            'Oops, I meant to offer you \$25'),
-                    offerPrice: context.knobs.text(
-                        label: 'Offer Price', initialValue: '\$25'),
+                        initialValue: 'Oops, I meant to offer you \$25'),
+                    offerPrice: context.knobs
+                        .text(label: 'Offer Price', initialValue: '\$25'),
                     offeredListing: context.knobs.text(
                         label: 'Image Path',
                         initialValue: 'assets/demo/nayeon.png'),
@@ -123,10 +124,9 @@ class WidgetbookHotReload extends StatelessWidget {
                         initialValue: 'You negotiated papagowon’s offer.'),
                     message: context.knobs.text(
                         label: 'Offer Message',
-                        initialValue:
-                            'I don\'t want a nayeon pc or \$25 😬'),
-                    offerPrice: context.knobs.text(
-                        label: 'Offer Price', initialValue: '\$25'),
+                        initialValue: 'I don\'t want a nayeon pc or \$25 😬'),
+                    offerPrice: context.knobs
+                        .text(label: 'Offer Price', initialValue: '\$25'),
                     priceNegotiated: true,
                     offeredListing: context.knobs.text(
                         label: 'Image Path',
@@ -134,7 +134,6 @@ class WidgetbookHotReload extends StatelessWidget {
                     listingNegotiated: true,
                   ),
                 ),
-
                 WidgetbookUseCase(
                   name: 'Buy Offer Sent',
                   builder: (context) => OfferChatBubble(
@@ -143,10 +142,9 @@ class WidgetbookHotReload extends StatelessWidget {
                         initialValue: 'You offered to buy!'),
                     message: context.knobs.text(
                         label: 'Offer Message',
-                        initialValue:
-                            'I\'d love to buy your Momo photocard!'),
-                    offerPrice: context.knobs.text(
-                        label: 'Offer Price', initialValue: '\$45'),
+                        initialValue: 'I\'d love to buy your Momo photocard!'),
+                    offerPrice: context.knobs
+                        .text(label: 'Offer Price', initialValue: '\$45'),
                   ),
                 ),
                 WidgetbookUseCase(
@@ -159,8 +157,8 @@ class WidgetbookHotReload extends StatelessWidget {
                         label: 'Offer Message',
                         initialValue:
                             'I\'d love to trade you for this Nayeon photocard!'),
-                    offerPrice: context.knobs.text(
-                        label: 'Offer Price', initialValue: '\$45'),
+                    offerPrice: context.knobs
+                        .text(label: 'Offer Price', initialValue: '\$45'),
                     offeredListing: context.knobs.text(
                         label: 'Image Path',
                         initialValue: 'assets/demo/nayeon.png'),
@@ -174,10 +172,9 @@ class WidgetbookHotReload extends StatelessWidget {
                         initialValue: 'You edited your offer!'),
                     message: context.knobs.text(
                         label: 'Offer Message',
-                        initialValue:
-                            'Oops, I meant to offer you \$25'),
-                    offerPrice: context.knobs.text(
-                        label: 'Offer Price', initialValue: '\$25'),
+                        initialValue: 'Oops, I meant to offer you \$25'),
+                    offerPrice: context.knobs
+                        .text(label: 'Offer Price', initialValue: '\$25'),
                     offeredListing: context.knobs.text(
                         label: 'Image Path',
                         initialValue: 'assets/demo/nayeon.png'),
@@ -193,13 +190,44 @@ class WidgetbookHotReload extends StatelessWidget {
                         label: 'Offer Message',
                         initialValue:
                             'I don\'t want a nayeon pc or \$25 😬Do you have anything else?'),
-                    offerPrice: context.knobs.text(
-                        label: 'Offer Price', initialValue: '\$25'),
+                    offerPrice: context.knobs
+                        .text(label: 'Offer Price', initialValue: '\$25'),
                     priceNegotiated: true,
                     offeredListing: context.knobs.text(
                         label: 'Image Path',
                         initialValue: 'assets/demo/nayeon.png'),
                     listingNegotiated: true,
+                  ),
+                ),
+              ],
+            ),
+            WidgetbookComponent(
+              name: 'navigation',
+              useCases: [
+                WidgetbookUseCase(
+                  name: 'Tab App Bar',
+                  builder: (context) => TabAppBar(
+                    title: context.knobs.text(
+                        label: 'Tab Title', initialValue: 'Recommendations'),
+                    actions: [
+                      IconButton(
+                        icon: const Icon(IconlyLight.filter, color: PocadotColors.primary500),
+                        onPressed: () {},
+                      ),
+                      IconButton(
+                        icon: const Icon(IconlyLight.notification,
+                            color: PocadotColors.primary500),
+                        onPressed: () {},
+
+                      )
+                    ],
+                  ),
+                ),
+                WidgetbookUseCase(
+                  name: 'Stack App Bar',
+                  builder: (context) => StackAppBar(
+                    title: context.knobs.text(
+                        label: 'Stack Title', initialValue: 'Recommendation Preferences'),
                   ),
                 ),
               ],
