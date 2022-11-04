@@ -3,43 +3,9 @@ import 'package:pocadot_client/theme/colors.dart';
 import 'package:iconly/iconly.dart';
 import 'package:pocadot_client/theme/icons.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
+import 'package:pocadot_client/widgets/navigation/main_tab_app_bar.dart';
 
 //#region SAVED
-class SavedAppBar extends StatelessWidget with PreferredSizeWidget {
-  @override
-  final Size preferredSize;
-
-  SavedAppBar({Key? key})
-      : preferredSize = const Size.fromHeight(56.0),
-        super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return AppBar(
-        backgroundColor: PocadotColors.greyscale50,
-        elevation: 1,
-        centerTitle: false,
-        title: const Text(
-          "Saved",
-          style: TextStyle(color: PocadotColors.primary500, fontFamily: 'Jua'),
-        ),
-        actions: [
-          IconButton(
-            icon: const Icon(IconlyLight.edit_square,
-                color: PocadotColors.primary500),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: const Icon(IconlyLight.notification,
-                color: PocadotColors.primary500),
-            onPressed: () {
-              Navigator.pushNamed(context, '/notifications');
-            },
-          )
-        ]);
-  }
-}
-
 class SavedContent extends StatefulWidget {
   const SavedContent({super.key});
 
@@ -78,7 +44,20 @@ class SavedScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: SavedAppBar(),
+      appBar: TabAppBar(title: 'Saved', actions: [
+        IconButton(
+          icon: const Icon(IconlyLight.edit_square,
+              color: PocadotColors.primary500),
+          onPressed: () {},
+        ),
+        IconButton(
+          icon: const Icon(IconlyLight.notification,
+              color: PocadotColors.primary500),
+          onPressed: () {
+            Navigator.pushNamed(context, '/notifications');
+          },
+        )
+      ]),
       body: const SavedContent(),
     );
   }
