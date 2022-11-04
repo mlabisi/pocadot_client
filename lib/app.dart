@@ -119,6 +119,9 @@ class App extends StatelessWidget {
             case '/country-settings':
               return MaterialPageRoute(
                   builder: (_) => const CountrySettingsScreen());
+            case '/help-center':
+              return MaterialPageRoute(
+                  builder: (_) => const CountrySettingsScreen());
             case '/':
             default:
               return MaterialPageRoute(builder: (_) => const Root());
