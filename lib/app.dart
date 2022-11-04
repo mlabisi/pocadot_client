@@ -11,8 +11,10 @@ import 'package:pocadot_client/screens/saved/saved_screen.dart';
 import 'package:pocadot_client/screens/shared/add_listing_screen.dart';
 import 'package:pocadot_client/screens/shared/biases/biases_screen.dart';
 import 'package:pocadot_client/screens/shared/filter_results.dart';
+import 'package:pocadot_client/screens/shared/make_offer.dart';
 import 'package:pocadot_client/screens/shared/notifications/notifications_screen.dart';
 import 'package:pocadot_client/screens/shared/view_listing.dart';
+import 'package:pocadot_client/screens/shared/view_profile.dart';
 import 'package:pocadot_client/screens/suggestions/preferences/suggestion_preferences_screen.dart';
 import 'package:pocadot_client/screens/suggestions/suggestions_screen.dart';
 import 'package:pocadot_client/theme/colors.dart';
@@ -75,6 +77,12 @@ class App extends StatelessWidget {
             case '/view-listing':
               return MaterialPageRoute(
                   builder: (_) => const ViewListingScreen());
+            case '/view-profile':
+              return MaterialPageRoute(
+                  builder: (_) => const ViewProfileScreen());
+            case '/make-offer':
+              return MaterialPageRoute(
+                  builder: (_) => const MakeOfferScreen());
             case '/':
             default:
               return MaterialPageRoute(builder: (_) => const Root());
