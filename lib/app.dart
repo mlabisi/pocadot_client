@@ -51,6 +51,8 @@ class App extends StatelessWidget {
               return MaterialPageRoute(builder: (_) => const BiasesScreen());
             case '/add-listing':
               return MaterialPageRoute(builder: (_) => const AddListingScreen());
+            case '/collection':
+              return MaterialPageRoute(builder: (_) => const AddListingScreen());
             case '/':
             default:
               return MaterialPageRoute(builder: (_) => const Root());
