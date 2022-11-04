@@ -8,6 +8,7 @@ import 'package:pocadot_client/screens/explore/search/search_screen.dart';
 import 'package:pocadot_client/screens/more/more_screen.dart';
 import 'package:pocadot_client/screens/more/my_listings/my_listings_screen.dart';
 import 'package:pocadot_client/screens/more/my_offers/my_offers_screen.dart';
+import 'package:pocadot_client/screens/more/settings/push_notifications/push_notifications_settings_screen.dart';
 import 'package:pocadot_client/screens/more/settings/settings_screen.dart';
 import 'package:pocadot_client/screens/profile/edit/edit_profile_screen.dart';
 import 'package:pocadot_client/screens/profile/my_profile_screen.dart';
@@ -99,6 +100,9 @@ class App extends StatelessWidget {
             case '/settings':
               return MaterialPageRoute(
                   builder: (_) => const SettingsScreen());
+            case '/push-notification-settings':
+              return MaterialPageRoute(
+                  builder: (_) => const PushNotificationSettingsScreen());
             case '/':
             default:
               return MaterialPageRoute(builder: (_) => const Root());
