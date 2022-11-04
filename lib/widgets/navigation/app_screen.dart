@@ -3,7 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 
 class AppScreen extends HookWidget {
   final PreferredSizeWidget? appBar;
-  final StatefulWidget? content;
+  final Widget? content;
 
   const AppScreen({super.key, this.appBar, this.content});
 
