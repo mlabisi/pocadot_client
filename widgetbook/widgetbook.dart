@@ -4,6 +4,7 @@ import 'package:pocadot_client/theme/colors.dart';
 import 'package:pocadot_client/widgets/cards/bias_choice_card.dart';
 import 'package:pocadot_client/widgets/cards/listing_card.dart';
 import 'package:pocadot_client/widgets/cards/recommendation_card.dart';
+import 'package:pocadot_client/widgets/common/search_bar.dart';
 import 'package:pocadot_client/widgets/navigation/main_tab_app_bar.dart';
 import 'package:pocadot_client/widgets/navigation/stack_app_bar.dart';
 import 'package:pocadot_client/widgets/offers/offer_chat_bubble.dart';
@@ -211,14 +212,14 @@ class WidgetbookHotReload extends StatelessWidget {
                         label: 'Tab Title', initialValue: 'Recommendations'),
                     actions: [
                       IconButton(
-                        icon: const Icon(IconlyLight.filter, color: PocadotColors.primary500),
+                        icon: const Icon(IconlyLight.filter,
+                            color: PocadotColors.primary500),
                         onPressed: () {},
                       ),
                       IconButton(
                         icon: const Icon(IconlyLight.notification,
                             color: PocadotColors.primary500),
                         onPressed: () {},
-
                       )
                     ],
                   ),
@@ -227,7 +228,22 @@ class WidgetbookHotReload extends StatelessWidget {
                   name: 'Stack App Bar',
                   builder: (context) => StackAppBar(
                     title: context.knobs.text(
-                        label: 'Stack Title', initialValue: 'Recommendation Preferences'),
+                        label: 'Stack Title',
+                        initialValue: 'Recommendation Preferences'),
+                  ),
+                ),
+              ],
+            ),
+            WidgetbookComponent(
+              name: 'common',
+              useCases: [
+                WidgetbookUseCase(
+                  name: 'Search Bar',
+                  builder: (context) => SearchBar(
+                    textController: TextEditingController(),
+                    hintText: context.knobs.text(
+                        label: "Search Placeholder",
+                        initialValue: 'Search for groups and idols'),
                   ),
                 ),
               ],

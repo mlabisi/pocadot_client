@@ -6,7 +6,7 @@ import 'package:pocadot_client/screens/more/more_screen.dart';
 import 'package:pocadot_client/screens/profile/my_profile_screen.dart';
 import 'package:pocadot_client/screens/saved/saved_screen.dart';
 import 'package:pocadot_client/screens/shared/biases/biases_screen.dart';
-import 'package:pocadot_client/screens/shared/notifications_screen.dart';
+import 'package:pocadot_client/screens/shared/notifications/notifications_screen.dart';
 import 'package:pocadot_client/screens/suggestions/preferences/suggestion_preferences_screen.dart';
 import 'package:pocadot_client/screens/suggestions/suggestions_screen.dart';
 import 'package:pocadot_client/theme/colors.dart';
@@ -34,7 +34,8 @@ class App extends StatelessWidget {
       // ),
       // ),
       child: MaterialApp(
-      title: 'pocadot',
+        debugShowCheckedModeBanner: false,
+        title: 'pocadot',
       theme: ThemeData(
         primaryColor: PocadotColors.primary500,
         fontFamily: 'Urbanist'
