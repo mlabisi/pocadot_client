@@ -6,15 +6,15 @@ import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:pocadot_client/widgets/navigation/main_tab_app_bar.dart';
 import 'package:pocadot_client/widgets/navigation/stack_app_bar.dart';
 
-//#region MyListings
-class MyListingsContent extends StatefulWidget {
-  const MyListingsContent({super.key});
+//#region MyOffers
+class MyOffersContent extends StatefulWidget {
+  const MyOffersContent({super.key});
 
   @override
-  State<MyListingsContent> createState() => _MyListingsContentState();
+  State<MyOffersContent> createState() => _MyOffersContentState();
 }
 
-class _MyListingsContentState extends State<MyListingsContent> {
+class _MyOffersContentState extends State<MyOffersContent> {
   late ScrollController _scrollController;
   double _scrollControllerOffset = 0.0;
 
@@ -34,25 +34,22 @@ class _MyListingsContentState extends State<MyListingsContent> {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text('My Listings',
+      child: Text('My Offers',
           style: TextStyle(color: PocadotColors.greyscale900)),
     );
   }
 }
 
-class MyListingsScreen extends StatelessWidget {
-  const MyListingsScreen({super.key});
+class MyOffersScreen extends StatelessWidget {
+  const MyOffersScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: StackAppBar(
-        title: 'My Listings',
-        actions: [
-          IconButton(onPressed: () {}, icon: const Icon(IconlyLight.edit_square))
-        ],
+        title: 'My Offers'
       ),
-      body: const MyListingsContent(),
+      body: const MyOffersContent(),
     );
   }
 }
