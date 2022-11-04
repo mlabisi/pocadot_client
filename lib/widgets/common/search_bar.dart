@@ -6,12 +6,13 @@ class SearchBar extends StatefulWidget {
   final FocusNode? focusNode;
   final TextEditingController textController;
   final String hintText;
+  final bool? autofocus;
 
   const SearchBar(
       {required this.textController,
       required this.hintText,
       Key? key,
-      this.focusNode})
+      this.focusNode, this.autofocus})
       : super(key: key);
 
   @override
@@ -46,6 +47,7 @@ class _SearchBarState extends State<SearchBar> {
               color: Colors.grey.withOpacity(.1)),
         ]),
         child: TextField(
+          autofocus: widget.autofocus ?? false,
           autocorrect: false,
           focusNode: _focusNode,
           controller: widget.textController,

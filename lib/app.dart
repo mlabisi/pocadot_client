@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:iconly/iconly.dart';
+import 'package:pocadot_client/screens/explore/collection/collection_screen.dart';
 import 'package:pocadot_client/screens/explore/explore_screen.dart';
+import 'package:pocadot_client/screens/explore/search/search_screen.dart';
 import 'package:pocadot_client/screens/more/more_screen.dart';
 import 'package:pocadot_client/screens/profile/my_profile_screen.dart';
 import 'package:pocadot_client/screens/saved/saved_screen.dart';
@@ -52,7 +54,11 @@ class App extends StatelessWidget {
             case '/add-listing':
               return MaterialPageRoute(builder: (_) => const AddListingScreen());
             case '/collection':
-              return MaterialPageRoute(builder: (_) => const AddListingScreen());
+              return MaterialPageRoute(builder: (_) => const CollectionScreen());
+            case '/search':
+              return MaterialPageRoute(builder: (_) => const SearchScreen());
+            case '/filter-results':
+              return MaterialPageRoute(builder: (_) => const SearchScreen());
             case '/':
             default:
               return MaterialPageRoute(builder: (_) => const Root());

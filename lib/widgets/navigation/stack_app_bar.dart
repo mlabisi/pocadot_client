@@ -3,10 +3,12 @@ import 'package:pocadot_client/theme/colors.dart';
 
 class StackAppBar extends StatelessWidget with PreferredSizeWidget {
   final String title;
+  final List<Widget>? actions;
+
   @override
   final Size preferredSize;
 
-  StackAppBar({Key? key, required this.title})
+  StackAppBar({Key? key, required this.title, this.actions})
       : preferredSize = const Size.fromHeight(56.0),
         super(key: key);
 
@@ -27,6 +29,8 @@ class StackAppBar extends StatelessWidget with PreferredSizeWidget {
         title: Text(
           title,
           style: const TextStyle(color: PocadotColors.primary500, fontFamily: 'Jua'),
-        ));
+        ),
+      actions: (actions?.isNotEmpty ?? false) ? actions : [],
+    );
   }
 }
