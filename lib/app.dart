@@ -9,6 +9,7 @@ import 'package:pocadot_client/screens/profile/my_profile_screen.dart';
 import 'package:pocadot_client/screens/saved/saved_screen.dart';
 import 'package:pocadot_client/screens/shared/add_listings_screen.dart';
 import 'package:pocadot_client/screens/shared/biases/biases_screen.dart';
+import 'package:pocadot_client/screens/shared/filter_results.dart';
 import 'package:pocadot_client/screens/shared/notifications/notifications_screen.dart';
 import 'package:pocadot_client/screens/suggestions/preferences/suggestion_preferences_screen.dart';
 import 'package:pocadot_client/screens/suggestions/suggestions_screen.dart';
@@ -58,7 +59,7 @@ class App extends StatelessWidget {
             case '/search':
               return MaterialPageRoute(builder: (_) => const SearchScreen());
             case '/filter-results':
-              return MaterialPageRoute(builder: (_) => const SearchScreen());
+              return MaterialPageRoute(builder: (_) => const FilterResultsScreen());
             case '/':
             default:
               return MaterialPageRoute(builder: (_) => const Root());

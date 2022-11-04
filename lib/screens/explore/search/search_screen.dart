@@ -72,7 +72,7 @@ class SearchScreen extends HookWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: StackAppBar(title: 'Search', actions: [
-        IconButton(
+        IconButton( // TODO: useCallback to hide when there are no results??
           icon: const Icon(IconlyLight.filter, color: PocadotColors.primary500),
           onPressed: () {
             Navigator.pushNamed(context, '/filter-results');
@@ -80,9 +80,7 @@ class SearchScreen extends HookWidget {
         ),
         IconButton(
           icon: const Icon(IconlyLight.swap, color: PocadotColors.primary500),
-          onPressed: () {
-            Navigator.pushNamed(context, '/notifications');
-          },
+          onPressed: () {},
         )
       ]),
       body: const SearchContent(),

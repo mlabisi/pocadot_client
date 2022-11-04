@@ -3,12 +3,13 @@ import 'package:pocadot_client/theme/colors.dart';
 
 class StackAppBar extends StatelessWidget with PreferredSizeWidget {
   final String title;
+  final IconData? backIcon;
   final List<Widget>? actions;
 
   @override
   final Size preferredSize;
 
-  StackAppBar({Key? key, required this.title, this.actions})
+  StackAppBar({Key? key, required this.title, this.actions, this.backIcon})
       : preferredSize = const Size.fromHeight(56.0),
         super(key: key);
 
@@ -20,7 +21,7 @@ class StackAppBar extends StatelessWidget with PreferredSizeWidget {
         centerTitle: false,
         titleSpacing: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back,
+          icon: Icon(backIcon ?? Icons.arrow_back,
               color: PocadotColors.primary500),
           onPressed: () {
             if (Navigator.canPop(context)) Navigator.pop(context);
