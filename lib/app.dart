@@ -20,6 +20,7 @@ import 'package:pocadot_client/screens/shared/biases/biases_screen.dart';
 import 'package:pocadot_client/screens/shared/listings/filter_results.dart';
 import 'package:pocadot_client/screens/shared/listings/make_offer.dart';
 import 'package:pocadot_client/screens/shared/notifications/notifications_screen.dart';
+import 'package:pocadot_client/screens/shared/settings/language_settings.dart';
 import 'package:pocadot_client/screens/shared/views/view_listing.dart';
 import 'package:pocadot_client/screens/shared/views/view_profile.dart';
 import 'package:pocadot_client/screens/suggestions/preferences/suggestion_preferences_screen.dart';
@@ -111,6 +112,9 @@ class App extends StatelessWidget {
             case '/connected-accounts':
               return MaterialPageRoute(
                   builder: (_) => const ConnectedAccountsScreen());
+            case '/language-settings':
+              return MaterialPageRoute(
+                  builder: (_) => const LanguageSettingsScreen());
             case '/':
             default:
               return MaterialPageRoute(builder: (_) => const Root());
