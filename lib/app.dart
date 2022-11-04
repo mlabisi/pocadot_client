@@ -5,6 +5,7 @@ import 'package:pocadot_client/screens/explore/all_listings/all_listings_screen.
 import 'package:pocadot_client/screens/explore/collection/collection_screen.dart';
 import 'package:pocadot_client/screens/explore/explore_screen.dart';
 import 'package:pocadot_client/screens/explore/search/search_screen.dart';
+import 'package:pocadot_client/screens/more/change_password/change_password_screen.dart';
 import 'package:pocadot_client/screens/more/more_screen.dart';
 import 'package:pocadot_client/screens/more/my_listings/my_listings_screen.dart';
 import 'package:pocadot_client/screens/more/my_offers/my_offers_screen.dart';
@@ -122,6 +123,9 @@ class App extends StatelessWidget {
             case '/help-center':
               return MaterialPageRoute(
                   builder: (_) => const CountrySettingsScreen());
+            case '/change-password':
+              return MaterialPageRoute(
+                  builder: (_) => const ChangePasswordScreen());
             case '/':
             default:
               return MaterialPageRoute(builder: (_) => const Root());
