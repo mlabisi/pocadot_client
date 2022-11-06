@@ -106,8 +106,8 @@ class _SwiperState extends State<Swiper> with SingleTickerProviderStateMixin {
   bool _horizontal = false;
   bool _isUnswiping = false;
   bool _isUnswipingAll = false;
-  int _swipedDirectionVertical = 0; //-1 left, 1 right
-  int _swipedDirectionHorizontal = 0; //-1 bottom, 1 top
+  int _swipedDirectionVertical = 0; //-1 down, 1 up
+  int _swipedDirectionHorizontal = 0; //-1 left, 1 right
 
   UnswipeCard? _lastCard;
 
@@ -239,31 +239,33 @@ class _SwiperState extends State<Swiper> with SingleTickerProviderStateMixin {
         setState(() {
           if (_swipeTyp == 1) {
             if (widget.unlimitedUnswipe) {
-              _lastCards.add(
-                UnswipeCard(
+              if (detectedDirection == SwiperDirection.left) {
+                _lastCards.add(
+                  UnswipeCard(
+                    widget: widget.cards!.last!,
+                    horizontal: _horizontal,
+                    vertical: _vertical,
+                    swipedDirectionHorizontal: _swipedDirectionHorizontal,
+                    swipedDirectionVertical: _swipedDirectionVertical,
+                  ),
+                );
+              } else {
+                _lastCard = UnswipeCard(
                   widget: widget.cards!.last!,
                   horizontal: _horizontal,
                   vertical: _vertical,
                   swipedDirectionHorizontal: _swipedDirectionHorizontal,
                   swipedDirectionVertical: _swipedDirectionVertical,
-                ),
-              );
-            } else {
-              _lastCard = UnswipeCard(
-                widget: widget.cards!.last!,
-                horizontal: _horizontal,
-                vertical: _vertical,
-                swipedDirectionHorizontal: _swipedDirectionHorizontal,
-                swipedDirectionVertical: _swipedDirectionVertical,
-              );
+                );
+              }
             }
             _swipedDirectionHorizontal = 0;
             _swipedDirectionVertical = 0;
             _vertical = false;
             _horizontal = false;
-            widget.cards!.removeLast();
+            Widget? swiped = widget.cards!.removeLast();
 
-            widget.onSwipe(widget.cards!.length, detectedDirection);
+            widget.onSwipe(swiped, detectedDirection);
             if (widget.cards!.isEmpty) widget.onEnd();
           } else if (_swipeTyp == 2) {
             if (widget.unlimitedUnswipe) {

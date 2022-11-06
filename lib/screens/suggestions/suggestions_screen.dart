@@ -12,11 +12,23 @@ import 'package:pocadot_client/widgets/navigation/main_tab_app_bar.dart';
 
 //#region SUGGESTIONS
 
-class SuggestionsContent extends StatelessWidget {
-  final double borderRadius = 25;
+class SuggestionsContent extends StatefulWidget {
   final SwiperController controller;
 
   const SuggestionsContent({super.key, required this.controller});
+
+  @override
+  State<SuggestionsContent> createState() => _SuggestionsContentState();
+}
+
+class _SuggestionsContentState extends State<SuggestionsContent> {
+  final double borderRadius = 25;
+  final List<String> skipped = [];
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +42,7 @@ class SuggestionsContent extends StatelessWidget {
 
         final suggestionCards = data.userSuggestions
             .map((e) => RecommendationCard(
+                  id: e.id,
                   imagePath: 'assets/demo/nayeon.png',
                   artist: e.idols.map((e) => e.name).toList().join(', '),
                   release: e.release,
@@ -38,7 +51,7 @@ class SuggestionsContent extends StatelessWidget {
                       .toList()
                       .join('/'),
                   onTapped: () {},
-                  controller: controller,
+                  controller: widget.controller,
                 ))
             .toList();
 
@@ -51,11 +64,13 @@ class SuggestionsContent extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const SizedBox(
+                  SizedBox(
                     width: double.infinity,
                     child: Text(
-                      'Check back later for more recommendations, or click the button below to review your already-seen photocard suggestions!',
-                      style: TextStyle(color: PocadotColors.primary500),
+                      skipped.isNotEmpty
+                          ? "Check back later for more recommendations, or click the button below to review your already-seen photocard suggestions!"
+                          : "Check back later for more recommendations, or click the button below to see if there are new photocard suggestions available for you!",
+                      style: const TextStyle(color: PocadotColors.primary500),
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -81,11 +96,17 @@ class SuggestionsContent extends StatelessWidget {
                                         BorderRadius.circular(borderRadius)),
                               )),
                           onPressed: () {
-                            controller.unswipe();
+                            if (skipped.isNotEmpty) {
+                              skipped.clear();
+                              widget.controller.unswipe();
+                            } else {
+                              refetch!();
+                            }
                           },
-                          child: const Text(
-                            'Review',
-                            style: TextStyle(color: PocadotColors.othersWhite),
+                          child: Text(
+                            skipped.isEmpty ? 'Restart' : 'Review',
+                            style: const TextStyle(
+                                color: PocadotColors.othersWhite),
                           )))
                 ],
               )),
@@ -93,8 +114,13 @@ class SuggestionsContent extends StatelessWidget {
                 unlimitedUnswipe: true,
                 verticalSwipeEnabled: false,
                 cards: suggestionCards,
-                controller: controller,
-                onSwipe: (_, __) {},
+                controller: widget.controller,
+                onSwipe:
+                    (RecommendationCard? swiped, SwiperDirection direction) {
+                  if (direction == SwiperDirection.left) {
+                    skipped.add(swiped?.id ?? '');
+                  }
+                },
                 padding: EdgeInsets.only(
                     left: (constraints.widthConstraints().maxWidth * 0.125),
                     top: (constraints.widthConstraints().maxWidth * 0.125)),

@@ -5,6 +5,7 @@ import 'package:pocadot_client/widgets/cards/square_card.dart';
 import 'package:pocadot_client/widgets/cards/swiper.dart';
 
 class RecommendationCard extends StatelessWidget {
+  final String id;
   final String imagePath;
   final String artist;
   final String listingTag;
@@ -13,7 +14,8 @@ class RecommendationCard extends StatelessWidget {
   final SwiperController controller;
 
   const RecommendationCard(
-      {required this.imagePath,
+      {required this.id,
+      required this.imagePath,
       required this.artist,
       required this.release,
       required this.listingTag,
