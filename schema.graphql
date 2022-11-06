@@ -25,7 +25,7 @@ type Amount {
 type Group implements Talent {
     id: ID!
     idols: [Idol!]!
-    name: String! @fake(type: productName)
+    name: String! @fake(type: currencyName)
 }
 
 type GroupFeed {

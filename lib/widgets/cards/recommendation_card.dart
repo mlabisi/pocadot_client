@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:pocadot_client/theme/colors.dart';
 import 'package:pocadot_client/widgets/cards/square_card.dart';
+import 'package:pocadot_client/widgets/cards/swiper.dart';
 
 class RecommendationCard extends StatelessWidget {
   final String imagePath;
@@ -9,8 +10,7 @@ class RecommendationCard extends StatelessWidget {
   final String listingTag;
   final String release;
   final Function() onTapped;
-  final Function() onLeft;
-  final Function() onRight;
+  final SwiperController controller;
 
   const RecommendationCard(
       {required this.imagePath,
@@ -18,8 +18,7 @@ class RecommendationCard extends StatelessWidget {
       required this.release,
       required this.listingTag,
       required this.onTapped,
-      required this.onLeft,
-      required this.onRight,
+      required this.controller,
       Key? key})
       : super(key: key);
 
@@ -42,84 +41,77 @@ class RecommendationCard extends StatelessWidget {
         const SizedBox(
           height: 5,
         ),
-        SizedBox(
-          width: constraints.widthConstraints().maxWidth * 0.75,
-          height: constraints.widthConstraints().maxWidth * 0.35,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                artist,
-                style: const TextStyle(
-                  color: PocadotColors.greyscale900,
-                  fontFamily: 'Jua',
-                  fontSize: 18,
-                ),
-              ),
-              const SizedBox(width: 4),
-              Text(
-                release,
-                style: const TextStyle(
-                  color: PocadotColors.greyscale700,
-                  fontSize: 12,
-                  fontFamily: "Urbanist",
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Chip(
-                backgroundColor: PocadotColors.transparentBlue,
-                label: Text(
-                  listingTag,
-                  style: const TextStyle(
-                    color: PocadotColors.primary500,
-                    fontSize: 8,
-                    fontFamily: "Urbanist",
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        shape: const CircleBorder(),
-                        padding: const EdgeInsets.all(12),
-                        backgroundColor: PocadotColors.alertsStatusError,
-                        foregroundColor: PocadotColors.othersWhite),
-                    onPressed: () => onLeft,
-                    child: const Icon(Icons.close,
-                        size: 10, color: PocadotColors.othersWhite),
-                  ),
-                  const Spacer(),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        shape: const CircleBorder(),
-                        padding: const EdgeInsets.all(12),
-                        backgroundColor: PocadotColors.primary500,
-                        foregroundColor: PocadotColors.othersWhite),
-                    onPressed: () => onRight,
-                    child: const Icon(
-                      IconlyBold.heart,
-                      size: 10,
-                      color: PocadotColors.othersWhite,
-                    ),
-                  ),
-                ],
-              ),
-            ],
+        Text(
+          artist,
+          style: const TextStyle(
+            color: PocadotColors.greyscale900,
+            fontFamily: 'Jua',
+            fontSize: 18,
           ),
-        )
+        ),
+        const SizedBox(
+          height: 3,
+        ),
+        Text(
+          release,
+          style: const TextStyle(
+            color: PocadotColors.greyscale700,
+            fontSize: 12,
+            fontFamily: "Urbanist",
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        const SizedBox(
+          height: 5,
+        ),
+        Chip(
+          backgroundColor: PocadotColors.transparentBlue,
+          label: Text(
+            listingTag,
+            style: const TextStyle(
+              color: PocadotColors.primary500,
+              fontSize: 8,
+              fontFamily: "Urbanist",
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ),
+        SizedBox(
+            width: constraints.widthConstraints().maxWidth * 0.75,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      shape: const CircleBorder(),
+                      padding: const EdgeInsets.all(12),
+                      backgroundColor: PocadotColors.alertsStatusError,
+                      foregroundColor: PocadotColors.othersWhite),
+                  onPressed: () {
+                    controller.swipeLeft();
+                  },
+                  child: const Icon(Icons.close,
+                      size: 10, color: PocadotColors.othersWhite),
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      shape: const CircleBorder(),
+                      padding: const EdgeInsets.all(12),
+                      backgroundColor: PocadotColors.primary500,
+                      foregroundColor: PocadotColors.othersWhite),
+                  onPressed: () {
+                    controller.swipeRight();
+                  },
+                  child: const Icon(
+                    IconlyBold.heart,
+                    size: 10,
+                    color: PocadotColors.othersWhite,
+                  ),
+                ),
+              ],
+            )),
       ], onPressed: onTapped);
     });
   }
