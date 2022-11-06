@@ -48,6 +48,9 @@ class Swiper extends StatefulWidget {
   /// function that gets called with the boolean true when the last card gets unswiped and with the boolean false when there is no card to unswipe
   final Function unswipe;
 
+  /// function that gets called with the boolean true when all cards get unswiped and with the boolean false when there are no cards to unswipe
+  final Function unswipeAll;
+
   /// direction in which the card gets swiped when triggered by controller, default set to right
   final SwiperDirection direction;
 
@@ -68,6 +71,7 @@ class Swiper extends StatefulWidget {
     this.onSwipe = emptyFunctionIndex,
     this.onEnd = emptyFunction,
     this.unswipe = emptyFunctionBool,
+    this.unswipeAll = emptyFunctionBool,
     this.direction = SwiperDirection.right,
   })  : assert(maxAngle >= 0 && maxAngle <= 360),
         assert(threshold >= 1 && threshold <= 100),
@@ -78,8 +82,7 @@ class Swiper extends StatefulWidget {
   State createState() => _SwiperState();
 }
 
-class _SwiperState extends State<Swiper>
-    with SingleTickerProviderStateMixin {
+class _SwiperState extends State<Swiper> with SingleTickerProviderStateMixin {
   double _left = 0;
   double _top = 0;
   double _total = 0;
@@ -102,10 +105,12 @@ class _SwiperState extends State<Swiper>
   bool _vertical = false;
   bool _horizontal = false;
   bool _isUnswiping = false;
+  bool _isUnswipingAll = false;
   int _swipedDirectionVertical = 0; //-1 left, 1 right
   int _swipedDirectionHorizontal = 0; //-1 bottom, 1 top
 
   UnswipeCard? _lastCard;
+
   // ignore: prefer_final_fields
   List<UnswipeCard?> _lastCards = [];
   SwiperDirection detectedDirection = SwiperDirection.none;
@@ -116,7 +121,7 @@ class _SwiperState extends State<Swiper>
 
     if (widget.controller != null) {
       widget.controller!
-      //swipe widget from the outside
+        //swipe widget from the outside
         ..addListener(() {
           if (widget.controller!.state == SwiperState.swipe) {
             if (widget.cards!.isNotEmpty) {
@@ -140,7 +145,7 @@ class _SwiperState extends State<Swiper>
             }
           }
         })
-      //swipe widget left from the outside
+        //swipe widget left from the outside
         ..addListener(() {
           if (widget.controller!.state == SwiperState.swipeLeft) {
             if (widget.cards!.isNotEmpty) {
@@ -150,7 +155,7 @@ class _SwiperState extends State<Swiper>
             }
           }
         })
-      //swipe widget right from the outside
+        //swipe widget right from the outside
         ..addListener(() {
           if (widget.controller!.state == SwiperState.swipeRight) {
             if (widget.cards!.isNotEmpty) {
@@ -160,11 +165,33 @@ class _SwiperState extends State<Swiper>
             }
           }
         })
-      //unswipe widget from the outside
+        //unswipe widget from the outside
         ..addListener(() {
           if (widget.controller!.state == SwiperState.unswipe) {
             if (widget.allowUnswipe) {
               if (!_isUnswiping) {
+                if (_lastCard != null || _lastCards.isNotEmpty) {
+                  if (widget.unlimitedUnswipe) {
+                    for(int i = (_lastCards.length - 1); i > -1; i--) {
+                      _unswipe(_lastCards[i]!);
+                    }
+                  } else {
+                    _unswipe(_lastCard!);
+                  }
+                  widget.unswipe(true);
+                  _animationController.forward();
+                } else {
+                  widget.unswipe(false);
+                }
+              }
+            }
+          }
+        })
+        //unswipe all from widget from the outside
+        ..addListener(() {
+          if (widget.controller!.state == SwiperState.unswipeAll) {
+            if (widget.allowUnswipe) {
+              if (!_isUnswipingAll) {
                 if (_lastCard != null || _lastCards.isNotEmpty) {
                   if (widget.unlimitedUnswipe) {
                     _unswipe(_lastCards.last!);
@@ -174,7 +201,7 @@ class _SwiperState extends State<Swiper>
                   widget.unswipe(true);
                   _animationController.forward();
                 } else {
-                  widget.unswipe(false);
+                  widget.unswipeAll(false);
                 }
               }
             }
@@ -240,11 +267,12 @@ class _SwiperState extends State<Swiper>
             if (widget.cards!.isEmpty) widget.onEnd();
           } else if (_swipeTyp == 2) {
             if (widget.unlimitedUnswipe) {
-              _lastCards.removeLast();
+              _lastCards.clear();
             } else {
               _lastCard = null;
             }
             _isUnswiping = false;
+            _isUnswipingAll = false;
           }
           _animationController.reset();
           _left = 0;
@@ -280,11 +308,11 @@ class _SwiperState extends State<Swiper>
                     ...widget.cards!
                         .asMap()
                         .map((index, _) {
-                      return MapEntry(
-                        index,
-                        _item(constraints, index),
-                      );
-                    })
+                          return MapEntry(
+                            index,
+                            _item(constraints, index),
+                          );
+                        })
                         .values
                         .toList(),
                   ]);
@@ -374,7 +402,7 @@ class _SwiperState extends State<Swiper>
   void _calculateScale() {
     if (_scale <= 1.0 && _scale >= 0.9) {
       _scale =
-      (_total > 0) ? 0.9 + (_total / 5000) : 0.9 + -1 * (_total / 5000);
+          (_total > 0) ? 0.9 + (_total / 5000) : 0.9 + -1 * (_total / 5000);
     }
   }
 
@@ -402,11 +430,11 @@ class _SwiperState extends State<Swiper>
         begin: _left,
         end: (_left == 0)
             ? (widget.direction == SwiperDirection.right)
-            ? MediaQuery.of(context).size.width
-            : -MediaQuery.of(context).size.width
+                ? MediaQuery.of(context).size.width
+                : -MediaQuery.of(context).size.width
             : (_left > widget.threshold)
-            ? MediaQuery.of(context).size.width
-            : -MediaQuery.of(context).size.width,
+                ? MediaQuery.of(context).size.width
+                : -MediaQuery.of(context).size.width,
       ).animate(_animationController);
       _topAnimation = Tween<double>(
         begin: _top,
@@ -445,11 +473,11 @@ class _SwiperState extends State<Swiper>
         begin: _top,
         end: (_top == 0)
             ? (widget.direction == SwiperDirection.bottom)
-            ? MediaQuery.of(context).size.height
-            : -MediaQuery.of(context).size.height
+                ? MediaQuery.of(context).size.height
+                : -MediaQuery.of(context).size.height
             : (_top > widget.threshold)
-            ? MediaQuery.of(context).size.height
-            : -MediaQuery.of(context).size.height,
+                ? MediaQuery.of(context).size.height
+                : -MediaQuery.of(context).size.height,
       ).animate(_animationController);
       _scaleAnimation = Tween<double>(
         begin: _scale,
@@ -555,7 +583,9 @@ class _SwiperState extends State<Swiper>
 
 //for null safety
 void emptyFunction() {}
+
 void emptyFunctionIndex(int index, SwiperDirection direction) {}
+
 void emptyFunctionBool(bool unswiped) {}
 
 //to call the swipe or unswipe function from outside of the  swiper
@@ -585,6 +615,12 @@ class SwiperController extends ChangeNotifier {
     state = SwiperState.unswipe;
     notifyListeners();
   }
+
+  //calls unswipe the card by changing the status of the controller
+  void unswipeAll() {
+    state = SwiperState.unswipeAll;
+    notifyListeners();
+  }
 }
 
 class UnswipeCard {
@@ -603,6 +639,6 @@ class UnswipeCard {
   });
 }
 
-enum SwiperState { swipe, swipeLeft, swipeRight, unswipe }
+enum SwiperState { swipe, swipeLeft, swipeRight, unswipe, unswipeAll }
 
 enum SwiperDirection { none, left, right, top, bottom }

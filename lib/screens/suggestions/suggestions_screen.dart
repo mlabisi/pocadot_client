@@ -80,7 +80,9 @@ class SuggestionsContent extends StatelessWidget {
                                     borderRadius:
                                         BorderRadius.circular(borderRadius)),
                               )),
-                          onPressed: () {},
+                          onPressed: () {
+                            controller.unswipe();
+                          },
                           child: const Text(
                             'Review',
                             style: TextStyle(color: PocadotColors.othersWhite),
@@ -88,6 +90,7 @@ class SuggestionsContent extends StatelessWidget {
                 ],
               )),
               Swiper(
+                unlimitedUnswipe: true,
                 verticalSwipeEnabled: false,
                 cards: suggestionCards,
                 controller: controller,
