@@ -54,6 +54,7 @@ class WidgetbookHotReload extends StatelessWidget {
                 WidgetbookUseCase(
                   name: 'Recommendation Card',
                   builder: (context) => RecommendationCard(
+                    id: '',
                     imagePath: context.knobs.text(
                         label: 'Featured Image Path',
                         initialValue: 'assets/demo/nayeon.png'),
