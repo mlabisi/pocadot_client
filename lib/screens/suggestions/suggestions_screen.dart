@@ -104,7 +104,7 @@ class _SuggestionsContentState extends State<SuggestionsContent> {
                             }
                           },
                           child: Text(
-                            skipped.isEmpty ? 'Restart' : 'Review',
+                            skipped.isEmpty ? 'Refresh' : 'Review',
                             style: const TextStyle(
                                 color: PocadotColors.othersWhite),
                           )))

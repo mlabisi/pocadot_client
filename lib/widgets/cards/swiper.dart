@@ -172,9 +172,7 @@ class _SwiperState extends State<Swiper> with SingleTickerProviderStateMixin {
               if (!_isUnswiping) {
                 if (_lastCard != null || _lastCards.isNotEmpty) {
                   if (widget.unlimitedUnswipe) {
-                    for(int i = (_lastCards.length - 1); i > -1; i--) {
-                      _unswipe(_lastCards[i]!);
-                    }
+                    _unswipe(_lastCards.last!);
                   } else {
                     _unswipe(_lastCard!);
                   }
@@ -192,13 +190,12 @@ class _SwiperState extends State<Swiper> with SingleTickerProviderStateMixin {
           if (widget.controller!.state == SwiperState.unswipeAll) {
             if (widget.allowUnswipe) {
               if (!_isUnswipingAll) {
-                if (_lastCard != null || _lastCards.isNotEmpty) {
-                  if (widget.unlimitedUnswipe) {
-                    _unswipe(_lastCards.last!);
-                  } else {
-                    _unswipe(_lastCard!);
-                  }
-                  widget.unswipe(true);
+                if (_lastCards.isNotEmpty) {
+                  widget.unswipeAll(true);
+                  for(int i = (_lastCards.length - 1); i > -1; i--) {
+                      _unswipe(_lastCards[i]!);
+                    }
+                  widget.unswipeAll(false);
                   _animationController.forward();
                 } else {
                   widget.unswipeAll(false);

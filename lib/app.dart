@@ -30,6 +30,7 @@ import 'package:pocadot_client/screens/suggestions/preferences/suggestion_prefer
 import 'package:pocadot_client/screens/suggestions/suggestions_screen.dart';
 import 'package:pocadot_client/theme/colors.dart';
 import 'package:pocadot_client/theme/icons.dart';
+import 'package:pocadot_client/widgets/cards/swiper.dart';
 import 'package:provider/provider.dart';
 
 class App extends StatelessWidget {
