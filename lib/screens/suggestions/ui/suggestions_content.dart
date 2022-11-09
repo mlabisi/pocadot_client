@@ -1,9 +1,11 @@
+import 'package:event/event.dart';
 import 'package:flutter/material.dart';
 import 'package:pocadot_client/graphql/__generated__/schema.graphql.dart';
-import 'package:pocadot_client/screens/suggestions/~graphql/__generated__/suggestions.fragment.graphql.dart';
-import 'package:pocadot_client/screens/suggestions/~graphql/__generated__/user_suggestions.query.graphql.dart';
+import 'package:pocadot_client/screens/suggestions/domain/events/suggestion_saved.dart';
+import 'package:pocadot_client/screens/suggestions/domain/events/suggestion_skipped.dart';
+import 'package:pocadot_client/screens/suggestions/domain/events/suggestion_viewed.dart';
+import 'package:pocadot_client/screens/suggestions/ui/~graphql/__generated__/suggestions.fragment.graphql.dart';
 import 'package:pocadot_client/theme/colors.dart';
-import 'package:pocadot_client/utils.dart';
 import 'package:pocadot_client/widgets/cards/recommendation_card.dart';
 import 'package:pocadot_client/widgets/cards/swiper.dart';
 
@@ -52,7 +54,12 @@ class _SuggestionsContentState extends State<SuggestionsContent> {
                   .map((e) => toJson$Enum$ListingType(e))
                   .toList()
                   .join('/'),
-              onTapped: () {},
+              onTapped: () {
+                var tappedSuggestion = Event<ViewedSuggestion>();
+                tappedSuggestion.broadcast(ViewedSuggestion(e.id, '', DateTime.now()));
+
+                // navigate to view listing screen
+              },
               controller: _swiperController,
             ))
         .toList();
@@ -113,12 +120,16 @@ class _SuggestionsContentState extends State<SuggestionsContent> {
               controller: _swiperController,
               onSwipe: (RecommendationCard? swiped, SwiperDirection direction) {
                 if (direction == SwiperDirection.left) {
-                  skipped.add(swiped?.id ?? '');
+                  var swipedLeft = Event<SkippedSuggestion>();
+                  swipedLeft.broadcast(SkippedSuggestion(swiped!.id, '', DateTime.now()));
+                  skipped.add(swiped.id);
                 } else {
-                  saved.add(swiped?.id ?? '');
+                  var swipedRight = Event<SavedSuggestion>();
+                  swipedRight.broadcast(SavedSuggestion(swiped!.id, '', DateTime.now()));
+                  saved.add(swiped.id);
                 }
 
-                seen.add(swiped?.id ?? '');
+                seen.add(swiped.id ?? '');
               },
               onEnd: () {
                 setState(() {

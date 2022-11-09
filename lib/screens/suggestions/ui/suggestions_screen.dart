@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
-import 'package:pocadot_client/screens/suggestions/suggestions_content.dart';
-import 'package:pocadot_client/screens/suggestions/~graphql/__generated__/user_suggestions.query.graphql.dart';
+import 'package:pocadot_client/screens/suggestions/ui/suggestions_content.dart';
+import 'package:pocadot_client/screens/suggestions/ui/~graphql/__generated__/user_suggestions.query.graphql.dart';
 import 'package:pocadot_client/theme/colors.dart';
 import 'package:pocadot_client/utils.dart';
 import 'package:pocadot_client/widgets/navigation/app_screen.dart';

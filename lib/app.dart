@@ -30,12 +30,9 @@ import 'package:pocadot_client/screens/shared/settings/view_language_settings_sc
 import 'package:pocadot_client/screens/shared/views/view_listing_screen.dart';
 import 'package:pocadot_client/screens/shared/views/view_profile_screen.dart';
 import 'package:pocadot_client/screens/suggestions/preferences/suggestion_preferences_screen.dart';
-import 'package:pocadot_client/screens/suggestions/suggestions_content.dart';
-import 'package:pocadot_client/screens/suggestions/suggestions_screen.dart';
+import 'package:pocadot_client/screens/suggestions/ui/suggestions_screen.dart';
 import 'package:pocadot_client/theme/colors.dart';
 import 'package:pocadot_client/theme/icons.dart';
-import 'package:pocadot_client/widgets/cards/swiper.dart';
-import 'package:provider/provider.dart';
 import 'package:rxdart/subjects.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
