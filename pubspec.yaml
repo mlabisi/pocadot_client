@@ -34,10 +34,12 @@ dependencies:
     sdk: flutter
   flutter_hooks: ^0.18.5+1
   flutter_lints: ^2.0.1
+  flutter_local_notifications: ^12.0.3
   graphql: ^5.1.1
   graphql_flutter: ^5.1.0
   iconly: ^1.0.1
   provider: ^6.0.4
+  rxdart: ^0.27.5
 
 dev_dependencies:
   flutter_test:
