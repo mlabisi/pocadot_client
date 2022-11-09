@@ -30,16 +30,21 @@ import 'package:pocadot_client/screens/shared/settings/view_language_settings_sc
 import 'package:pocadot_client/screens/shared/views/view_listing_screen.dart';
 import 'package:pocadot_client/screens/shared/views/view_profile_screen.dart';
 import 'package:pocadot_client/screens/suggestions/preferences/suggestion_preferences_screen.dart';
+import 'package:pocadot_client/screens/suggestions/suggestions_content.dart';
 import 'package:pocadot_client/screens/suggestions/suggestions_screen.dart';
 import 'package:pocadot_client/theme/colors.dart';
 import 'package:pocadot_client/theme/icons.dart';
 import 'package:pocadot_client/widgets/cards/swiper.dart';
 import 'package:provider/provider.dart';
 import 'package:rxdart/subjects.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+const String authTokenKey = 'authToken';
+const String selectedIndexKey = 'selectedIndex';
+
 
 class AuthenticationState extends ChangeNotifier {
   final FlutterSecureStorage storage = const FlutterSecureStorage();
-  final String authTokenKey = 'authToken';
 
   String? authToken;
   bool isLoading = true;
@@ -233,9 +238,15 @@ class Root extends StatefulWidget {
 class _RootState extends State<Root> {
   int _selectedIndex = 0;
 
+  void _loadPrefs() async {
+    final prefs = await SharedPreferences.getInstance();
+    int selectedIndex = prefs.getInt(selectedIndexKey) ?? 0;
+    setState(() => _selectedIndex = widget.selectedIndex ?? selectedIndex);
+  }
+
   @override
   void initState() {
-    _selectedIndex = widget.selectedIndex ?? 0;
+    _loadPrefs();
     super.initState();
   }
 

@@ -11,7 +11,7 @@ final notificationSubject = BehaviorSubject<NotificationResponse>();
 
 void main() async {
   // load env variables?
-  await dotenv.load(fileName: ".env");
+  await dotenv.load();
 
   // get App Launch Details
   final NotificationAppLaunchDetails? launchDetails =
