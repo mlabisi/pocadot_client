@@ -3,6 +3,7 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:pocadot_client/app.dart';
 import 'package:rxdart/subjects.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 final localNotifications = FlutterLocalNotificationsPlugin();
 
@@ -10,16 +11,17 @@ final notificationSubject = BehaviorSubject<NotificationResponse>();
 
 void main() async {
   // load env variables?
-  // pub dotenv
+  await dotenv.load(fileName: ".env");
 
   // get App Launch Details
   final NotificationAppLaunchDetails? launchDetails =
       await localNotifications.getNotificationAppLaunchDetails();
 
-  // set initial route based on cold start or not
-  String initialRoute = launchDetails?.didNotificationLaunchApp ?? false
-      ? 'alert route'
-      : 'login route';
+  // set initial route if the app was opened via notification
+  String? initialRoute;
+  if(launchDetails!.didNotificationLaunchApp) {
+    initialRoute = 'route from notification';
+  }
 
   // initialize platform-specific notification settings
   const AndroidInitializationSettings androidSettings =
@@ -47,8 +49,8 @@ void main() async {
   await initHiveForFlutter();
 
   // Login with existing token or show logged-out view
-  runApp(const App(
+  runApp(App(
       initialRoute: initialRoute,
       notificationSubject: notificationSubject,
-      eventId: launchDetails?.payload));
+      eventId: launchDetails.notificationResponse?.payload));
 }

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:iconly/iconly.dart';
 import 'package:pocadot_client/screens/explore/all_listings/all_listings_screen.dart';
@@ -32,26 +35,108 @@ import 'package:pocadot_client/theme/colors.dart';
 import 'package:pocadot_client/theme/icons.dart';
 import 'package:pocadot_client/widgets/cards/swiper.dart';
 import 'package:provider/provider.dart';
+import 'package:rxdart/subjects.dart';
 
-class App extends StatelessWidget {
-  const App({Key? key}) : super(key: key);
+class AuthenticationState extends ChangeNotifier {
+  final FlutterSecureStorage storage = const FlutterSecureStorage();
+  final String authTokenKey = 'authToken';
+
+  String? authToken;
+  bool isLoading = true;
+
+  Future<void> checkForExistingToken() async {
+    isLoading = true;
+    if (await storage.containsKey(key: authTokenKey)) {
+      authToken = await storage.read(key: authTokenKey);
+      print("Token found $authToken");
+    }
+    isLoading = false;
+    notifyListeners();
+  }
+
+  ValueNotifier<GraphQLClient> getAPIClient() {
+    final HttpLink httpLink = HttpLink(dotenv.env['API_URL']!);
+    final AuthLink authLink = AuthLink(
+        getToken: () => authToken != null ? "Bearer $authToken" : null);
+    final link = authLink.concat(httpLink);
+    return ValueNotifier(
+      GraphQLClient(
+        cache: GraphQLCache(store: HiveStore()),
+        link: link,
+      ),
+    );
+  }
+}
+
+class App extends StatefulWidget {
+  final String? initialRoute;
+  final BehaviorSubject<NotificationResponse> notificationSubject;
+  final String? eventId;
+
+  App(
+      {Key? key,
+      required this.notificationSubject,
+      this.initialRoute,
+      this.eventId})
+      : super(key: key);
+
+  final GlobalKey<NavigatorState> _navigator = GlobalKey<NavigatorState>();
+
+  @override
+  State<App> createState() => _AppState();
+}
+
+class _AppState extends State<App> {
+  bool isLoading = true;
+  AuthenticationState authenticationState = AuthenticationState();
+
+  void listenForAuthStateChanges() {
+    if (isLoading != authenticationState.isLoading) {
+      setState(() => isLoading = authenticationState.isLoading);
+    }
+  }
+
+  @override
+  void initState() {
+    authenticationState.addListener(listenForAuthStateChanges);
+    authenticationState.checkForExistingToken();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    isLoading = true;
+    widget.notificationSubject.close();
+    authenticationState.removeListener(listenForAuthStateChanges);
+    super.dispose();
+  }
+
+  void reinitialize([String? newToken]) {
+    authenticationState.authToken = newToken;
+    final client = authenticationState.getAPIClient().value;
+    client.resetStore(refetchQueries: false);
+  }
 
   @override
   Widget build(BuildContext context) {
+    // grab optional initialRoute from when app was opened via notification
+    String? initialRoute = widget.initialRoute;
+    final apiClient = authenticationState.getAPIClient();
+
+    if (authenticationState.isLoading || isLoading) {
+      return const Center(child: CircularProgressIndicator());
+    }
+
+    if (authenticationState.authToken != null) {
+      initialRoute = widget.initialRoute ?? 'tabs view';
+    }
+
     return GraphQLProvider(
-      client: ValueNotifier(
-        GraphQLClient(
-          cache: GraphQLCache(store: HiveStore()),
-          link: HttpLink("http://192.168.254.53:9002/graphql"),
-        ),
-      ),
-      // child: MultiProvider(
-      //   providers: [
-      //     // ChangeNotifierProvider<SuggestionsProvider>(create: (context) => SuggestionsProvider(),)
-      //   ],
+      client: apiClient,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'pocadot',
+        title: 'Pocadot',
+        navigatorKey: widget._navigator,
         theme: ThemeData(
             primaryColor: PocadotColors.primary500, fontFamily: 'Urbanist'),
         onGenerateRoute: (settings) {
@@ -128,6 +213,7 @@ class App extends StatelessWidget {
               return MaterialPageRoute(builder: (_) => const Root());
           }
         },
+        initialRoute: initialRoute,
         home: const Root(),
         // ),
       ),
@@ -136,7 +222,9 @@ class App extends StatelessWidget {
 }
 
 class Root extends StatefulWidget {
-  const Root({super.key});
+  final int? selectedIndex;
+
+  const Root({super.key, this.selectedIndex});
 
   @override
   State<Root> createState() => _RootState();
@@ -144,6 +232,12 @@ class Root extends StatefulWidget {
 
 class _RootState extends State<Root> {
   int _selectedIndex = 0;
+
+  @override
+  void initState() {
+    _selectedIndex = widget.selectedIndex ?? 0;
+    super.initState();
+  }
 
   void _onItemTapped(int index) {
     setState(() {
@@ -161,48 +255,51 @@ class _RootState extends State<Root> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: _pages[_selectedIndex],
-        bottomNavigationBar: BottomAppBar(
-          color: PocadotColors.othersWhite,
-          child: SizedBox(
-            height: 56,
-            width: MediaQuery.of(context).size.width,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 25.0, right: 25.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  IconBottomBar(
-                      icon: PocadotIcons.cards,
-                      activeIcon: PocadotIcons.cardsFilled,
-                      selected: _selectedIndex == 0,
-                      onPressed: () => _onItemTapped(0)),
-                  IconBottomBar(
-                      icon: IconlyLight.search,
-                      activeIcon: IconlyBold.search,
-                      selected: _selectedIndex == 1,
-                      onPressed: () => _onItemTapped(1)),
-                  IconBottomBar(
-                      icon: IconlyLight.heart,
-                      activeIcon: IconlyBold.heart,
-                      selected: _selectedIndex == 2,
-                      onPressed: () => _onItemTapped(2)),
-                  IconBottomBar(
-                      icon: IconlyLight.profile,
-                      activeIcon: IconlyBold.profile,
-                      selected: _selectedIndex == 3,
-                      onPressed: () => _onItemTapped(3)),
-                  IconBottomBar(
-                      icon: IconlyLight.more_circle,
-                      activeIcon: IconlyBold.more_circle,
-                      selected: _selectedIndex == 4,
-                      onPressed: () => _onItemTapped(4))
-                ],
+    return LayoutBuilder(builder: (context, constraints) {
+      return Scaffold(
+          body: _pages[_selectedIndex],
+          bottomNavigationBar: BottomAppBar(
+            key: const ValueKey('bottomNavBar'),
+            color: PocadotColors.othersWhite,
+            child: SizedBox(
+              height: 56,
+              width: constraints.widthConstraints().maxWidth,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    IconBottomBar(
+                        icon: PocadotIcons.cards,
+                        activeIcon: PocadotIcons.cardsFilled,
+                        selected: _selectedIndex == 0,
+                        onPressed: () => _onItemTapped(0)),
+                    IconBottomBar(
+                        icon: IconlyLight.search,
+                        activeIcon: IconlyBold.search,
+                        selected: _selectedIndex == 1,
+                        onPressed: () => _onItemTapped(1)),
+                    IconBottomBar(
+                        icon: IconlyLight.heart,
+                        activeIcon: IconlyBold.heart,
+                        selected: _selectedIndex == 2,
+                        onPressed: () => _onItemTapped(2)),
+                    IconBottomBar(
+                        icon: IconlyLight.profile,
+                        activeIcon: IconlyBold.profile,
+                        selected: _selectedIndex == 3,
+                        onPressed: () => _onItemTapped(3)),
+                    IconBottomBar(
+                        icon: IconlyLight.more_circle,
+                        activeIcon: IconlyBold.more_circle,
+                        selected: _selectedIndex == 4,
+                        onPressed: () => _onItemTapped(4))
+                  ],
+                ),
               ),
             ),
-          ),
-        ));
+          ));
+    });
   }
 }
 
