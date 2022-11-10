@@ -42,6 +42,9 @@ class Swiper extends StatefulWidget {
   /// function that gets called when there is no widget left to be swiped away
   final Function onEnd;
 
+  /// function that gets called when there is only one widget left to be swiped away
+  final Function onLast;
+
   /// function that gets triggered when the swiper is disabled
   final Function onTapDisabled;
 
@@ -70,6 +73,7 @@ class Swiper extends StatefulWidget {
     this.onTapDisabled = emptyFunction,
     this.onSwipe = emptyFunctionIndex,
     this.onEnd = emptyFunction,
+    this.onLast = emptyFunction,
     this.unswipe = emptyFunctionBool,
     this.unswipeAll = emptyFunctionBool,
     this.direction = SwiperDirection.right,
@@ -263,6 +267,7 @@ class _SwiperState extends State<Swiper> with SingleTickerProviderStateMixin {
             Widget? swiped = widget.cards!.removeLast();
 
             widget.onSwipe(swiped, detectedDirection);
+            if (widget.cards!.length == 1) widget.onLast();
             if (widget.cards!.isEmpty) widget.onEnd();
           } else if (_swipeTyp == 2) {
             if (widget.unlimitedUnswipe) {

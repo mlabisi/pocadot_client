@@ -137,6 +137,9 @@ class _SuggestionsContentState extends State<SuggestionsContent> {
                   _swiperController = _swiperController;
                 });
               },
+              onLast: () {
+                widget.refresh();
+              },
               padding: EdgeInsets.only(
                   left: (constraints.widthConstraints().maxWidth * 0.125),
                   top: (constraints.widthConstraints().maxWidth * 0.125)),
