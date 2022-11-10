@@ -12,9 +12,13 @@ import 'package:pocadot_client/widgets/cards/swiper.dart';
 class SuggestionsContent extends StatefulWidget {
   final List<Fragment$suggestion> suggestions;
   final Function refresh;
+  final Function fetchMore;
 
   const SuggestionsContent(
-      {Key? key, required this.suggestions, required this.refresh})
+      {Key? key,
+      required this.suggestions,
+      required this.refresh,
+      required this.fetchMore})
       : super(key: key);
 
   @override
@@ -23,7 +27,7 @@ class SuggestionsContent extends StatefulWidget {
 
 class _SuggestionsContentState extends State<SuggestionsContent> {
   late SwiperController _swiperController;
-  late bool _showNotice;
+  final List<Widget?> _suggestionCards = [];
 
   @override
   void dispose() {
@@ -33,44 +37,16 @@ class _SuggestionsContentState extends State<SuggestionsContent> {
 
   @override
   void initState() {
-    _showNotice = false;
     _swiperController = SwiperController();
     super.initState();
   }
 
-  @override
-  Widget build(BuildContext context) {
-    final List<String> seen = [];
-    final List<String> skipped = [];
-    final List<String> saved = [];
-
-    final suggestionCards = widget.suggestions
-        .map((e) => RecommendationCard(
-              id: e.id,
-              imagePath: 'assets/demo/nayeon.png',
-              artist: e.idols.map((e) => e.name).toList().join(', '),
-              release: e.release,
-              listingTag: e.type
-                  .map((e) => toJson$Enum$ListingType(e))
-                  .toList()
-                  .join('/'),
-              onTapped: () {
-                var tappedSuggestion = Event<ViewedSuggestion>();
-                tappedSuggestion.broadcast(ViewedSuggestion(e.id, '', DateTime.now()));
-
-                // navigate to view listing screen
-              },
-              controller: _swiperController,
-            ))
-        .toList();
-
-    return LayoutBuilder(builder: (context, constraints) {
-      return Stack(
-        children: [
-          Visibility(
-            visible: _showNotice,
-            child: Center(
-                child: Column(
+  List<Widget?> getSuggestions() {
+    return widget.suggestions.map((e) {
+      return e.id ==
+              'DONE' // if suggestion id is "done", then return the notice
+          ? Center(
+              child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -101,7 +77,6 @@ class _SuggestionsContentState extends State<SuggestionsContent> {
                                   borderRadius: BorderRadius.circular(24)),
                             )),
                         onPressed: () {
-                          _showNotice = false;
                           widget.refresh();
                         },
                         child: const Text(
@@ -109,41 +84,77 @@ class _SuggestionsContentState extends State<SuggestionsContent> {
                           style: TextStyle(color: PocadotColors.othersWhite),
                         )))
               ],
-            )),
-          ),
-          Visibility(
-            visible: !_showNotice,
-            child: Swiper(
-              unlimitedUnswipe: true,
-              verticalSwipeEnabled: false,
-              cards: suggestionCards,
-              controller: _swiperController,
-              onSwipe: (RecommendationCard? swiped, SwiperDirection direction) {
-                if (direction == SwiperDirection.left) {
-                  var swipedLeft = Event<SkippedSuggestion>();
-                  swipedLeft.broadcast(SkippedSuggestion(swiped!.id, '', DateTime.now()));
-                  skipped.add(swiped.id);
-                } else {
-                  var swipedRight = Event<SavedSuggestion>();
-                  swipedRight.broadcast(SavedSuggestion(swiped!.id, '', DateTime.now()));
-                  saved.add(swiped.id);
-                }
+            ))
+          : RecommendationCard(
+              id: e.id,
+              imagePath: 'assets/demo/nayeon.png',
+              artist: e.idols.map((e) => e.name).toList().join(', '),
+              release: e.release,
+              listingTag: e.type
+                  .map((e) => toJson$Enum$ListingType(e))
+                  .toList()
+                  .join('/'),
+              onTapped: () {
+                var tappedSuggestion = Event<ViewedSuggestion>();
+                tappedSuggestion
+                    .broadcast(ViewedSuggestion(e.id, '', DateTime.now()));
 
-                seen.add(swiped.id ?? '');
+                // navigate to view listing screen
               },
-              onEnd: () {
-                setState(() {
-                  _showNotice = true;
-                  _swiperController = _swiperController;
-                });
-              },
-              onLast: () {
-                widget.refresh();
-              },
-              padding: EdgeInsets.only(
-                  left: (constraints.widthConstraints().maxWidth * 0.125),
-                  top: (constraints.widthConstraints().maxWidth * 0.125)),
-            ),
+              controller: _swiperController,
+            );
+    }).toList();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final List<String> seen = [];
+    final List<String> skipped = [];
+    final List<String> saved = [];
+
+    return LayoutBuilder(builder: (context, constraints) {
+      return Stack(
+        children: [
+          Swiper(
+            unlimitedUnswipe: true,
+            verticalSwipeEnabled: false,
+            cards: getSuggestions(),
+            controller: _swiperController,
+            onSwipe: (RecommendationCard? swiped, SwiperDirection direction) {
+              if (direction == SwiperDirection.left) {
+                var swipedLeft = Event<SkippedSuggestion>();
+                swipedLeft.broadcast(
+                    SkippedSuggestion(swiped!.id, '', DateTime.now()));
+                skipped.add(swiped.id);
+              } else {
+                var swipedRight = Event<SavedSuggestion>();
+                swipedRight
+                    .broadcast(SavedSuggestion(swiped!.id, '', DateTime.now()));
+                saved.add(swiped.id);
+              }
+
+              seen.add(swiped.id ?? '');
+            },
+            onEnd: () {
+              widget.refresh();
+
+              // widget.fetchMore(
+              //   (prev, more) {
+              //     final List<dynamic> items = <dynamic>[
+              //       ...prev?["userSuggestions"] as List<dynamic>? ??
+              //           <dynamic>[],
+              //       ...more?["userSuggestions"] as List<dynamic>? ??
+              //           <dynamic>[],
+              //     ];
+              //
+              //     more?["userSuggestions"] = items;
+              //     return more ?? <String, dynamic>{};
+              //   },
+              // );
+            },
+            padding: EdgeInsets.only(
+                left: (constraints.widthConstraints().maxWidth * 0.125),
+                top: (constraints.widthConstraints().maxWidth * 0.125)),
           )
         ],
       );

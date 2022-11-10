@@ -42,6 +42,7 @@ class SuggestionsScreen extends StatelessWidget {
         content: SuggestionsContent(
           suggestions: suggestions,
           refresh: refetch!,
+          fetchMore: fetchMore!,
         ),
       );
     });
