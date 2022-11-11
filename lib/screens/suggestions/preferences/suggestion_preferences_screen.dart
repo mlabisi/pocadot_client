@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:iconly/iconly.dart';
 import 'package:pocadot_client/theme/colors.dart';
 import 'package:pocadot_client/widgets/navigation/stack_app_bar.dart';
 
