@@ -93,6 +93,7 @@ type Mutation {
     disputeCharge: Transaction!
     faveListing(input: ID!): Listing!
     faveProfile(input: ID!): UserProfile!
+    faveSuggestedListing(input: ID!): Swipe!
     forgetPassword: UserAccount!
     login: UserAccount!
     logout: UserAccount!
@@ -104,7 +105,7 @@ type Mutation {
     rescindOffer(input: ID!): Offer!
     resetPassword: UserAccount!
     sendMessage(input: SendMessageInput!): Message!
-    skipSuggestedListing(input: ID!): Listing!
+    skipSuggestedListing(input: ID!): Swipe!
     unfaveListing(input: ID!): Listing!
     unfaveProfile(input: ID!): UserProfile!
     updateAccount: UserAccount!
@@ -135,14 +136,13 @@ type Query {
     idolsFeed(page: Int!): IdolFeed!
     listings(input: ListingFilters!): [Listing!]!
     listingsFeed: [Listing!]!
-    myAccount: UserAccount!
-    myProfile: UserProfile!
     profile(input: ID!): UserProfile!
     talent(input: TalentFilters!): [Talent!]!
     talentFeed: [Talent!]!
     userSuggestions: [Listing!]!
     users(input: UserFilters!): [UserProfile!]!
     usersFeed(page: Int!): ProfileFeed!
+  	currentUser: UserAccount!
 }
 
 "An external social media user profile"
@@ -192,6 +192,7 @@ sharetribeTR - GET /v1/api/transactions/query?only=sale
 type UserAccount {
     banned: Boolean!
     biases: [Talent!]!
+  	biasSuggestionsOnly: Boolean!
     connectedAccounts: [IdentityProvider!]!
     country: String! @fake(type: country)
     createdAt: String! @fake(type: date, options: {dateFormat: "x"})
@@ -213,6 +214,7 @@ type UserAccount {
     savedProfiles: [UserProfile!]!
     sentOffers: [Offer!]!
     suggestedListings: [Listing!]!
+    swipes: [Swipe!]!
 }
 
 """
@@ -226,6 +228,17 @@ type UserProfile {
     profilePicId: ID! @fake(type: uuid)
     socials: [SocialProfile!]!
     username: String! @fake(type: firstName)
+}
+
+"""
+A swipe action operated on a suggested listing by a user
+"""
+type Swipe {
+  id: ID!
+  listing: Listing!
+  faved: Boolean!
+  viewed: Boolean!
+  skipped: Boolean!
 }
 
 "Used to classify photocard conditions"

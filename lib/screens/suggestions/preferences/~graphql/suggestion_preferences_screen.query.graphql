@@ -1,0 +1,5 @@
+query SuggestionPreferencesScreen {
+    currentUser {
+        ...suggestionPreferences
+    }
+}

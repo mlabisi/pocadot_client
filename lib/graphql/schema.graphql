@@ -101,6 +101,7 @@ type Mutation {
     disputeCharge: Transaction!
     faveListing(input: ID!): Listing!
     faveProfile(input: ID!): UserProfile!
+    faveSuggestedListing(input: ID!): Swipe!
     forgetPassword: UserAccount!
     login: UserAccount!
     logout: UserAccount!
@@ -112,7 +113,7 @@ type Mutation {
     rescindOffer(input: ID!): Offer!
     resetPassword: UserAccount!
     sendMessage(input: SendMessageInput!): Message!
-    skipSuggestedListing(input: ID!): Listing!
+    skipSuggestedListing(input: ID!): Swipe!
     unfaveListing(input: ID!): Listing!
     unfaveProfile(input: ID!): UserProfile!
     updateAccount: UserAccount!
@@ -136,6 +137,7 @@ type ProfileFeed {
 
 type Query {
     account(input: ID!): UserAccount!
+    currentUser: UserAccount!
     featuredListings: [Listing!]!
     groups(input: GroupFilters!): [Group!]!
     groupsFeed(page: Int!): GroupFeed!
@@ -143,12 +145,10 @@ type Query {
     idolsFeed(page: Int!): IdolFeed!
     listings(input: ListingFilters!): [Listing!]!
     listingsFeed: [Listing!]!
-    myAccount: UserAccount!
-    myProfile: UserProfile!
     profile(input: ID!): UserProfile!
     talent(input: TalentFilters!): [Talent!]!
     talentFeed: [Talent!]!
-    userSuggestions(input: ID!): [Listing!]!
+    userSuggestions: [Listing!]!
     users(input: UserFilters!): [UserProfile!]!
     usersFeed(page: Int!): ProfileFeed!
 }
@@ -182,6 +182,15 @@ type Suggestion {
     skipped: Boolean!
 }
 
+"A swipe action operated on a suggested listing by a user"
+type Swipe {
+    faved: Boolean!
+    id: ID!
+    listing: Listing!
+    skipped: Boolean!
+    viewed: Boolean!
+}
+
 "Represents an monetary transaction made for an accepted offer"
 type Transaction {
     amountCharged: Amount!
@@ -200,6 +209,7 @@ sharetribeTR - GET /v1/api/transactions/query?only=sale
 """
 type UserAccount {
     banned: Boolean!
+    biasSuggestionsOnly: Boolean!
     biases: [Talent!]!
     connectedAccounts: [IdentityProvider!]!
     country: String!
@@ -222,6 +232,7 @@ type UserAccount {
     savedProfiles: [UserProfile!]!
     sentOffers: [Offer!]!
     suggestedListings: [Listing!]!
+    swipes: [Swipe!]!
 }
 
 """

@@ -1,0 +1,3 @@
+fragment suggestionPreferences on UserAccount {
+    biasSuggestionsOnly
+}
