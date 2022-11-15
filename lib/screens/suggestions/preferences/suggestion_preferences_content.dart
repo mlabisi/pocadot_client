@@ -14,6 +14,22 @@ class SuggestionPreferencesContent extends StatefulWidget {
 }
 
 class _SuggestionPreferencesContentState extends State<SuggestionPreferencesContent> {
+  late bool _biasesOnly;
+
+  void toggleSwitch() {
+    setState(() {
+      _biasesOnly = !_biasesOnly;
+
+      // execute mutation to update value
+    });
+  }
+
+  @override
+  void initState() {
+    _biasesOnly = widget.suggestionPreferences.biasSuggestionsOnly;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -220,30 +236,7 @@ class _SuggestionPreferencesContentState extends State<SuggestionPreferencesCont
                             ),
                           ),
                           const SizedBox(width: 20),
-                          Container(
-                            width: 44,
-                            height: 24,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(1000),
-                              color: const Color(0xffeeeeee),
-                            ),
-                            padding: const EdgeInsets.only(right: 20, ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children:[
-                                Container(
-                                  width: 24,
-                                  height: 24,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
-                                  child: const FlutterLogo(size: 24),
-                                ),
-                              ],
-                            ),
-                          ),
+                          Switch(value: _biasesOnly, onChanged: (value) => toggleSwitch())
                         ],
                       ),
                     ),
