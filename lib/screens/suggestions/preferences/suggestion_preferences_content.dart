@@ -29,7 +29,7 @@ class _SuggestionPreferencesContentState
     setState(() {
       _biasesOnly = !_biasesOnly;
 
-      // execute mutation to update value
+      // TODO execute mutation to update value
     });
   }
 
