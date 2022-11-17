@@ -29,7 +29,7 @@ import 'package:pocadot_client/screens/shared/settings/view_country_settings_scr
 import 'package:pocadot_client/screens/shared/settings/view_language_settings_screen.dart';
 import 'package:pocadot_client/screens/shared/views/view_listing_screen.dart';
 import 'package:pocadot_client/screens/shared/views/view_profile_screen.dart';
-import 'package:pocadot_client/screens/suggestions/preferences/suggestion_preferences_screen.dart';
+import 'package:pocadot_client/screens/suggestions/preferences/ui/suggestion_preferences_screen.dart';
 import 'package:pocadot_client/screens/suggestions/ui/suggestions_screen.dart';
 import 'package:pocadot_client/theme/colors.dart';
 import 'package:pocadot_client/theme/icons.dart';
