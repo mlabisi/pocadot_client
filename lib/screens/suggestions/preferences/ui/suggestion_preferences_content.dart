@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
-import 'package:pocadot_client/screens/suggestions/preferences/~graphql/__generated__/suggestion_preferences.fragment.graphql.dart';
+import 'package:pocadot_client/screens/suggestions/preferences/ui/~graphql/__generated__/suggestion_preferences.fragment.graphql.dart';
 import 'package:pocadot_client/theme/colors.dart';
 import 'package:pocadot_client/theme/icons.dart';
 

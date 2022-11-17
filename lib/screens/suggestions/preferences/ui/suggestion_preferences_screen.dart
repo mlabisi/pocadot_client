@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pocadot_client/screens/suggestions/preferences/ui/suggestion_preferences_content.dart';
-import 'package:pocadot_client/screens/suggestions/preferences/~graphql/__generated__/suggestion_preferences_screen.query.graphql.dart';
+import 'package:pocadot_client/screens/suggestions/preferences/ui/~graphql/__generated__/suggestion_preferences_screen.query.graphql.dart';
 import 'package:pocadot_client/utils.dart';
 import 'package:pocadot_client/widgets/navigation/stack_app_bar.dart';
 
