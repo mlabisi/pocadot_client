@@ -1,5 +1,7 @@
+import 'package:event/event.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
+import 'package:pocadot_client/screens/suggestions/preferences/domain/events/suggestion_preferences_updated.dart';
 import 'package:pocadot_client/screens/suggestions/preferences/ui/~graphql/__generated__/suggestion_preferences.fragment.graphql.dart';
 import 'package:pocadot_client/theme/colors.dart';
 import 'package:pocadot_client/theme/icons.dart';
@@ -9,11 +11,10 @@ class SuggestionPreferencesContent extends StatefulWidget {
   final Function refresh;
   final Function fetchMore;
 
-  const SuggestionPreferencesContent(
-      {Key? key,
-      required this.suggestionPreferences,
-      required this.refresh,
-      required this.fetchMore})
+  const SuggestionPreferencesContent({Key? key,
+    required this.suggestionPreferences,
+    required this.refresh,
+    required this.fetchMore})
       : super(key: key);
 
   @override
@@ -29,7 +30,11 @@ class _SuggestionPreferencesContentState
     setState(() {
       _biasesOnly = !_biasesOnly;
 
-      // TODO execute mutation to update value
+      var toggleSwitched = Event<SuggestionPrefsUpdated>();
+      toggleSwitched.broadcast(SuggestionPrefsUpdated(
+          Fragment$suggestionPreferences(
+              biasSuggestionsOnly: _biasesOnly, $__typename: 'UserAccount'), '',
+          DateTime.now()));
     });
   }
 
