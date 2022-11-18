@@ -68,7 +68,7 @@ class _SuggestionPreferencesContentState
                 color: PocadotColors.greyscale200),
             const SizedBox(height: 16),
             GestureDetector(
-              onTap: () => {},
+              onTapDown: (_) => {},
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,

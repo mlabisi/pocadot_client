@@ -39,7 +39,7 @@ class _SquareCardState extends State<SquareCard> {
               ),
             ],
           ),
-          child: Wrap(direction: Axis.vertical, crossAxisAlignment: WrapCrossAlignment.center, children: widget.content,),
+          child: Column(mainAxisSize: MainAxisSize.min, mainAxisAlignment: MainAxisAlignment.spaceBetween, children: widget.content),
         );
       }),
     );

@@ -6,7 +6,7 @@ import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:iconly/iconly.dart';
 import 'package:pocadot_client/screens/explore/all_listings/all_listings_screen.dart';
 import 'package:pocadot_client/screens/explore/collection/collection_screen.dart';
-import 'package:pocadot_client/screens/explore/explore_screen.dart';
+import 'package:pocadot_client/screens/explore/ui/explore_screen.dart';
 import 'package:pocadot_client/screens/explore/search/search_screen.dart';
 import 'package:pocadot_client/screens/more/change_password/change_password_screen.dart';
 import 'package:pocadot_client/screens/more/more_screen.dart';

@@ -27,8 +27,8 @@ class ListingCard extends StatelessWidget {
     return LayoutBuilder(builder: (context, constraints) {
       return SquareCard(content: [
         Container(
-          width: constraints.widthConstraints().maxWidth * 0.5,
-          height: constraints.widthConstraints().maxWidth * 0.5,
+          width: constraints.widthConstraints().maxWidth * 0.8,
+          height: constraints.widthConstraints().maxWidth * 0.8,
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(22)),
           ),
@@ -41,80 +41,68 @@ class ListingCard extends StatelessWidget {
         const SizedBox(
           height: 10,
         ),
-        SizedBox(
-          width: constraints.widthConstraints().maxWidth * 0.5,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    artist,
+        Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Wrap(
+              direction: Axis.horizontal,
+              crossAxisAlignment: WrapCrossAlignment.start,
+              children: [
+                Text(
+                  artist,
+                  style: const TextStyle(
+                    color: PocadotColors.greyscale900,
+                    fontFamily: 'Jua',
+                  ),
+                ),
+                Text(
+                  release,
+                  style: const TextStyle(
+                    color: PocadotColors.greyscale700,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                CircleAvatar(
+                  radius: 8,
+                  backgroundImage: AssetImage(
+                    avatarImage,
+                  ),
+                ),
+                const SizedBox(width: 2,),
+                Expanded(
+                  child: Text(
+                    '@$username',
                     style: const TextStyle(
                       color: PocadotColors.greyscale900,
-                      fontFamily: 'Jua',
-                      fontSize: 18,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
-                  const SizedBox(width: 4),
-                  Text(
-                    release,
+                ),
+                Chip(
+                  backgroundColor: PocadotColors.transparentBlue,
+                  labelPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 5),
+                  label: Text(
+                    listingTag,
                     style: const TextStyle(
-                      color: PocadotColors.greyscale700,
-                      fontSize: 12,
-                      fontFamily: "Urbanist",
+                      color: PocadotColors.primary500,
+                      fontSize: 8,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                ],
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  CircleAvatar(
-                    radius: 8,
-                    backgroundImage: AssetImage(
-                      avatarImage,
-                    ),
-                  ),
-                  const SizedBox(width: 5,),
-                  Expanded(
-                    child: Text(
-                      '@$username',
-                      style: const TextStyle(
-                        color: PocadotColors.greyscale900,
-                        fontSize: 12,
-                        fontFamily: "Urbanist",
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
-                  Chip(
-                    backgroundColor: PocadotColors.primary500,
-                    label: Text(
-                      listingTag,
-                      style: const TextStyle(
-                        color: PocadotColors.othersWhite,
-                        fontSize: 8,
-                        fontFamily: "Urbanist",
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
+                ),
+              ],
+            ),
+          ],
         )
       ], onPressed: onPressed);
     });

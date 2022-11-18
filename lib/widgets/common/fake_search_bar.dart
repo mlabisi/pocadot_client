@@ -11,7 +11,7 @@ class FakeSearchBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
       return Container(
-        width: constraints.widthConstraints().maxWidth * 0.9,
+        width: double.infinity,
         decoration: BoxDecoration(boxShadow: [
           BoxShadow(
               offset: const Offset(12, 26),

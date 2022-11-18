@@ -1,0 +1,16 @@
+fragment featuredListings on Listing {
+    id
+    type
+    release
+    listedBy {
+        profile {
+            username
+        }
+    }
+    idols {
+        name
+    }
+    groups {
+        name
+    }
+}

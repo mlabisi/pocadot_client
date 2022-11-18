@@ -5,7 +5,4 @@ fragment suggestion on Listing {
     idols {
         name
     }
-    groups {
-        name
-    }
 }
