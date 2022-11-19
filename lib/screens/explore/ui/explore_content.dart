@@ -24,6 +24,7 @@ class ExploreContent extends StatefulWidget {
 }
 
 class _ExploreContentState extends State<ExploreContent> {
+  late List<Widget> _banners;
   late ScrollController _scrollController;
   double _scrollControllerOffset = 0.0;
 
@@ -43,10 +44,34 @@ class _ExploreContentState extends State<ExploreContent> {
   void initState() {
     _scrollController = ScrollController();
     _scrollController.addListener(_scrollListener);
+    _banners = [
+      const SizedBox(
+        width: 16.0,
+      ),
+      GestureDetector(
+        child: Image.asset(
+          'assets/demo/girlGroups.png',
+          fit: BoxFit.fitHeight,
+        ),
+      ),
+      const SizedBox(
+        width: 16.0,
+      ),
+      GestureDetector(
+        child: Image.asset(
+          'assets/demo/boyGroups.png',
+          fit: BoxFit.fitHeight,
+        ),
+      ),
+      const SizedBox(
+        width: 16.0,
+      ),
+    ];
+
     super.initState();
   }
 
-  List<Widget> getFeatured(BoxConstraints constraints) {
+  List<Widget> getFeatured() {
     return widget.featured.map((e) {
       return ListingCard(
         avatarImage: 'assets/demo/nayeon.png',
@@ -107,29 +132,7 @@ class _ExploreContentState extends State<ExploreContent> {
                     child: ListView(
                       padding: const EdgeInsets.symmetric(vertical: 8.0),
                       scrollDirection: Axis.horizontal,
-                      children: [
-                        const SizedBox(
-                          width: 16.0,
-                        ),
-                        GestureDetector(
-                          child: Image.asset(
-                            'assets/demo/girlGroups.png',
-                            fit: BoxFit.fitHeight,
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 16.0,
-                        ),
-                        GestureDetector(
-                          child: Image.asset(
-                            'assets/demo/boyGroups.png',
-                            fit: BoxFit.fitHeight,
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 16.0,
-                        ),
-                      ],
+                      children: _banners,
                     ),
                   )),
                   SliverToBoxAdapter(
@@ -172,7 +175,7 @@ class _ExploreContentState extends State<ExploreContent> {
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     sliver: SliverGrid(
                         delegate:
-                            SliverChildListDelegate(getFeatured(constraints)),
+                            SliverChildListDelegate(getFeatured()),
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
@@ -181,17 +184,6 @@ class _ExploreContentState extends State<ExploreContent> {
                           crossAxisSpacing: 8,
                         )),
                   ),
-
-                  // SliverToBoxAdapter(
-                  //   child: GridView.count(
-                  //     childAspectRatio: 1 / 1.55,
-                  //     crossAxisCount: 2,
-                  //     padding: const EdgeInsets.only(top: 12),
-                  //     mainAxisSpacing: 12,
-                  //     crossAxisSpacing: 8,
-                  //     children: getFeatured(constraints),
-                  //   ),
-                  // )
                 ],
               ),
             ),
