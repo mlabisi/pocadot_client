@@ -64,65 +64,107 @@ class _ExploreContentState extends State<ExploreContent> {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
-      return Padding(
-        padding: const EdgeInsets.only(left: (16), top: (18), right: (16)),
-        child: Column(
+      return Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            GestureDetector(
-                onTapDown: (_) => Navigator.pushNamed(context, '/search'),
-                child: const FakeSearchBar(
-                  hintText: 'Search for groups and idols',
-                )),
-            const SizedBox(
-              height: 12,
+            Padding(
+              padding: const EdgeInsets.only(left: (16), top: (18), right: (16), bottom: 12),
+              child: GestureDetector(
+                  onTapDown: (_) => Navigator.pushNamed(context, '/search'),
+                  child: const FakeSearchBar(
+                    hintText: 'Search for groups and idols',
+                  )),
             ),
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Expanded(
-                  child: SizedBox(
-                    child: Text(
-                      "Featured Listings",
-                      style: TextStyle(
-                        color: PocadotColors.greyscale900,
-                        fontFamily: 'Jua',
-                        fontSize: 20,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Text(
+                    "Collections",
+                    style: TextStyle(
+                      color: PocadotColors.greyscale900,
+                      fontFamily: 'Jua',
+                      fontSize: 20,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            SizedBox(
+              height: constraints.heightConstraints().maxHeight * 0.25,
+              child: ListView(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                scrollDirection: Axis.horizontal,
+                children: [
+                  const SizedBox(width: 16.0,),
+                  GestureDetector(
+                    child: Image.asset(
+                      'assets/demo/girlGroups.png',
+                      fit: BoxFit.fitHeight,
+                    ),
+                  ),
+                  const SizedBox(width: 16.0,),
+                  GestureDetector(
+                    child: Image.asset(
+                      'assets/demo/boyGroups.png',
+                      fit: BoxFit.fitHeight,
+                    ),
+                  ),
+                  const SizedBox(width: 16.0,),
+                ],
+              ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Expanded(
+                    child: SizedBox(
+                      child: Text(
+                        "Featured Listings",
+                        style: TextStyle(
+                          color: PocadotColors.greyscale900,
+                          fontFamily: 'Jua',
+                          fontSize: 20,
+                        ),
                       ),
                     ),
                   ),
-                ),
-                const SizedBox(width: 12),
-                GestureDetector(
-                  onTapDown: (_) {},
-                  child: const Text(
-                    "See All",
-                    textAlign: TextAlign.right,
-                    style: TextStyle(
-                      color: PocadotColors.primary500,
-                      fontSize: 16,
+                  GestureDetector(
+                    onTapDown: (_) {},
+                    child: const Text(
+                      "See All",
+                      textAlign: TextAlign.right,
+                      style: TextStyle(
+                        color: PocadotColors.primary500,
+                        fontSize: 16,
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-            Flexible(
+            Expanded(
               child: GridView.count(
-                childAspectRatio: 1/1.55,
+                childAspectRatio: 1 / 1.55,
                 crossAxisCount: 2,
-                padding: const EdgeInsets.only(top: 12),
+                padding: const EdgeInsets.only(top: 12, left:16, right: 16),
                 mainAxisSpacing: 12,
                 crossAxisSpacing: 8,
                 children: getFeatured(constraints),
               ),
-            )
-          ],
-        ),
-      );
+            ),
+          ]);
     });
   }
 }
