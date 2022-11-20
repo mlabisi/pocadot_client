@@ -1,3 +1,4 @@
+import '../components/listing_card_widget.dart';
 import '../components/notifications_button_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -15,18 +16,21 @@ class SavedScreenWidget extends StatefulWidget {
 }
 
 class _SavedScreenWidgetState extends State<SavedScreenWidget> {
-  TextEditingController? textController;
+  TextEditingController? textController1;
+  TextEditingController? textController2;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    textController = TextEditingController();
+    textController1 = TextEditingController();
+    textController2 = TextEditingController();
   }
 
   @override
   void dispose() {
-    textController?.dispose();
+    textController1?.dispose();
+    textController2?.dispose();
     super.dispose();
   }
 
@@ -74,86 +78,128 @@ class _SavedScreenWidgetState extends State<SavedScreenWidget> {
             children: [
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 0),
-                child: Container(
-                  width: double.infinity,
-                  height: 60,
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).greyscale100,
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  alignment: AlignmentDirectional(0, 0),
-                  child: TextFormField(
-                    controller: textController,
-                    onChanged: (_) => EasyDebounce.debounce(
-                      'textController',
-                      Duration(milliseconds: 2000),
-                      () => setState(() {}),
-                    ),
-                    autofocus: true,
-                    obscureText: false,
-                    decoration: InputDecoration(
-                      hintText: 'Search for groups and idols',
-                      hintStyle: FlutterFlowTheme.of(context)
-                          .bodyText1
-                          .override(
-                            fontFamily: 'Urbanist',
-                            color: FlutterFlowTheme.of(context).greyscale400,
-                          ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).primaryColor,
-                          width: 1,
-                        ),
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).primaryColor,
-                          width: 1,
-                        ),
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      errorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).alertRed,
-                          width: 1,
-                        ),
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      focusedErrorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).alertRed,
-                          width: 1,
-                        ),
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      filled: true,
-                      fillColor: FlutterFlowTheme.of(context).alternate,
-                      prefixIcon: Icon(
-                        FFIcons.ksearch,
-                        color: FlutterFlowTheme.of(context).greyscale400,
-                      ),
-                      suffixIcon: textController!.text.isNotEmpty
-                          ? InkWell(
-                              onTap: () async {
-                                textController?.clear();
-                                setState(() {});
-                              },
-                              child: Icon(
-                                Icons.clear,
-                                color:
-                                    FlutterFlowTheme.of(context).greyscale400,
-                                size: 22,
-                              ),
-                            )
-                          : null,
-                    ),
-                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                child: TextFormField(
+                  controller: textController1,
+                  readOnly: true,
+                  obscureText: false,
+                  decoration: InputDecoration(
+                    hintText: 'Search for groups and idols',
+                    hintStyle: FlutterFlowTheme.of(context).bodyText1.override(
                           fontFamily: 'Urbanist',
-                          color: FlutterFlowTheme.of(context).primaryText,
-                          lineHeight: 1,
+                          color: FlutterFlowTheme.of(context).greyscale400,
                         ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).greyscale100,
+                        width: 1,
+                      ),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).greyscale100,
+                        width: 1,
+                      ),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    errorBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).alertRed,
+                        width: 1,
+                      ),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    focusedErrorBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).alertRed,
+                        width: 1,
+                      ),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    filled: true,
+                    fillColor: FlutterFlowTheme.of(context).greyscale100,
+                    prefixIcon: Icon(
+                      FFIcons.ksearch,
+                      color: FlutterFlowTheme.of(context).greyscale400,
+                    ),
                   ),
+                  style: FlutterFlowTheme.of(context).bodyText1.override(
+                        fontFamily: 'Urbanist',
+                        color: FlutterFlowTheme.of(context).primaryText,
+                        lineHeight: 1,
+                      ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 0),
+                child: TextFormField(
+                  controller: textController2,
+                  onChanged: (_) => EasyDebounce.debounce(
+                    'textController2',
+                    Duration(milliseconds: 2000),
+                    () => setState(() {}),
+                  ),
+                  autofocus: true,
+                  obscureText: false,
+                  decoration: InputDecoration(
+                    hintText: 'Search for groups and idols',
+                    hintStyle: FlutterFlowTheme.of(context).bodyText1.override(
+                          fontFamily: 'Urbanist',
+                          color: FlutterFlowTheme.of(context).greyscale400,
+                        ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).primaryColor,
+                        width: 1,
+                      ),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).primaryColor,
+                        width: 1,
+                      ),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    errorBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).alertRed,
+                        width: 1,
+                      ),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    focusedErrorBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).alertRed,
+                        width: 1,
+                      ),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    filled: true,
+                    fillColor: FlutterFlowTheme.of(context).alternate,
+                    prefixIcon: Icon(
+                      FFIcons.ksearch,
+                      color: FlutterFlowTheme.of(context).greyscale400,
+                    ),
+                    suffixIcon: textController2!.text.isNotEmpty
+                        ? InkWell(
+                            onTap: () async {
+                              textController2?.clear();
+                              setState(() {});
+                            },
+                            child: Icon(
+                              Icons.clear,
+                              color: FlutterFlowTheme.of(context).greyscale400,
+                              size: 22,
+                            ),
+                          )
+                        : null,
+                  ),
+                  style: FlutterFlowTheme.of(context).bodyText1.override(
+                        fontFamily: 'Urbanist',
+                        color: FlutterFlowTheme.of(context).primaryText,
+                        lineHeight: 1,
+                      ),
                 ),
               ),
               Expanded(
@@ -180,23 +226,37 @@ class _SavedScreenWidgetState extends State<SavedScreenWidget> {
                       Expanded(
                         child: TabBarView(
                           children: [
-                            Text(
-                              'Tab View 1',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyText1
-                                  .override(
-                                    fontFamily: 'Urbanist',
-                                    fontSize: 32,
-                                  ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  16, 24, 16, 96),
+                              child: GridView(
+                                padding: EdgeInsets.zero,
+                                gridDelegate:
+                                    SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 2,
+                                  crossAxisSpacing: 10,
+                                  mainAxisSpacing: 10,
+                                  childAspectRatio: 0.8,
+                                ),
+                                primary: false,
+                                shrinkWrap: true,
+                                scrollDirection: Axis.vertical,
+                                children: [
+                                  ListingCardWidget(),
+                                  ListingCardWidget(),
+                                  ListingCardWidget(),
+                                  ListingCardWidget(),
+                                  ListingCardWidget(),
+                                  ListingCardWidget(),
+                                  ListingCardWidget(),
+                                  ListingCardWidget(),
+                                ],
+                              ),
                             ),
-                            Text(
-                              'Tab View 2',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyText1
-                                  .override(
-                                    fontFamily: 'Urbanist',
-                                    fontSize: 32,
-                                  ),
+                            ListView(
+                              padding: EdgeInsets.zero,
+                              scrollDirection: Axis.vertical,
+                              children: [],
                             ),
                           ],
                         ),

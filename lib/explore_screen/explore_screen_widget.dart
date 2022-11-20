@@ -15,7 +15,20 @@ class ExploreScreenWidget extends StatefulWidget {
 }
 
 class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
+  TextEditingController? textController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    textController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    textController?.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -62,42 +75,58 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
               children: [
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 0),
-                  child: Container(
-                    width: double.infinity,
-                    height: 60,
-                    decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).greyscale100,
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    alignment: AlignmentDirectional(0, 0),
-                    child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Icon(
-                            FFIcons.ksearch,
+                  child: TextFormField(
+                    controller: textController,
+                    readOnly: true,
+                    obscureText: false,
+                    decoration: InputDecoration(
+                      hintText: 'Search for groups and idols',
+                      hintStyle: FlutterFlowTheme.of(context)
+                          .bodyText1
+                          .override(
+                            fontFamily: 'Urbanist',
                             color: FlutterFlowTheme.of(context).greyscale400,
-                            size: 24,
                           ),
-                          Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
-                            child: Text(
-                              'Search for groups and idols',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyText1
-                                  .override(
-                                    fontFamily: 'Urbanist',
-                                    color: FlutterFlowTheme.of(context)
-                                        .greyscale400,
-                                    fontSize: 16,
-                                  ),
-                            ),
-                          ),
-                        ],
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: FlutterFlowTheme.of(context).greyscale100,
+                          width: 1,
+                        ),
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: FlutterFlowTheme.of(context).greyscale100,
+                          width: 1,
+                        ),
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      errorBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: FlutterFlowTheme.of(context).alertRed,
+                          width: 1,
+                        ),
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      focusedErrorBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: FlutterFlowTheme.of(context).alertRed,
+                          width: 1,
+                        ),
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      filled: true,
+                      fillColor: FlutterFlowTheme.of(context).greyscale100,
+                      prefixIcon: Icon(
+                        FFIcons.ksearch,
+                        color: FlutterFlowTheme.of(context).greyscale400,
                       ),
                     ),
+                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                          fontFamily: 'Urbanist',
+                          color: FlutterFlowTheme.of(context).primaryText,
+                          lineHeight: 1,
+                        ),
                   ),
                 ),
                 Padding(
