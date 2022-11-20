@@ -73,57 +73,65 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 0),
-                child: TextFormField(
-                  controller: textController,
-                  readOnly: true,
-                  obscureText: false,
-                  decoration: InputDecoration(
-                    hintText: 'Search for groups and idols',
-                    hintStyle: FlutterFlowTheme.of(context).bodyText1.override(
-                          fontFamily: 'Urbanist',
-                          color: FlutterFlowTheme.of(context).greyscale400,
-                        ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).alternate,
-                        width: 1,
-                      ),
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).alternate,
-                        width: 1,
-                      ),
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    errorBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).alertRed,
-                        width: 1,
-                      ),
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    focusedErrorBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).alertRed,
-                        width: 1,
-                      ),
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    filled: true,
-                    fillColor: FlutterFlowTheme.of(context).alternate,
-                    prefixIcon: Icon(
-                      FFIcons.ksearch,
-                      color: FlutterFlowTheme.of(context).greyscale400,
-                    ),
+                padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
+                child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
                   ),
-                  style: FlutterFlowTheme.of(context).bodyText1.override(
-                        fontFamily: 'Urbanist',
-                        color: FlutterFlowTheme.of(context).primaryText,
-                        lineHeight: 1,
+                  child: TextFormField(
+                    controller: textController,
+                    readOnly: true,
+                    obscureText: false,
+                    decoration: InputDecoration(
+                      hintText: 'Search for groups and idols',
+                      hintStyle: FlutterFlowTheme.of(context)
+                          .bodyText1
+                          .override(
+                            fontFamily: 'Urbanist',
+                            color: FlutterFlowTheme.of(context).greyscale400,
+                          ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: FlutterFlowTheme.of(context).alternate,
+                          width: 1,
+                        ),
+                        borderRadius: BorderRadius.circular(16),
                       ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: FlutterFlowTheme.of(context).alternate,
+                          width: 1,
+                        ),
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      errorBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: FlutterFlowTheme.of(context).alertRed,
+                          width: 1,
+                        ),
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      focusedErrorBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: FlutterFlowTheme.of(context).alertRed,
+                          width: 1,
+                        ),
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      filled: true,
+                      fillColor: FlutterFlowTheme.of(context).alternate,
+                      prefixIcon: Icon(
+                        FFIcons.ksearch,
+                        color: FlutterFlowTheme.of(context).greyscale400,
+                      ),
+                    ),
+                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                          fontFamily: 'Urbanist',
+                          color: FlutterFlowTheme.of(context).primaryText,
+                          lineHeight: 1,
+                        ),
+                  ),
                 ),
               ),
               Expanded(
