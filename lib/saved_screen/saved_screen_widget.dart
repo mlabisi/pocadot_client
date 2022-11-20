@@ -90,14 +90,14 @@ class _SavedScreenWidgetState extends State<SavedScreenWidget> {
                         ),
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).greyscale100,
+                        color: FlutterFlowTheme.of(context).alternate,
                         width: 1,
                       ),
                       borderRadius: BorderRadius.circular(16),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).greyscale100,
+                        color: FlutterFlowTheme.of(context).alternate,
                         width: 1,
                       ),
                       borderRadius: BorderRadius.circular(16),
@@ -117,7 +117,7 @@ class _SavedScreenWidgetState extends State<SavedScreenWidget> {
                       borderRadius: BorderRadius.circular(16),
                     ),
                     filled: true,
-                    fillColor: FlutterFlowTheme.of(context).greyscale100,
+                    fillColor: FlutterFlowTheme.of(context).alternate,
                     prefixIcon: Icon(
                       FFIcons.ksearch,
                       color: FlutterFlowTheme.of(context).greyscale400,
