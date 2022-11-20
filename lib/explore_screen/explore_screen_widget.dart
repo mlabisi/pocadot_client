@@ -69,160 +69,181 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 0),
-                  child: TextFormField(
-                    controller: textController,
-                    readOnly: true,
-                    obscureText: false,
-                    decoration: InputDecoration(
-                      hintText: 'Search for groups and idols',
-                      hintStyle: FlutterFlowTheme.of(context)
-                          .bodyText1
-                          .override(
-                            fontFamily: 'Urbanist',
-                            color: FlutterFlowTheme.of(context).greyscale400,
-                          ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).alternate,
-                          width: 1,
-                        ),
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).alternate,
-                          width: 1,
-                        ),
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      errorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).alertRed,
-                          width: 1,
-                        ),
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      focusedErrorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).alertRed,
-                          width: 1,
-                        ),
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      filled: true,
-                      fillColor: FlutterFlowTheme.of(context).alternate,
-                      prefixIcon: Icon(
-                        FFIcons.ksearch,
-                        color: FlutterFlowTheme.of(context).greyscale400,
-                      ),
-                    ),
-                    style: FlutterFlowTheme.of(context).bodyText1.override(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 0),
+                child: TextFormField(
+                  controller: textController,
+                  readOnly: true,
+                  obscureText: false,
+                  decoration: InputDecoration(
+                    hintText: 'Search for groups and idols',
+                    hintStyle: FlutterFlowTheme.of(context).bodyText1.override(
                           fontFamily: 'Urbanist',
-                          color: FlutterFlowTheme.of(context).primaryText,
-                          lineHeight: 1,
+                          color: FlutterFlowTheme.of(context).greyscale400,
                         ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).alternate,
+                        width: 1,
+                      ),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).alternate,
+                        width: 1,
+                      ),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    errorBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).alertRed,
+                        width: 1,
+                      ),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    focusedErrorBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).alertRed,
+                        width: 1,
+                      ),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    filled: true,
+                    fillColor: FlutterFlowTheme.of(context).alternate,
+                    prefixIcon: Icon(
+                      FFIcons.ksearch,
+                      color: FlutterFlowTheme.of(context).greyscale400,
+                    ),
                   ),
+                  style: FlutterFlowTheme.of(context).bodyText1.override(
+                        fontFamily: 'Urbanist',
+                        color: FlutterFlowTheme.of(context).primaryText,
+                        lineHeight: 1,
+                      ),
                 ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(16, 24, 16, 0),
-                  child: Row(
+              ),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      Text(
-                        'Collections',
-                        style: FlutterFlowTheme.of(context).subtitle2.override(
-                              fontFamily: 'Jua',
-                              color: FlutterFlowTheme.of(context).primaryText,
-                            ),
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
-                  child: Container(
-                    width: double.infinity,
-                    height: MediaQuery.of(context).size.height * 0.15,
-                    decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).primaryBackground,
-                    ),
-                    child: ListView(
-                      padding: EdgeInsets.zero,
-                      primary: false,
-                      scrollDirection: Axis.horizontal,
-                      children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
-                          child: Image.asset(
-                            'assets/images/girlGroups.png',
-                            fit: BoxFit.fitHeight,
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
+                        child: Container(
+                          width: double.infinity,
+                          height: MediaQuery.of(context).size.height * 0.15,
+                          decoration: BoxDecoration(
+                            color:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                          ),
+                          child: ListView(
+                            padding: EdgeInsets.zero,
+                            primary: false,
+                            scrollDirection: Axis.horizontal,
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    16, 0, 16, 0),
+                                child: Image.asset(
+                                  'assets/images/girlGroups.png',
+                                  fit: BoxFit.fitHeight,
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 0, 16, 0),
+                                child: Image.asset(
+                                  'assets/images/boyGroups.png',
+                                  fit: BoxFit.fitHeight,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
-                        Image.asset(
-                          'assets/images/boyGroups.png',
-                          fit: BoxFit.fitHeight,
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(16, 24, 16, 0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Text(
+                              'Collections',
+                              style: FlutterFlowTheme.of(context)
+                                  .subtitle2
+                                  .override(
+                                    fontFamily: 'Jua',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                  ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(16, 24, 16, 0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Featured Listings',
-                        style: FlutterFlowTheme.of(context).subtitle2.override(
-                              fontFamily: 'Jua',
-                              color: FlutterFlowTheme.of(context).primaryText,
-                            ),
                       ),
-                      Text(
-                        'See All',
-                        style: FlutterFlowTheme.of(context).bodyText1.override(
-                              fontFamily: 'Urbanist',
-                              color: FlutterFlowTheme.of(context).primaryColor,
-                              fontWeight: FontWeight.bold,
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(16, 24, 16, 0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Featured Listings',
+                              style: FlutterFlowTheme.of(context)
+                                  .subtitle2
+                                  .override(
+                                    fontFamily: 'Jua',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                  ),
                             ),
+                            Text(
+                              'See All',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Urbanist',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryColor,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(16, 24, 16, 96),
+                        child: GridView(
+                          padding: EdgeInsets.zero,
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            crossAxisSpacing: 10,
+                            mainAxisSpacing: 10,
+                            childAspectRatio: 0.8,
+                          ),
+                          primary: false,
+                          shrinkWrap: true,
+                          scrollDirection: Axis.vertical,
+                          children: [
+                            ListingCardWidget(),
+                            ListingCardWidget(),
+                            ListingCardWidget(),
+                            ListingCardWidget(),
+                            ListingCardWidget(),
+                            ListingCardWidget(),
+                            ListingCardWidget(),
+                            ListingCardWidget(),
+                          ],
+                        ),
                       ),
                     ],
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(16, 24, 16, 96),
-                  child: GridView(
-                    padding: EdgeInsets.zero,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 10,
-                      childAspectRatio: 0.8,
-                    ),
-                    primary: false,
-                    shrinkWrap: true,
-                    scrollDirection: Axis.vertical,
-                    children: [
-                      ListingCardWidget(),
-                      ListingCardWidget(),
-                      ListingCardWidget(),
-                      ListingCardWidget(),
-                      ListingCardWidget(),
-                      ListingCardWidget(),
-                      ListingCardWidget(),
-                      ListingCardWidget(),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

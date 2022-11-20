@@ -1,3 +1,4 @@
+import '../components/notifications_button_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -20,17 +21,19 @@ class _MoreScreenWidgetState extends State<MoreScreenWidget> {
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).primaryColor,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         automaticallyImplyLeading: false,
         title: Text(
-          'Page Title',
+          'More',
           style: FlutterFlowTheme.of(context).title2.override(
                 fontFamily: 'Jua',
-                color: Colors.white,
+                color: FlutterFlowTheme.of(context).primaryColor,
                 fontSize: 22,
               ),
         ),
-        actions: [],
+        actions: [
+          NotificationsButtonWidget(),
+        ],
         centerTitle: false,
         elevation: 2,
       ),
