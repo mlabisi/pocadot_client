@@ -40,6 +40,19 @@ abstract class FlutterFlowTheme {
 
   late Color primaryBtnText;
   late Color lineColor;
+  late Color white;
+  late Color transparent;
+  late Color background;
+  late Color greyscale900;
+  late Color greyscale700;
+  late Color btnText;
+  late Color alertRed;
+  late Color customColor4;
+  late Color backgroundComponents;
+  late Color alertGreen;
+  late Color greyscale400;
+  late Color greyscale100;
+  late Color greyscale500;
 
   String get title1Family => typography.title1Family;
   TextStyle get title1 => typography.title1;
@@ -70,7 +83,20 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color secondaryText = const Color(0xFF616161);
 
   late Color primaryBtnText = Color(0xFFFFFFFF);
-  late Color lineColor = Color(0xFFEEEEEE);
+  late Color lineColor = Color(0xFF35383F);
+  late Color white = Color(0xFFFFFFFF);
+  late Color transparent = Color(0x14A3B0EF);
+  late Color background = Color(0xFFF6F7FF);
+  late Color greyscale900 = Color(0xFF212121);
+  late Color greyscale700 = Color(0xFF616161);
+  late Color btnText = Color(0xFFFFFFFF);
+  late Color alertRed = Color(0xFFDF3F3F);
+  late Color customColor4 = Color(0xFF090F13);
+  late Color backgroundComponents = Color(0xFF1D2428);
+  late Color alertGreen = Color(0xFF2FB73C);
+  late Color greyscale400 = Color(0xFFBDBDBD);
+  late Color greyscale100 = Color(0xFFF5F5F5);
+  late Color greyscale500 = Color(0xFF9E9E9E);
 }
 
 abstract class Typography {
@@ -165,6 +191,19 @@ class DarkModeTheme extends FlutterFlowTheme {
 
   late Color primaryBtnText = Color(0xFFFFFFFF);
   late Color lineColor = Color(0xFF35383F);
+  late Color white = Color(0xFFFFFFFF);
+  late Color transparent = Color(0x14A3B0EF);
+  late Color background = Color(0xFFF6F7FF);
+  late Color greyscale900 = Color(0xFF212121);
+  late Color greyscale700 = Color(0xFF616161);
+  late Color btnText = Color(0xFFFFFFFF);
+  late Color alertRed = Color(0xFFDF3F3F);
+  late Color customColor4 = Color(0xFF090F13);
+  late Color backgroundComponents = Color(0xFF1D2428);
+  late Color alertGreen = Color(0xFF2FB73C);
+  late Color greyscale400 = Color(0xFFBDBDBD);
+  late Color greyscale100 = Color(0xFFF5F5F5);
+  late Color greyscale500 = Color(0xFF9E9E9E);
 }
 
 extension TextStyleHelper on TextStyle {

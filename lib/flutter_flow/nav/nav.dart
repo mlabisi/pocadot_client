@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
 import '../flutter_flow_theme.dart';
@@ -39,7 +40,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 ),
               ),
             )
-          : HomePageWidget(),
+          : NavBarPage(),
       routes: [
         FFRoute(
           name: '_initialize',
@@ -54,12 +55,42 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                     ),
                   ),
                 )
-              : HomePageWidget(),
+              : NavBarPage(),
           routes: [
             FFRoute(
-              name: 'HomePage',
-              path: 'homePage',
-              builder: (context, params) => HomePageWidget(),
+              name: 'SuggestionsScreen',
+              path: 'suggestionsScreen',
+              builder: (context, params) => params.isEmpty
+                  ? NavBarPage(initialPage: 'SuggestionsScreen')
+                  : SuggestionsScreenWidget(),
+            ),
+            FFRoute(
+              name: 'ExploreScreen',
+              path: 'exploreScreen',
+              builder: (context, params) => params.isEmpty
+                  ? NavBarPage(initialPage: 'ExploreScreen')
+                  : ExploreScreenWidget(),
+            ),
+            FFRoute(
+              name: 'SavedScreen',
+              path: 'savedScreen',
+              builder: (context, params) => params.isEmpty
+                  ? NavBarPage(initialPage: 'SavedScreen')
+                  : SavedScreenWidget(),
+            ),
+            FFRoute(
+              name: 'MyProfileScreen',
+              path: 'myProfileScreen',
+              builder: (context, params) => params.isEmpty
+                  ? NavBarPage(initialPage: 'MyProfileScreen')
+                  : MyProfileScreenWidget(),
+            ),
+            FFRoute(
+              name: 'MoreScreen',
+              path: 'moreScreen',
+              builder: (context, params) => params.isEmpty
+                  ? NavBarPage(initialPage: 'MoreScreen')
+                  : MoreScreenWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),

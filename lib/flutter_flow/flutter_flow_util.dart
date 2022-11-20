@@ -12,12 +12,14 @@ import '../main.dart';
 
 import 'lat_lng.dart';
 
+export 'keep_alive_wrapper.dart';
 export 'lat_lng.dart';
 export 'place.dart';
 export 'dart:math' show min, max;
 export 'dart:convert' show jsonEncode, jsonDecode;
 export 'package:intl/intl.dart';
 export 'package:page_transition/page_transition.dart';
+export 'custom_icons.dart' show FFIcons;
 export 'internationalization.dart' show FFLocalizations;
 export 'nav/nav.dart';
 
