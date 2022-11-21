@@ -214,4 +214,6 @@ class FFIcons {
       IconData(0xe806, fontFamily: _pocadotIconsFamily);
   static const IconData klifebuoy =
       IconData(0xe807, fontFamily: _pocadotIconsFamily);
+  static const IconData kcarrdSymbol =
+      IconData(0xe808, fontFamily: _pocadotIconsFamily);
 }

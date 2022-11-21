@@ -239,7 +239,6 @@ class _SavedScreenWidgetState extends State<SavedScreenWidget> {
                                   childAspectRatio: 0.8,
                                 ),
                                 primary: false,
-                                shrinkWrap: true,
                                 scrollDirection: Axis.vertical,
                                 children: [
                                   ListingCardWidget(),
