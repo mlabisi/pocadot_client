@@ -140,6 +140,24 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(16, 24, 16, 0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Text(
+                              'Collections',
+                              style: FlutterFlowTheme.of(context)
+                                  .subtitle2
+                                  .override(
+                                    fontFamily: 'Jua',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                  ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
                         child: Container(
                           width: double.infinity,
@@ -171,24 +189,6 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                               ),
                             ],
                           ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(16, 24, 16, 0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Text(
-                              'Collections',
-                              style: FlutterFlowTheme.of(context)
-                                  .subtitle2
-                                  .override(
-                                    fontFamily: 'Jua',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                  ),
-                            ),
-                          ],
                         ),
                       ),
                       Padding(

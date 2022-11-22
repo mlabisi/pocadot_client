@@ -22,6 +22,8 @@ class _SavedScreenWidgetState extends State<SavedScreenWidget>
     with TickerProviderStateMixin {
   TextEditingController? textController1;
   TextEditingController? textController2;
+  TextEditingController? textController3;
+  TextEditingController? textController4;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -29,12 +31,16 @@ class _SavedScreenWidgetState extends State<SavedScreenWidget>
     super.initState();
     textController1 = TextEditingController();
     textController2 = TextEditingController();
+    textController3 = TextEditingController();
+    textController4 = TextEditingController();
   }
 
   @override
   void dispose() {
     textController1?.dispose();
     textController2?.dispose();
+    textController3?.dispose();
+    textController4?.dispose();
     super.dispose();
   }
 
@@ -80,132 +86,6 @@ class _SavedScreenWidgetState extends State<SavedScreenWidget>
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 0),
-                child: TextFormField(
-                  controller: textController1,
-                  readOnly: true,
-                  obscureText: false,
-                  decoration: InputDecoration(
-                    hintText: 'Search for groups and idols',
-                    hintStyle: FlutterFlowTheme.of(context).bodyText1.override(
-                          fontFamily: 'Urbanist',
-                          color: FlutterFlowTheme.of(context).greyscale400,
-                        ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).alternate,
-                        width: 1,
-                      ),
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).alternate,
-                        width: 1,
-                      ),
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    errorBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).alertRed,
-                        width: 1,
-                      ),
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    focusedErrorBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).alertRed,
-                        width: 1,
-                      ),
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    filled: true,
-                    fillColor: FlutterFlowTheme.of(context).alternate,
-                    prefixIcon: Icon(
-                      FFIcons.ksearch,
-                      color: FlutterFlowTheme.of(context).greyscale400,
-                    ),
-                  ),
-                  style: FlutterFlowTheme.of(context).bodyText1.override(
-                        fontFamily: 'Urbanist',
-                        color: FlutterFlowTheme.of(context).primaryText,
-                        lineHeight: 1,
-                      ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 0),
-                child: TextFormField(
-                  controller: textController2,
-                  onChanged: (_) => EasyDebounce.debounce(
-                    'textController2',
-                    Duration(milliseconds: 2000),
-                    () => setState(() {}),
-                  ),
-                  autofocus: true,
-                  obscureText: false,
-                  decoration: InputDecoration(
-                    hintText: 'Search for groups and idols',
-                    hintStyle: FlutterFlowTheme.of(context).bodyText1.override(
-                          fontFamily: 'Urbanist',
-                          color: FlutterFlowTheme.of(context).greyscale400,
-                        ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).primaryColor,
-                        width: 1,
-                      ),
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).primaryColor,
-                        width: 1,
-                      ),
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    errorBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).alertRed,
-                        width: 1,
-                      ),
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    focusedErrorBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).alertRed,
-                        width: 1,
-                      ),
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    filled: true,
-                    fillColor: FlutterFlowTheme.of(context).alternate,
-                    prefixIcon: Icon(
-                      FFIcons.ksearch,
-                      color: FlutterFlowTheme.of(context).greyscale400,
-                    ),
-                    suffixIcon: textController2!.text.isNotEmpty
-                        ? InkWell(
-                            onTap: () async {
-                              textController2?.clear();
-                              setState(() {});
-                            },
-                            child: Icon(
-                              Icons.clear,
-                              color: FlutterFlowTheme.of(context).greyscale400,
-                              size: 22,
-                            ),
-                          )
-                        : null,
-                  ),
-                  style: FlutterFlowTheme.of(context).bodyText1.override(
-                        fontFamily: 'Urbanist',
-                        color: FlutterFlowTheme.of(context).primaryText,
-                        lineHeight: 1,
-                      ),
-                ),
-              ),
               Expanded(
                 child: DefaultTabController(
                   length: 2,
@@ -229,281 +109,642 @@ class _SavedScreenWidgetState extends State<SavedScreenWidget>
                       Expanded(
                         child: TabBarView(
                           children: [
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  16, 24, 16, 96),
-                              child: GridView(
-                                padding: EdgeInsets.zero,
-                                gridDelegate:
-                                    SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount: 2,
-                                  crossAxisSpacing: 10,
-                                  mainAxisSpacing: 10,
-                                  childAspectRatio: 0.8,
-                                ),
-                                primary: false,
-                                scrollDirection: Axis.vertical,
+                            SingleChildScrollView(
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  ListingCardWidget(),
-                                  ListingCardWidget(),
-                                  ListingCardWidget(),
-                                  ListingCardWidget(),
-                                  ListingCardWidget(),
-                                  ListingCardWidget(),
-                                  ListingCardWidget(),
-                                  ListingCardWidget(),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        16, 16, 16, 0),
+                                    child: TextFormField(
+                                      controller: textController1,
+                                      readOnly: true,
+                                      obscureText: false,
+                                      decoration: InputDecoration(
+                                        hintText: 'Search for groups and idols',
+                                        hintStyle: FlutterFlowTheme.of(context)
+                                            .bodyText1
+                                            .override(
+                                              fontFamily: 'Urbanist',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .greyscale400,
+                                            ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .alternate,
+                                            width: 1,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(16),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .alternate,
+                                            width: 1,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(16),
+                                        ),
+                                        errorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .alertRed,
+                                            width: 1,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(16),
+                                        ),
+                                        focusedErrorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .alertRed,
+                                            width: 1,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(16),
+                                        ),
+                                        filled: true,
+                                        fillColor: FlutterFlowTheme.of(context)
+                                            .alternate,
+                                        prefixIcon: Icon(
+                                          FFIcons.ksearch,
+                                          color: FlutterFlowTheme.of(context)
+                                              .greyscale400,
+                                        ),
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1
+                                          .override(
+                                            fontFamily: 'Urbanist',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            lineHeight: 1,
+                                          ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        16, 16, 16, 0),
+                                    child: TextFormField(
+                                      controller: textController2,
+                                      onChanged: (_) => EasyDebounce.debounce(
+                                        'textController2',
+                                        Duration(milliseconds: 2000),
+                                        () => setState(() {}),
+                                      ),
+                                      autofocus: true,
+                                      obscureText: false,
+                                      decoration: InputDecoration(
+                                        hintText: 'Search for groups and idols',
+                                        hintStyle: FlutterFlowTheme.of(context)
+                                            .bodyText1
+                                            .override(
+                                              fontFamily: 'Urbanist',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .greyscale400,
+                                            ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryColor,
+                                            width: 1,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(16),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryColor,
+                                            width: 1,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(16),
+                                        ),
+                                        errorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .alertRed,
+                                            width: 1,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(16),
+                                        ),
+                                        focusedErrorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .alertRed,
+                                            width: 1,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(16),
+                                        ),
+                                        filled: true,
+                                        fillColor: FlutterFlowTheme.of(context)
+                                            .alternate,
+                                        prefixIcon: Icon(
+                                          FFIcons.ksearch,
+                                          color: FlutterFlowTheme.of(context)
+                                              .greyscale400,
+                                        ),
+                                        suffixIcon: textController2!
+                                                .text.isNotEmpty
+                                            ? InkWell(
+                                                onTap: () async {
+                                                  textController2?.clear();
+                                                  setState(() {});
+                                                },
+                                                child: Icon(
+                                                  Icons.clear,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .greyscale400,
+                                                  size: 22,
+                                                ),
+                                              )
+                                            : null,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1
+                                          .override(
+                                            fontFamily: 'Urbanist',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            lineHeight: 1,
+                                          ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        16, 24, 16, 96),
+                                    child: GridView(
+                                      padding: EdgeInsets.zero,
+                                      gridDelegate:
+                                          SliverGridDelegateWithFixedCrossAxisCount(
+                                        crossAxisCount: 2,
+                                        crossAxisSpacing: 10,
+                                        mainAxisSpacing: 10,
+                                        childAspectRatio: 0.8,
+                                      ),
+                                      primary: false,
+                                      shrinkWrap: true,
+                                      scrollDirection: Axis.vertical,
+                                      children: [
+                                        ListingCardWidget(),
+                                        ListingCardWidget(),
+                                        ListingCardWidget(),
+                                        ListingCardWidget(),
+                                        ListingCardWidget(),
+                                        ListingCardWidget(),
+                                        ListingCardWidget(),
+                                        ListingCardWidget(),
+                                      ],
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),
-                            ListView(
-                              padding: EdgeInsets.zero,
-                              scrollDirection: Axis.vertical,
+                            Column(
+                              mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 0, 1),
-                                  child: Container(
-                                    width: double.infinity,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                    ),
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          8, 8, 8, 8),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(40),
-                                            child: Image.asset(
-                                              'assets/images/seulgi.png',
-                                              width: 60,
-                                              height: 60,
-                                              fit: BoxFit.cover,
-                                            ),
-                                          ),
-                                          Expanded(
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(12, 0, 0, 0),
-                                                  child: Text(
-                                                    'uriddeulgi',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .subtitle1,
-                                                  ),
-                                                ),
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(12, 0, 0, 0),
-                                                  child: Text(
-                                                    'last active 8 minutes ago',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyText1,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                          Card(
-                                            clipBehavior:
-                                                Clip.antiAliasWithSaveLayer,
+                                      16, 16, 16, 16),
+                                  child: TextFormField(
+                                    controller: textController3,
+                                    readOnly: true,
+                                    obscureText: false,
+                                    decoration: InputDecoration(
+                                      hintText: 'Search for pocadot users',
+                                      hintStyle: FlutterFlowTheme.of(context)
+                                          .bodyText1
+                                          .override(
+                                            fontFamily: 'Urbanist',
                                             color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                            elevation: 1,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(40),
-                                            ),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(4, 4, 4, 4),
-                                              child: Icon(
-                                                Icons
-                                                    .keyboard_arrow_right_rounded,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryText,
-                                                size: 24,
-                                              ),
-                                            ),
+                                                .greyscale400,
                                           ),
-                                        ],
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .alternate,
+                                          width: 1,
+                                        ),
+                                        borderRadius: BorderRadius.circular(16),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .alternate,
+                                          width: 1,
+                                        ),
+                                        borderRadius: BorderRadius.circular(16),
+                                      ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .alertRed,
+                                          width: 1,
+                                        ),
+                                        borderRadius: BorderRadius.circular(16),
+                                      ),
+                                      focusedErrorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .alertRed,
+                                          width: 1,
+                                        ),
+                                        borderRadius: BorderRadius.circular(16),
+                                      ),
+                                      filled: true,
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .alternate,
+                                      prefixIcon: Icon(
+                                        FFIcons.ksearch,
+                                        color: FlutterFlowTheme.of(context)
+                                            .greyscale400,
                                       ),
                                     ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyText1
+                                        .override(
+                                          fontFamily: 'Urbanist',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          lineHeight: 1,
+                                        ),
                                   ),
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 0, 1),
-                                  child: Container(
-                                    width: double.infinity,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
+                                      16, 16, 16, 16),
+                                  child: TextFormField(
+                                    controller: textController4,
+                                    onChanged: (_) => EasyDebounce.debounce(
+                                      'textController4',
+                                      Duration(milliseconds: 2000),
+                                      () => setState(() {}),
                                     ),
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          8, 8, 8, 8),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(40),
-                                            child: Image.asset(
-                                              'assets/images/seulgi.png',
-                                              width: 60,
-                                              height: 60,
-                                              fit: BoxFit.cover,
-                                            ),
-                                          ),
-                                          Expanded(
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(12, 0, 0, 0),
-                                                  child: Text(
-                                                    'uriddeulgi',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .subtitle1,
-                                                  ),
-                                                ),
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(12, 0, 0, 0),
-                                                  child: Text(
-                                                    'last active 8 minutes ago',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyText1,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                          Card(
-                                            clipBehavior:
-                                                Clip.antiAliasWithSaveLayer,
+                                    autofocus: true,
+                                    obscureText: false,
+                                    decoration: InputDecoration(
+                                      hintText: 'Search for pocadot users',
+                                      hintStyle: FlutterFlowTheme.of(context)
+                                          .bodyText1
+                                          .override(
+                                            fontFamily: 'Urbanist',
                                             color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                            elevation: 1,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(40),
-                                            ),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(4, 4, 4, 4),
+                                                .greyscale400,
+                                          ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryColor,
+                                          width: 1,
+                                        ),
+                                        borderRadius: BorderRadius.circular(16),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryColor,
+                                          width: 1,
+                                        ),
+                                        borderRadius: BorderRadius.circular(16),
+                                      ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .alertRed,
+                                          width: 1,
+                                        ),
+                                        borderRadius: BorderRadius.circular(16),
+                                      ),
+                                      focusedErrorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .alertRed,
+                                          width: 1,
+                                        ),
+                                        borderRadius: BorderRadius.circular(16),
+                                      ),
+                                      filled: true,
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .alternate,
+                                      prefixIcon: Icon(
+                                        FFIcons.ksearch,
+                                        color: FlutterFlowTheme.of(context)
+                                            .greyscale400,
+                                      ),
+                                      suffixIcon: textController4!
+                                              .text.isNotEmpty
+                                          ? InkWell(
+                                              onTap: () async {
+                                                textController4?.clear();
+                                                setState(() {});
+                                              },
                                               child: Icon(
-                                                Icons
-                                                    .keyboard_arrow_right_rounded,
+                                                Icons.clear,
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .secondaryText,
-                                                size: 24,
+                                                        .greyscale400,
+                                                size: 22,
                                               ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
+                                            )
+                                          : null,
                                     ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyText1
+                                        .override(
+                                          fontFamily: 'Urbanist',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          lineHeight: 1,
+                                        ),
                                   ),
                                 ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 0, 1),
-                                  child: Container(
-                                    width: double.infinity,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                    ),
-                                    child: Padding(
+                                ListView(
+                                  padding: EdgeInsets.zero,
+                                  shrinkWrap: true,
+                                  scrollDirection: Axis.vertical,
+                                  children: [
+                                    Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          8, 8, 8, 8),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(40),
-                                            child: Image.asset(
-                                              'assets/images/seulgi.png',
-                                              width: 60,
-                                              height: 60,
-                                              fit: BoxFit.cover,
-                                            ),
-                                          ),
-                                          Expanded(
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(12, 0, 0, 0),
-                                                  child: Text(
-                                                    'uriddeulgi',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .subtitle1,
-                                                  ),
+                                          0, 0, 0, 1),
+                                      child: Container(
+                                        width: double.infinity,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                        ),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  8, 8, 8, 8),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(40),
+                                                child: Image.asset(
+                                                  'assets/images/seulgi.png',
+                                                  width: 60,
+                                                  height: 60,
+                                                  fit: BoxFit.cover,
                                                 ),
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(12, 0, 0, 0),
-                                                  child: Text(
-                                                    'last active 8 minutes ago',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyText1,
-                                                  ),
+                                              ),
+                                              Expanded(
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  12, 0, 0, 0),
+                                                      child: Text(
+                                                        'uriddeulgi',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .subtitle1,
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  12, 0, 0, 0),
+                                                      child: Text(
+                                                        'last active 8 minutes ago',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyText1,
+                                                      ),
+                                                    ),
+                                                  ],
                                                 ),
-                                              ],
-                                            ),
-                                          ),
-                                          Card(
-                                            clipBehavior:
-                                                Clip.antiAliasWithSaveLayer,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                            elevation: 1,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(40),
-                                            ),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(4, 4, 4, 4),
-                                              child: Icon(
-                                                Icons
-                                                    .keyboard_arrow_right_rounded,
+                                              ),
+                                              Card(
+                                                clipBehavior:
+                                                    Clip.antiAliasWithSaveLayer,
                                                 color:
                                                     FlutterFlowTheme.of(context)
+                                                        .primaryBackground,
+                                                elevation: 1,
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(40),
+                                                ),
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(4, 4, 4, 4),
+                                                  child: Icon(
+                                                    Icons
+                                                        .keyboard_arrow_right_rounded,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
                                                         .secondaryText,
-                                                size: 24,
+                                                    size: 24,
+                                                  ),
+                                                ),
                                               ),
-                                            ),
+                                            ],
                                           ),
-                                        ],
+                                        ),
                                       ),
                                     ),
-                                  ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0, 0, 0, 1),
+                                      child: Container(
+                                        width: double.infinity,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                        ),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  8, 8, 8, 8),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(40),
+                                                child: Image.asset(
+                                                  'assets/images/seulgi.png',
+                                                  width: 60,
+                                                  height: 60,
+                                                  fit: BoxFit.cover,
+                                                ),
+                                              ),
+                                              Expanded(
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  12, 0, 0, 0),
+                                                      child: Text(
+                                                        'uriddeulgi',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .subtitle1,
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  12, 0, 0, 0),
+                                                      child: Text(
+                                                        'last active 8 minutes ago',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyText1,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Card(
+                                                clipBehavior:
+                                                    Clip.antiAliasWithSaveLayer,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryBackground,
+                                                elevation: 1,
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(40),
+                                                ),
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(4, 4, 4, 4),
+                                                  child: Icon(
+                                                    Icons
+                                                        .keyboard_arrow_right_rounded,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryText,
+                                                    size: 24,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0, 0, 0, 1),
+                                      child: Container(
+                                        width: double.infinity,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                        ),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  8, 8, 8, 8),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(40),
+                                                child: Image.asset(
+                                                  'assets/images/seulgi.png',
+                                                  width: 60,
+                                                  height: 60,
+                                                  fit: BoxFit.cover,
+                                                ),
+                                              ),
+                                              Expanded(
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  12, 0, 0, 0),
+                                                      child: Text(
+                                                        'uriddeulgi',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .subtitle1,
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  12, 0, 0, 0),
+                                                      child: Text(
+                                                        'last active 8 minutes ago',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyText1,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Card(
+                                                clipBehavior:
+                                                    Clip.antiAliasWithSaveLayer,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryBackground,
+                                                elevation: 1,
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(40),
+                                                ),
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(4, 4, 4, 4),
+                                                  child: Icon(
+                                                    Icons
+                                                        .keyboard_arrow_right_rounded,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryText,
+                                                    size: 24,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ],
                             ),

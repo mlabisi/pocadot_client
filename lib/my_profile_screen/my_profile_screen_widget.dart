@@ -276,33 +276,11 @@ class _MyProfileScreenWidgetState extends State<MyProfileScreenWidget> {
                                 indicatorColor:
                                     FlutterFlowTheme.of(context).primaryColor,
                                 tabs: [
-                                  Row(
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 8, 0),
-                                        child: Icon(
-                                          FFIcons.kcategory,
-                                        ),
-                                      ),
-                                      Tab(
-                                        text: 'My Listings',
-                                      ),
-                                    ],
+                                  Tab(
+                                    text: 'My Listings',
                                   ),
-                                  Row(
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 8, 0),
-                                        child: Icon(
-                                          FFIcons.kticketStar,
-                                        ),
-                                      ),
-                                      Tab(
-                                        text: 'My Offers',
-                                      ),
-                                    ],
+                                  Tab(
+                                    text: 'My Offers',
                                   ),
                                 ],
                               ),
@@ -1062,7 +1040,7 @@ class _MyProfileScreenWidgetState extends State<MyProfileScreenWidget> {
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            'Pending Order',
+                                                            'Offer Made',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyText1
@@ -1077,65 +1055,32 @@ class _MyProfileScreenWidgetState extends State<MyProfileScreenWidget> {
                                                                           .w500,
                                                                 ),
                                                           ),
-                                                          Text(
-                                                            'Estimated Pickup TIme',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyText1,
-                                                          ),
-                                                          Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0,
-                                                                        4,
-                                                                        0,
-                                                                        0),
-                                                            child: Text(
-                                                              '4:00pm',
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .title1,
-                                                            ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                12, 0, 0, 0),
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .end,
-                                                      children: [
-                                                        Text(
-                                                          'Order Summary',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyText2,
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(0,
-                                                                      4, 0, 4),
-                                                          child: Row(
+                                                          Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
                                                                     .max,
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .end,
                                                             children: [
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0,
+                                                                            4,
+                                                                            0,
+                                                                            0),
+                                                                child: Text(
+                                                                  'Nayeon',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .subtitle2
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Jua',
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                      ),
+                                                                ),
+                                                              ),
                                                               Padding(
                                                                 padding:
                                                                     EdgeInsetsDirectional
@@ -1145,28 +1090,490 @@ class _MyProfileScreenWidgetState extends State<MyProfileScreenWidget> {
                                                                             0,
                                                                             0),
                                                                 child: Text(
-                                                                  '\$25.40',
+                                                                  'IM NAYEON',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .title3,
+                                                                      .bodyText2,
                                                                 ),
                                                               ),
                                                             ],
                                                           ),
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(0,
-                                                                      4, 0, 8),
-                                                          child: Text(
-                                                            '(4 items)',
+                                                          Text(
+                                                            '+ view offer',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
-                                                                .bodyText1,
+                                                                .bodyText1
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Urbanist',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                                ),
                                                           ),
-                                                        ),
-                                                      ],
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            15),
+                                                    child: Image.asset(
+                                                      'assets/images/nayeon.png',
+                                                      width: 75,
+                                                      height: 100,
+                                                      fit: BoxFit.cover,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  16, 12, 16, 0),
+                                          child: Container(
+                                            width: MediaQuery.of(context)
+                                                .size
+                                                .width,
+                                            height: 100,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  blurRadius: 12,
+                                                  color: Color(0x34000000),
+                                                  offset: Offset(-2, 5),
+                                                )
+                                              ],
+                                              borderRadius:
+                                                  BorderRadius.circular(8),
+                                            ),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(8, 8, 12, 8),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Container(
+                                                    width: 4,
+                                                    height: double.infinity,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .alertGreen,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              4),
+                                                    ),
+                                                  ),
+                                                  Expanded(
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  12, 0, 0, 0),
+                                                      child: Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .start,
+                                                        children: [
+                                                          Text(
+                                                            'Offer Accepted',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyText1
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Urbanist',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .alertGreen,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
+                                                          ),
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0,
+                                                                            4,
+                                                                            0,
+                                                                            0),
+                                                                child: Text(
+                                                                  'Seulgi',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .subtitle2
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Jua',
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            4,
+                                                                            4,
+                                                                            0,
+                                                                            0),
+                                                                child: Text(
+                                                                  '28 REASONS',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyText2,
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          Text(
+                                                            '+ view offer',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyText1
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Urbanist',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                                ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            15),
+                                                    child: Image.network(
+                                                      'https://media.karousell.com/media/photos/products/2022/10/13/wttwtb_red_velvet_seulgi_28_re_1665650222_27bbe90c_progressive.jpg',
+                                                      width: 75,
+                                                      height: 100,
+                                                      fit: BoxFit.cover,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  16, 12, 16, 0),
+                                          child: Container(
+                                            width: MediaQuery.of(context)
+                                                .size
+                                                .width,
+                                            height: 100,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  blurRadius: 12,
+                                                  color: Color(0x34000000),
+                                                  offset: Offset(-2, 5),
+                                                )
+                                              ],
+                                              borderRadius:
+                                                  BorderRadius.circular(8),
+                                            ),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(8, 8, 12, 8),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Container(
+                                                    width: 4,
+                                                    height: double.infinity,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .alertRed,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              4),
+                                                    ),
+                                                  ),
+                                                  Expanded(
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  12, 0, 0, 0),
+                                                      child: Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .start,
+                                                        children: [
+                                                          Text(
+                                                            'Offer Rejected',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyText1
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Urbanist',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .alertRed,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
+                                                          ),
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0,
+                                                                            4,
+                                                                            0,
+                                                                            0),
+                                                                child: Text(
+                                                                  'Yeji',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .subtitle2
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Jua',
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            4,
+                                                                            4,
+                                                                            0,
+                                                                            0),
+                                                                child: Text(
+                                                                  'GUESS WHO',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyText2,
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          Text(
+                                                            '+ view offer',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyText1
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Urbanist',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                                ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            15),
+                                                    child: Image.network(
+                                                      'https://d1w8cc2yygc27j.cloudfront.net/8931798496777269043/2517300188563170448.jpg',
+                                                      width: 75,
+                                                      height: 100,
+                                                      fit: BoxFit.cover,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  16, 12, 16, 0),
+                                          child: Container(
+                                            width: MediaQuery.of(context)
+                                                .size
+                                                .width,
+                                            height: 100,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  blurRadius: 12,
+                                                  color: Color(0x34000000),
+                                                  offset: Offset(-2, 5),
+                                                )
+                                              ],
+                                              borderRadius:
+                                                  BorderRadius.circular(8),
+                                            ),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(8, 8, 12, 8),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Container(
+                                                    width: 4,
+                                                    height: double.infinity,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .greyscale700,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              4),
+                                                    ),
+                                                  ),
+                                                  Expanded(
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  12, 0, 0, 0),
+                                                      child: Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .start,
+                                                        children: [
+                                                          Text(
+                                                            'Offer Cancelled',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyText1
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Urbanist',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .greyscale700,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
+                                                          ),
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0,
+                                                                            4,
+                                                                            0,
+                                                                            0),
+                                                                child: Text(
+                                                                  'Heejin',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .subtitle2
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Jua',
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            4,
+                                                                            4,
+                                                                            0,
+                                                                            0),
+                                                                child: Text(
+                                                                  'FL!P THAT',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyText2,
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          Text(
+                                                            '+ view offer',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyText1
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Urbanist',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                                ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            15),
+                                                    child: Image.network(
+                                                      'https://i.ebayimg.com/images/g/4UAAAOSwKJ5isxcq/s-l400.jpg',
+                                                      width: 75,
+                                                      height: 100,
+                                                      fit: BoxFit.cover,
                                                     ),
                                                   ),
                                                 ],

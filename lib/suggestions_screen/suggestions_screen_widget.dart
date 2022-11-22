@@ -1,4 +1,5 @@
 import '../components/listing_tag_widget.dart';
+import '../components/notifications_button_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_swipeable_stack.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -47,30 +48,17 @@ class _SuggestionsScreenWidgetState extends State<SuggestionsScreenWidget> {
             borderColor: Colors.transparent,
             borderRadius: 30,
             borderWidth: 1,
-            buttonSize: 40,
+            buttonSize: 60,
             icon: Icon(
               FFIcons.kfilter,
               color: FlutterFlowTheme.of(context).primaryColor,
-              size: 25,
+              size: 30,
             ),
             onPressed: () {
               print('IconButton pressed ...');
             },
           ),
-          FlutterFlowIconButton(
-            borderColor: Colors.transparent,
-            borderRadius: 30,
-            borderWidth: 1,
-            buttonSize: 40,
-            icon: Icon(
-              FFIcons.knotification,
-              color: FlutterFlowTheme.of(context).primaryColor,
-              size: 25,
-            ),
-            onPressed: () {
-              print('IconButton pressed ...');
-            },
-          ),
+          NotificationsButtonWidget(),
         ],
         centerTitle: false,
         elevation: 2,
