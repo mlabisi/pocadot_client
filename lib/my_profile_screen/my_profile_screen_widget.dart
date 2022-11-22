@@ -64,6 +64,20 @@ class _MyProfileScreenWidgetState extends State<MyProfileScreenWidget> {
               ),
         ),
         actions: [
+          FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30,
+            borderWidth: 1,
+            buttonSize: 60,
+            icon: Icon(
+              FFIcons.keditSquare,
+              color: FlutterFlowTheme.of(context).primaryColor,
+              size: 30,
+            ),
+            onPressed: () {
+              print('IconButton pressed ...');
+            },
+          ),
           NotificationsButtonWidget(),
         ],
         centerTitle: false,
@@ -301,84 +315,99 @@ class _MyProfileScreenWidgetState extends State<MyProfileScreenWidget> {
                                       child: Column(
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
-                                          Form(
-                                            key: formKey1,
-                                            autovalidateMode:
-                                                AutovalidateMode.disabled,
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(16, 8, 0, 0),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: [
-                                                  Expanded(
-                                                    child:
-                                                        FlutterFlowChoiceChips(
-                                                      initiallySelected: [
-                                                        'All'
-                                                      ],
-                                                      options: [
-                                                        ChipData('All'),
-                                                        ChipData('Live'),
-                                                        ChipData('Closed'),
-                                                        ChipData('Cancelled')
-                                                      ],
-                                                      onChanged: (val) =>
-                                                          setState(() =>
-                                                              choiceChipsValue1 =
-                                                                  val?.first),
-                                                      selectedChipStyle:
-                                                          ChipStyle(
-                                                        backgroundColor:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryColor,
-                                                        textStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyText1
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Urbanist',
-                                                                  color: Colors
-                                                                      .white,
-                                                                ),
-                                                        iconColor: Colors.white,
-                                                        iconSize: 18,
-                                                        elevation: 4,
+                                          Container(
+                                            width: double.infinity,
+                                            child: Form(
+                                              key: formKey1,
+                                              autovalidateMode:
+                                                  AutovalidateMode.disabled,
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(0, 8, 0, 0),
+                                                child: SingleChildScrollView(
+                                                  scrollDirection:
+                                                      Axis.horizontal,
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(16, 0,
+                                                                    16, 0),
+                                                        child:
+                                                            FlutterFlowChoiceChips(
+                                                          initiallySelected: [
+                                                            'All'
+                                                          ],
+                                                          options: [
+                                                            ChipData('All'),
+                                                            ChipData('Live'),
+                                                            ChipData('Closed'),
+                                                            ChipData(
+                                                                'Cancelled')
+                                                          ],
+                                                          onChanged: (val) =>
+                                                              setState(() =>
+                                                                  choiceChipsValue1 =
+                                                                      val?.first),
+                                                          selectedChipStyle:
+                                                              ChipStyle(
+                                                            backgroundColor:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryColor,
+                                                            textStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyText1
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Urbanist',
+                                                                      color: Colors
+                                                                          .white,
+                                                                    ),
+                                                            iconColor:
+                                                                Colors.white,
+                                                            iconSize: 18,
+                                                            elevation: 4,
+                                                          ),
+                                                          unselectedChipStyle:
+                                                              ChipStyle(
+                                                            backgroundColor:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryBackground,
+                                                            textStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyText2
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Urbanist',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryColor,
+                                                                    ),
+                                                            iconColor: Color(
+                                                                0xFF323B45),
+                                                            iconSize: 18,
+                                                            elevation: 4,
+                                                          ),
+                                                          chipSpacing: 20,
+                                                          multiselect: false,
+                                                          initialized:
+                                                              choiceChipsValue1 !=
+                                                                  null,
+                                                          alignment:
+                                                              WrapAlignment
+                                                                  .start,
+                                                        ),
                                                       ),
-                                                      unselectedChipStyle:
-                                                          ChipStyle(
-                                                        backgroundColor:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondaryBackground,
-                                                        textStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyText2
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Urbanist',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryColor,
-                                                                ),
-                                                        iconColor:
-                                                            Color(0xFF323B45),
-                                                        iconSize: 18,
-                                                        elevation: 4,
-                                                      ),
-                                                      chipSpacing: 20,
-                                                      multiselect: false,
-                                                      initialized:
-                                                          choiceChipsValue1 !=
-                                                              null,
-                                                      alignment:
-                                                          WrapAlignment.start,
-                                                    ),
+                                                    ],
                                                   ),
-                                                ],
+                                                ),
                                               ),
                                             ),
                                           ),
@@ -701,76 +730,86 @@ class _MyProfileScreenWidgetState extends State<MyProfileScreenWidget> {
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16, 8, 0, 0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Expanded(
-                                                  child: FlutterFlowChoiceChips(
-                                                    initiallySelected: ['All'],
-                                                    options: [
-                                                      ChipData('All'),
-                                                      ChipData('Sent'),
-                                                      ChipData('Accepted'),
-                                                      ChipData('Rejected'),
-                                                      ChipData('Cancelled')
-                                                    ],
-                                                    onChanged: (val) =>
-                                                        setState(() =>
-                                                            choiceChipsValue2 =
-                                                                val?.first),
-                                                    selectedChipStyle:
-                                                        ChipStyle(
-                                                      backgroundColor:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryColor,
-                                                      textStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyText1
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Urbanist',
-                                                                color: Colors
-                                                                    .white,
-                                                              ),
-                                                      iconColor: Colors.white,
-                                                      iconSize: 18,
-                                                      elevation: 4,
+                                                    0, 8, 0, 0),
+                                            child: SingleChildScrollView(
+                                              scrollDirection: Axis.horizontal,
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                                16, 0, 16, 0),
+                                                    child:
+                                                        FlutterFlowChoiceChips(
+                                                      initiallySelected: [
+                                                        'All'
+                                                      ],
+                                                      options: [
+                                                        ChipData('All'),
+                                                        ChipData('Sent'),
+                                                        ChipData('Accepted'),
+                                                        ChipData('Rejected'),
+                                                        ChipData('Cancelled')
+                                                      ],
+                                                      onChanged: (val) =>
+                                                          setState(() =>
+                                                              choiceChipsValue2 =
+                                                                  val?.first),
+                                                      selectedChipStyle:
+                                                          ChipStyle(
+                                                        backgroundColor:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryColor,
+                                                        textStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyText1
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Urbanist',
+                                                                  color: Colors
+                                                                      .white,
+                                                                ),
+                                                        iconColor: Colors.white,
+                                                        iconSize: 18,
+                                                        elevation: 4,
+                                                      ),
+                                                      unselectedChipStyle:
+                                                          ChipStyle(
+                                                        backgroundColor:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryBackground,
+                                                        textStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyText2
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Urbanist',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryColor,
+                                                                ),
+                                                        iconColor:
+                                                            Color(0xFF323B45),
+                                                        iconSize: 18,
+                                                        elevation: 4,
+                                                      ),
+                                                      chipSpacing: 20,
+                                                      multiselect: false,
+                                                      initialized:
+                                                          choiceChipsValue2 !=
+                                                              null,
+                                                      alignment:
+                                                          WrapAlignment.start,
                                                     ),
-                                                    unselectedChipStyle:
-                                                        ChipStyle(
-                                                      backgroundColor:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondaryBackground,
-                                                      textStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyText2
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Urbanist',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryColor,
-                                                              ),
-                                                      iconColor:
-                                                          Color(0xFF323B45),
-                                                      iconSize: 18,
-                                                      elevation: 4,
-                                                    ),
-                                                    chipSpacing: 20,
-                                                    multiselect: false,
-                                                    initialized:
-                                                        choiceChipsValue2 !=
-                                                            null,
-                                                    alignment:
-                                                        WrapAlignment.start,
                                                   ),
-                                                ),
-                                              ],
+                                                ],
+                                              ),
                                             ),
                                           ),
                                         ),

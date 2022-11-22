@@ -20,11 +20,11 @@ class _NotificationsButtonWidgetState extends State<NotificationsButtonWidget> {
       borderColor: Colors.transparent,
       borderRadius: 30,
       borderWidth: 1,
-      buttonSize: 40,
+      buttonSize: 60,
       icon: Icon(
         FFIcons.knotification,
         color: FlutterFlowTheme.of(context).primaryColor,
-        size: 25,
+        size: 30,
       ),
       onPressed: () {
         print('IconButton pressed ...');
