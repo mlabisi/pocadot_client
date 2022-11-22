@@ -1,6 +1,7 @@
 import '../components/listing_card_widget.dart';
 import '../components/notifications_button_widget.dart';
 import '../flutter_flow/flutter_flow_animations.dart';
+import '../flutter_flow/flutter_flow_choice_chips.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -20,10 +21,12 @@ class SavedScreenWidget extends StatefulWidget {
 
 class _SavedScreenWidgetState extends State<SavedScreenWidget>
     with TickerProviderStateMixin {
+  String? choiceChipsValue;
   TextEditingController? textController1;
   TextEditingController? textController2;
   TextEditingController? textController3;
   TextEditingController? textController4;
+  final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -113,6 +116,87 @@ class _SavedScreenWidgetState extends State<SavedScreenWidget>
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
+                                  Container(
+                                    width: double.infinity,
+                                    child: Form(
+                                      key: formKey,
+                                      autovalidateMode:
+                                          AutovalidateMode.disabled,
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0, 8, 0, 0),
+                                        child: SingleChildScrollView(
+                                          scrollDirection: Axis.horizontal,
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(16, 0, 16, 0),
+                                                child: FlutterFlowChoiceChips(
+                                                  initiallySelected: ['All'],
+                                                  options: [
+                                                    ChipData('All'),
+                                                    ChipData('Live'),
+                                                    ChipData('Closed'),
+                                                    ChipData('Cancelled')
+                                                  ],
+                                                  onChanged: (val) => setState(
+                                                      () => choiceChipsValue =
+                                                          val?.first),
+                                                  selectedChipStyle: ChipStyle(
+                                                    backgroundColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryColor,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .bodyText1
+                                                        .override(
+                                                          fontFamily:
+                                                              'Urbanist',
+                                                          color: Colors.white,
+                                                        ),
+                                                    iconColor: Colors.white,
+                                                    iconSize: 18,
+                                                    elevation: 4,
+                                                  ),
+                                                  unselectedChipStyle:
+                                                      ChipStyle(
+                                                    backgroundColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .secondaryBackground,
+                                                    textStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyText2
+                                                            .override(
+                                                              fontFamily:
+                                                                  'Urbanist',
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryColor,
+                                                            ),
+                                                    iconColor:
+                                                        Color(0xFF323B45),
+                                                    iconSize: 18,
+                                                    elevation: 4,
+                                                  ),
+                                                  chipSpacing: 20,
+                                                  multiselect: false,
+                                                  initialized:
+                                                      choiceChipsValue != null,
+                                                  alignment:
+                                                      WrapAlignment.start,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         16, 16, 16, 0),
@@ -276,6 +360,43 @@ class _SavedScreenWidgetState extends State<SavedScreenWidget>
                                                 .primaryText,
                                             lineHeight: 1,
                                           ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        16, 8, 16, 0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(
+                                          '8 Listings',
+                                          style: FlutterFlowTheme.of(context)
+                                              .subtitle2
+                                              .override(
+                                                fontFamily: 'Jua',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                              ),
+                                        ),
+                                        FlutterFlowIconButton(
+                                          borderColor: Colors.transparent,
+                                          borderRadius: 30,
+                                          borderWidth: 1,
+                                          buttonSize: 40,
+                                          icon: Icon(
+                                            FFIcons.kswap,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryColor,
+                                            size: 20,
+                                          ),
+                                          onPressed: () {
+                                            print('IconButton pressed ...');
+                                          },
+                                        ),
+                                      ],
                                     ),
                                   ),
                                   Padding(
@@ -464,6 +585,43 @@ class _SavedScreenWidgetState extends State<SavedScreenWidget>
                                               .primaryText,
                                           lineHeight: 1,
                                         ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      16, 8, 16, 0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        '3 Pocadotters',
+                                        style: FlutterFlowTheme.of(context)
+                                            .subtitle2
+                                            .override(
+                                              fontFamily: 'Jua',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                            ),
+                                      ),
+                                      FlutterFlowIconButton(
+                                        borderColor: Colors.transparent,
+                                        borderRadius: 30,
+                                        borderWidth: 1,
+                                        buttonSize: 40,
+                                        icon: Icon(
+                                          FFIcons.kswap,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryColor,
+                                          size: 20,
+                                        ),
+                                        onPressed: () {
+                                          print('IconButton pressed ...');
+                                        },
+                                      ),
+                                    ],
                                   ),
                                 ),
                                 ListView(
