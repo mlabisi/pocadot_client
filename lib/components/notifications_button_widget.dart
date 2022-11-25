@@ -26,8 +26,8 @@ class _NotificationsButtonWidgetState extends State<NotificationsButtonWidget> {
         color: FlutterFlowTheme.of(context).primaryColor,
         size: 30,
       ),
-      onPressed: () {
-        print('IconButton pressed ...');
+      onPressed: () async {
+        context.pushNamed('NotificationsScreen');
       },
     );
   }

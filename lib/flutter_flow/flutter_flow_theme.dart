@@ -58,6 +58,8 @@ abstract class FlutterFlowTheme {
   late Color blue;
   late Color boldRed;
   late Color orange;
+  late Color customColor3;
+  late Color customColor1;
 
   String get title1Family => typography.title1Family;
   TextStyle get title1 => typography.title1;
@@ -107,6 +109,8 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color blue = Color(0xFF1D9BF0);
   late Color boldRed = Color(0xFFEE2E24);
   late Color orange = Color(0xFFFF981F);
+  late Color customColor3 = Color(0xFFDF3F3F);
+  late Color customColor1 = Color(0xFF2FB73C);
 }
 
 abstract class Typography {
@@ -219,6 +223,8 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color blue = Color(0xFF1D9BF0);
   late Color boldRed = Color(0xFFEE2E24);
   late Color orange = Color(0xFFFF981F);
+  late Color customColor3 = Color(0xFFDF3F3F);
+  late Color customColor1 = Color(0xFF452FB7);
 }
 
 extension TextStyleHelper on TextStyle {

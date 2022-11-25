@@ -126,7 +126,7 @@ class _NavBarPageState extends State<NavBarPage> {
         borderRadius: 8,
         itemBorderRadius: 8,
         margin: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 8),
+        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
         width: double.infinity,
         elevation: 0,
         items: [

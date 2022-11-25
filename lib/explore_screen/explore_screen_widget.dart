@@ -3,6 +3,7 @@ import '../components/notifications_button_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
+import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -73,65 +74,76 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
-                child: Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
-                  ),
-                  child: TextFormField(
-                    controller: textController,
-                    readOnly: true,
-                    obscureText: false,
-                    decoration: InputDecoration(
-                      hintText: 'Search for groups and idols',
-                      hintStyle: FlutterFlowTheme.of(context)
-                          .bodyText1
-                          .override(
-                            fontFamily: 'Urbanist',
-                            color: FlutterFlowTheme.of(context).greyscale400,
-                          ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).alternate,
-                          width: 1,
-                        ),
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).alternate,
-                          width: 1,
-                        ),
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      errorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).alertRed,
-                          width: 1,
-                        ),
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      focusedErrorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).alertRed,
-                          width: 1,
-                        ),
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      filled: true,
-                      fillColor: FlutterFlowTheme.of(context).alternate,
-                      prefixIcon: Icon(
-                        FFIcons.ksearch,
-                        color: FlutterFlowTheme.of(context).greyscale400,
-                      ),
-                    ),
-                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 0),
+                child: TextFormField(
+                  controller: textController,
+                  readOnly: true,
+                  obscureText: false,
+                  decoration: InputDecoration(
+                    hintText: 'Search for groups and idols',
+                    hintStyle: FlutterFlowTheme.of(context).bodyText1.override(
                           fontFamily: 'Urbanist',
-                          color: FlutterFlowTheme.of(context).primaryText,
-                          lineHeight: 1,
+                          color: FlutterFlowTheme.of(context).greyscale400,
                         ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).alternate,
+                        width: 1,
+                      ),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).alternate,
+                        width: 1,
+                      ),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    errorBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).alertRed,
+                        width: 1,
+                      ),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    focusedErrorBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).alertRed,
+                        width: 1,
+                      ),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    filled: true,
+                    fillColor: FlutterFlowTheme.of(context).alternate,
+                    prefixIcon: Icon(
+                      FFIcons.ksearch,
+                      color: FlutterFlowTheme.of(context).greyscale400,
+                    ),
                   ),
+                  style: FlutterFlowTheme.of(context).bodyText1.override(
+                        fontFamily: 'Urbanist',
+                        color: FlutterFlowTheme.of(context).primaryText,
+                        lineHeight: 1,
+                      ),
+                ),
+              ),
+              FFButtonWidget(
+                onPressed: () async {
+                  context.pushNamed('SearchScreen');
+                },
+                text: 'Flop Search Button',
+                options: FFButtonOptions(
+                  height: 40,
+                  color: FlutterFlowTheme.of(context).primaryColor,
+                  textStyle: FlutterFlowTheme.of(context).subtitle2.override(
+                        fontFamily: 'Jua',
+                        color: Colors.white,
+                      ),
+                  borderSide: BorderSide(
+                    color: Colors.transparent,
+                    width: 1,
+                  ),
+                  borderRadius: BorderRadius.circular(8),
                 ),
               ),
               Expanded(
@@ -207,16 +219,21 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                                         .primaryText,
                                   ),
                             ),
-                            Text(
-                              'See All',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyText1
-                                  .override(
-                                    fontFamily: 'Urbanist',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryColor,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                            InkWell(
+                              onTap: () async {
+                                context.pushNamed('CollectionDetailScreen');
+                              },
+                              child: Text(
+                                'See All',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'Urbanist',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryColor,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                              ),
                             ),
                           ],
                         ),

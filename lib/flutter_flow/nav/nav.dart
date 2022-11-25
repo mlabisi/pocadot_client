@@ -65,6 +65,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   : SuggestionsScreenWidget(),
             ),
             FFRoute(
+              name: 'SuggestionPreferences',
+              path: 'suggestionPreferences',
+              builder: (context, params) => SuggestionPreferencesWidget(),
+            ),
+            FFRoute(
               name: 'ExploreScreen',
               path: 'exploreScreen',
               builder: (context, params) => params.isEmpty
@@ -91,6 +96,26 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => params.isEmpty
                   ? NavBarPage(initialPage: 'MoreScreen')
                   : MoreScreenWidget(),
+            ),
+            FFRoute(
+              name: 'NotificationsScreen',
+              path: 'notificationsScreen',
+              builder: (context, params) => NotificationsScreenWidget(),
+            ),
+            FFRoute(
+              name: 'SearchScreen',
+              path: 'searchScreen',
+              builder: (context, params) => SearchScreenWidget(),
+            ),
+            FFRoute(
+              name: 'CollectionDetailScreen',
+              path: 'collectionDetailScreen',
+              builder: (context, params) => CollectionDetailScreenWidget(),
+            ),
+            FFRoute(
+              name: 'FilterResultsScreen',
+              path: 'filterResultsScreen',
+              builder: (context, params) => FilterResultsScreenWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),
