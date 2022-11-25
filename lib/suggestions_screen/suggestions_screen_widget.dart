@@ -54,8 +54,8 @@ class _SuggestionsScreenWidgetState extends State<SuggestionsScreenWidget> {
               color: FlutterFlowTheme.of(context).primaryColor,
               size: 30,
             ),
-            onPressed: () {
-              print('IconButton pressed ...');
+            onPressed: () async {
+              context.pushNamed('SuggestionPreferences');
             },
           ),
           NotificationsButtonWidget(),

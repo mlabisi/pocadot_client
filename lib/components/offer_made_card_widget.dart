@@ -51,13 +51,43 @@ class _OfferMadeCardWidgetState extends State<OfferMadeCardWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'Offer Made',
-                        style: FlutterFlowTheme.of(context).bodyText1.override(
-                              fontFamily: 'Urbanist',
-                              color: FlutterFlowTheme.of(context).primaryColor,
-                              fontWeight: FontWeight.w500,
+                      Wrap(
+                        spacing: 0,
+                        runSpacing: 0,
+                        alignment: WrapAlignment.start,
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        direction: Axis.horizontal,
+                        runAlignment: WrapAlignment.start,
+                        verticalDirection: VerticalDirection.down,
+                        clipBehavior: Clip.none,
+                        children: [
+                          Text(
+                            'Offer Made',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyText1
+                                .override(
+                                  fontFamily: 'Urbanist',
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryColor,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(4, 0, 0, 0),
+                            child: Text(
+                              '4 Min Ago',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Urbanist',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                             ),
+                          ),
+                        ],
                       ),
                       Row(
                         mainAxisSize: MainAxisSize.max,

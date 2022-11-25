@@ -62,50 +62,51 @@ class _CollectionDetailScreenWidgetState
               Expanded(
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      ProfileHeaderWidget(),
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Featured Listings',
-                                style: FlutterFlowTheme.of(context).title3,
-                              ),
-                            ],
-                          ),
-                          Wrap(
-                            spacing: 0,
-                            runSpacing: 0,
-                            alignment: WrapAlignment.start,
-                            crossAxisAlignment: WrapCrossAlignment.start,
-                            direction: Axis.horizontal,
-                            runAlignment: WrapAlignment.start,
-                            verticalDirection: VerticalDirection.down,
-                            clipBehavior: Clip.none,
-                            children: [
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    16, 0, 16, 0),
-                                child: Text(
-                                  'Check out the listings selected by our editors!',
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context).bodyText1,
+                  child: SingleChildScrollView(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        ProfileHeaderWidget(),
+                        Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Featured Listings',
+                                  style: FlutterFlowTheme.of(context).title3,
                                 ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Expanded(
-                        child: Padding(
+                              ],
+                            ),
+                            Wrap(
+                              spacing: 0,
+                              runSpacing: 0,
+                              alignment: WrapAlignment.start,
+                              crossAxisAlignment: WrapCrossAlignment.start,
+                              direction: Axis.horizontal,
+                              runAlignment: WrapAlignment.start,
+                              verticalDirection: VerticalDirection.down,
+                              clipBehavior: Clip.none,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      16, 0, 16, 0),
+                                  child: Text(
+                                    'Check out the listings selected by our editors!',
+                                    textAlign: TextAlign.center,
+                                    style:
+                                        FlutterFlowTheme.of(context).bodyText1,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Padding(
                           padding:
-                              EdgeInsetsDirectional.fromSTEB(16, 16, 16, 0),
+                              EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
                           child: GridView(
                             padding: EdgeInsets.zero,
                             gridDelegate:
@@ -130,8 +131,8 @@ class _CollectionDetailScreenWidgetState
                             ],
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),

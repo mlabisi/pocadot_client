@@ -186,17 +186,27 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     16, 0, 16, 0),
-                                child: Image.asset(
-                                  'assets/images/girlGroups.png',
-                                  fit: BoxFit.fitHeight,
+                                child: InkWell(
+                                  onTap: () async {
+                                    context.pushNamed('CollectionDetailScreen');
+                                  },
+                                  child: Image.asset(
+                                    'assets/images/girlGroups.png',
+                                    fit: BoxFit.fitHeight,
+                                  ),
                                 ),
                               ),
                               Padding(
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(0, 0, 16, 0),
-                                child: Image.asset(
-                                  'assets/images/boyGroups.png',
-                                  fit: BoxFit.fitHeight,
+                                child: InkWell(
+                                  onTap: () async {
+                                    context.pushNamed('CollectionDetailScreen');
+                                  },
+                                  child: Image.asset(
+                                    'assets/images/boyGroups.png',
+                                    fit: BoxFit.fitHeight,
+                                  ),
                                 ),
                               ),
                             ],
