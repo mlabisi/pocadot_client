@@ -152,7 +152,7 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                         height: 100,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
-                                              .greyscale50,
+                                              .tertiaryColor,
                                           borderRadius:
                                               BorderRadius.circular(22),
                                           border: Border.all(
@@ -175,7 +175,7 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                                   FFIcons.kcamera,
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .greyscale400,
+                                                      .greyscale700,
                                                   size: 24,
                                                 ),
                                                 Text(
@@ -188,7 +188,7 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .greyscale500,
+                                                                .greyscale700,
                                                       ),
                                                 ),
                                               ],
@@ -250,7 +250,7 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                         height: 100,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
-                                              .greyscale50,
+                                              .tertiaryColor,
                                           borderRadius:
                                               BorderRadius.circular(22),
                                           border: Border.all(
@@ -273,7 +273,7 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                                   FFIcons.kcamera,
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .greyscale400,
+                                                      .greyscale700,
                                                   size: 24,
                                                 ),
                                                 Text(
@@ -286,7 +286,7 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .greyscale500,
+                                                                .greyscale700,
                                                       ),
                                                 ),
                                               ],
@@ -352,7 +352,7 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .greyscale50,
+                                                      .tertiaryColor,
                                               borderRadius:
                                                   BorderRadius.circular(12),
                                               border: Border.all(
@@ -380,7 +380,7 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                                               'Urbanist',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .secondaryText,
+                                                              .greyscale700,
                                                         ),
                                                   ),
                                                 ),
@@ -422,11 +422,11 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                               fontFamily: 'Urbanist',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .greyscale400,
+                                                      .greyscale700,
                                             ),
                                         hintText: 'Select an idol',
                                         fillColor: FlutterFlowTheme.of(context)
-                                            .greyscale50,
+                                            .tertiaryColor,
                                         elevation: 2,
                                         borderColor: Colors.transparent,
                                         borderWidth: 0,
@@ -499,9 +499,15 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                         decoration: InputDecoration(
                                           hintText:
                                               'Name of Album, Pack, Season\'s Greeting',
-                                          hintStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyText2,
+                                          hintStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .bodyText1
+                                              .override(
+                                                fontFamily: 'Urbanist',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .greyscale700,
+                                              ),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color:
@@ -542,10 +548,16 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                           filled: true,
                                           fillColor:
                                               FlutterFlowTheme.of(context)
-                                                  .greyscale50,
+                                                  .tertiaryColor,
                                         ),
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyText1,
+                                            .bodyText1
+                                            .override(
+                                              fontFamily: 'Urbanist',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .greyscale700,
+                                            ),
                                       ),
                                     ),
                                   ],
@@ -611,14 +623,20 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                         decoration: InputDecoration(
                                           hintText:
                                               'Provide a detailed description of your listing.',
-                                          hintStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyText2,
+                                          hintStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .bodyText2
+                                              .override(
+                                                fontFamily: 'Urbanist',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .greyscale700,
+                                              ),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .greyscale400,
+                                                      .greyscale700,
                                               width: 1,
                                             ),
                                             borderRadius:
@@ -628,7 +646,7 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                             borderSide: BorderSide(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .greyscale400,
+                                                      .greyscale700,
                                               width: 1,
                                             ),
                                             borderRadius:
@@ -654,10 +672,16 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                           filled: true,
                                           fillColor:
                                               FlutterFlowTheme.of(context)
-                                                  .greyscale50,
+                                                  .tertiaryColor,
                                         ),
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyText1,
+                                            .bodyText1
+                                            .override(
+                                              fontFamily: 'Urbanist',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .greyscale500,
+                                            ),
                                         maxLines: 5,
                                       ),
                                     ),
@@ -949,14 +973,20 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                         obscureText: false,
                                         decoration: InputDecoration(
                                           hintText: 'Ex: \$25',
-                                          hintStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyText2,
+                                          hintStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .bodyText2
+                                              .override(
+                                                fontFamily: 'Urbanist',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .greyscale700,
+                                              ),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .greyscale400,
+                                                      .greyscale700,
                                               width: 1,
                                             ),
                                             borderRadius:
@@ -966,7 +996,7 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                             borderSide: BorderSide(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .greyscale400,
+                                                      .greyscale700,
                                               width: 1,
                                             ),
                                             borderRadius:
@@ -992,10 +1022,16 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                           filled: true,
                                           fillColor:
                                               FlutterFlowTheme.of(context)
-                                                  .greyscale50,
+                                                  .tertiaryColor,
                                         ),
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyText1,
+                                            .bodyText1
+                                            .override(
+                                              fontFamily: 'Urbanist',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .greyscale500,
+                                            ),
                                       ),
                                     ),
                                   ],
