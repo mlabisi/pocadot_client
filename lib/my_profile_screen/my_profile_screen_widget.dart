@@ -25,10 +25,8 @@ class MyProfileScreenWidget extends StatefulWidget {
 class _MyProfileScreenWidgetState extends State<MyProfileScreenWidget> {
   String? choiceChipsValue1;
   TextEditingController? textController1;
-  TextEditingController? textController2;
   String? choiceChipsValue2;
-  TextEditingController? textController3;
-  TextEditingController? textController4;
+  TextEditingController? textController2;
   final formKey1 = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final formKey2 = GlobalKey<FormState>();
@@ -38,16 +36,12 @@ class _MyProfileScreenWidgetState extends State<MyProfileScreenWidget> {
     super.initState();
     textController1 = TextEditingController();
     textController2 = TextEditingController();
-    textController3 = TextEditingController();
-    textController4 = TextEditingController();
   }
 
   @override
   void dispose() {
     textController1?.dispose();
     textController2?.dispose();
-    textController3?.dispose();
-    textController4?.dispose();
     super.dispose();
   }
 
@@ -219,88 +213,8 @@ class _MyProfileScreenWidgetState extends State<MyProfileScreenWidget> {
                                           0, 16, 0, 0),
                                       child: TextFormField(
                                         controller: textController1,
-                                        readOnly: true,
-                                        obscureText: false,
-                                        decoration: InputDecoration(
-                                          hintText: 'Search your listings',
-                                          hintStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .bodyText1
-                                              .override(
-                                                fontFamily: 'Urbanist',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .greyscale400,
-                                              ),
-                                          enabledBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .alternate,
-                                              width: 1,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(16),
-                                          ),
-                                          focusedBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .alternate,
-                                              width: 1,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(16),
-                                          ),
-                                          errorBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .alertRed,
-                                              width: 1,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(16),
-                                          ),
-                                          focusedErrorBorder:
-                                              OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .alertRed,
-                                              width: 1,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(16),
-                                          ),
-                                          filled: true,
-                                          fillColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .alternate,
-                                          prefixIcon: Icon(
-                                            FFIcons.ksearch,
-                                            color: FlutterFlowTheme.of(context)
-                                                .greyscale400,
-                                          ),
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyText1
-                                            .override(
-                                              fontFamily: 'Urbanist',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                              lineHeight: 1,
-                                            ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 16, 0, 0),
-                                      child: TextFormField(
-                                        controller: textController2,
                                         onChanged: (_) => EasyDebounce.debounce(
-                                          'textController2',
+                                          'textController1',
                                           Duration(milliseconds: 2000),
                                           () => setState(() {}),
                                         ),
@@ -366,11 +280,11 @@ class _MyProfileScreenWidgetState extends State<MyProfileScreenWidget> {
                                             color: FlutterFlowTheme.of(context)
                                                 .greyscale400,
                                           ),
-                                          suffixIcon: textController2!
+                                          suffixIcon: textController1!
                                                   .text.isNotEmpty
                                               ? InkWell(
                                                   onTap: () async {
-                                                    textController2?.clear();
+                                                    textController1?.clear();
                                                     setState(() {});
                                                   },
                                                   child: Icon(
@@ -544,89 +458,9 @@ class _MyProfileScreenWidgetState extends State<MyProfileScreenWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           16, 16, 16, 0),
                                       child: TextFormField(
-                                        controller: textController3,
-                                        readOnly: true,
-                                        obscureText: false,
-                                        decoration: InputDecoration(
-                                          hintText: 'Search your offers',
-                                          hintStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .bodyText1
-                                              .override(
-                                                fontFamily: 'Urbanist',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .greyscale400,
-                                              ),
-                                          enabledBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .alternate,
-                                              width: 1,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(16),
-                                          ),
-                                          focusedBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .alternate,
-                                              width: 1,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(16),
-                                          ),
-                                          errorBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .alertRed,
-                                              width: 1,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(16),
-                                          ),
-                                          focusedErrorBorder:
-                                              OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .alertRed,
-                                              width: 1,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(16),
-                                          ),
-                                          filled: true,
-                                          fillColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .alternate,
-                                          prefixIcon: Icon(
-                                            FFIcons.ksearch,
-                                            color: FlutterFlowTheme.of(context)
-                                                .greyscale400,
-                                          ),
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyText1
-                                            .override(
-                                              fontFamily: 'Urbanist',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                              lineHeight: 1,
-                                            ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          16, 16, 16, 0),
-                                      child: TextFormField(
-                                        controller: textController4,
+                                        controller: textController2,
                                         onChanged: (_) => EasyDebounce.debounce(
-                                          'textController4',
+                                          'textController2',
                                           Duration(milliseconds: 2000),
                                           () => setState(() {}),
                                         ),
@@ -692,11 +526,11 @@ class _MyProfileScreenWidgetState extends State<MyProfileScreenWidget> {
                                             color: FlutterFlowTheme.of(context)
                                                 .greyscale400,
                                           ),
-                                          suffixIcon: textController4!
+                                          suffixIcon: textController2!
                                                   .text.isNotEmpty
                                               ? InkWell(
                                                   onTap: () async {
-                                                    textController4?.clear();
+                                                    textController2?.clear();
                                                     setState(() {});
                                                   },
                                                   child: Icon(

@@ -39,7 +39,7 @@ class _OfferMadeCardWidgetState extends State<OfferMadeCardWidget> {
                 width: 4,
                 height: double.infinity,
                 decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).primaryColor,
+                  color: FlutterFlowTheme.of(context).blue,
                   borderRadius: BorderRadius.circular(4),
                 ),
               ),
@@ -63,14 +63,12 @@ class _OfferMadeCardWidgetState extends State<OfferMadeCardWidget> {
                         children: [
                           Text(
                             'Offer Made',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyText1
-                                .override(
-                                  fontFamily: 'Urbanist',
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryColor,
-                                  fontWeight: FontWeight.w500,
-                                ),
+                            style:
+                                FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Urbanist',
+                                      color: FlutterFlowTheme.of(context).blue,
+                                      fontWeight: FontWeight.w500,
+                                    ),
                           ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(4, 0, 0, 0),

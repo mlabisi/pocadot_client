@@ -73,7 +73,7 @@ class _SuggestionsScreenWidgetState extends State<SuggestionsScreenWidget> {
               color: FlutterFlowTheme.of(context).primaryBackground,
             ),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 90),
+              padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 80),
               child: FlutterFlowSwipeableStack(
                 topCardHeightFraction: 0.8,
                 middleCardHeightFraction: 0.84,

@@ -58,8 +58,8 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
               color: FlutterFlowTheme.of(context).primaryColor,
               size: 25,
             ),
-            onPressed: () {
-              print('IconButton pressed ...');
+            onPressed: () async {
+              context.pushNamed('AddListingScreen');
             },
           ),
           NotificationsButtonWidget(),

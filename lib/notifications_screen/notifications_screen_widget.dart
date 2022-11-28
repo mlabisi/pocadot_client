@@ -108,10 +108,10 @@ class _NotificationsScreenWidgetState extends State<NotificationsScreenWidget> {
                                   scrollDirection: Axis.vertical,
                                   children: [
                                     OfferReceivedCardWidget(),
+                                    OfferMadeCardWidget(),
                                     OfferAcceptedCardWidget(),
                                     OfferRejectedCardWidget(),
                                     OfferCancelledCardWidget(),
-                                    OfferMadeCardWidget(),
                                   ],
                                 ),
                               ),

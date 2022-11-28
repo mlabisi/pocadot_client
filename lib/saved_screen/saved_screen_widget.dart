@@ -22,22 +22,19 @@ class SavedScreenWidget extends StatefulWidget {
 class _SavedScreenWidgetState extends State<SavedScreenWidget>
     with TickerProviderStateMixin {
   String? choiceChipsValue;
-  TextEditingController? textController1;
-  TextEditingController? textController2;
+  TextEditingController? textController;
   final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    textController1 = TextEditingController();
-    textController2 = TextEditingController();
+    textController = TextEditingController();
   }
 
   @override
   void dispose() {
-    textController1?.dispose();
-    textController2?.dispose();
+    textController?.dispose();
     super.dispose();
   }
 
@@ -88,65 +85,9 @@ class _SavedScreenWidgetState extends State<SavedScreenWidget>
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
                   child: TextFormField(
-                    controller: textController1,
-                    readOnly: true,
-                    obscureText: false,
-                    decoration: InputDecoration(
-                      hintText: 'Search for groups and idols',
-                      hintStyle: FlutterFlowTheme.of(context)
-                          .bodyText1
-                          .override(
-                            fontFamily: 'Urbanist',
-                            color: FlutterFlowTheme.of(context).greyscale400,
-                          ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).alternate,
-                          width: 1,
-                        ),
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).alternate,
-                          width: 1,
-                        ),
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      errorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).alertRed,
-                          width: 1,
-                        ),
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      focusedErrorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).alertRed,
-                          width: 1,
-                        ),
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      filled: true,
-                      fillColor: FlutterFlowTheme.of(context).alternate,
-                      prefixIcon: Icon(
-                        FFIcons.ksearch,
-                        color: FlutterFlowTheme.of(context).greyscale400,
-                      ),
-                    ),
-                    style: FlutterFlowTheme.of(context).bodyText1.override(
-                          fontFamily: 'Urbanist',
-                          color: FlutterFlowTheme.of(context).primaryText,
-                          lineHeight: 1,
-                        ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
-                  child: TextFormField(
-                    controller: textController2,
+                    controller: textController,
                     onChanged: (_) => EasyDebounce.debounce(
-                      'textController2',
+                      'textController',
                       Duration(milliseconds: 2000),
                       () => setState(() {}),
                     ),
@@ -193,10 +134,10 @@ class _SavedScreenWidgetState extends State<SavedScreenWidget>
                         FFIcons.ksearch,
                         color: FlutterFlowTheme.of(context).greyscale400,
                       ),
-                      suffixIcon: textController2!.text.isNotEmpty
+                      suffixIcon: textController!.text.isNotEmpty
                           ? InkWell(
                               onTap: () async {
-                                textController2?.clear();
+                                textController?.clear();
                                 setState(() {});
                               },
                               child: Icon(

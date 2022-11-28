@@ -103,6 +103,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => NotificationsScreenWidget(),
             ),
             FFRoute(
+              name: 'AddListingScreen',
+              path: 'addListingScreen',
+              builder: (context, params) => AddListingScreenWidget(),
+            ),
+            FFRoute(
               name: 'SearchScreen',
               path: 'searchScreen',
               builder: (context, params) => SearchScreenWidget(),
