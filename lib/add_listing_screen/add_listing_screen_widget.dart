@@ -1127,7 +1127,7 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                         onPressed: () {
                                           print('Button pressed ...');
                                         },
-                                        text: 'Reset',
+                                        text: 'Cancel',
                                         options: FFButtonOptions(
                                           width: 130,
                                           height: 40,
@@ -1154,7 +1154,7 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                         onPressed: () {
                                           print('Button pressed ...');
                                         },
-                                        text: 'Apply',
+                                        text: 'Create',
                                         options: FFButtonOptions(
                                           width: 130,
                                           height: 40,
