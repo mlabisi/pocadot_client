@@ -121,6 +121,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'FilterResultsScreen',
               path: 'filterResultsScreen',
               builder: (context, params) => FilterResultsScreenWidget(),
+            ),
+            FFRoute(
+              name: 'ViewListingScreen',
+              path: 'viewListingScreen',
+              builder: (context, params) => ViewListingScreenWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),
