@@ -123,19 +123,29 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => FilterResultsScreenWidget(),
             ),
             FFRoute(
-              name: 'ViewListingScreen',
-              path: 'viewListingScreen',
-              builder: (context, params) => ViewListingScreenWidget(),
-            ),
-            FFRoute(
               name: 'ViewProfileScreen',
               path: 'viewProfileScreen',
               builder: (context, params) => ViewProfileScreenWidget(),
             ),
             FFRoute(
+              name: 'ViewListingScreen',
+              path: 'viewListingScreen',
+              builder: (context, params) => ViewListingScreenWidget(),
+            ),
+            FFRoute(
               name: 'MakeOfferScreen',
               path: 'makeOfferScreen',
               builder: (context, params) => MakeOfferScreenWidget(),
+            ),
+            FFRoute(
+              name: 'MyListingScreen',
+              path: 'myListingScreen',
+              builder: (context, params) => MyListingScreenWidget(),
+            ),
+            FFRoute(
+              name: 'EditProfileScreen',
+              path: 'editProfileScreen',
+              builder: (context, params) => EditProfileScreenWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),

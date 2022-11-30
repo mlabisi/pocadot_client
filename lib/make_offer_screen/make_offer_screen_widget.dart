@@ -395,11 +395,12 @@ class _MakeOfferScreenWidgetState extends State<MakeOfferScreenWidget> {
                                 color:
                                     FlutterFlowTheme.of(context).primaryColor,
                                 textStyle: FlutterFlowTheme.of(context)
-                                    .subtitle2
+                                    .bodyText1
                                     .override(
-                                      fontFamily: 'Jua',
+                                      fontFamily: 'Urbanist',
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBackground,
+                                      fontWeight: FontWeight.bold,
                                     ),
                                 borderSide: BorderSide(
                                   color: Colors.transparent,

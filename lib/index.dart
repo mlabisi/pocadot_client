@@ -17,9 +17,13 @@ export 'collection_detail_screen/collection_detail_screen_widget.dart'
     show CollectionDetailScreenWidget;
 export 'filter_results_screen/filter_results_screen_widget.dart'
     show FilterResultsScreenWidget;
-export 'view_listing_screen/view_listing_screen_widget.dart'
-    show ViewListingScreenWidget;
 export 'view_profile_screen/view_profile_screen_widget.dart'
     show ViewProfileScreenWidget;
+export 'view_listing_screen/view_listing_screen_widget.dart'
+    show ViewListingScreenWidget;
 export 'make_offer_screen/make_offer_screen_widget.dart'
     show MakeOfferScreenWidget;
+export 'my_listing_screen/my_listing_screen_widget.dart'
+    show MyListingScreenWidget;
+export 'edit_profile_screen/edit_profile_screen_widget.dart'
+    show EditProfileScreenWidget;
