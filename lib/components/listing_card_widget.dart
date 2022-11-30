@@ -58,8 +58,7 @@ class _ListingCardWidgetState extends State<ListingCardWidget> {
                             borderRadius: BorderRadius.circular(20),
                             child: Image.network(
                               'https://media.karousell.com/media/photos/products/2022/7/12/wtb_im_nayeon_pop_ver_rainbow__1657668775_9fcbc9b9_progressive.jpg',
-                              width: 100,
-                              height: 100,
+                              width: double.infinity,
                               fit: BoxFit.fitWidth,
                             ),
                           ),
@@ -87,6 +86,7 @@ class _ListingCardWidgetState extends State<ListingCardWidget> {
                                         fontFamily: 'Jua',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
+                                        fontSize: 20,
                                       ),
                                 ),
                                 Expanded(
@@ -101,7 +101,7 @@ class _ListingCardWidgetState extends State<ListingCardWidget> {
                                             fontFamily: 'Urbanist',
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryText,
-                                            fontSize: 12,
+                                            fontSize: 10,
                                           ),
                                     ),
                                   ),
@@ -180,35 +180,36 @@ class _ListingCardWidgetState extends State<ListingCardWidget> {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Container(
-              width: 35,
-              height: 35,
-              decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).primaryBackground,
-                boxShadow: [
-                  BoxShadow(
-                    blurRadius: 4,
-                    color: Color(0x33000000),
-                    offset: Offset(0, 2),
-                  )
-                ],
-                shape: BoxShape.circle,
-              ),
-              child: ToggleIcon(
-                onPressed: () async {
-                  setState(
-                      () => FFAppState().testToggle = !FFAppState().testToggle);
-                },
-                value: FFAppState().testToggle,
-                onIcon: Icon(
-                  FFIcons.kheart,
-                  color: FlutterFlowTheme.of(context).primaryColor,
-                  size: 25,
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(0, 8, 8, 0),
+              child: Container(
+                width: 40,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(22),
+                    bottomRight: Radius.circular(0),
+                    topLeft: Radius.circular(0),
+                    topRight: Radius.circular(22),
+                  ),
+                  shape: BoxShape.rectangle,
                 ),
-                offIcon: Icon(
-                  FFIcons.kheart,
-                  color: FlutterFlowTheme.of(context).primaryColor,
-                  size: 25,
+                child: ToggleIcon(
+                  onPressed: () async {
+                    setState(() =>
+                        FFAppState().testToggle = !FFAppState().testToggle);
+                  },
+                  value: FFAppState().testToggle,
+                  onIcon: Icon(
+                    FFIcons.kheart,
+                    color: FlutterFlowTheme.of(context).boldRed,
+                    size: 20,
+                  ),
+                  offIcon: Icon(
+                    FFIcons.kheart,
+                    color: FlutterFlowTheme.of(context).boldRed,
+                    size: 20,
+                  ),
                 ),
               ),
             ),

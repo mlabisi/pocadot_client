@@ -509,16 +509,21 @@ class _ViewListingScreenWidgetState extends State<ViewListingScreenWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Container(
-                                      width: 32,
-                                      height: 32,
-                                      clipBehavior: Clip.antiAlias,
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                      ),
-                                      child: Image.network(
-                                        'https://picsum.photos/seed/539/600',
-                                        fit: BoxFit.cover,
+                                    InkWell(
+                                      onTap: () async {
+                                        context.pushNamed('ViewProfileScreen');
+                                      },
+                                      child: Container(
+                                        width: 32,
+                                        height: 32,
+                                        clipBehavior: Clip.antiAlias,
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: Image.network(
+                                          'https://picsum.photos/seed/539/600',
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
                                     ),
                                     Expanded(
@@ -541,34 +546,31 @@ class _ViewListingScreenWidgetState extends State<ViewListingScreenWidget> {
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     2, 0, 0, 0),
-                                            child: Text(
-                                              'itsgoindownnn',
-                                              maxLines: 1,
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyText1
-                                                  .override(
-                                                    fontFamily: 'Urbanist',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryColor,
-                                                    fontWeight: FontWeight.bold,
-                                                  ),
+                                            child: InkWell(
+                                              onTap: () async {
+                                                context.pushNamed(
+                                                    'ViewProfileScreen');
+                                              },
+                                              child: Text(
+                                                'itsgoindownnn',
+                                                maxLines: 1,
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyText1
+                                                    .override(
+                                                      fontFamily: 'Urbanist',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryColor,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                    ),
+                                              ),
                                             ),
                                           ),
                                         ],
                                       ),
-                                    ),
-                                    Text(
-                                      'View Profile',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyText1
-                                          .override(
-                                            fontFamily: 'Urbanist',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
-                                            fontWeight: FontWeight.bold,
-                                          ),
                                     ),
                                   ],
                                 ),
@@ -607,10 +609,14 @@ class _ViewListingScreenWidgetState extends State<ViewListingScreenWidget> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             FFButtonWidget(
-                              onPressed: () {
-                                print('Button pressed ...');
+                              onPressed: () async {
+                                context.pushNamed('ViewProfileScreen');
                               },
-                              text: 'Reset',
+                              text: 'View Profile',
+                              icon: Icon(
+                                FFIcons.kprofile,
+                                size: 16,
+                              ),
                               options: FFButtonOptions(
                                 width: 130,
                                 height: 40,
@@ -634,9 +640,12 @@ class _ViewListingScreenWidgetState extends State<ViewListingScreenWidget> {
                               onPressed: () {
                                 print('Button pressed ...');
                               },
-                              text: 'Apply',
+                              text: 'Make Offer',
+                              icon: Icon(
+                                FFIcons.kticketStar,
+                                size: 16,
+                              ),
                               options: FFButtonOptions(
-                                width: 130,
                                 height: 40,
                                 color:
                                     FlutterFlowTheme.of(context).primaryColor,

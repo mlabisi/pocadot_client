@@ -126,6 +126,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'ViewListingScreen',
               path: 'viewListingScreen',
               builder: (context, params) => ViewListingScreenWidget(),
+            ),
+            FFRoute(
+              name: 'ViewProfileScreen',
+              path: 'viewProfileScreen',
+              builder: (context, params) => ViewProfileScreenWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),
