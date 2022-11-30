@@ -53,7 +53,7 @@ class _ViewProfileScreenWidgetState extends State<ViewProfileScreenWidget> {
           borderWidth: 1,
           buttonSize: 55,
           icon: Icon(
-            FFIcons.karrowLeft,
+            Icons.arrow_back_rounded,
             color: FlutterFlowTheme.of(context).primaryColor,
             size: 25,
           ),

@@ -131,6 +131,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'ViewProfileScreen',
               path: 'viewProfileScreen',
               builder: (context, params) => ViewProfileScreenWidget(),
+            ),
+            FFRoute(
+              name: 'MakeOfferScreen',
+              path: 'makeOfferScreen',
+              builder: (context, params) => MakeOfferScreenWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),

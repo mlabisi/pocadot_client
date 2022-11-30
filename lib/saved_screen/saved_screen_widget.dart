@@ -2,6 +2,7 @@ import '../components/listing_card_widget.dart';
 import '../components/notifications_button_widget.dart';
 import '../flutter_flow/flutter_flow_animations.dart';
 import '../flutter_flow/flutter_flow_choice_chips.dart';
+import '../flutter_flow/flutter_flow_drop_down.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -22,6 +23,8 @@ class SavedScreenWidget extends StatefulWidget {
 class _SavedScreenWidgetState extends State<SavedScreenWidget>
     with TickerProviderStateMixin {
   String? choiceChipsValue;
+  String? dropDownValue1;
+  String? dropDownValue2;
   TextEditingController? textController;
   final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -273,20 +276,49 @@ class _SavedScreenWidgetState extends State<SavedScreenWidget>
                                                         .primaryText,
                                               ),
                                         ),
-                                        FlutterFlowIconButton(
-                                          borderColor: Colors.transparent,
-                                          borderRadius: 30,
-                                          borderWidth: 1,
-                                          buttonSize: 40,
+                                        FlutterFlowDropDown<String>(
+                                          initialOption: dropDownValue1 ??=
+                                              'Default',
+                                          options: [
+                                            'A - Z',
+                                            'Recently Listed',
+                                            'Price Low to High',
+                                            'Price High to Low',
+                                            'Oldest',
+                                            'Default'
+                                          ],
+                                          onChanged: (val) => setState(
+                                              () => dropDownValue1 = val),
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.4,
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .bodyText1
+                                              .override(
+                                                fontFamily: 'Urbanist',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                              ),
                                           icon: Icon(
                                             FFIcons.kswap,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryColor,
-                                            size: 20,
+                                            size: 15,
                                           ),
-                                          onPressed: () {
-                                            print('IconButton pressed ...');
-                                          },
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryBackground,
+                                          elevation: 2,
+                                          borderColor: Colors.transparent,
+                                          borderWidth: 0,
+                                          borderRadius: 0,
+                                          margin:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  4, 4, 12, 4),
+                                          hidesUnderline: true,
                                         ),
                                       ],
                                     ),
@@ -327,7 +359,7 @@ class _SavedScreenWidgetState extends State<SavedScreenWidget>
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        16, 8, 16, 0),
+                                        0, 8, 0, 0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -344,20 +376,49 @@ class _SavedScreenWidgetState extends State<SavedScreenWidget>
                                                         .primaryText,
                                               ),
                                         ),
-                                        FlutterFlowIconButton(
-                                          borderColor: Colors.transparent,
-                                          borderRadius: 30,
-                                          borderWidth: 1,
-                                          buttonSize: 40,
+                                        FlutterFlowDropDown<String>(
+                                          initialOption: dropDownValue2 ??=
+                                              'Default',
+                                          options: [
+                                            'A - Z',
+                                            'Recently Listed',
+                                            'Price Low to High',
+                                            'Price High to Low',
+                                            'Oldest',
+                                            'Default'
+                                          ],
+                                          onChanged: (val) => setState(
+                                              () => dropDownValue2 = val),
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.4,
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .bodyText1
+                                              .override(
+                                                fontFamily: 'Urbanist',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                              ),
                                           icon: Icon(
                                             FFIcons.kswap,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryColor,
-                                            size: 20,
+                                            size: 15,
                                           ),
-                                          onPressed: () {
-                                            print('IconButton pressed ...');
-                                          },
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryBackground,
+                                          elevation: 2,
+                                          borderColor: Colors.transparent,
+                                          borderWidth: 0,
+                                          borderRadius: 0,
+                                          margin:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  4, 4, 12, 4),
+                                          hidesUnderline: true,
                                         ),
                                       ],
                                     ),

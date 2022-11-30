@@ -21,3 +21,5 @@ export 'view_listing_screen/view_listing_screen_widget.dart'
     show ViewListingScreenWidget;
 export 'view_profile_screen/view_profile_screen_widget.dart'
     show ViewProfileScreenWidget;
+export 'make_offer_screen/make_offer_screen_widget.dart'
+    show MakeOfferScreenWidget;

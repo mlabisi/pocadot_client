@@ -130,7 +130,8 @@ class _MyProfileScreenWidgetState extends State<MyProfileScreenWidget> {
                             child: TabBarView(
                               children: [
                                 Column(
-                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     Container(
                                       width: double.infinity,
@@ -401,6 +402,11 @@ class _MyProfileScreenWidgetState extends State<MyProfileScreenWidget> {
                                           ListingCardWidget(),
                                         ],
                                       ),
+                                    ),
+                                    Container(
+                                      width: 100,
+                                      height: 100,
+                                      decoration: BoxDecoration(),
                                     ),
                                   ],
                                 ),
