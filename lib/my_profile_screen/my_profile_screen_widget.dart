@@ -74,8 +74,8 @@ class _MyProfileScreenWidgetState extends State<MyProfileScreenWidget> {
               color: FlutterFlowTheme.of(context).primaryColor,
               size: 30,
             ),
-            onPressed: () {
-              print('IconButton pressed ...');
+            onPressed: () async {
+              context.pushNamed('EditProfileScreen');
             },
           ),
           NotificationsButtonWidget(),
