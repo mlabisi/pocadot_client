@@ -51,7 +51,7 @@ class _IdolPhotocardsScreenWidgetState
           borderWidth: 1,
           buttonSize: 55,
           icon: Icon(
-            Icons.close,
+            Icons.arrow_back_rounded,
             color: FlutterFlowTheme.of(context).primaryColor,
             size: 25,
           ),

@@ -17,13 +17,13 @@ class AddListingScreenWidget extends StatefulWidget {
 }
 
 class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
-  String? dropDownValue;
+  String? dropDownValue1;
+  String? dropDownValue2;
   TextEditingController? textController1;
-  TextEditingController? textController2;
   double? ratingBarValue;
   bool? checkboxValue1;
   bool? checkboxValue2;
-  TextEditingController? textController3;
+  TextEditingController? textController2;
   bool? switchValue;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -32,14 +32,12 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
     super.initState();
     textController1 = TextEditingController();
     textController2 = TextEditingController();
-    textController3 = TextEditingController();
   }
 
   @override
   void dispose() {
     textController1?.dispose();
     textController2?.dispose();
-    textController3?.dispose();
     super.dispose();
   }
 
@@ -416,8 +414,8 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                           0, 8, 0, 0),
                                       child: FlutterFlowDropDown<String>(
                                         options: ['Option 1'],
-                                        onChanged: (val) =>
-                                            setState(() => dropDownValue = val),
+                                        onChanged: (val) => setState(
+                                            () => dropDownValue1 = val),
                                         height: 50,
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyText1
@@ -456,7 +454,7 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0, 0, 0, 4),
                                           child: Text(
-                                            'Era / Release',
+                                            'Photocard',
                                             style: FlutterFlowTheme.of(context)
                                                 .subtitle2
                                                 .override(
@@ -485,7 +483,7 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                         clipBehavior: Clip.none,
                                         children: [
                                           Text(
-                                            'Share the name of the album, season’s greetings, era, etc that this photocard came from.',
+                                            'Enter the name of an album, season’s greetings, merchandise, etc and select the photocard this listing is for. Select \'OTHER\' if the photocard is not listed.',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyText1,
                                           ),
@@ -494,66 +492,13 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 8, 0, 8),
-                                      child: TextFormField(
-                                        controller: textController1,
-                                        autofocus: true,
-                                        obscureText: false,
-                                        decoration: InputDecoration(
-                                          hintText:
-                                              'Name of Album, Pack, Season\'s Greeting',
-                                          hintStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .bodyText1
-                                              .override(
-                                                fontFamily: 'Urbanist',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .greyscale700,
-                                              ),
-                                          enabledBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .greyscale400,
-                                              width: 1,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(12),
-                                          ),
-                                          focusedBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .greyscale400,
-                                              width: 1,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(12),
-                                          ),
-                                          errorBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color: Color(0x00000000),
-                                              width: 1,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(12),
-                                          ),
-                                          focusedErrorBorder:
-                                              OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color: Color(0x00000000),
-                                              width: 1,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(12),
-                                          ),
-                                          filled: true,
-                                          fillColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .tertiaryColor,
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
+                                          0, 8, 0, 0),
+                                      child: FlutterFlowDropDown<String>(
+                                        options: ['Option 1'],
+                                        onChanged: (val) => setState(
+                                            () => dropDownValue2 = val),
+                                        height: 50,
+                                        textStyle: FlutterFlowTheme.of(context)
                                             .bodyText1
                                             .override(
                                               fontFamily: 'Urbanist',
@@ -561,6 +506,16 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .greyscale700,
                                             ),
+                                        hintText: 'Select a photocard',
+                                        fillColor: FlutterFlowTheme.of(context)
+                                            .tertiaryColor,
+                                        elevation: 2,
+                                        borderColor: Colors.transparent,
+                                        borderWidth: 0,
+                                        borderRadius: 0,
+                                        margin: EdgeInsetsDirectional.fromSTEB(
+                                            12, 4, 12, 4),
+                                        hidesUnderline: true,
                                       ),
                                     ),
                                   ],
@@ -620,7 +575,7 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0, 8, 0, 8),
                                       child: TextFormField(
-                                        controller: textController2,
+                                        controller: textController1,
                                         autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(
@@ -971,7 +926,7 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0, 8, 0, 8),
                                       child: TextFormField(
-                                        controller: textController3,
+                                        controller: textController2,
                                         autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(

@@ -162,35 +162,68 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                           children: [
                             Padding(
                               padding:
+                                  EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0, 8, 0, 8),
+                                    child: Text(
+                                      'Quick Links',
+                                      style: FlutterFlowTheme.of(context)
+                                          .subtitle2
+                                          .override(
+                                            fontFamily: 'Jua',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding:
                                   EdgeInsetsDirectional.fromSTEB(16, 8, 16, 0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
                                 children: [
-                                  Expanded(
-                                    flex: 1,
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 8, 0),
-                                      child: Container(
-                                        width: 100,
-                                        height: 100,
-                                        decoration: BoxDecoration(
-                                          color:
-                                              FlutterFlowTheme.of(context).pink,
-                                          borderRadius:
-                                              BorderRadius.circular(24),
-                                        ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0, 8, 4, 8),
+                                    child: Container(
+                                      width: MediaQuery.of(context).size.width *
+                                          0.3,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        boxShadow: [
+                                          BoxShadow(
+                                            blurRadius: 4,
+                                            color: Color(0x230E151B),
+                                            offset: Offset(0, 2),
+                                          )
+                                        ],
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            8, 16, 8, 16),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
                                           children: [
                                             Icon(
                                               FFIcons.kheart,
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .white,
+                                                      .primaryColor,
                                               size: 32,
                                             ),
                                             Padding(
@@ -205,7 +238,7 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                                                           fontFamily: 'Jua',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .white,
+                                                              .primaryColor,
                                                         ),
                                               ),
                                             ),
@@ -214,30 +247,39 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                                       ),
                                     ),
                                   ),
-                                  Expanded(
-                                    flex: 1,
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 8, 0),
-                                      child: Container(
-                                        width: 100,
-                                        height: 100,
-                                        decoration: BoxDecoration(
-                                          color:
-                                              FlutterFlowTheme.of(context).blue,
-                                          borderRadius:
-                                              BorderRadius.circular(24),
-                                        ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0, 8, 4, 8),
+                                    child: Container(
+                                      width: MediaQuery.of(context).size.width *
+                                          0.3,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        boxShadow: [
+                                          BoxShadow(
+                                            blurRadius: 4,
+                                            color: Color(0x230E151B),
+                                            offset: Offset(0, 2),
+                                          )
+                                        ],
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            8, 16, 8, 16),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
                                           children: [
                                             Icon(
                                               Icons.remove_red_eye_outlined,
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .white,
+                                                      .primaryColor,
                                               size: 32,
                                             ),
                                             Padding(
@@ -252,7 +294,7 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                                                           fontFamily: 'Jua',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .white,
+                                                              .primaryColor,
                                                         ),
                                               ),
                                             ),
@@ -261,46 +303,59 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                                       ),
                                     ),
                                   ),
-                                  Expanded(
-                                    flex: 1,
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0, 8, 0, 8),
                                     child: Container(
-                                      width: 100,
-                                      height: 100,
+                                      width: MediaQuery.of(context).size.width *
+                                          0.3,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
-                                            .boldRed,
-                                        borderRadius: BorderRadius.circular(24),
-                                      ),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Icon(
-                                            FFIcons.kticketStar,
-                                            color: FlutterFlowTheme.of(context)
-                                                .white,
-                                            size: 32,
-                                          ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0, 4, 0, 0),
-                                            child: Text(
-                                              'Offer Sent',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .subtitle2
-                                                      .override(
-                                                        fontFamily: 'Jua',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .white,
-                                                      ),
-                                            ),
-                                          ),
+                                            .secondaryBackground,
+                                        boxShadow: [
+                                          BoxShadow(
+                                            blurRadius: 4,
+                                            color: Color(0x230E151B),
+                                            offset: Offset(0, 2),
+                                          )
                                         ],
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            8, 16, 8, 16),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Icon(
+                                              FFIcons.kticketStar,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryColor,
+                                              size: 32,
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0, 4, 0, 0),
+                                              child: Text(
+                                                'Offer Made',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .subtitle2
+                                                        .override(
+                                                          fontFamily: 'Jua',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryColor,
+                                                        ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ),

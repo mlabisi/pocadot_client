@@ -320,7 +320,7 @@ class _PhotocardDetailsScreenWidgetState
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    16, 16, 16, 8),
+                                    16, 8, 16, 12),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [

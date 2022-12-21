@@ -109,7 +109,7 @@ class _IdolPhotocardsWidgetState extends State<IdolPhotocardsWidget> {
                     color: FlutterFlowTheme.of(context).greyscale200,
                   ),
                   Wrap(
-                    spacing: 4,
+                    spacing: 2,
                     runSpacing: 8,
                     alignment: WrapAlignment.start,
                     crossAxisAlignment: WrapCrossAlignment.start,
