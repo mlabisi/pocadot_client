@@ -59,7 +59,7 @@ class _CollectionScreenWidgetState extends State<CollectionScreenWidget> {
             borderWidth: 1,
             buttonSize: 60,
             icon: Icon(
-              FFIcons.keditSquare,
+              FFIcons.kfingerHeart,
               color: FlutterFlowTheme.of(context).primaryColor,
               size: 30,
             ),

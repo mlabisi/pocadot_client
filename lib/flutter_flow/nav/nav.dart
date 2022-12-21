@@ -156,6 +156,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'EditProfileScreen',
               path: 'editProfileScreen',
               builder: (context, params) => EditProfileScreenWidget(),
+            ),
+            FFRoute(
+              name: 'SettingsScreen',
+              path: 'settingsScreen',
+              builder: (context, params) => SettingsScreenWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),

@@ -32,3 +32,4 @@ export 'my_listing_screen/my_listing_screen_widget.dart'
     show MyListingScreenWidget;
 export 'edit_profile_screen/edit_profile_screen_widget.dart'
     show EditProfileScreenWidget;
+export 'settings_screen/settings_screen_widget.dart' show SettingsScreenWidget;

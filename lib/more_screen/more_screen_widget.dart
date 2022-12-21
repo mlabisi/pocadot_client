@@ -58,7 +58,12 @@ class _MoreScreenWidgetState extends State<MoreScreenWidget> {
                 MyListingsRowWidget(),
                 MyOffersRowWidget(),
                 MyBiasesRowWidget(),
-                MySettingsRowWidget(),
+                InkWell(
+                  onTap: () async {
+                    context.pushNamed('SettingsScreen');
+                  },
+                  child: MySettingsRowWidget(),
+                ),
                 ChangePasswordRowWidget(),
                 LogoutButtonWidget(),
                 DeleteAccountButtonWidget(),
