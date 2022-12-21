@@ -5,6 +5,7 @@ import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class EditProfileScreenWidget extends StatefulWidget {
   const EditProfileScreenWidget({Key? key}) : super(key: key);
@@ -44,6 +45,8 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -429,6 +432,8 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                                   .tertiaryColor,
                                           prefixIcon: Icon(
                                             FFIcons.kprofile,
+                                            color: FlutterFlowTheme.of(context)
+                                                .greyscale500,
                                             size: 20,
                                           ),
                                           suffixIcon: Icon(
@@ -687,6 +692,8 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                                   .tertiaryColor,
                                           prefixIcon: Icon(
                                             FFIcons.ktwitter,
+                                            color: FlutterFlowTheme.of(context)
+                                                .greyscale500,
                                             size: 20,
                                           ),
                                         ),
@@ -762,6 +769,8 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                                   .tertiaryColor,
                                           prefixIcon: Icon(
                                             FFIcons.kinsta,
+                                            color: FlutterFlowTheme.of(context)
+                                                .greyscale500,
                                             size: 20,
                                           ),
                                         ),
@@ -836,6 +845,8 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                                   .tertiaryColor,
                                           prefixIcon: Icon(
                                             FFIcons.kcarrdSymbol,
+                                            color: FlutterFlowTheme.of(context)
+                                                .greyscale500,
                                             size: 20,
                                           ),
                                         ),

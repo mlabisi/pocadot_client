@@ -3,6 +3,7 @@ import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class ProfileHeaderWidget extends StatefulWidget {
   const ProfileHeaderWidget({Key? key}) : super(key: key);
@@ -14,6 +15,8 @@ class ProfileHeaderWidget extends StatefulWidget {
 class _ProfileHeaderWidgetState extends State<ProfileHeaderWidget> {
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
       child: Column(

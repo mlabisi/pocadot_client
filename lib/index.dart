@@ -4,9 +4,14 @@ export 'suggestions_screen/suggestions_screen_widget.dart'
 export 'suggestion_preferences/suggestion_preferences_widget.dart'
     show SuggestionPreferencesWidget;
 export 'explore_screen/explore_screen_widget.dart' show ExploreScreenWidget;
-export 'saved_screen/saved_screen_widget.dart' show SavedScreenWidget;
 export 'my_profile_screen/my_profile_screen_widget.dart'
     show MyProfileScreenWidget;
+export 'collection_screen/collection_screen_widget.dart'
+    show CollectionScreenWidget;
+export 'idol_photocards_screen/idol_photocards_screen_widget.dart'
+    show IdolPhotocardsScreenWidget;
+export 'photocard_details_screen/photocard_details_screen_widget.dart'
+    show PhotocardDetailsScreenWidget;
 export 'more_screen/more_screen_widget.dart' show MoreScreenWidget;
 export 'notifications_screen/notifications_screen_widget.dart'
     show NotificationsScreenWidget;

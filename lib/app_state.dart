@@ -1,7 +1,8 @@
+import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter_flow/lat_lng.dart';
 
-class FFAppState {
+class FFAppState extends ChangeNotifier {
   static final FFAppState _instance = FFAppState._internal();
 
   factory FFAppState() {
@@ -22,6 +23,8 @@ class FFAppState {
   bool _testToggle = false;
   bool get testToggle => _testToggle;
   set testToggle(bool _value) {
+    notifyListeners();
+
     _testToggle = _value;
     prefs.setBool('ff_testToggle', _value);
   }

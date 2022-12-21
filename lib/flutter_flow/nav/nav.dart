@@ -33,7 +33,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       errorBuilder: (context, _) => appStateNotifier.showSplashImage
           ? Builder(
               builder: (context) => Container(
-                color: FlutterFlowTheme.of(context).primaryText,
+                color: FlutterFlowTheme.of(context).primaryBackground,
                 child: Image.asset(
                   'assets/images/Type=Logo_Text_Light,_Component=Logo@3x.png',
                   fit: BoxFit.scaleDown,
@@ -48,7 +48,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, _) => appStateNotifier.showSplashImage
               ? Builder(
                   builder: (context) => Container(
-                    color: FlutterFlowTheme.of(context).primaryText,
+                    color: FlutterFlowTheme.of(context).primaryBackground,
                     child: Image.asset(
                       'assets/images/Type=Logo_Text_Light,_Component=Logo@3x.png',
                       fit: BoxFit.scaleDown,
@@ -77,18 +77,28 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   : ExploreScreenWidget(),
             ),
             FFRoute(
-              name: 'SavedScreen',
-              path: 'savedScreen',
-              builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'SavedScreen')
-                  : SavedScreenWidget(),
-            ),
-            FFRoute(
               name: 'MyProfileScreen',
               path: 'myProfileScreen',
               builder: (context, params) => params.isEmpty
                   ? NavBarPage(initialPage: 'MyProfileScreen')
                   : MyProfileScreenWidget(),
+            ),
+            FFRoute(
+              name: 'CollectionScreen',
+              path: 'collectionScreen',
+              builder: (context, params) => params.isEmpty
+                  ? NavBarPage(initialPage: 'CollectionScreen')
+                  : CollectionScreenWidget(),
+            ),
+            FFRoute(
+              name: 'IdolPhotocardsScreen',
+              path: 'idolPhotocardsScreen',
+              builder: (context, params) => IdolPhotocardsScreenWidget(),
+            ),
+            FFRoute(
+              name: 'PhotocardDetailsScreen',
+              path: 'photocardDetailsScreen',
+              builder: (context, params) => PhotocardDetailsScreenWidget(),
             ),
             FFRoute(
               name: 'MoreScreen',

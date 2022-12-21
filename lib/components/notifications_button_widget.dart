@@ -4,6 +4,7 @@ import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class NotificationsButtonWidget extends StatefulWidget {
   const NotificationsButtonWidget({Key? key}) : super(key: key);
@@ -16,6 +17,8 @@ class NotificationsButtonWidget extends StatefulWidget {
 class _NotificationsButtonWidgetState extends State<NotificationsButtonWidget> {
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return FlutterFlowIconButton(
       borderColor: Colors.transparent,
       borderRadius: 30,

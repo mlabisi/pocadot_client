@@ -3,6 +3,7 @@ import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class ListingTagWidget extends StatefulWidget {
   const ListingTagWidget({Key? key}) : super(key: key);
@@ -14,6 +15,8 @@ class ListingTagWidget extends StatefulWidget {
 class _ListingTagWidgetState extends State<ListingTagWidget> {
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Container(
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).alternate,

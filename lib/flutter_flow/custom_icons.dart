@@ -218,4 +218,8 @@ class FFIcons {
       IconData(0xe808, fontFamily: _pocadotIconsFamily);
   static const IconData kcondition =
       IconData(0xe809, fontFamily: _pocadotIconsFamily);
+  static const IconData ksparkleOutline =
+      IconData(0xe80b, fontFamily: _pocadotIconsFamily);
+  static const IconData ksparkles =
+      IconData(0xe80c, fontFamily: _pocadotIconsFamily);
 }

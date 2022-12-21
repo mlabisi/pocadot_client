@@ -1,3 +1,4 @@
+import 'package:provider/provider.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -15,9 +16,12 @@ void main() async {
 
   await FlutterFlowTheme.initialize();
 
-  FFAppState(); // Initialize FFAppState
+  final appState = FFAppState(); // Initialize FFAppState
 
-  runApp(MyApp());
+  runApp(ChangeNotifierProvider(
+    create: (context) => appState,
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatefulWidget {
@@ -107,7 +111,7 @@ class _NavBarPageState extends State<NavBarPage> {
     final tabs = {
       'SuggestionsScreen': SuggestionsScreenWidget(),
       'ExploreScreen': ExploreScreenWidget(),
-      'SavedScreen': SavedScreenWidget(),
+      'CollectionScreen': CollectionScreenWidget(),
       'MyProfileScreen': MyProfileScreenWidget(),
       'MoreScreen': MoreScreenWidget(),
     };
@@ -137,7 +141,9 @@ class _NavBarPageState extends State<NavBarPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(
-                  currentIndex == 0 ? FFIcons.kcardsFilled : FFIcons.kcards,
+                  currentIndex == 0
+                      ? FFIcons.ksparkles
+                      : FFIcons.ksparkleOutline,
                   color: currentIndex == 0
                       ? FlutterFlowTheme.of(context).primaryColor
                       : FlutterFlowTheme.of(context).greyscale500,
@@ -165,7 +171,7 @@ class _NavBarPageState extends State<NavBarPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(
-                  currentIndex == 2 ? FFIcons.kheart : FFIcons.kheart,
+                  currentIndex == 2 ? FFIcons.kcardsFilled : FFIcons.kcards,
                   color: currentIndex == 2
                       ? FlutterFlowTheme.of(context).primaryColor
                       : FlutterFlowTheme.of(context).greyscale500,

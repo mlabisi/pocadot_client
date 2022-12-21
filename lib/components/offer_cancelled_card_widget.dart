@@ -3,6 +3,7 @@ import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class OfferCancelledCardWidget extends StatefulWidget {
   const OfferCancelledCardWidget({Key? key}) : super(key: key);
@@ -15,6 +16,8 @@ class OfferCancelledCardWidget extends StatefulWidget {
 class _OfferCancelledCardWidgetState extends State<OfferCancelledCardWidget> {
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(16, 12, 16, 0),
       child: Container(
