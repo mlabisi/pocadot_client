@@ -83,8 +83,7 @@ class _PhotocardDetailsScreenWidgetState
                         child: Container(
                           width: MediaQuery.of(context).size.width,
                           decoration: BoxDecoration(
-                            color:
-                                FlutterFlowTheme.of(context).primaryBackground,
+                            borderRadius: BorderRadius.circular(20),
                           ),
                           child: InkWell(
                             onTap: () async {
@@ -326,7 +325,7 @@ class _PhotocardDetailsScreenWidgetState
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Wrap(
-                                      spacing: 4,
+                                      spacing: 2,
                                       runSpacing: 8,
                                       alignment: WrapAlignment.start,
                                       crossAxisAlignment:
@@ -377,12 +376,13 @@ class _PhotocardDetailsScreenWidgetState
                         ],
                       ),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
+                        padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
+                            // Shown if user has this photocard in their collection
                             FFButtonWidget(
                               onPressed: () {
                                 print('Button pressed ...');
@@ -408,11 +408,40 @@ class _PhotocardDetailsScreenWidgetState
                                 borderRadius: BorderRadius.circular(100),
                               ),
                             ),
+
+                            // Shown if user does not have this photocard in their collection
                             FFButtonWidget(
                               onPressed: () {
                                 print('Button pressed ...');
                               },
-                              text: 'Add/Remove',
+                              text: 'Wishlist Toggle',
+                              options: FFButtonOptions(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    16, 16, 16, 16),
+                                color:
+                                    FlutterFlowTheme.of(context).primaryColor,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'Urbanist',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBackground,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1,
+                                ),
+                                borderRadius: BorderRadius.circular(100),
+                              ),
+                            ),
+
+                            // Shown if the user does not have this photocard in their collection. Removes from wishlist when pressed.
+                            FFButtonWidget(
+                              onPressed: () {
+                                print('Button pressed ...');
+                              },
+                              text: 'Collection Toggle',
                               options: FFButtonOptions(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     16, 16, 16, 16),
