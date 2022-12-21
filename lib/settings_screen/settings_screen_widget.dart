@@ -102,6 +102,9 @@ class _SettingsScreenWidgetState extends State<SettingsScreenWidget> {
                                     if (newValue!) {
                                       setDarkModeSetting(
                                           context, ThemeMode.dark);
+                                    } else {
+                                      setDarkModeSetting(
+                                          context, ThemeMode.light);
                                     }
                                   },
                                   activeColor:
