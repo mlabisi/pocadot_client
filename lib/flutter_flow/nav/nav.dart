@@ -161,6 +161,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'BiasesScreen',
               path: 'biasesScreen',
               builder: (context, params) => BiasesScreenWidget(),
+            ),
+            FFRoute(
+              name: 'OffersScreen',
+              path: 'offersScreen',
+              builder: (context, params) => OffersScreenWidget(),
+            ),
+            FFRoute(
+              name: 'ChangePasswordScreen',
+              path: 'changePasswordScreen',
+              builder: (context, params) => ChangePasswordScreenWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),

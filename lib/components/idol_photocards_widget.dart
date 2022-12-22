@@ -131,7 +131,7 @@ class _IdolPhotocardsWidgetState extends State<IdolPhotocardsWidget> {
                                 padding: MediaQuery.of(context).viewInsets,
                                 child: Container(
                                   height:
-                                      MediaQuery.of(context).size.height * 0.8,
+                                      MediaQuery.of(context).size.height * 0.95,
                                   child: PhotocardDetailsWidget(),
                                 ),
                               );

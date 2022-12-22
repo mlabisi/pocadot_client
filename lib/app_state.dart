@@ -24,7 +24,6 @@ class FFAppState extends ChangeNotifier {
   bool get testToggle => _testToggle;
   set testToggle(bool _value) {
     notifyListeners();
-
     _testToggle = _value;
     prefs.setBool('ff_testToggle', _value);
   }

@@ -65,7 +65,22 @@ class _SearchScreenWidgetState extends State<SearchScreenWidget> {
                 fontSize: 22,
               ),
         ),
-        actions: [],
+        actions: [
+          FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30,
+            borderWidth: 1,
+            buttonSize: 60,
+            icon: Icon(
+              FFIcons.kplus,
+              color: FlutterFlowTheme.of(context).primaryColor,
+              size: 30,
+            ),
+            onPressed: () async {
+              context.pushNamed('AddListingScreen');
+            },
+          ),
+        ],
         centerTitle: false,
         elevation: 2,
       ),
@@ -235,7 +250,7 @@ class _SearchScreenWidgetState extends State<SearchScreenWidget> {
                               crossAxisCount: 2,
                               crossAxisSpacing: 10,
                               mainAxisSpacing: 10,
-                              childAspectRatio: 0.8,
+                              childAspectRatio: 0.65,
                             ),
                             primary: false,
                             shrinkWrap: true,

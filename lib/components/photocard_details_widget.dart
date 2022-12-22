@@ -57,10 +57,13 @@ class _PhotocardDetailsWidgetState extends State<PhotocardDetailsWidget> {
                       child: Hero(
                         tag: 'imageTag',
                         transitionOnUserGestures: true,
-                        child: Image.network(
-                          'https://pocadot.b-cdn.net/reclnaz03rdkqyOlU.png',
-                          width: MediaQuery.of(context).size.width,
-                          fit: BoxFit.cover,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(24),
+                          child: Image.network(
+                            'https://pocadot.b-cdn.net/reclnaz03rdkqyOlU.png',
+                            width: MediaQuery.of(context).size.width,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                     ),
@@ -70,38 +73,47 @@ class _PhotocardDetailsWidgetState extends State<PhotocardDetailsWidget> {
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Text(
-                      'Yuqi · (G)I-DLE',
-                      style: FlutterFlowTheme.of(context).subtitle1.override(
-                            fontFamily: 'Urbanist',
-                            color: FlutterFlowTheme.of(context).primaryText,
-                          ),
-                    ),
-                    Text(
-                      'I love - Born Version A',
-                      style: FlutterFlowTheme.of(context).bodyText1.override(
-                            fontFamily: 'Urbanist',
-                            fontSize: 12,
-                          ),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).alternate,
-                        borderRadius: BorderRadius.circular(22),
-                        shape: BoxShape.rectangle,
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 2),
+                      child: Text(
+                        'Yuqi · (G)I-DLE',
+                        style: FlutterFlowTheme.of(context).subtitle1.override(
+                              fontFamily: 'Urbanist',
+                              color: FlutterFlowTheme.of(context).primaryText,
+                            ),
                       ),
-                      child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(10, 5, 10, 5),
-                        child: Text(
-                          'Album Inclusion',
-                          style: FlutterFlowTheme.of(context)
-                              .bodyText1
-                              .override(
-                                fontFamily: 'Urbanist',
-                                color:
-                                    FlutterFlowTheme.of(context).primaryColor,
-                                fontSize: 10,
-                              ),
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 4),
+                      child: Text(
+                        'I love - Born Version A',
+                        style: FlutterFlowTheme.of(context).bodyText1.override(
+                              fontFamily: 'Urbanist',
+                              fontSize: 12,
+                            ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 4),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: FlutterFlowTheme.of(context).alternate,
+                          borderRadius: BorderRadius.circular(22),
+                          shape: BoxShape.rectangle,
+                        ),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(10, 5, 10, 5),
+                          child: Text(
+                            'Album Inclusion',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyText1
+                                .override(
+                                  fontFamily: 'Urbanist',
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryColor,
+                                  fontSize: 10,
+                                ),
+                          ),
                         ),
                       ),
                     ),
@@ -277,6 +289,7 @@ class _PhotocardDetailsWidgetState extends State<PhotocardDetailsWidget> {
                                 children: [
                                   InkWell(
                                     onTap: () async {
+                                      Navigator.pop(context);
                                       await showModalBottomSheet(
                                         isScrollControlled: true,
                                         backgroundColor:
@@ -300,14 +313,162 @@ class _PhotocardDetailsWidgetState extends State<PhotocardDetailsWidget> {
                                     },
                                     child: PhotocardThumbnailWidget(),
                                   ),
-                                  PhotocardThumbnailWidget(),
-                                  PhotocardThumbnailWidget(),
-                                  PhotocardThumbnailWidget(),
-                                  PhotocardThumbnailWidget(),
-                                  PhotocardThumbnailWidget(),
-                                  PhotocardThumbnailWidget(),
-                                  PhotocardThumbnailWidget(),
-                                  PhotocardThumbnailWidget(),
+                                  InkWell(
+                                    onTap: () async {
+                                      Navigator.pop(context);
+                                      await showModalBottomSheet(
+                                        isScrollControlled: true,
+                                        backgroundColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                        context: context,
+                                        builder: (context) {
+                                          return Padding(
+                                            padding: MediaQuery.of(context)
+                                                .viewInsets,
+                                            child: Container(
+                                              height: MediaQuery.of(context)
+                                                      .size
+                                                      .height *
+                                                  0.8,
+                                              child: PhotocardDetailsWidget(),
+                                            ),
+                                          );
+                                        },
+                                      ).then((value) => setState(() {}));
+                                    },
+                                    child: PhotocardThumbnailWidget(),
+                                  ),
+                                  InkWell(
+                                    onTap: () async {
+                                      Navigator.pop(context);
+                                      await showModalBottomSheet(
+                                        isScrollControlled: true,
+                                        backgroundColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                        context: context,
+                                        builder: (context) {
+                                          return Padding(
+                                            padding: MediaQuery.of(context)
+                                                .viewInsets,
+                                            child: Container(
+                                              height: MediaQuery.of(context)
+                                                      .size
+                                                      .height *
+                                                  0.8,
+                                              child: PhotocardDetailsWidget(),
+                                            ),
+                                          );
+                                        },
+                                      ).then((value) => setState(() {}));
+                                    },
+                                    child: PhotocardThumbnailWidget(),
+                                  ),
+                                  InkWell(
+                                    onTap: () async {
+                                      Navigator.pop(context);
+                                      await showModalBottomSheet(
+                                        isScrollControlled: true,
+                                        backgroundColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                        context: context,
+                                        builder: (context) {
+                                          return Padding(
+                                            padding: MediaQuery.of(context)
+                                                .viewInsets,
+                                            child: Container(
+                                              height: MediaQuery.of(context)
+                                                      .size
+                                                      .height *
+                                                  0.8,
+                                              child: PhotocardDetailsWidget(),
+                                            ),
+                                          );
+                                        },
+                                      ).then((value) => setState(() {}));
+                                    },
+                                    child: PhotocardThumbnailWidget(),
+                                  ),
+                                  InkWell(
+                                    onTap: () async {
+                                      Navigator.pop(context);
+                                      await showModalBottomSheet(
+                                        isScrollControlled: true,
+                                        backgroundColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                        context: context,
+                                        builder: (context) {
+                                          return Padding(
+                                            padding: MediaQuery.of(context)
+                                                .viewInsets,
+                                            child: Container(
+                                              height: MediaQuery.of(context)
+                                                      .size
+                                                      .height *
+                                                  0.8,
+                                              child: PhotocardDetailsWidget(),
+                                            ),
+                                          );
+                                        },
+                                      ).then((value) => setState(() {}));
+                                    },
+                                    child: PhotocardThumbnailWidget(),
+                                  ),
+                                  InkWell(
+                                    onTap: () async {
+                                      Navigator.pop(context);
+                                      await showModalBottomSheet(
+                                        isScrollControlled: true,
+                                        backgroundColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                        context: context,
+                                        builder: (context) {
+                                          return Padding(
+                                            padding: MediaQuery.of(context)
+                                                .viewInsets,
+                                            child: Container(
+                                              height: MediaQuery.of(context)
+                                                      .size
+                                                      .height *
+                                                  0.8,
+                                              child: PhotocardDetailsWidget(),
+                                            ),
+                                          );
+                                        },
+                                      ).then((value) => setState(() {}));
+                                    },
+                                    child: PhotocardThumbnailWidget(),
+                                  ),
+                                  InkWell(
+                                    onTap: () async {
+                                      Navigator.pop(context);
+                                      await showModalBottomSheet(
+                                        isScrollControlled: true,
+                                        backgroundColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                        context: context,
+                                        builder: (context) {
+                                          return Padding(
+                                            padding: MediaQuery.of(context)
+                                                .viewInsets,
+                                            child: Container(
+                                              height: MediaQuery.of(context)
+                                                      .size
+                                                      .height *
+                                                  0.8,
+                                              child: PhotocardDetailsWidget(),
+                                            ),
+                                          );
+                                        },
+                                      ).then((value) => setState(() {}));
+                                    },
+                                    child: PhotocardThumbnailWidget(),
+                                  ),
                                 ],
                               ),
                             ],

@@ -55,8 +55,18 @@ class _MoreScreenWidgetState extends State<MoreScreenWidget> {
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
-                MyListingsRowWidget(),
-                MyOffersRowWidget(),
+                InkWell(
+                  onTap: () async {
+                    context.pushNamed('SearchScreen');
+                  },
+                  child: MyListingsRowWidget(),
+                ),
+                InkWell(
+                  onTap: () async {
+                    context.pushNamed('OffersScreen');
+                  },
+                  child: MyOffersRowWidget(),
+                ),
                 InkWell(
                   onTap: () async {
                     context.pushNamed('BiasesScreen');
@@ -69,7 +79,12 @@ class _MoreScreenWidgetState extends State<MoreScreenWidget> {
                   },
                   child: MySettingsRowWidget(),
                 ),
-                ChangePasswordRowWidget(),
+                InkWell(
+                  onTap: () async {
+                    context.pushNamed('ChangePasswordScreen');
+                  },
+                  child: ChangePasswordRowWidget(),
+                ),
                 LogoutButtonWidget(),
                 DeleteAccountButtonWidget(),
                 PocadotSocialsWidget(),
