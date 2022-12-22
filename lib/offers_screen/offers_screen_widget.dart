@@ -62,7 +62,7 @@ class _OffersScreenWidgetState extends State<OffersScreenWidget> {
           },
         ),
         title: Text(
-          'Offers',
+          'My Offers',
           style: FlutterFlowTheme.of(context).title2.override(
                 fontFamily: 'Urbanist',
                 color: FlutterFlowTheme.of(context).primaryColor,

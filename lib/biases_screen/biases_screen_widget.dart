@@ -59,7 +59,7 @@ class _BiasesScreenWidgetState extends State<BiasesScreenWidget> {
           },
         ),
         title: Text(
-          'Biases',
+          'My Biases',
           style: FlutterFlowTheme.of(context).title2.override(
                 fontFamily: 'Urbanist',
                 color: FlutterFlowTheme.of(context).primaryColor,
