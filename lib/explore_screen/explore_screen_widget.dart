@@ -156,7 +156,7 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 16),
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
@@ -183,17 +183,17 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                                 ],
                               ),
                             ),
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(16, 8, 16, 0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 8, 4, 8),
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 8, 4, 8),
+                                  child: InkWell(
+                                    onTap: () async {
+                                      context.pushNamed('SearchScreen');
+                                    },
                                     child: Container(
                                       width: MediaQuery.of(context).size.width *
                                           0.25,
@@ -248,9 +248,14 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                                       ),
                                     ),
                                   ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 8, 4, 8),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 8, 4, 8),
+                                  child: InkWell(
+                                    onTap: () async {
+                                      context.pushNamed('SearchScreen');
+                                    },
                                     child: Container(
                                       width: MediaQuery.of(context).size.width *
                                           0.25,
@@ -305,9 +310,14 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                                       ),
                                     ),
                                   ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 8, 0, 8),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 8, 0, 8),
+                                  child: InkWell(
+                                    onTap: () async {
+                                      context.pushNamed('SearchScreen');
+                                    },
                                     child: Container(
                                       width: MediaQuery.of(context).size.width *
                                           0.25,
@@ -362,8 +372,8 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                                       ),
                                     ),
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ],
                         ),
