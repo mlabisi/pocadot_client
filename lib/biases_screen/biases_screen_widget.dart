@@ -59,7 +59,7 @@ class _BiasesScreenWidgetState extends State<BiasesScreenWidget> {
           },
         ),
         title: Text(
-          'Your Biases',
+          'Biases',
           style: FlutterFlowTheme.of(context).title2.override(
                 fontFamily: 'Jua',
                 color: FlutterFlowTheme.of(context).primaryColor,
@@ -99,7 +99,6 @@ class _BiasesScreenWidgetState extends State<BiasesScreenWidget> {
                           Duration(milliseconds: 2000),
                           () => setState(() {}),
                         ),
-                        autofocus: true,
                         obscureText: false,
                         decoration: InputDecoration(
                           hintText: 'Search for groups and idols',
