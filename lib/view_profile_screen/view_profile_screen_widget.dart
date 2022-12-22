@@ -75,7 +75,7 @@ class _ViewProfileScreenWidgetState extends State<ViewProfileScreenWidget> {
           child: Text(
             'Page Title',
             style: FlutterFlowTheme.of(context).title2.override(
-                  fontFamily: 'Jua',
+                  fontFamily: 'Urbanist',
                   color: FlutterFlowTheme.of(context).primaryColor,
                   fontSize: 22,
                 ),
@@ -289,7 +289,7 @@ class _ViewProfileScreenWidgetState extends State<ViewProfileScreenWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .subtitle2
                                   .override(
-                                    fontFamily: 'Jua',
+                                    fontFamily: 'Urbanist',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                   ),

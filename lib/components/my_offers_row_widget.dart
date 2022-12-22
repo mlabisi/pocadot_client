@@ -66,7 +66,7 @@ class _MyOffersRowWidgetState extends State<MyOffersRowWidget>
                       child: Text(
                         'My Offers',
                         style: FlutterFlowTheme.of(context).subtitle2.override(
-                              fontFamily: 'Jua',
+                              fontFamily: 'Urbanist',
                               color: FlutterFlowTheme.of(context).primaryText,
                             ),
                       ),

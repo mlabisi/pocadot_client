@@ -45,7 +45,7 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
         title: Text(
           'Explore',
           style: FlutterFlowTheme.of(context).title2.override(
-                fontFamily: 'Jua',
+                fontFamily: 'Urbanist',
                 color: FlutterFlowTheme.of(context).primaryColor,
                 fontSize: 22,
               ),
@@ -145,7 +145,7 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                           color: FlutterFlowTheme.of(context).primaryBackground,
                           textStyle:
                               FlutterFlowTheme.of(context).subtitle2.override(
-                                    fontFamily: 'Jua',
+                                    fontFamily: 'Urbanist',
                                     color: Colors.white,
                                   ),
                           borderSide: BorderSide(
@@ -174,7 +174,7 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .subtitle2
                                           .override(
-                                            fontFamily: 'Jua',
+                                            fontFamily: 'Urbanist',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                           ),
@@ -231,16 +231,17 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                                                   .fromSTEB(0, 4, 0, 0),
                                               child: Text(
                                                 'Saved',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .subtitle2
-                                                        .override(
-                                                          fontFamily: 'Jua',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .subtitle2
+                                                    .override(
+                                                      fontFamily: 'Urbanist',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
                                                               .primaryColor,
-                                                          fontSize: 16,
-                                                        ),
+                                                      fontSize: 16,
+                                                    ),
                                               ),
                                             ),
                                           ],
@@ -293,16 +294,17 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                                                   .fromSTEB(0, 4, 0, 0),
                                               child: Text(
                                                 'Viewed',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .subtitle2
-                                                        .override(
-                                                          fontFamily: 'Jua',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .subtitle2
+                                                    .override(
+                                                      fontFamily: 'Urbanist',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
                                                               .primaryColor,
-                                                          fontSize: 16,
-                                                        ),
+                                                      fontSize: 16,
+                                                    ),
                                               ),
                                             ),
                                           ],
@@ -355,16 +357,17 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                                                   .fromSTEB(0, 4, 0, 0),
                                               child: Text(
                                                 'Offer Made',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .subtitle2
-                                                        .override(
-                                                          fontFamily: 'Jua',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .subtitle2
+                                                    .override(
+                                                      fontFamily: 'Urbanist',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
                                                               .primaryColor,
-                                                          fontSize: 16,
-                                                        ),
+                                                      fontSize: 16,
+                                                    ),
                                               ),
                                             ),
                                           ],
@@ -389,7 +392,7 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .subtitle2
                                   .override(
-                                    fontFamily: 'Jua',
+                                    fontFamily: 'Urbanist',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                   ),

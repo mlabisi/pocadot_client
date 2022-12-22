@@ -67,7 +67,7 @@ class _ChangePasswordRowWidgetState extends State<ChangePasswordRowWidget>
                       child: Text(
                         'Change Password',
                         style: FlutterFlowTheme.of(context).subtitle2.override(
-                              fontFamily: 'Jua',
+                              fontFamily: 'Urbanist',
                               color: FlutterFlowTheme.of(context).primaryText,
                             ),
                       ),

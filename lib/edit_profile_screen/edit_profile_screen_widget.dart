@@ -70,7 +70,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
         title: Text(
           'Edit Profile',
           style: FlutterFlowTheme.of(context).title2.override(
-                fontFamily: 'Jua',
+                fontFamily: 'Urbanist',
                 color: FlutterFlowTheme.of(context).primaryColor,
                 fontSize: 22,
               ),
@@ -123,7 +123,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .subtitle2
                                                 .override(
-                                                  fontFamily: 'Jua',
+                                                  fontFamily: 'Urbanist',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
@@ -232,7 +232,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .subtitle2
                                                 .override(
-                                                  fontFamily: 'Jua',
+                                                  fontFamily: 'Urbanist',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
@@ -339,7 +339,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .subtitle2
                                                 .override(
-                                                  fontFamily: 'Jua',
+                                                  fontFamily: 'Urbanist',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
@@ -473,7 +473,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .subtitle2
                                                 .override(
-                                                  fontFamily: 'Jua',
+                                                  fontFamily: 'Urbanist',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
@@ -598,7 +598,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .subtitle2
                                                 .override(
-                                                  fontFamily: 'Jua',
+                                                  fontFamily: 'Urbanist',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,

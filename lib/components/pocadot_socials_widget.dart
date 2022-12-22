@@ -32,7 +32,7 @@ class _PocadotSocialsWidgetState extends State<PocadotSocialsWidget> {
                   child: Text(
                     'Follow pocadot!',
                     style: FlutterFlowTheme.of(context).subtitle2.override(
-                          fontFamily: 'Jua',
+                          fontFamily: 'Urbanist',
                           color: FlutterFlowTheme.of(context).primaryText,
                         ),
                   ),
@@ -73,7 +73,7 @@ class _PocadotSocialsWidgetState extends State<PocadotSocialsWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .subtitle2
                                   .override(
-                                    fontFamily: 'Jua',
+                                    fontFamily: 'Urbanist',
                                     color: FlutterFlowTheme.of(context).white,
                                   ),
                             ),
@@ -110,7 +110,7 @@ class _PocadotSocialsWidgetState extends State<PocadotSocialsWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .subtitle2
                                   .override(
-                                    fontFamily: 'Jua',
+                                    fontFamily: 'Urbanist',
                                     color: FlutterFlowTheme.of(context).white,
                                   ),
                             ),
@@ -144,7 +144,7 @@ class _PocadotSocialsWidgetState extends State<PocadotSocialsWidget> {
                             'YouTube',
                             style:
                                 FlutterFlowTheme.of(context).subtitle2.override(
-                                      fontFamily: 'Jua',
+                                      fontFamily: 'Urbanist',
                                       color: FlutterFlowTheme.of(context).white,
                                     ),
                           ),

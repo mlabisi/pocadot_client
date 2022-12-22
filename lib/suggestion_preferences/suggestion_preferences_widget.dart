@@ -47,7 +47,7 @@ class _SuggestionPreferencesWidgetState
         title: Text(
           'Suggestion Preferences',
           style: FlutterFlowTheme.of(context).title2.override(
-                fontFamily: 'Jua',
+                fontFamily: 'Urbanist',
                 color: FlutterFlowTheme.of(context).primaryColor,
                 fontSize: 22,
               ),

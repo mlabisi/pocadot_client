@@ -138,41 +138,41 @@ class ThemeTypography extends Typography {
 
   final FlutterFlowTheme theme;
 
-  String get title1Family => 'Jua';
+  String get title1Family => 'Urbanist';
   TextStyle get title1 => GoogleFonts.getFont(
-        'Jua',
+        'Urbanist',
         color: theme.primaryText,
-        fontWeight: FontWeight.normal,
+        fontWeight: FontWeight.bold,
         fontSize: 48,
         fontStyle: FontStyle.normal,
       );
-  String get title2Family => 'Jua';
+  String get title2Family => 'Urbanist';
   TextStyle get title2 => GoogleFonts.getFont(
-        'Jua',
+        'Urbanist',
         color: theme.secondaryText,
-        fontWeight: FontWeight.normal,
+        fontWeight: FontWeight.w600,
         fontSize: 40,
         fontStyle: FontStyle.normal,
       );
-  String get title3Family => 'Jua';
+  String get title3Family => 'Urbanist';
   TextStyle get title3 => GoogleFonts.getFont(
-        'Jua',
+        'Urbanist',
         color: theme.primaryText,
-        fontWeight: FontWeight.normal,
+        fontWeight: FontWeight.w500,
         fontSize: 32,
         fontStyle: FontStyle.normal,
       );
-  String get subtitle1Family => 'Jua';
+  String get subtitle1Family => 'Urbanist';
   TextStyle get subtitle1 => GoogleFonts.getFont(
-        'Jua',
+        'Urbanist',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 24,
         fontStyle: FontStyle.normal,
       );
-  String get subtitle2Family => 'Jua';
+  String get subtitle2Family => 'Urbanist';
   TextStyle get subtitle2 => GoogleFonts.getFont(
-        'Jua',
+        'Urbanist',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 20,

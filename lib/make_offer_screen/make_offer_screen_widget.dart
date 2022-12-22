@@ -62,7 +62,7 @@ class _MakeOfferScreenWidgetState extends State<MakeOfferScreenWidget> {
         title: Text(
           'Make an Offer',
           style: FlutterFlowTheme.of(context).title2.override(
-                fontFamily: 'Jua',
+                fontFamily: 'Urbanist',
                 color: FlutterFlowTheme.of(context).primaryColor,
                 fontSize: 22,
               ),
@@ -104,7 +104,7 @@ class _MakeOfferScreenWidgetState extends State<MakeOfferScreenWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .subtitle2
                                             .override(
-                                              fontFamily: 'Jua',
+                                              fontFamily: 'Urbanist',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
@@ -214,7 +214,7 @@ class _MakeOfferScreenWidgetState extends State<MakeOfferScreenWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .subtitle2
                                             .override(
-                                              fontFamily: 'Jua',
+                                              fontFamily: 'Urbanist',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
@@ -284,7 +284,7 @@ class _MakeOfferScreenWidgetState extends State<MakeOfferScreenWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .subtitle2
                                             .override(
-                                              fontFamily: 'Jua',
+                                              fontFamily: 'Urbanist',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,

@@ -86,7 +86,7 @@ class _ListingCardWidgetState extends State<ListingCardWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .subtitle1
                                       .override(
-                                        fontFamily: 'Jua',
+                                        fontFamily: 'Urbanist',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                         fontSize: 20,

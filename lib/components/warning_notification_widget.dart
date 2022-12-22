@@ -72,7 +72,7 @@ class _WarningNotificationWidgetState extends State<WarningNotificationWidget>
                             style: FlutterFlowTheme.of(context)
                                 .subtitle2
                                 .override(
-                                  fontFamily: 'Jua',
+                                  fontFamily: 'Urbanist',
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
                                 ),

@@ -67,7 +67,7 @@ class _FilterResultsScreenWidgetState extends State<FilterResultsScreenWidget> {
         title: Text(
           'Filter Results',
           style: FlutterFlowTheme.of(context).title2.override(
-                fontFamily: 'Jua',
+                fontFamily: 'Urbanist',
                 color: FlutterFlowTheme.of(context).primaryColor,
                 fontSize: 22,
               ),
@@ -128,7 +128,7 @@ class _FilterResultsScreenWidgetState extends State<FilterResultsScreenWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .subtitle2
                                                 .override(
-                                                  fontFamily: 'Jua',
+                                                  fontFamily: 'Urbanist',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
@@ -228,7 +228,7 @@ class _FilterResultsScreenWidgetState extends State<FilterResultsScreenWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .subtitle2
                                                 .override(
-                                                  fontFamily: 'Jua',
+                                                  fontFamily: 'Urbanist',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
@@ -488,7 +488,7 @@ class _FilterResultsScreenWidgetState extends State<FilterResultsScreenWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .subtitle2
                                                 .override(
-                                                  fontFamily: 'Jua',
+                                                  fontFamily: 'Urbanist',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
@@ -587,7 +587,7 @@ class _FilterResultsScreenWidgetState extends State<FilterResultsScreenWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .subtitle2
                                                 .override(
-                                                  fontFamily: 'Jua',
+                                                  fontFamily: 'Urbanist',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,

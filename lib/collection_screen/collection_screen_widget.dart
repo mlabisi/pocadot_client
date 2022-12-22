@@ -47,7 +47,7 @@ class _CollectionScreenWidgetState extends State<CollectionScreenWidget> {
         title: Text(
           'Collection',
           style: FlutterFlowTheme.of(context).title2.override(
-                fontFamily: 'Jua',
+                fontFamily: 'Urbanist',
                 color: FlutterFlowTheme.of(context).primaryColor,
                 fontSize: 22,
               ),
@@ -165,7 +165,7 @@ class _CollectionScreenWidgetState extends State<CollectionScreenWidget> {
                           style: FlutterFlowTheme.of(context)
                               .subtitle2
                               .override(
-                                fontFamily: 'Jua',
+                                fontFamily: 'Urbanist',
                                 color: FlutterFlowTheme.of(context).primaryText,
                               ),
                         ),

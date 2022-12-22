@@ -64,7 +64,7 @@ class _SelectedIdolCardWidgetState extends State<SelectedIdolCardWidget> {
                 child: Text(
                   'Yuqi',
                   style: FlutterFlowTheme.of(context).subtitle1.override(
-                        fontFamily: 'Jua',
+                        fontFamily: 'Urbanist',
                         color: FlutterFlowTheme.of(context).primaryText,
                         fontSize: 20,
                       ),

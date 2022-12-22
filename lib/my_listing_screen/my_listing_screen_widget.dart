@@ -60,7 +60,7 @@ class _MyListingScreenWidgetState extends State<MyListingScreenWidget> {
           child: Text(
             'Page Title',
             style: FlutterFlowTheme.of(context).title2.override(
-                  fontFamily: 'Jua',
+                  fontFamily: 'Urbanist',
                   color: FlutterFlowTheme.of(context).primaryColor,
                   fontSize: 22,
                 ),
@@ -226,7 +226,7 @@ class _MyListingScreenWidgetState extends State<MyListingScreenWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .subtitle1
                                 .override(
-                                  fontFamily: 'Jua',
+                                  fontFamily: 'Urbanist',
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
                                 ),
@@ -268,7 +268,7 @@ class _MyListingScreenWidgetState extends State<MyListingScreenWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .subtitle2
                                       .override(
-                                        fontFamily: 'Jua',
+                                        fontFamily: 'Urbanist',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                       ),
@@ -308,7 +308,7 @@ class _MyListingScreenWidgetState extends State<MyListingScreenWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .subtitle2
                                       .override(
-                                        fontFamily: 'Jua',
+                                        fontFamily: 'Urbanist',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                       ),
@@ -347,7 +347,7 @@ class _MyListingScreenWidgetState extends State<MyListingScreenWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .subtitle2
                                       .override(
-                                        fontFamily: 'Jua',
+                                        fontFamily: 'Urbanist',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                       ),
@@ -386,7 +386,7 @@ class _MyListingScreenWidgetState extends State<MyListingScreenWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .subtitle2
                                       .override(
-                                        fontFamily: 'Jua',
+                                        fontFamily: 'Urbanist',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                       ),
@@ -437,7 +437,7 @@ class _MyListingScreenWidgetState extends State<MyListingScreenWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .subtitle2
                                             .override(
-                                              fontFamily: 'Jua',
+                                              fontFamily: 'Urbanist',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
@@ -591,7 +591,7 @@ class _MyListingScreenWidgetState extends State<MyListingScreenWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .subtitle2
                                           .override(
-                                            fontFamily: 'Jua',
+                                            fontFamily: 'Urbanist',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                           ),

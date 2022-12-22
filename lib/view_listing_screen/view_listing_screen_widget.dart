@@ -61,7 +61,7 @@ class _ViewListingScreenWidgetState extends State<ViewListingScreenWidget> {
           child: Text(
             'Page Title',
             style: FlutterFlowTheme.of(context).title2.override(
-                  fontFamily: 'Jua',
+                  fontFamily: 'Urbanist',
                   color: FlutterFlowTheme.of(context).primaryColor,
                   fontSize: 22,
                 ),
@@ -245,7 +245,7 @@ class _ViewListingScreenWidgetState extends State<ViewListingScreenWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .subtitle1
                                 .override(
-                                  fontFamily: 'Jua',
+                                  fontFamily: 'Urbanist',
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
                                 ),
@@ -287,7 +287,7 @@ class _ViewListingScreenWidgetState extends State<ViewListingScreenWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .subtitle2
                                       .override(
-                                        fontFamily: 'Jua',
+                                        fontFamily: 'Urbanist',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                       ),
@@ -327,7 +327,7 @@ class _ViewListingScreenWidgetState extends State<ViewListingScreenWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .subtitle2
                                       .override(
-                                        fontFamily: 'Jua',
+                                        fontFamily: 'Urbanist',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                       ),
@@ -366,7 +366,7 @@ class _ViewListingScreenWidgetState extends State<ViewListingScreenWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .subtitle2
                                       .override(
-                                        fontFamily: 'Jua',
+                                        fontFamily: 'Urbanist',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                       ),
@@ -405,7 +405,7 @@ class _ViewListingScreenWidgetState extends State<ViewListingScreenWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .subtitle2
                                       .override(
-                                        fontFamily: 'Jua',
+                                        fontFamily: 'Urbanist',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                       ),
@@ -456,7 +456,7 @@ class _ViewListingScreenWidgetState extends State<ViewListingScreenWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .subtitle2
                                             .override(
-                                              fontFamily: 'Jua',
+                                              fontFamily: 'Urbanist',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,

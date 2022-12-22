@@ -51,7 +51,7 @@ class _NotificationsScreenWidgetState extends State<NotificationsScreenWidget> {
         title: Text(
           'Notifications',
           style: FlutterFlowTheme.of(context).title2.override(
-                fontFamily: 'Jua',
+                fontFamily: 'Urbanist',
                 color: FlutterFlowTheme.of(context).primaryColor,
                 fontSize: 22,
               ),

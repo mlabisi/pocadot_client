@@ -41,7 +41,7 @@ class _SuggestionsScreenWidgetState extends State<SuggestionsScreenWidget> {
         title: Text(
           'Suggestions',
           style: FlutterFlowTheme.of(context).title2.override(
-                fontFamily: 'Jua',
+                fontFamily: 'Urbanist',
                 color: FlutterFlowTheme.of(context).primaryColor,
                 fontSize: 22,
               ),
@@ -136,7 +136,7 @@ class _SuggestionsScreenWidgetState extends State<SuggestionsScreenWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .subtitle1
                                           .override(
-                                            fontFamily: 'Jua',
+                                            fontFamily: 'Urbanist',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                           ),
@@ -254,7 +254,7 @@ class _SuggestionsScreenWidgetState extends State<SuggestionsScreenWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .subtitle1
                                           .override(
-                                            fontFamily: 'Jua',
+                                            fontFamily: 'Urbanist',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                           ),
@@ -372,7 +372,7 @@ class _SuggestionsScreenWidgetState extends State<SuggestionsScreenWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .subtitle1
                                           .override(
-                                            fontFamily: 'Jua',
+                                            fontFamily: 'Urbanist',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                           ),
@@ -490,7 +490,7 @@ class _SuggestionsScreenWidgetState extends State<SuggestionsScreenWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .subtitle1
                                           .override(
-                                            fontFamily: 'Jua',
+                                            fontFamily: 'Urbanist',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                           ),
@@ -608,7 +608,7 @@ class _SuggestionsScreenWidgetState extends State<SuggestionsScreenWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .subtitle1
                                           .override(
-                                            fontFamily: 'Jua',
+                                            fontFamily: 'Urbanist',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                           ),

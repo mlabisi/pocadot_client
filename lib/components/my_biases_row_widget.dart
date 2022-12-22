@@ -66,7 +66,7 @@ class _MyBiasesRowWidgetState extends State<MyBiasesRowWidget>
                       child: Text(
                         'My Biases',
                         style: FlutterFlowTheme.of(context).subtitle2.override(
-                              fontFamily: 'Jua',
+                              fontFamily: 'Urbanist',
                               color: FlutterFlowTheme.of(context).primaryText,
                             ),
                       ),

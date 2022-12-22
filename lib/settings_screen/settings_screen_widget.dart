@@ -45,7 +45,7 @@ class _SettingsScreenWidgetState extends State<SettingsScreenWidget> {
         title: Text(
           'Settings',
           style: FlutterFlowTheme.of(context).title2.override(
-                fontFamily: 'Jua',
+                fontFamily: 'Urbanist',
                 color: FlutterFlowTheme.of(context).primaryColor,
                 fontSize: 22,
               ),
