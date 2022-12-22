@@ -576,7 +576,6 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                           0, 8, 0, 8),
                                       child: TextFormField(
                                         controller: textController1,
-                                        autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(
                                           hintText:
@@ -927,7 +926,6 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                           0, 8, 0, 8),
                                       child: TextFormField(
                                         controller: textController2,
-                                        autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(
                                           hintText: 'Ex: \$25',

@@ -33,3 +33,6 @@ export 'my_listing_screen/my_listing_screen_widget.dart'
 export 'edit_profile_screen/edit_profile_screen_widget.dart'
     show EditProfileScreenWidget;
 export 'settings_screen/settings_screen_widget.dart' show SettingsScreenWidget;
+export 'biases_screen/biases_screen_widget.dart' show BiasesScreenWidget;
+export 'biases_bottom_sheet/biases_bottom_sheet_widget.dart'
+    show BiasesBottomSheetWidget;

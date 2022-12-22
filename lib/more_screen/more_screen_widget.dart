@@ -57,7 +57,12 @@ class _MoreScreenWidgetState extends State<MoreScreenWidget> {
               children: [
                 MyListingsRowWidget(),
                 MyOffersRowWidget(),
-                MyBiasesRowWidget(),
+                InkWell(
+                  onTap: () async {
+                    context.pushNamed('BiasesScreen');
+                  },
+                  child: MyBiasesRowWidget(),
+                ),
                 InkWell(
                   onTap: () async {
                     context.pushNamed('SettingsScreen');

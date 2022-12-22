@@ -86,7 +86,12 @@ class _SuggestionPreferencesWidgetState
                             ),
                           ],
                         ),
-                        MyBiasesRowWidget(),
+                        InkWell(
+                          onTap: () async {
+                            context.pushNamed('BiasesScreen');
+                          },
+                          child: MyBiasesRowWidget(),
+                        ),
                       ],
                     ),
                   ),

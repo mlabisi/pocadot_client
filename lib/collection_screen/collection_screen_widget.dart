@@ -63,8 +63,8 @@ class _CollectionScreenWidgetState extends State<CollectionScreenWidget> {
               color: FlutterFlowTheme.of(context).primaryColor,
               size: 30,
             ),
-            onPressed: () {
-              print('IconButton pressed ...');
+            onPressed: () async {
+              context.pushNamed('BiasesScreen');
             },
           ),
           NotificationsButtonWidget(),

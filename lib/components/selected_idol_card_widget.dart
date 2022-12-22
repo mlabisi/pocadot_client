@@ -19,71 +19,66 @@ class _SelectedIdolCardWidgetState extends State<SelectedIdolCardWidget> {
 
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 0),
-      child: InkWell(
-        onTap: () async {
-          context.pushNamed('ViewListingScreen');
-        },
-        child: Container(
-          decoration: BoxDecoration(
-            color: FlutterFlowTheme.of(context).secondaryBackground,
-            boxShadow: [
-              BoxShadow(
-                blurRadius: 4,
-                color: Color(0x33000000),
-                offset: Offset(0, 2),
-              )
-            ],
-            borderRadius: BorderRadius.circular(22),
-            border: Border.all(
-              color: FlutterFlowTheme.of(context).primaryColor,
-              width: 3,
-            ),
+      child: Container(
+        decoration: BoxDecoration(
+          color: FlutterFlowTheme.of(context).secondaryBackground,
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 4,
+              color: Color(0x33000000),
+              offset: Offset(0, 2),
+            )
+          ],
+          borderRadius: BorderRadius.circular(22),
+          border: Border.all(
+            color: FlutterFlowTheme.of(context).primaryColor,
+            width: 3,
           ),
-          child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  child: ClipRRect(
-                    child: Container(
-                      height: MediaQuery.of(context).size.height * 1,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
-                      ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: Image.network(
-                          'https://w.namu.la/s/521e6a9540f93408e76f33f197cfc781273af8c927d180ac1c8b969e2ffe7559c997bb0a0105476ca567a40ad7ee73763af3c034b990eb0bc9df1c91c9d2d0226237094190f37e187680fbfb2958ff1564babbb4c99ae8fe863c186c7090627a',
-                          width: double.infinity,
-                          fit: BoxFit.fitWidth,
-                        ),
+        ),
+        child: Padding(
+          padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: ClipRRect(
+                  child: Container(
+                    height: MediaQuery.of(context).size.height * 1,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Image.network(
+                        'https://w.namu.la/s/521e6a9540f93408e76f33f197cfc781273af8c927d180ac1c8b969e2ffe7559c997bb0a0105476ca567a40ad7ee73763af3c034b990eb0bc9df1c91c9d2d0226237094190f37e187680fbfb2958ff1564babbb4c99ae8fe863c186c7090627a',
+                        width: double.infinity,
+                        fit: BoxFit.fitWidth,
                       ),
                     ),
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
-                  child: Text(
-                    'Yuqi',
-                    style: FlutterFlowTheme.of(context).subtitle1.override(
-                          fontFamily: 'Jua',
-                          color: FlutterFlowTheme.of(context).primaryText,
-                          fontSize: 20,
-                        ),
-                  ),
-                ),
-                Text(
-                  '(G)I-DLE',
-                  style: FlutterFlowTheme.of(context).bodyText1.override(
-                        fontFamily: 'Urbanist',
-                        color: FlutterFlowTheme.of(context).secondaryText,
-                        fontSize: 10,
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
+                child: Text(
+                  'Yuqi',
+                  style: FlutterFlowTheme.of(context).subtitle1.override(
+                        fontFamily: 'Jua',
+                        color: FlutterFlowTheme.of(context).primaryText,
+                        fontSize: 20,
                       ),
                 ),
-              ],
-            ),
+              ),
+              Text(
+                '(G)I-DLE',
+                style: FlutterFlowTheme.of(context).bodyText1.override(
+                      fontFamily: 'Urbanist',
+                      color: FlutterFlowTheme.of(context).secondaryText,
+                      fontSize: 10,
+                    ),
+              ),
+            ],
           ),
         ),
       ),
