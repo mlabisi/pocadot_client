@@ -81,32 +81,54 @@ class _ListingCardWidgetState extends State<ListingCardWidget> {
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Text(
-                                  'Nayeon',
-                                  style: FlutterFlowTheme.of(context)
-                                      .subtitle1
-                                      .override(
-                                        fontFamily: 'Urbanist',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        fontSize: 20,
-                                      ),
-                                ),
-                                Expanded(
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        4, 0, 0, 0),
-                                    child: Text(
-                                      'IM NAYEON',
+                                Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'Nayeon',
                                       style: FlutterFlowTheme.of(context)
-                                          .bodyText1
+                                          .subtitle1
                                           .override(
                                             fontFamily: 'Urbanist',
                                             color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
-                                            fontSize: 10,
+                                                .primaryText,
+                                            fontSize: 16,
                                           ),
                                     ),
+                                  ],
+                                ),
+                                Expanded(
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'IM NAYEON',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1
+                                            .override(
+                                              fontFamily: 'Urbanist',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                              fontSize: 10,
+                                            ),
+                                      ),
+                                      Text(
+                                        'IM NAYEON',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1
+                                            .override(
+                                              fontFamily: 'Urbanist',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                              fontSize: 10,
+                                            ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ],

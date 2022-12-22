@@ -18,32 +18,27 @@ class _PhotocardThumbnailWidgetState extends State<PhotocardThumbnailWidget> {
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 
-    return InkWell(
-      onTap: () async {
-        context.pushNamed('PhotocardDetailsScreen');
-      },
-      child: Stack(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(16),
-            child: Image.network(
-              'https://pocadot.b-cdn.net/reclnaz03rdkqyOlU.png',
-              width: MediaQuery.of(context).size.width * 0.16,
-              height: MediaQuery.of(context).size.height * 0.12,
-              fit: BoxFit.fitHeight,
+    return Stack(
+      children: [
+        ClipRRect(
+          borderRadius: BorderRadius.circular(16),
+          child: Image.network(
+            'https://pocadot.b-cdn.net/reclnaz03rdkqyOlU.png',
+            width: MediaQuery.of(context).size.width * 0.16,
+            height: MediaQuery.of(context).size.height * 0.12,
+            fit: BoxFit.fitHeight,
+          ),
+        ),
+        if (false)
+          Container(
+            width: MediaQuery.of(context).size.width * 0.16,
+            height: MediaQuery.of(context).size.height * 0.12,
+            decoration: BoxDecoration(
+              color: Color(0x7F212121),
+              borderRadius: BorderRadius.circular(12),
             ),
           ),
-          if (false)
-            Container(
-              width: MediaQuery.of(context).size.width * 0.16,
-              height: MediaQuery.of(context).size.height * 0.12,
-              decoration: BoxDecoration(
-                color: Color(0x7F212121),
-                borderRadius: BorderRadius.circular(12),
-              ),
-            ),
-        ],
-      ),
+      ],
     );
   }
 }

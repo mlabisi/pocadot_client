@@ -96,11 +96,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => IdolPhotocardsScreenWidget(),
             ),
             FFRoute(
-              name: 'PhotocardDetailsScreen',
-              path: 'photocardDetailsScreen',
-              builder: (context, params) => PhotocardDetailsScreenWidget(),
-            ),
-            FFRoute(
               name: 'MoreScreen',
               path: 'moreScreen',
               builder: (context, params) => params.isEmpty

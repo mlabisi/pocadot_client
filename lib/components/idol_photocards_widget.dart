@@ -1,3 +1,4 @@
+import '../components/photocard_details_widget.dart';
 import '../components/photocard_thumbnail_widget.dart';
 import '../flutter_flow/flutter_flow_expanded_image_view.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -118,7 +119,27 @@ class _IdolPhotocardsWidgetState extends State<IdolPhotocardsWidget> {
                     verticalDirection: VerticalDirection.down,
                     clipBehavior: Clip.none,
                     children: [
-                      PhotocardThumbnailWidget(),
+                      InkWell(
+                        onTap: () async {
+                          await showModalBottomSheet(
+                            isScrollControlled: true,
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                            context: context,
+                            builder: (context) {
+                              return Padding(
+                                padding: MediaQuery.of(context).viewInsets,
+                                child: Container(
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.8,
+                                  child: PhotocardDetailsWidget(),
+                                ),
+                              );
+                            },
+                          ).then((value) => setState(() {}));
+                        },
+                        child: PhotocardThumbnailWidget(),
+                      ),
                       Stack(
                         children: [
                           InkWell(
