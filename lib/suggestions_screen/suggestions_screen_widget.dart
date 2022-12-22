@@ -133,13 +133,8 @@ class _SuggestionsScreenWidgetState extends State<SuggestionsScreenWidget> {
                                   children: [
                                     Text(
                                       'Nayeon',
-                                      style: FlutterFlowTheme.of(context)
-                                          .subtitle1
-                                          .override(
-                                            fontFamily: 'Urbanist',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                          ),
+                                      style:
+                                          FlutterFlowTheme.of(context).title3,
                                     ),
                                     Text(
                                       'IM NAYEON',
@@ -370,12 +365,7 @@ class _SuggestionsScreenWidgetState extends State<SuggestionsScreenWidget> {
                                     Text(
                                       'Nayeon',
                                       style: FlutterFlowTheme.of(context)
-                                          .subtitle1
-                                          .override(
-                                            fontFamily: 'Urbanist',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                          ),
+                                          .subtitle1,
                                     ),
                                     Text(
                                       'IM NAYEON',

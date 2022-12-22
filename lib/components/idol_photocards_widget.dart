@@ -211,7 +211,7 @@ class _IdolPhotocardsWidgetState extends State<IdolPhotocardsWidget> {
                               width: MediaQuery.of(context).size.width * 0.16,
                               height: MediaQuery.of(context).size.height * 0.12,
                               decoration: BoxDecoration(
-                                color: Color(0x7F212121),
+                                color: Color(0xCC212121),
                                 borderRadius: BorderRadius.circular(12),
                               ),
                             ),
@@ -257,7 +257,7 @@ class _IdolPhotocardsWidgetState extends State<IdolPhotocardsWidget> {
                             width: MediaQuery.of(context).size.width * 0.16,
                             height: MediaQuery.of(context).size.height * 0.12,
                             decoration: BoxDecoration(
-                              color: Color(0x7F212121),
+                              color: Color(0xCD212121),
                               borderRadius: BorderRadius.circular(12),
                             ),
                           ),
@@ -303,7 +303,7 @@ class _IdolPhotocardsWidgetState extends State<IdolPhotocardsWidget> {
                             width: MediaQuery.of(context).size.width * 0.16,
                             height: MediaQuery.of(context).size.height * 0.12,
                             decoration: BoxDecoration(
-                              color: Color(0x7F212121),
+                              color: Color(0xCD212121),
                               borderRadius: BorderRadius.circular(12),
                             ),
                           ),
@@ -349,7 +349,7 @@ class _IdolPhotocardsWidgetState extends State<IdolPhotocardsWidget> {
                             width: MediaQuery.of(context).size.width * 0.16,
                             height: MediaQuery.of(context).size.height * 0.12,
                             decoration: BoxDecoration(
-                              color: Color(0x7F212121),
+                              color: Color(0xCD212121),
                               borderRadius: BorderRadius.circular(12),
                             ),
                           ),
