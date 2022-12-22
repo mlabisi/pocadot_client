@@ -196,7 +196,7 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                                         0, 8, 4, 8),
                                     child: Container(
                                       width: MediaQuery.of(context).size.width *
-                                          0.3,
+                                          0.25,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
@@ -224,7 +224,7 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryColor,
-                                              size: 32,
+                                              size: 24,
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
@@ -239,6 +239,7 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryColor,
+                                                          fontSize: 16,
                                                         ),
                                               ),
                                             ),
@@ -252,7 +253,7 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                                         0, 8, 4, 8),
                                     child: Container(
                                       width: MediaQuery.of(context).size.width *
-                                          0.3,
+                                          0.25,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
@@ -280,7 +281,7 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryColor,
-                                              size: 32,
+                                              size: 24,
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
@@ -295,6 +296,7 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryColor,
+                                                          fontSize: 16,
                                                         ),
                                               ),
                                             ),
@@ -308,7 +310,7 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                                         0, 8, 0, 8),
                                     child: Container(
                                       width: MediaQuery.of(context).size.width *
-                                          0.3,
+                                          0.25,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
@@ -336,7 +338,7 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryColor,
-                                              size: 32,
+                                              size: 24,
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
@@ -351,6 +353,7 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryColor,
+                                                          fontSize: 16,
                                                         ),
                                               ),
                                             ),
