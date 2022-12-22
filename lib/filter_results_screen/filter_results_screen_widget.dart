@@ -705,7 +705,8 @@ class _FilterResultsScreenWidgetState extends State<FilterResultsScreenWidget> {
                                       options: FFButtonOptions(
                                         width: 130,
                                         height: 40,
-                                        color: Color(0x4CA3B0EF),
+                                        color: FlutterFlowTheme.of(context)
+                                            .alternate,
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyText1
                                             .override(
