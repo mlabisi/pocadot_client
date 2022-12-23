@@ -707,7 +707,8 @@ class _ViewListingScreenWidgetState extends State<ViewListingScreenWidget> {
                               options: FFButtonOptions(
                                 width: 130,
                                 height: 40,
-                                color: FlutterFlowTheme.of(context).alternate,
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
                                 textStyle: FlutterFlowTheme.of(context)
                                     .bodyText1
                                     .override(

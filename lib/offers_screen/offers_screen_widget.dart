@@ -3,6 +3,7 @@ import '../components/offer_cancelled_card_widget.dart';
 import '../components/offer_made_card_widget.dart';
 import '../components/offer_rejected_card_widget.dart';
 import '../flutter_flow/flutter_flow_choice_chips.dart';
+import '../flutter_flow/flutter_flow_drop_down.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -22,6 +23,7 @@ class OffersScreenWidget extends StatefulWidget {
 class _OffersScreenWidgetState extends State<OffersScreenWidget> {
   String? choiceChipsValue;
   TextEditingController? textController;
+  String? dropDownValue;
   final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -233,19 +235,30 @@ class _OffersScreenWidgetState extends State<OffersScreenWidget> {
                                 color: FlutterFlowTheme.of(context).primaryText,
                               ),
                         ),
-                        FlutterFlowIconButton(
-                          borderColor: Colors.transparent,
-                          borderRadius: 30,
-                          borderWidth: 1,
-                          buttonSize: 40,
+                        FlutterFlowDropDown<String>(
+                          options: ['A - Z', 'Most Recent', 'Oldest', ''],
+                          onChanged: (val) =>
+                              setState(() => dropDownValue = val),
+                          width: MediaQuery.of(context).size.width * 0.4,
+                          textStyle: FlutterFlowTheme.of(context)
+                              .bodyText1
+                              .override(
+                                fontFamily: 'Urbanist',
+                                color: FlutterFlowTheme.of(context).primaryText,
+                              ),
                           icon: Icon(
                             FFIcons.kswap,
                             color: FlutterFlowTheme.of(context).primaryColor,
-                            size: 20,
+                            size: 15,
                           ),
-                          onPressed: () {
-                            print('IconButton pressed ...');
-                          },
+                          fillColor:
+                              FlutterFlowTheme.of(context).primaryBackground,
+                          elevation: 2,
+                          borderColor: Colors.transparent,
+                          borderWidth: 0,
+                          borderRadius: 0,
+                          margin: EdgeInsetsDirectional.fromSTEB(4, 4, 12, 4),
+                          hidesUnderline: true,
                         ),
                       ],
                     ),

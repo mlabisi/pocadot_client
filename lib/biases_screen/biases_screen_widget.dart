@@ -83,7 +83,7 @@ class _BiasesScreenWidgetState extends State<BiasesScreenWidget> {
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
                       child: Text(
-                        'Tell us the idols whose photocards you collect and pocadot will help you keep track of your collection and recommend listings!',
+                        'Tell us the idols whose photocards you collect. pocadot will help you keep track of your collection and recommend listings!',
                         style: FlutterFlowTheme.of(context).bodyText1.override(
                               fontFamily: 'Urbanist',
                               color: FlutterFlowTheme.of(context).secondaryText,

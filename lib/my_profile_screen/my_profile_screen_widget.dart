@@ -58,7 +58,7 @@ class _MyProfileScreenWidgetState extends State<MyProfileScreenWidget> {
       body: NestedScrollView(
         headerSliverBuilder: (context, _) => [
           SliverAppBar(
-            expandedHeight: MediaQuery.of(context).size.height * 0.5,
+            expandedHeight: MediaQuery.of(context).size.height * 0.45,
             pinned: true,
             floating: false,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -380,15 +380,13 @@ class _MyProfileScreenWidgetState extends State<MyProfileScreenWidget> {
                                                       ),
                                             ),
                                             FlutterFlowDropDown<String>(
-                                              initialOption: dropDownValue ??=
-                                                  'Default',
                                               options: [
                                                 'A - Z',
                                                 'Recently Listed',
                                                 'Price Low to High',
                                                 'Price High to Low',
                                                 'Oldest',
-                                                'Default'
+                                                ''
                                               ],
                                               onChanged: (val) => setState(
                                                   () => dropDownValue = val),

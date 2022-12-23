@@ -69,13 +69,32 @@ class _PhotocardDetailsBlockWidgetState
                   Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: Image.network(
-                          'https://pocadot.b-cdn.net/recTLCAdgnX8FQU6e.png',
-                          width: MediaQuery.of(context).size.width * 0.16,
-                          height: MediaQuery.of(context).size.height * 0.12,
-                          fit: BoxFit.cover,
+                      InkWell(
+                        onTap: () async {
+                          await showModalBottomSheet(
+                            isScrollControlled: true,
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                            context: context,
+                            builder: (context) {
+                              return Padding(
+                                padding: MediaQuery.of(context).viewInsets,
+                                child: Container(
+                                  height: 85,
+                                  child: PhotocardDetailsWidget(),
+                                ),
+                              );
+                            },
+                          ).then((value) => setState(() {}));
+                        },
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: Image.network(
+                            'https://pocadot.b-cdn.net/recTLCAdgnX8FQU6e.png',
+                            width: MediaQuery.of(context).size.width * 0.16,
+                            height: MediaQuery.of(context).size.height * 0.12,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                       Expanded(
@@ -299,6 +318,70 @@ class _PhotocardDetailsBlockWidgetState
                                             print('Button pressed ...');
                                           },
                                           text: 'Remove from My Collection',
+                                          options: FFButtonOptions(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    8, 8, 8, 8),
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryColor,
+                                            textStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .bodyText1
+                                                .override(
+                                                  fontFamily: 'Urbanist',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryBackground,
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                            borderSide: BorderSide(
+                                              color: Colors.transparent,
+                                              width: 1,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(100),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              if (false)
+                                Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0, 8, 0, 4),
+                                      child: Text(
+                                        'You listed this photocard!',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1
+                                            .override(
+                                              fontFamily: 'Urbanist',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryColor,
+                                              fontWeight: FontWeight.w300,
+                                              fontStyle: FontStyle.italic,
+                                            ),
+                                      ),
+                                    ),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        // Shown if user has this photocard in their collection
+                                        FFButtonWidget(
+                                          onPressed: () {
+                                            print('Button pressed ...');
+                                          },
+                                          text: 'View Listing',
                                           options: FFButtonOptions(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(

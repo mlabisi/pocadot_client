@@ -1,3 +1,4 @@
+import '../components/filter_photocards_widget.dart';
 import '../components/idol_photocards_widget.dart';
 import '../flutter_flow/flutter_flow_drop_down.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
@@ -315,15 +316,7 @@ class _IdolPhotocardsScreenWidgetState
                           ),
                         ),
                         FlutterFlowDropDown<String>(
-                          initialOption: dropDownValue ??= 'Default',
-                          options: [
-                            'A - Z',
-                            'Recently Listed',
-                            'Price Low to High',
-                            'Price High to Low',
-                            'Oldest',
-                            'Default'
-                          ],
+                          options: ['A - Z', 'Most Recent', 'Oldest', ''],
                           onChanged: (val) =>
                               setState(() => dropDownValue = val),
                           width: MediaQuery.of(context).size.width * 0.4,
@@ -358,7 +351,22 @@ class _IdolPhotocardsScreenWidgetState
                             size: 22,
                           ),
                           onPressed: () async {
-                            context.pushNamed('FilterResultsScreen');
+                            await showModalBottomSheet(
+                              isScrollControlled: true,
+                              backgroundColor: FlutterFlowTheme.of(context)
+                                  .primaryBackground,
+                              enableDrag: false,
+                              context: context,
+                              builder: (context) {
+                                return Padding(
+                                  padding: MediaQuery.of(context).viewInsets,
+                                  child: Container(
+                                    height: 85,
+                                    child: FilterPhotocardsWidget(),
+                                  ),
+                                );
+                              },
+                            ).then((value) => setState(() {}));
                           },
                         ),
                       ],

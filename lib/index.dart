@@ -18,12 +18,12 @@ export 'add_listing_screen/add_listing_screen_widget.dart'
 export 'search_screen/search_screen_widget.dart' show SearchScreenWidget;
 export 'collection_detail_screen/collection_detail_screen_widget.dart'
     show CollectionDetailScreenWidget;
-export 'filter_results_screen/filter_results_screen_widget.dart'
-    show FilterResultsScreenWidget;
 export 'view_profile_screen/view_profile_screen_widget.dart'
     show ViewProfileScreenWidget;
 export 'view_listing_screen/view_listing_screen_widget.dart'
     show ViewListingScreenWidget;
+export 'filter_results_screen/filter_results_screen_widget.dart'
+    show FilterResultsScreenWidget;
 export 'make_offer_screen/make_offer_screen_widget.dart'
     show MakeOfferScreenWidget;
 export 'my_listing_screen/my_listing_screen_widget.dart'

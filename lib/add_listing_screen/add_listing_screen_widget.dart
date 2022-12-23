@@ -1088,7 +1088,7 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                           width: 130,
                                           height: 40,
                                           color: FlutterFlowTheme.of(context)
-                                              .alternate,
+                                              .primaryBackground,
                                           textStyle: FlutterFlowTheme.of(
                                                   context)
                                               .bodyText1

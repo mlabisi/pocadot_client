@@ -190,14 +190,13 @@ class _SearchScreenWidgetState extends State<SearchScreenWidget> {
                                 ),
                               ),
                               FlutterFlowDropDown<String>(
-                                initialOption: dropDownValue ??= 'Default',
                                 options: [
                                   'A - Z',
                                   'Recently Listed',
                                   'Price Low to High',
                                   'Price High to Low',
                                   'Oldest',
-                                  'Default'
+                                  ''
                                 ],
                                 onChanged: (val) =>
                                     setState(() => dropDownValue = val),

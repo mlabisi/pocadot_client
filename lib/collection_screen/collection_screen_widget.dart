@@ -89,7 +89,6 @@ class _CollectionScreenWidgetState extends State<CollectionScreenWidget> {
                       Duration(milliseconds: 2000),
                       () => setState(() {}),
                     ),
-                    autofocus: true,
                     obscureText: false,
                     decoration: InputDecoration(
                       hintText: 'Search for groups and idols',
@@ -181,14 +180,13 @@ class _CollectionScreenWidgetState extends State<CollectionScreenWidget> {
                                   ),
                                 ),
                                 FlutterFlowDropDown<String>(
-                                  initialOption: dropDownValue ??= 'Default',
                                   options: [
                                     'A - Z',
                                     'Recently Listed',
                                     'Price Low to High',
                                     'Price High to Low',
                                     'Oldest',
-                                    'Default'
+                                    ''
                                   ],
                                   onChanged: (val) =>
                                       setState(() => dropDownValue = val),

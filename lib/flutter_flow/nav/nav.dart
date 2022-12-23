@@ -123,11 +123,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => CollectionDetailScreenWidget(),
             ),
             FFRoute(
-              name: 'FilterResultsScreen',
-              path: 'filterResultsScreen',
-              builder: (context, params) => FilterResultsScreenWidget(),
-            ),
-            FFRoute(
               name: 'ViewProfileScreen',
               path: 'viewProfileScreen',
               builder: (context, params) => ViewProfileScreenWidget(),
@@ -136,6 +131,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'ViewListingScreen',
               path: 'viewListingScreen',
               builder: (context, params) => ViewListingScreenWidget(),
+            ),
+            FFRoute(
+              name: 'FilterResultsScreen',
+              path: 'filterResultsScreen',
+              builder: (context, params) => FilterResultsScreenWidget(),
             ),
             FFRoute(
               name: 'MakeOfferScreen',

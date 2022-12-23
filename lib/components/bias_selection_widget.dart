@@ -55,7 +55,7 @@ class _BiasSelectionWidgetState extends State<BiasSelectionWidget> {
               child: Theme(
                 data: ThemeData(
                   unselectedWidgetColor:
-                      FlutterFlowTheme.of(context).secondaryText,
+                      FlutterFlowTheme.of(context).primaryColor,
                 ),
                 child: CheckboxListTile(
                   value: checkboxListTileValue ??= true,
@@ -75,12 +75,12 @@ class _BiasSelectionWidgetState extends State<BiasSelectionWidget> {
                   ),
                   tileColor: FlutterFlowTheme.of(context).secondaryBackground,
                   activeColor: FlutterFlowTheme.of(context).primaryColor,
-                  checkColor: FlutterFlowTheme.of(context).primaryBtnText,
+                  checkColor: FlutterFlowTheme.of(context).white,
                   dense: false,
                   controlAffinity: ListTileControlAffinity.trailing,
                   contentPadding: EdgeInsetsDirectional.fromSTEB(8, 0, 8, 0),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
+                    borderRadius: BorderRadius.circular(6),
                   ),
                 ),
               ),

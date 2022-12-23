@@ -371,15 +371,13 @@ class _ViewProfileScreenWidgetState extends State<ViewProfileScreenWidget> {
                                                 ),
                                           ),
                                           FlutterFlowDropDown<String>(
-                                            initialOption: dropDownValue1 ??=
-                                                'Default',
                                             options: [
                                               'A - Z',
                                               'Recently Listed',
                                               'Price Low to High',
                                               'Price High to Low',
                                               'Oldest',
-                                              'Default'
+                                              ''
                                             ],
                                             onChanged: (val) => setState(
                                                 () => dropDownValue1 = val),
