@@ -77,7 +77,7 @@ class _SuggestionsScreenWidgetState extends State<SuggestionsScreenWidget> {
           child: Align(
             alignment: AlignmentDirectional(0, -0.75),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16, 20, 16, 80),
+              padding: EdgeInsetsDirectional.fromSTEB(16, 20, 16, 104),
               child: FlutterFlowSwipeableStack(
                 topCardHeightFraction: 0.74,
                 middleCardHeightFraction: 0.7,
