@@ -66,7 +66,7 @@ class _MyProfileScreenWidgetState extends State<MyProfileScreenWidget> {
             actions: [],
             flexibleSpace: FlexibleSpaceBar(
               title: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 14),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.end,

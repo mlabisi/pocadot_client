@@ -1,4 +1,4 @@
-name: pocadot
+name: pocadot_static
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -29,7 +29,6 @@ dependencies:
   cached_network_image: 3.2.1
   easy_debounce: 2.0.1
   expandable: 5.0.1
-  floating_bottom_navigation_bar: 1.5.2
   flutter_animate: 1.0.0
   flutter_cache_manager: 3.3.0
   flutter_rating_bar: 4.0.1

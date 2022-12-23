@@ -1,6 +1,6 @@
 {
-    "name": "pocadot",
-    "short_name": "pocadot",
+    "name": "pocadot-static",
+    "short_name": "pocadot-static",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

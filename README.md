@@ -1,4 +1,4 @@
-# pocadot
+# pocadot-static
 
 A new Flutter project.
 

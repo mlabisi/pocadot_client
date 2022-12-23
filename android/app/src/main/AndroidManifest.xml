@@ -45,7 +45,7 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="pocadot" android:host="pocadot.com" />
+                <data android:scheme="pocadotstatic" android:host="pocadotstatic.com" />
             </intent-filter>
 
         </activity>

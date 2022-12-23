@@ -80,7 +80,8 @@ class _PhotocardDetailsBlockWidgetState
                               return Padding(
                                 padding: MediaQuery.of(context).viewInsets,
                                 child: Container(
-                                  height: 85,
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.85,
                                   child: PhotocardDetailsWidget(),
                                 ),
                               );
