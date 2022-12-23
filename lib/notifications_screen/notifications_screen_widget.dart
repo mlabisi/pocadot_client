@@ -3,7 +3,7 @@ import '../components/offer_accepted_card_widget.dart';
 import '../components/offer_cancelled_card_widget.dart';
 import '../components/offer_made_card_widget.dart';
 import '../components/offer_rejected_card_widget.dart';
-import '../components/trade_offer_received_card_widget.dart';
+import '../components/trade_offer_reveived_notification_widget.dart';
 import '../components/warning_notification_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -110,7 +110,7 @@ class _NotificationsScreenWidgetState extends State<NotificationsScreenWidget> {
                                   padding: EdgeInsets.zero,
                                   scrollDirection: Axis.vertical,
                                   children: [
-                                    TradeOfferReceivedCardWidget(),
+                                    TradeOfferReveivedNotificationWidget(),
                                     OfferMadeCardWidget(),
                                     OfferAcceptedCardWidget(),
                                     OfferRejectedCardWidget(),
