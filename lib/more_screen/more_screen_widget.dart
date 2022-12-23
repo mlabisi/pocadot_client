@@ -1,6 +1,7 @@
 import '../components/change_password_row_widget.dart';
 import '../components/delete_account_button_widget.dart';
 import '../components/logout_button_widget.dart';
+import '../components/logout_sheet_widget.dart';
 import '../components/my_biases_row_widget.dart';
 import '../components/my_listings_row_widget.dart';
 import '../components/my_offers_row_widget.dart';
@@ -85,7 +86,26 @@ class _MoreScreenWidgetState extends State<MoreScreenWidget> {
                   },
                   child: ChangePasswordRowWidget(),
                 ),
-                LogoutButtonWidget(),
+                InkWell(
+                  onTap: () async {
+                    await showModalBottomSheet(
+                      isScrollControlled: true,
+                      backgroundColor:
+                          FlutterFlowTheme.of(context).primaryBackground,
+                      context: context,
+                      builder: (context) {
+                        return Padding(
+                          padding: MediaQuery.of(context).viewInsets,
+                          child: Container(
+                            height: MediaQuery.of(context).size.height * 0.25,
+                            child: LogoutSheetWidget(),
+                          ),
+                        );
+                      },
+                    ).then((value) => setState(() {}));
+                  },
+                  child: LogoutButtonWidget(),
+                ),
                 DeleteAccountButtonWidget(),
                 PocadotSocialsWidget(),
               ],

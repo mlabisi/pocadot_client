@@ -1,5 +1,7 @@
+import '../components/buy_offer_received_card_widget.dart';
 import '../components/listing_tag_widget.dart';
-import '../components/received_offer_widget.dart';
+import '../components/photocard_details_block_widget.dart';
+import '../components/trade_offer_received_card_widget.dart';
 import '../flutter_flow/flutter_flow_expanded_image_view.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -76,7 +78,7 @@ class _MyListingScreenWidgetState extends State<MyListingScreenWidget> {
           child: Stack(
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 88),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 96),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -110,8 +112,8 @@ class _MyListingScreenWidgetState extends State<MyListingScreenWidget> {
                                               type: PageTransitionType.fade,
                                               child:
                                                   FlutterFlowExpandedImageView(
-                                                image: Image.asset(
-                                                  'assets/images/nayeon.png',
+                                                image: Image.network(
+                                                  'https://pocadot.b-cdn.net/recTLCAdgnX8FQU6e.png',
                                                   fit: BoxFit.contain,
                                                 ),
                                                 allowRotation: false,
@@ -127,11 +129,11 @@ class _MyListingScreenWidgetState extends State<MyListingScreenWidget> {
                                           child: ClipRRect(
                                             borderRadius:
                                                 BorderRadius.circular(40),
-                                            child: Image.asset(
-                                              'assets/images/nayeon.png',
+                                            child: Image.network(
+                                              'https://pocadot.b-cdn.net/recTLCAdgnX8FQU6e.png',
                                               width: 300,
                                               height: 300,
-                                              fit: BoxFit.cover,
+                                              fit: BoxFit.fitHeight,
                                             ),
                                           ),
                                         ),
@@ -148,8 +150,8 @@ class _MyListingScreenWidgetState extends State<MyListingScreenWidget> {
                                               type: PageTransitionType.fade,
                                               child:
                                                   FlutterFlowExpandedImageView(
-                                                image: Image.asset(
-                                                  'assets/images/nayeon.png',
+                                                image: Image.network(
+                                                  'https://pocadot.b-cdn.net/recTLCAdgnX8FQU6e.png',
                                                   fit: BoxFit.contain,
                                                 ),
                                                 allowRotation: false,
@@ -165,9 +167,9 @@ class _MyListingScreenWidgetState extends State<MyListingScreenWidget> {
                                           child: ClipRRect(
                                             borderRadius:
                                                 BorderRadius.circular(40),
-                                            child: Image.asset(
-                                              'assets/images/nayeon.png',
-                                              fit: BoxFit.cover,
+                                            child: Image.network(
+                                              'https://pocadot.b-cdn.net/recTLCAdgnX8FQU6e.png',
+                                              fit: BoxFit.fitHeight,
                                             ),
                                           ),
                                         ),
@@ -222,7 +224,7 @@ class _MyListingScreenWidgetState extends State<MyListingScreenWidget> {
                             child: ListingTagWidget(),
                           ),
                           Text(
-                            'Nayeon · IM NAYEON',
+                            'Yuqi · (G)I-DLE',
                             style: FlutterFlowTheme.of(context)
                                 .subtitle1
                                 .override(
@@ -232,7 +234,7 @@ class _MyListingScreenWidgetState extends State<MyListingScreenWidget> {
                                 ),
                           ),
                           Text(
-                            'TWICE',
+                            'I love (2022) - Broadcast (1/3)',
                             style:
                                 FlutterFlowTheme.of(context).bodyText1.override(
                                       fontFamily: 'Urbanist',
@@ -285,12 +287,10 @@ class _MyListingScreenWidgetState extends State<MyListingScreenWidget> {
                                 ),
                               ],
                             ),
-                            Container(
-                              width: 1,
+                            SizedBox(
                               height: 100,
-                              decoration: BoxDecoration(
-                                color:
-                                    FlutterFlowTheme.of(context).greyscale200,
+                              child: VerticalDivider(
+                                thickness: 1,
                               ),
                             ),
                             Column(
@@ -325,12 +325,10 @@ class _MyListingScreenWidgetState extends State<MyListingScreenWidget> {
                                 ),
                               ],
                             ),
-                            Container(
-                              width: 1,
+                            SizedBox(
                               height: 100,
-                              decoration: BoxDecoration(
-                                color:
-                                    FlutterFlowTheme.of(context).greyscale200,
+                              child: VerticalDivider(
+                                thickness: 1,
                               ),
                             ),
                             Column(
@@ -364,12 +362,10 @@ class _MyListingScreenWidgetState extends State<MyListingScreenWidget> {
                                 ),
                               ],
                             ),
-                            Container(
-                              width: 1,
+                            SizedBox(
                               height: 100,
-                              decoration: BoxDecoration(
-                                color:
-                                    FlutterFlowTheme.of(context).greyscale200,
+                              child: VerticalDivider(
+                                thickness: 1,
                               ),
                             ),
                             Column(
@@ -405,6 +401,12 @@ class _MyListingScreenWidgetState extends State<MyListingScreenWidget> {
                             ),
                           ],
                         ),
+                      ),
+                      Divider(
+                        thickness: 1,
+                        indent: 16,
+                        endIndent: 16,
+                        color: FlutterFlowTheme.of(context).greyscale200,
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(16, 24, 16, 0),
@@ -464,7 +466,7 @@ class _MyListingScreenWidgetState extends State<MyListingScreenWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0, 4, 0, 16),
                                       child: Text(
-                                        'I’m putting this Seulgi photocard up for sale. Please make an offer if you’re interested!',
+                                        'I’m putting this Yuqi Broadcast photocard up for sale. Please make an offer if you’re interested!',
                                         textAlign: TextAlign.start,
                                         style: FlutterFlowTheme.of(context)
                                             .bodyText1
@@ -488,70 +490,42 @@ class _MyListingScreenWidgetState extends State<MyListingScreenWidget> {
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    16, 16, 16, 16),
+                                    16, 0, 16, 8),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    InkWell(
-                                      onTap: () async {
-                                        context.pushNamed('ViewProfileScreen');
-                                      },
-                                      child: Container(
-                                        width: 32,
-                                        height: 32,
-                                        clipBehavior: Clip.antiAlias,
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                        ),
-                                        child: Image.network(
-                                          'https://picsum.photos/seed/539/600',
-                                          fit: BoxFit.cover,
-                                        ),
+                                    FlutterFlowIconButton(
+                                      borderColor: Colors.transparent,
+                                      borderRadius: 30,
+                                      borderWidth: 1,
+                                      buttonSize: 40,
+                                      icon: Icon(
+                                        FFIcons.keditSquare,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryColor,
+                                        size: 20,
                                       ),
+                                      onPressed: () {
+                                        print('IconButton pressed ...');
+                                      },
                                     ),
                                     Expanded(
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    8, 0, 0, 0),
-                                            child: Text(
-                                              'Listed by',
-                                              maxLines: 1,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyText1,
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    2, 0, 0, 0),
-                                            child: InkWell(
-                                              onTap: () async {
-                                                context.pushNamed(
-                                                    'ViewProfileScreen');
-                                              },
-                                              child: Text(
-                                                'itsgoindownnn',
-                                                maxLines: 1,
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyText1
-                                                    .override(
-                                                      fontFamily: 'Urbanist',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryColor,
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                    ),
-                                              ),
-                                            ),
+                                          Text(
+                                            'Edit Description',
+                                            maxLines: 1,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyText1
+                                                .override(
+                                                  fontFamily: 'Urbanist',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryColor,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                           ),
                                         ],
                                       ),
@@ -563,6 +537,7 @@ class _MyListingScreenWidgetState extends State<MyListingScreenWidget> {
                           ),
                         ),
                       ),
+                      PhotocardDetailsBlockWidget(),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(16, 24, 16, 24),
                         child: Container(
@@ -609,10 +584,8 @@ class _MyListingScreenWidgetState extends State<MyListingScreenWidget> {
                               Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  ReceivedOfferWidget(),
-                                  ReceivedOfferWidget(),
-                                  ReceivedOfferWidget(),
-                                  ReceivedOfferWidget(),
+                                  TradeOfferReceivedCardWidget(),
+                                  BuyOfferReceivedCardWidget(),
                                 ],
                               ),
                             ],
