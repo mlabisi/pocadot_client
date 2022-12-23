@@ -7,7 +7,6 @@ import '../flutter_flow/flutter_flow_choice_chips.dart';
 import '../flutter_flow/flutter_flow_drop_down.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_toggle_icon.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
@@ -88,23 +87,6 @@ class _ViewProfileScreenWidgetState extends State<ViewProfileScreenWidget> {
           ),
         ),
         actions: [
-          ToggleIcon(
-            onPressed: () async {
-              setState(
-                  () => FFAppState().testToggle = !FFAppState().testToggle);
-            },
-            value: FFAppState().testToggle,
-            onIcon: Icon(
-              FFIcons.kheart,
-              color: FlutterFlowTheme.of(context).primaryColor,
-              size: 25,
-            ),
-            offIcon: Icon(
-              FFIcons.kheart,
-              color: FlutterFlowTheme.of(context).primaryColor,
-              size: 25,
-            ),
-          ),
           FlutterFlowIconButton(
             borderColor: Colors.transparent,
             borderRadius: 30,
