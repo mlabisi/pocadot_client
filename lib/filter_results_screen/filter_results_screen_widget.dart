@@ -723,6 +723,7 @@ class _FilterResultsScreenWidgetState extends State<FilterResultsScreenWidget> {
                                         borderRadius:
                                             BorderRadius.circular(100),
                                       ),
+                                      showLoadingIndicator: false,
                                     ),
                                     FFButtonWidget(
                                       onPressed: () {

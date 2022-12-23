@@ -7,7 +7,6 @@ import '../flutter_flow/flutter_flow_util.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -261,8 +260,8 @@ class _BiasesScreenWidgetState extends State<BiasesScreenWidget> {
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                FaIcon(
-                                  FontAwesomeIcons.chevronUp,
+                                Icon(
+                                  FFIcons.karrowUp2,
                                   color: Colors.black,
                                   size: 16,
                                 ),

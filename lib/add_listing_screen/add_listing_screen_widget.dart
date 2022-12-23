@@ -1106,6 +1106,7 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                           borderRadius:
                                               BorderRadius.circular(100),
                                         ),
+                                        showLoadingIndicator: false,
                                       ),
                                       FFButtonWidget(
                                         onPressed: () {
