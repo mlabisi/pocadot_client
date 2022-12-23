@@ -1,6 +1,6 @@
+import '../components/idol_actions_widget.dart';
 import '../components/idol_card_widget.dart';
 import '../components/listing_card_widget.dart';
-import '../components/photocard_details_widget.dart';
 import '../components/profile_description_widget.dart';
 import '../components/profile_header_widget.dart';
 import '../flutter_flow/flutter_flow_choice_chips.dart';
@@ -577,15 +577,13 @@ class _ViewProfileScreenWidgetState extends State<ViewProfileScreenWidget> {
                                             ),
                                           ),
                                           FlutterFlowDropDown<String>(
-                                            initialOption: dropDownValue2 ??=
-                                                'Default',
                                             options: [
                                               'A - Z',
                                               'Recently Listed',
                                               'Price Low to High',
                                               'Price High to Low',
                                               'Oldest',
-                                              'Default'
+                                              ''
                                             ],
                                             onChanged: (val) => setState(
                                                 () => dropDownValue2 = val),
@@ -674,9 +672,9 @@ class _ViewProfileScreenWidgetState extends State<ViewProfileScreenWidget> {
                                                           MediaQuery.of(context)
                                                                   .size
                                                                   .height *
-                                                              0.85,
+                                                              0.4,
                                                       child:
-                                                          PhotocardDetailsWidget(),
+                                                          IdolActionsWidget(),
                                                     ),
                                                   );
                                                 },
@@ -704,9 +702,9 @@ class _ViewProfileScreenWidgetState extends State<ViewProfileScreenWidget> {
                                                           MediaQuery.of(context)
                                                                   .size
                                                                   .height *
-                                                              0.85,
+                                                              0.4,
                                                       child:
-                                                          PhotocardDetailsWidget(),
+                                                          IdolActionsWidget(),
                                                     ),
                                                   );
                                                 },
@@ -734,9 +732,9 @@ class _ViewProfileScreenWidgetState extends State<ViewProfileScreenWidget> {
                                                           MediaQuery.of(context)
                                                                   .size
                                                                   .height *
-                                                              0.85,
+                                                              0.4,
                                                       child:
-                                                          PhotocardDetailsWidget(),
+                                                          IdolActionsWidget(),
                                                     ),
                                                   );
                                                 },
@@ -764,9 +762,9 @@ class _ViewProfileScreenWidgetState extends State<ViewProfileScreenWidget> {
                                                           MediaQuery.of(context)
                                                                   .size
                                                                   .height *
-                                                              0.85,
+                                                              0.4,
                                                       child:
-                                                          PhotocardDetailsWidget(),
+                                                          IdolActionsWidget(),
                                                     ),
                                                   );
                                                 },
@@ -794,9 +792,9 @@ class _ViewProfileScreenWidgetState extends State<ViewProfileScreenWidget> {
                                                           MediaQuery.of(context)
                                                                   .size
                                                                   .height *
-                                                              0.85,
+                                                              0.4,
                                                       child:
-                                                          PhotocardDetailsWidget(),
+                                                          IdolActionsWidget(),
                                                     ),
                                                   );
                                                 },
@@ -824,9 +822,9 @@ class _ViewProfileScreenWidgetState extends State<ViewProfileScreenWidget> {
                                                           MediaQuery.of(context)
                                                                   .size
                                                                   .height *
-                                                              0.85,
+                                                              0.4,
                                                       child:
-                                                          PhotocardDetailsWidget(),
+                                                          IdolActionsWidget(),
                                                     ),
                                                   );
                                                 },
@@ -854,9 +852,9 @@ class _ViewProfileScreenWidgetState extends State<ViewProfileScreenWidget> {
                                                           MediaQuery.of(context)
                                                                   .size
                                                                   .height *
-                                                              0.85,
+                                                              0.4,
                                                       child:
-                                                          PhotocardDetailsWidget(),
+                                                          IdolActionsWidget(),
                                                     ),
                                                   );
                                                 },
@@ -884,9 +882,9 @@ class _ViewProfileScreenWidgetState extends State<ViewProfileScreenWidget> {
                                                           MediaQuery.of(context)
                                                                   .size
                                                                   .height *
-                                                              0.85,
+                                                              0.4,
                                                       child:
-                                                          PhotocardDetailsWidget(),
+                                                          IdolActionsWidget(),
                                                     ),
                                                   );
                                                 },
@@ -914,9 +912,9 @@ class _ViewProfileScreenWidgetState extends State<ViewProfileScreenWidget> {
                                                           MediaQuery.of(context)
                                                                   .size
                                                                   .height *
-                                                              0.85,
+                                                              0.4,
                                                       child:
-                                                          PhotocardDetailsWidget(),
+                                                          IdolActionsWidget(),
                                                     ),
                                                   );
                                                 },
