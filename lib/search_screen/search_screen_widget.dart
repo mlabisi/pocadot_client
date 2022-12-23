@@ -165,84 +165,84 @@ class _SearchScreenWidgetState extends State<SearchScreenWidget> {
               Expanded(
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Expanded(
-                              child: Text(
-                                '14 Results',
-                                style: FlutterFlowTheme.of(context)
-                                    .subtitle2
+                  child: SingleChildScrollView(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  '14 Results',
+                                  style: FlutterFlowTheme.of(context)
+                                      .subtitle2
+                                      .override(
+                                        fontFamily: 'Urbanist',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
+                                ),
+                              ),
+                              FlutterFlowDropDown<String>(
+                                initialOption: dropDownValue ??= 'Default',
+                                options: [
+                                  'A - Z',
+                                  'Recently Listed',
+                                  'Price Low to High',
+                                  'Price High to Low',
+                                  'Oldest',
+                                  'Default'
+                                ],
+                                onChanged: (val) =>
+                                    setState(() => dropDownValue = val),
+                                width: MediaQuery.of(context).size.width * 0.4,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .bodyText1
                                     .override(
                                       fontFamily: 'Urbanist',
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
                                     ),
+                                icon: Icon(
+                                  FFIcons.kswap,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryColor,
+                                  size: 15,
+                                ),
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                                elevation: 2,
+                                borderColor: Colors.transparent,
+                                borderWidth: 0,
+                                borderRadius: 0,
+                                margin:
+                                    EdgeInsetsDirectional.fromSTEB(4, 4, 12, 4),
+                                hidesUnderline: true,
                               ),
-                            ),
-                            FlutterFlowDropDown<String>(
-                              initialOption: dropDownValue ??= 'Default',
-                              options: [
-                                'A - Z',
-                                'Recently Listed',
-                                'Price Low to High',
-                                'Price High to Low',
-                                'Oldest',
-                                'Default'
-                              ],
-                              onChanged: (val) =>
-                                  setState(() => dropDownValue = val),
-                              width: MediaQuery.of(context).size.width * 0.4,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .bodyText1
-                                  .override(
-                                    fontFamily: 'Urbanist',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                  ),
-                              icon: Icon(
-                                FFIcons.kswap,
-                                color:
-                                    FlutterFlowTheme.of(context).primaryColor,
-                                size: 15,
+                              FlutterFlowIconButton(
+                                borderColor: Colors.transparent,
+                                borderRadius: 30,
+                                borderWidth: 1,
+                                buttonSize: 40,
+                                icon: Icon(
+                                  FFIcons.kfilter2,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryColor,
+                                  size: 22,
+                                ),
+                                onPressed: () async {
+                                  context.pushNamed('FilterResultsScreen');
+                                },
                               ),
-                              fillColor: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
-                              elevation: 2,
-                              borderColor: Colors.transparent,
-                              borderWidth: 0,
-                              borderRadius: 0,
-                              margin:
-                                  EdgeInsetsDirectional.fromSTEB(4, 4, 12, 4),
-                              hidesUnderline: true,
-                            ),
-                            FlutterFlowIconButton(
-                              borderColor: Colors.transparent,
-                              borderRadius: 30,
-                              borderWidth: 1,
-                              buttonSize: 40,
-                              icon: Icon(
-                                FFIcons.kfilter2,
-                                color:
-                                    FlutterFlowTheme.of(context).primaryColor,
-                                size: 22,
-                              ),
-                              onPressed: () async {
-                                context.pushNamed('FilterResultsScreen');
-                              },
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                      Expanded(
-                        child: Padding(
+                        Padding(
                           padding:
-                              EdgeInsetsDirectional.fromSTEB(16, 16, 16, 0),
+                              EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
                           child: GridView(
                             padding: EdgeInsets.zero,
                             gridDelegate:
@@ -267,8 +267,8 @@ class _SearchScreenWidgetState extends State<SearchScreenWidget> {
                             ],
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),

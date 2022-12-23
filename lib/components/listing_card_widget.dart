@@ -140,7 +140,7 @@ class _ListingCardWidgetState extends State<ListingCardWidget> {
                                             ),
                                       ),
                                       Text(
-                                        ' - Burn Version A',
+                                        ' - Born Version A',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyText1
                                             .override(

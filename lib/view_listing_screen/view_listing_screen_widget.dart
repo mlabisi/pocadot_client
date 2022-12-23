@@ -252,7 +252,7 @@ class _ViewListingScreenWidgetState extends State<ViewListingScreenWidget> {
                                 ),
                           ),
                           Text(
-                            'I love (2022) - Broadcast B',
+                            'I love (2022) - Broadcast (1/3)',
                             style:
                                 FlutterFlowTheme.of(context).bodyText1.override(
                                       fontFamily: 'Urbanist',
@@ -709,7 +709,7 @@ class _ViewListingScreenWidgetState extends State<ViewListingScreenWidget> {
                                                               .fromSTEB(
                                                                   0, 8, 0, 4),
                                                       child: Text(
-                                                        'You (don\'t) own this photocard!',
+                                                        'You don\'t own this photocard!',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1186,7 +1186,7 @@ class _ViewListingScreenWidgetState extends State<ViewListingScreenWidget> {
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        8, 0, 8, 16),
+                                        0, 0, 0, 16),
                                     child: GridView(
                                       padding: EdgeInsets.zero,
                                       gridDelegate:

@@ -137,7 +137,7 @@ class _FilterResultsScreenWidgetState extends State<FilterResultsScreenWidget> {
                                         ),
                                         collapsed: Container(),
                                         expanded: Column(
-                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisSize: MainAxisSize.min,
                                           children: [
                                             Divider(
                                               thickness: 1,
@@ -237,7 +237,7 @@ class _FilterResultsScreenWidgetState extends State<FilterResultsScreenWidget> {
                                         ),
                                         collapsed: Container(),
                                         expanded: Column(
-                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisSize: MainAxisSize.min,
                                           children: [
                                             Divider(
                                               thickness: 1,
@@ -497,7 +497,7 @@ class _FilterResultsScreenWidgetState extends State<FilterResultsScreenWidget> {
                                         ),
                                         collapsed: Container(),
                                         expanded: Column(
-                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisSize: MainAxisSize.min,
                                           children: [
                                             Divider(
                                               thickness: 1,
@@ -596,7 +596,7 @@ class _FilterResultsScreenWidgetState extends State<FilterResultsScreenWidget> {
                                         ),
                                         collapsed: Container(),
                                         expanded: Column(
-                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisSize: MainAxisSize.min,
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
