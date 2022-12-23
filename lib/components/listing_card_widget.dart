@@ -190,21 +190,34 @@ class _ListingCardWidgetState extends State<ListingCardWidget> {
                                           ),
                                         ),
                                         Expanded(
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    2, 0, 0, 0),
-                                            child: Text(
-                                              '@itsgoindownnn',
-                                              maxLines: 1,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
+                                          child: Wrap(
+                                            spacing: 0,
+                                            runSpacing: 0,
+                                            alignment: WrapAlignment.start,
+                                            crossAxisAlignment:
+                                                WrapCrossAlignment.start,
+                                            direction: Axis.horizontal,
+                                            runAlignment: WrapAlignment.start,
+                                            verticalDirection:
+                                                VerticalDirection.down,
+                                            clipBehavior: Clip.none,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(2, 0, 0, 0),
+                                                child: Text(
+                                                  '@itsgoindownnn',
+                                                  maxLines: 1,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
                                                       .bodyText1
                                                       .override(
                                                         fontFamily: 'Urbanist',
                                                         fontSize: 8,
                                                       ),
-                                            ),
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                         ),
                                       ],

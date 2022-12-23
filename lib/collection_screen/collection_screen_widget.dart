@@ -76,12 +76,12 @@ class _CollectionScreenWidgetState extends State<CollectionScreenWidget> {
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
+            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 52),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 0),
                   child: TextFormField(
                     controller: textController,
                     onChanged: (_) => EasyDebounce.debounce(
@@ -89,6 +89,7 @@ class _CollectionScreenWidgetState extends State<CollectionScreenWidget> {
                       Duration(milliseconds: 2000),
                       () => setState(() {}),
                     ),
+                    autofocus: true,
                     obscureText: false,
                     decoration: InputDecoration(
                       hintText: 'Search for groups and idols',
@@ -100,14 +101,14 @@ class _CollectionScreenWidgetState extends State<CollectionScreenWidget> {
                           ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).primaryColor,
+                          color: FlutterFlowTheme.of(context).alternate,
                           width: 1,
                         ),
                         borderRadius: BorderRadius.circular(16),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).primaryColor,
+                          color: FlutterFlowTheme.of(context).alternate,
                           width: 1,
                         ),
                         borderRadius: BorderRadius.circular(16),
@@ -154,140 +155,161 @@ class _CollectionScreenWidgetState extends State<CollectionScreenWidget> {
                         ),
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Expanded(
-                        child: Text(
-                          '9 Idols',
-                          style: FlutterFlowTheme.of(context)
-                              .subtitle2
-                              .override(
-                                fontFamily: 'Urbanist',
-                                color: FlutterFlowTheme.of(context).primaryText,
-                              ),
-                        ),
-                      ),
-                      FlutterFlowDropDown<String>(
-                        initialOption: dropDownValue ??= 'Default',
-                        options: [
-                          'A - Z',
-                          'Recently Listed',
-                          'Price Low to High',
-                          'Price High to Low',
-                          'Oldest',
-                          'Default'
-                        ],
-                        onChanged: (val) => setState(() => dropDownValue = val),
-                        width: MediaQuery.of(context).size.width * 0.4,
-                        textStyle: FlutterFlowTheme.of(context)
-                            .bodyText1
-                            .override(
-                              fontFamily: 'Urbanist',
-                              color: FlutterFlowTheme.of(context).primaryText,
-                            ),
-                        icon: Icon(
-                          FFIcons.kswap,
-                          color: FlutterFlowTheme.of(context).primaryColor,
-                          size: 15,
-                        ),
-                        fillColor:
-                            FlutterFlowTheme.of(context).primaryBackground,
-                        elevation: 2,
-                        borderColor: Colors.transparent,
-                        borderWidth: 0,
-                        borderRadius: 0,
-                        margin: EdgeInsetsDirectional.fromSTEB(4, 4, 12, 4),
-                        hidesUnderline: true,
-                      ),
-                      FlutterFlowIconButton(
-                        borderColor: Colors.transparent,
-                        borderRadius: 30,
-                        borderWidth: 1,
-                        buttonSize: 40,
-                        icon: Icon(
-                          FFIcons.kfilter2,
-                          color: FlutterFlowTheme.of(context).primaryColor,
-                          size: 22,
-                        ),
-                        onPressed: () async {
-                          context.pushNamed('FilterResultsScreen');
-                        },
-                      ),
-                    ],
-                  ),
-                ),
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
-                    child: GridView(
-                      padding: EdgeInsets.zero,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        crossAxisSpacing: 10,
-                        mainAxisSpacing: 10,
-                        childAspectRatio: 0.9,
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    '9 Idols',
+                                    style: FlutterFlowTheme.of(context)
+                                        .subtitle2
+                                        .override(
+                                          fontFamily: 'Urbanist',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
+                                  ),
+                                ),
+                                FlutterFlowDropDown<String>(
+                                  initialOption: dropDownValue ??= 'Default',
+                                  options: [
+                                    'A - Z',
+                                    'Recently Listed',
+                                    'Price Low to High',
+                                    'Price High to Low',
+                                    'Oldest',
+                                    'Default'
+                                  ],
+                                  onChanged: (val) =>
+                                      setState(() => dropDownValue = val),
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.4,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .bodyText1
+                                      .override(
+                                        fontFamily: 'Urbanist',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
+                                  icon: Icon(
+                                    FFIcons.kswap,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryColor,
+                                    size: 15,
+                                  ),
+                                  fillColor: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                  elevation: 2,
+                                  borderColor: Colors.transparent,
+                                  borderWidth: 0,
+                                  borderRadius: 0,
+                                  margin: EdgeInsetsDirectional.fromSTEB(
+                                      4, 4, 12, 4),
+                                  hidesUnderline: true,
+                                ),
+                                FlutterFlowIconButton(
+                                  borderColor: Colors.transparent,
+                                  borderRadius: 30,
+                                  borderWidth: 1,
+                                  buttonSize: 40,
+                                  icon: Icon(
+                                    FFIcons.kfilter2,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryColor,
+                                    size: 22,
+                                  ),
+                                  onPressed: () async {
+                                    context.pushNamed('FilterResultsScreen');
+                                  },
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(16, 0, 16, 16),
+                            child: GridView(
+                              padding: EdgeInsets.zero,
+                              gridDelegate:
+                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 2,
+                                crossAxisSpacing: 10,
+                                mainAxisSpacing: 10,
+                                childAspectRatio: 0.9,
+                              ),
+                              primary: false,
+                              shrinkWrap: true,
+                              scrollDirection: Axis.vertical,
+                              children: [
+                                InkWell(
+                                  onTap: () async {
+                                    context.pushNamed('IdolPhotocardsScreen');
+                                  },
+                                  child: IdolCardWidget(),
+                                ),
+                                InkWell(
+                                  onTap: () async {
+                                    context.pushNamed('IdolPhotocardsScreen');
+                                  },
+                                  child: IdolCardWidget(),
+                                ),
+                                InkWell(
+                                  onTap: () async {
+                                    context.pushNamed('IdolPhotocardsScreen');
+                                  },
+                                  child: IdolCardWidget(),
+                                ),
+                                InkWell(
+                                  onTap: () async {
+                                    context.pushNamed('IdolPhotocardsScreen');
+                                  },
+                                  child: IdolCardWidget(),
+                                ),
+                                InkWell(
+                                  onTap: () async {
+                                    context.pushNamed('IdolPhotocardsScreen');
+                                  },
+                                  child: IdolCardWidget(),
+                                ),
+                                InkWell(
+                                  onTap: () async {
+                                    context.pushNamed('IdolPhotocardsScreen');
+                                  },
+                                  child: IdolCardWidget(),
+                                ),
+                                InkWell(
+                                  onTap: () async {
+                                    context.pushNamed('IdolPhotocardsScreen');
+                                  },
+                                  child: IdolCardWidget(),
+                                ),
+                                InkWell(
+                                  onTap: () async {
+                                    context.pushNamed('IdolPhotocardsScreen');
+                                  },
+                                  child: IdolCardWidget(),
+                                ),
+                                InkWell(
+                                  onTap: () async {
+                                    context.pushNamed('IdolPhotocardsScreen');
+                                  },
+                                  child: IdolCardWidget(),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
-                      shrinkWrap: true,
-                      scrollDirection: Axis.vertical,
-                      children: [
-                        InkWell(
-                          onTap: () async {
-                            context.pushNamed('IdolPhotocardsScreen');
-                          },
-                          child: IdolCardWidget(),
-                        ),
-                        InkWell(
-                          onTap: () async {
-                            context.pushNamed('IdolPhotocardsScreen');
-                          },
-                          child: IdolCardWidget(),
-                        ),
-                        InkWell(
-                          onTap: () async {
-                            context.pushNamed('IdolPhotocardsScreen');
-                          },
-                          child: IdolCardWidget(),
-                        ),
-                        InkWell(
-                          onTap: () async {
-                            context.pushNamed('IdolPhotocardsScreen');
-                          },
-                          child: IdolCardWidget(),
-                        ),
-                        InkWell(
-                          onTap: () async {
-                            context.pushNamed('IdolPhotocardsScreen');
-                          },
-                          child: IdolCardWidget(),
-                        ),
-                        InkWell(
-                          onTap: () async {
-                            context.pushNamed('IdolPhotocardsScreen');
-                          },
-                          child: IdolCardWidget(),
-                        ),
-                        InkWell(
-                          onTap: () async {
-                            context.pushNamed('IdolPhotocardsScreen');
-                          },
-                          child: IdolCardWidget(),
-                        ),
-                        InkWell(
-                          onTap: () async {
-                            context.pushNamed('IdolPhotocardsScreen');
-                          },
-                          child: IdolCardWidget(),
-                        ),
-                        InkWell(
-                          onTap: () async {
-                            context.pushNamed('IdolPhotocardsScreen');
-                          },
-                          child: IdolCardWidget(),
-                        ),
-                      ],
                     ),
                   ),
                 ),

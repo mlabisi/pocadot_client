@@ -706,7 +706,7 @@ class _FilterResultsScreenWidgetState extends State<FilterResultsScreenWidget> {
                                         width: 130,
                                         height: 40,
                                         color: FlutterFlowTheme.of(context)
-                                            .alternate,
+                                            .primaryBackground,
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyText1
                                             .override(
