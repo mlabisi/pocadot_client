@@ -29,13 +29,6 @@ class _WarningNotificationWidgetState extends State<WarningNotificationWidget>
         width: double.infinity,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).primaryBackground,
-          boxShadow: [
-            BoxShadow(
-              blurRadius: 0,
-              color: FlutterFlowTheme.of(context).greyscale200,
-              offset: Offset(0, 1),
-            )
-          ],
         ),
         child: Column(
           mainAxisSize: MainAxisSize.max,

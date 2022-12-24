@@ -397,8 +397,7 @@ class _MakeOfferScreenWidgetState extends State<MakeOfferScreenWidget> {
                                     .bodyText1
                                     .override(
                                       fontFamily: 'Urbanist',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                      color: FlutterFlowTheme.of(context).white,
                                       fontWeight: FontWeight.bold,
                                     ),
                                 borderSide: BorderSide(

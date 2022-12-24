@@ -1120,7 +1120,7 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                                 fontFamily: 'Urbanist',
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .primaryText,
+                                                        .white,
                                                 fontWeight: FontWeight.bold,
                                               ),
                                           borderSide: BorderSide(

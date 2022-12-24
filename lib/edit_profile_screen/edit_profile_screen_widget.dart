@@ -909,7 +909,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                                 fontFamily: 'Urbanist',
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .primaryText,
+                                                        .white,
                                                 fontWeight: FontWeight.bold,
                                               ),
                                           borderSide: BorderSide(

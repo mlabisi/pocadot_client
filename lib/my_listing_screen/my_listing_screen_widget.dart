@@ -636,8 +636,7 @@ class _MyListingScreenWidgetState extends State<MyListingScreenWidget> {
                                     .bodyText1
                                     .override(
                                       fontFamily: 'Urbanist',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                      color: FlutterFlowTheme.of(context).white,
                                       fontWeight: FontWeight.bold,
                                     ),
                                 borderSide: BorderSide(

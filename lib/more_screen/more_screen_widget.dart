@@ -113,7 +113,12 @@ class _MoreScreenWidgetState extends State<MoreScreenWidget> {
                   },
                   child: LogoutButtonWidget(),
                 ),
-                DeleteAccountButtonWidget(),
+                InkWell(
+                  onTap: () async {
+                    context.pushNamed('DeleteAccountScreen');
+                  },
+                  child: DeleteAccountButtonWidget(),
+                ),
                 PocadotSocialsWidget(),
               ],
             ),

@@ -44,7 +44,7 @@ class _ListingRowWidgetState extends State<ListingRowWidget> {
                   'https://pocadot.b-cdn.net/reclnaz03rdkqyOlU.png',
                   width: MediaQuery.of(context).size.width * 0.16,
                   height: MediaQuery.of(context).size.height * 0.12,
-                  fit: BoxFit.fitHeight,
+                  fit: BoxFit.fitWidth,
                 ),
               ),
               Expanded(

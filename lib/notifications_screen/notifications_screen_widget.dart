@@ -74,62 +74,59 @@ class _NotificationsScreenWidgetState extends State<NotificationsScreenWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Expanded(
-                child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
-                  child: DefaultTabController(
-                    length: 2,
-                    initialIndex: 0,
-                    child: Column(
-                      children: [
-                        TabBar(
-                          labelColor: FlutterFlowTheme.of(context).primaryColor,
-                          labelStyle: FlutterFlowTheme.of(context).bodyText1,
-                          indicatorColor:
-                              FlutterFlowTheme.of(context).primaryColor,
-                          tabs: [
-                            Tab(
-                              text: 'General',
+                child: DefaultTabController(
+                  length: 2,
+                  initialIndex: 0,
+                  child: Column(
+                    children: [
+                      TabBar(
+                        labelColor: FlutterFlowTheme.of(context).primaryColor,
+                        labelStyle: FlutterFlowTheme.of(context).bodyText1,
+                        indicatorColor:
+                            FlutterFlowTheme.of(context).primaryColor,
+                        tabs: [
+                          Tab(
+                            text: 'General',
+                          ),
+                          Tab(
+                            text: 'Offers',
+                          ),
+                        ],
+                      ),
+                      Expanded(
+                        child: TabBarView(
+                          children: [
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
+                              child: ListView(
+                                padding: EdgeInsets.zero,
+                                scrollDirection: Axis.vertical,
+                                children: [
+                                  InfoNotificationWidget(),
+                                  WarningNotificationWidget(),
+                                ],
+                              ),
                             ),
-                            Tab(
-                              text: 'Offers',
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
+                              child: ListView(
+                                padding: EdgeInsets.zero,
+                                scrollDirection: Axis.vertical,
+                                children: [
+                                  TradeOfferReveivedNotificationWidget(),
+                                  OfferMadeCardWidget(),
+                                  OfferAcceptedCardWidget(),
+                                  OfferRejectedCardWidget(),
+                                  OfferCancelledCardWidget(),
+                                ],
+                              ),
                             ),
                           ],
                         ),
-                        Expanded(
-                          child: TabBarView(
-                            children: [
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
-                                child: ListView(
-                                  padding: EdgeInsets.zero,
-                                  scrollDirection: Axis.vertical,
-                                  children: [
-                                    InfoNotificationWidget(),
-                                    WarningNotificationWidget(),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
-                                child: ListView(
-                                  padding: EdgeInsets.zero,
-                                  scrollDirection: Axis.vertical,
-                                  children: [
-                                    TradeOfferReveivedNotificationWidget(),
-                                    OfferMadeCardWidget(),
-                                    OfferAcceptedCardWidget(),
-                                    OfferRejectedCardWidget(),
-                                    OfferCancelledCardWidget(),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ),
