@@ -74,7 +74,10 @@ class _DeleteAccountScreenWidgetState extends State<DeleteAccountScreenWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 4),
                   child: Text(
                     'Delete Account?',
-                    style: FlutterFlowTheme.of(context).title3,
+                    style: FlutterFlowTheme.of(context).title3.override(
+                          fontFamily: 'Urbanist',
+                          color: FlutterFlowTheme.of(context).alertRed,
+                        ),
                   ),
                 ),
                 Wrap(
@@ -113,13 +116,12 @@ class _DeleteAccountScreenWidgetState extends State<DeleteAccountScreenWidget> {
                           padding:
                               EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
                           color: FlutterFlowTheme.of(context).primaryColor,
-                          textStyle: FlutterFlowTheme.of(context)
-                              .bodyText1
-                              .override(
-                                fontFamily: 'Urbanist',
-                                color: FlutterFlowTheme.of(context).primaryText,
-                                fontWeight: FontWeight.bold,
-                              ),
+                          textStyle:
+                              FlutterFlowTheme.of(context).bodyText1.override(
+                                    fontFamily: 'Urbanist',
+                                    color: FlutterFlowTheme.of(context).white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                           borderSide: BorderSide(
                             color: Colors.transparent,
                             width: 1,

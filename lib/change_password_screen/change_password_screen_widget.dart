@@ -1,3 +1,4 @@
+import '../components/generic_alert_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -97,319 +98,340 @@ class _ChangePasswordScreenWidgetState
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Column(
-                      mainAxisSize: MainAxisSize.max,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 16),
-                          child: Text(
-                            'Enter your current password',
-                            style: FlutterFlowTheme.of(context).bodyText1,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 16),
-                          child: TextFormField(
-                            controller: textController1,
-                            obscureText: !passwordVisibility1,
-                            decoration: InputDecoration(
-                              hintText: 'Current Password',
-                              hintStyle: FlutterFlowTheme.of(context)
-                                  .bodyText1
-                                  .override(
-                                    fontFamily: 'Urbanist',
-                                    color: FlutterFlowTheme.of(context)
-                                        .greyscale500,
-                                  ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              errorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).alertRed,
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              focusedErrorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).alertRed,
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              filled: true,
-                              fillColor: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              prefixIcon: Icon(
-                                FFIcons.kunlock,
-                                color:
-                                    FlutterFlowTheme.of(context).greyscale500,
-                                size: 20,
-                              ),
-                              suffixIcon: InkWell(
-                                onTap: () => setState(
-                                  () => passwordVisibility1 =
-                                      !passwordVisibility1,
-                                ),
-                                focusNode: FocusNode(skipTraversal: true),
-                                child: Icon(
-                                  passwordVisibility1
-                                      ? Icons.visibility_outlined
-                                      : Icons.visibility_off_outlined,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  size: 22,
-                                ),
-                              ),
+                    GenericAlertWidget(),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 16),
+                            child: Text(
+                              'Enter your current password',
+                              style: FlutterFlowTheme.of(context).bodyText1,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyText1,
                           ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 16),
-                          child: TextFormField(
-                            controller: textController2,
-                            obscureText: !passwordVisibility2,
-                            decoration: InputDecoration(
-                              hintText: 'Confirm Current Password',
-                              hintStyle: FlutterFlowTheme.of(context)
-                                  .bodyText1
-                                  .override(
-                                    fontFamily: 'Urbanist',
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 16),
+                            child: TextFormField(
+                              controller: textController1,
+                              obscureText: !passwordVisibility1,
+                              decoration: InputDecoration(
+                                hintText: 'Current Password',
+                                hintStyle: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'Urbanist',
+                                      color: FlutterFlowTheme.of(context)
+                                          .greyscale500,
+                                    ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context)
-                                        .greyscale500,
+                                        .secondaryBackground,
+                                    width: 1,
                                   ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  width: 1,
+                                  borderRadius: BorderRadius.circular(16),
                                 ),
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  width: 1,
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(16),
                                 ),
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              errorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).alertRed,
-                                  width: 1,
+                                errorBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color:
+                                        FlutterFlowTheme.of(context).alertRed,
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(16),
                                 ),
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              focusedErrorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).alertRed,
-                                  width: 1,
+                                focusedErrorBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color:
+                                        FlutterFlowTheme.of(context).alertRed,
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(16),
                                 ),
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              filled: true,
-                              fillColor: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              prefixIcon: Icon(
-                                FFIcons.kunlock,
-                                color:
-                                    FlutterFlowTheme.of(context).greyscale500,
-                                size: 20,
-                              ),
-                              suffixIcon: InkWell(
-                                onTap: () => setState(
-                                  () => passwordVisibility2 =
-                                      !passwordVisibility2,
-                                ),
-                                focusNode: FocusNode(skipTraversal: true),
-                                child: Icon(
-                                  passwordVisibility2
-                                      ? Icons.visibility_outlined
-                                      : Icons.visibility_off_outlined,
+                                filled: true,
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                prefixIcon: Icon(
+                                  FFIcons.kunlock,
                                   color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  size: 22,
+                                      FlutterFlowTheme.of(context).greyscale500,
+                                  size: 20,
+                                ),
+                                suffixIcon: InkWell(
+                                  onTap: () => setState(
+                                    () => passwordVisibility1 =
+                                        !passwordVisibility1,
+                                  ),
+                                  focusNode: FocusNode(skipTraversal: true),
+                                  child: Icon(
+                                    passwordVisibility1
+                                        ? Icons.visibility_outlined
+                                        : Icons.visibility_off_outlined,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    size: 22,
+                                  ),
                                 ),
                               ),
+                              style: FlutterFlowTheme.of(context).bodyText1,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyText1,
                           ),
-                        ),
-                      ],
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 16),
+                            child: TextFormField(
+                              controller: textController2,
+                              obscureText: !passwordVisibility2,
+                              decoration: InputDecoration(
+                                hintText: 'Confirm Current Password',
+                                hintStyle: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'Urbanist',
+                                      color: FlutterFlowTheme.of(context)
+                                          .greyscale500,
+                                    ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
+                                errorBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color:
+                                        FlutterFlowTheme.of(context).alertRed,
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
+                                focusedErrorBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color:
+                                        FlutterFlowTheme.of(context).alertRed,
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
+                                filled: true,
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                prefixIcon: Icon(
+                                  FFIcons.kunlock,
+                                  color:
+                                      FlutterFlowTheme.of(context).greyscale500,
+                                  size: 20,
+                                ),
+                                suffixIcon: InkWell(
+                                  onTap: () => setState(
+                                    () => passwordVisibility2 =
+                                        !passwordVisibility2,
+                                  ),
+                                  focusNode: FocusNode(skipTraversal: true),
+                                  child: Icon(
+                                    passwordVisibility2
+                                        ? Icons.visibility_outlined
+                                        : Icons.visibility_off_outlined,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    size: 22,
+                                  ),
+                                ),
+                              ),
+                              style: FlutterFlowTheme.of(context).bodyText1,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                    Column(
-                      mainAxisSize: MainAxisSize.max,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 16),
-                          child: Text(
-                            'Enter a new password for your account',
-                            style: FlutterFlowTheme.of(context).bodyText1,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 16),
-                          child: TextFormField(
-                            controller: textController3,
-                            obscureText: !passwordVisibility3,
-                            decoration: InputDecoration(
-                              hintText: 'New Password',
-                              hintStyle: FlutterFlowTheme.of(context)
-                                  .bodyText1
-                                  .override(
-                                    fontFamily: 'Urbanist',
-                                    color: FlutterFlowTheme.of(context)
-                                        .greyscale500,
-                                  ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              errorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).alertRed,
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              focusedErrorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).alertRed,
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              filled: true,
-                              fillColor: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              prefixIcon: Icon(
-                                FFIcons.klock,
-                                color:
-                                    FlutterFlowTheme.of(context).greyscale500,
-                                size: 20,
-                              ),
-                              suffixIcon: InkWell(
-                                onTap: () => setState(
-                                  () => passwordVisibility3 =
-                                      !passwordVisibility3,
-                                ),
-                                focusNode: FocusNode(skipTraversal: true),
-                                child: Icon(
-                                  passwordVisibility3
-                                      ? Icons.visibility_outlined
-                                      : Icons.visibility_off_outlined,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  size: 22,
-                                ),
-                              ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 16),
+                            child: Text(
+                              'Enter a new password for your account',
+                              style: FlutterFlowTheme.of(context).bodyText1,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyText1,
                           ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 16),
-                          child: TextFormField(
-                            controller: textController4,
-                            obscureText: !passwordVisibility4,
-                            decoration: InputDecoration(
-                              hintText: 'Confirm New Password',
-                              hintStyle: FlutterFlowTheme.of(context)
-                                  .bodyText1
-                                  .override(
-                                    fontFamily: 'Urbanist',
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 16),
+                            child: TextFormField(
+                              controller: textController3,
+                              obscureText: !passwordVisibility3,
+                              decoration: InputDecoration(
+                                hintText: 'New Password',
+                                hintStyle: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'Urbanist',
+                                      color: FlutterFlowTheme.of(context)
+                                          .greyscale500,
+                                    ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context)
-                                        .greyscale500,
+                                        .secondaryBackground,
+                                    width: 1,
                                   ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  width: 1,
+                                  borderRadius: BorderRadius.circular(16),
                                 ),
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  width: 1,
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(16),
                                 ),
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              errorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).alertRed,
-                                  width: 1,
+                                errorBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color:
+                                        FlutterFlowTheme.of(context).alertRed,
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(16),
                                 ),
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              focusedErrorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).alertRed,
-                                  width: 1,
+                                focusedErrorBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color:
+                                        FlutterFlowTheme.of(context).alertRed,
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(16),
                                 ),
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              filled: true,
-                              fillColor: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              prefixIcon: Icon(
-                                FFIcons.klock,
-                                color:
-                                    FlutterFlowTheme.of(context).greyscale500,
-                                size: 20,
-                              ),
-                              suffixIcon: InkWell(
-                                onTap: () => setState(
-                                  () => passwordVisibility4 =
-                                      !passwordVisibility4,
-                                ),
-                                focusNode: FocusNode(skipTraversal: true),
-                                child: Icon(
-                                  passwordVisibility4
-                                      ? Icons.visibility_outlined
-                                      : Icons.visibility_off_outlined,
+                                filled: true,
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                prefixIcon: Icon(
+                                  FFIcons.klock,
                                   color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  size: 22,
+                                      FlutterFlowTheme.of(context).greyscale500,
+                                  size: 20,
+                                ),
+                                suffixIcon: InkWell(
+                                  onTap: () => setState(
+                                    () => passwordVisibility3 =
+                                        !passwordVisibility3,
+                                  ),
+                                  focusNode: FocusNode(skipTraversal: true),
+                                  child: Icon(
+                                    passwordVisibility3
+                                        ? Icons.visibility_outlined
+                                        : Icons.visibility_off_outlined,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    size: 22,
+                                  ),
                                 ),
                               ),
+                              style: FlutterFlowTheme.of(context).bodyText1,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyText1,
                           ),
-                        ),
-                      ],
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 16),
+                            child: TextFormField(
+                              controller: textController4,
+                              obscureText: !passwordVisibility4,
+                              decoration: InputDecoration(
+                                hintText: 'Confirm New Password',
+                                hintStyle: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'Urbanist',
+                                      color: FlutterFlowTheme.of(context)
+                                          .greyscale500,
+                                    ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
+                                errorBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color:
+                                        FlutterFlowTheme.of(context).alertRed,
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
+                                focusedErrorBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color:
+                                        FlutterFlowTheme.of(context).alertRed,
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
+                                filled: true,
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                prefixIcon: Icon(
+                                  FFIcons.klock,
+                                  color:
+                                      FlutterFlowTheme.of(context).greyscale500,
+                                  size: 20,
+                                ),
+                                suffixIcon: InkWell(
+                                  onTap: () => setState(
+                                    () => passwordVisibility4 =
+                                        !passwordVisibility4,
+                                  ),
+                                  focusNode: FocusNode(skipTraversal: true),
+                                  child: Icon(
+                                    passwordVisibility4
+                                        ? Icons.visibility_outlined
+                                        : Icons.visibility_off_outlined,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    size: 22,
+                                  ),
+                                ),
+                              ),
+                              style: FlutterFlowTheme.of(context).bodyText1,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),

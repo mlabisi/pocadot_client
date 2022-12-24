@@ -45,7 +45,7 @@ class _WarningNotificationWidgetState extends State<WarningNotificationWidget>
                     buttonSize: 60,
                     fillColor: Color(0x14DF3F3F),
                     icon: Icon(
-                      FFIcons.kwallet,
+                      FFIcons.kinfoCircle,
                       color: FlutterFlowTheme.of(context).alertRed,
                       size: 24,
                     ),
@@ -61,7 +61,7 @@ class _WarningNotificationWidgetState extends State<WarningNotificationWidget>
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
                           child: Text(
-                            'Credit Card Expired!',
+                            'You Have Been Banned!',
                             style: FlutterFlowTheme.of(context)
                                 .subtitle2
                                 .override(
@@ -74,7 +74,7 @@ class _WarningNotificationWidgetState extends State<WarningNotificationWidget>
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
                           child: Text(
-                            '9:36 PM | Wed, Nov 23 ',
+                            '9:36 PM | Wed, Dec 21 ',
                             style:
                                 FlutterFlowTheme.of(context).bodyText1.override(
                                       fontFamily: 'Urbanist',
@@ -105,13 +105,25 @@ class _WarningNotificationWidgetState extends State<WarningNotificationWidget>
                 ],
               ),
             ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(12, 0, 0, 4),
-              child: Text(
-                'Your card ending in 3421 has expired! Go to your More > Settings > Payment Methods to update your card.',
-                textAlign: TextAlign.start,
-                style: FlutterFlowTheme.of(context).bodyText1,
-              ),
+            Wrap(
+              spacing: 0,
+              runSpacing: 0,
+              alignment: WrapAlignment.start,
+              crossAxisAlignment: WrapCrossAlignment.start,
+              direction: Axis.horizontal,
+              runAlignment: WrapAlignment.start,
+              verticalDirection: VerticalDirection.down,
+              clipBehavior: Clip.none,
+              children: [
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(12, 0, 0, 4),
+                  child: Text(
+                    'Your account has been banned for violating our terms of service. Please contact us if you feel this is a mistake.',
+                    textAlign: TextAlign.start,
+                    style: FlutterFlowTheme.of(context).bodyText1,
+                  ),
+                ),
+              ],
             ),
           ],
         ),

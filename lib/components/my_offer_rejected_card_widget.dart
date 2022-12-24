@@ -5,16 +5,15 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class BuyOfferReceivedCardWidget extends StatefulWidget {
-  const BuyOfferReceivedCardWidget({Key? key}) : super(key: key);
+class MyOfferRejectedCardWidget extends StatefulWidget {
+  const MyOfferRejectedCardWidget({Key? key}) : super(key: key);
 
   @override
-  _BuyOfferReceivedCardWidgetState createState() =>
-      _BuyOfferReceivedCardWidgetState();
+  _MyOfferRejectedCardWidgetState createState() =>
+      _MyOfferRejectedCardWidgetState();
 }
 
-class _BuyOfferReceivedCardWidgetState
-    extends State<BuyOfferReceivedCardWidget> {
+class _MyOfferRejectedCardWidgetState extends State<MyOfferRejectedCardWidget> {
   @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
@@ -23,9 +22,11 @@ class _BuyOfferReceivedCardWidgetState
       padding: EdgeInsetsDirectional.fromSTEB(16, 12, 16, 0),
       child: InkWell(
         onTap: () async {
-          context.pushNamed('ReceivedOfferChatScreen');
+          context.pushNamed('SentOfferChatScreen');
         },
         child: Container(
+          width: MediaQuery.of(context).size.width,
+          height: 100,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
             boxShadow: [
@@ -41,13 +42,12 @@ class _BuyOfferReceivedCardWidgetState
             padding: EdgeInsetsDirectional.fromSTEB(8, 8, 12, 8),
             child: Row(
               mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
                   width: 4,
-                  height: 40,
+                  height: double.infinity,
                   decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).primaryColor,
+                    color: FlutterFlowTheme.of(context).alertRed,
                     borderRadius: BorderRadius.circular(4),
                   ),
                 ),
@@ -55,8 +55,8 @@ class _BuyOfferReceivedCardWidgetState
                   child: Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
                     child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Wrap(
@@ -70,13 +70,13 @@ class _BuyOfferReceivedCardWidgetState
                           clipBehavior: Clip.none,
                           children: [
                             Text(
-                              'Offer Received',
+                              'Offer Rejected',
                               style: FlutterFlowTheme.of(context)
                                   .bodyText1
                                   .override(
                                     fontFamily: 'Urbanist',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryColor,
+                                    color:
+                                        FlutterFlowTheme.of(context).alertRed,
                                     fontWeight: FontWeight.w500,
                                   ),
                             ),
@@ -84,7 +84,7 @@ class _BuyOfferReceivedCardWidgetState
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(4, 0, 0, 0),
                               child: Text(
-                                'Buy',
+                                'Thurs',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyText1
                                     .override(
@@ -98,8 +98,35 @@ class _BuyOfferReceivedCardWidgetState
                             ),
                           ],
                         ),
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
+                              child: Text(
+                                'Yeji',
+                                style: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Urbanist',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                    ),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(4, 4, 0, 0),
+                              child: Text(
+                                'GUESS WHO',
+                                style: FlutterFlowTheme.of(context).bodyText2,
+                              ),
+                            ),
+                          ],
+                        ),
                         Text(
-                          '+ view itsgoindownnn\'s offer',
+                          '+ view your offer',
                           style: FlutterFlowTheme.of(context)
                               .bodyText1
                               .override(
@@ -110,6 +137,15 @@ class _BuyOfferReceivedCardWidgetState
                         ),
                       ],
                     ),
+                  ),
+                ),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(15),
+                  child: Image.network(
+                    'https://d1w8cc2yygc27j.cloudfront.net/8931798496777269043/2517300188563170448.jpg',
+                    width: 75,
+                    height: 100,
+                    fit: BoxFit.cover,
                   ),
                 ),
               ],

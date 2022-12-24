@@ -5,16 +5,15 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class BuyOfferReceivedCardWidget extends StatefulWidget {
-  const BuyOfferReceivedCardWidget({Key? key}) : super(key: key);
+class MyOfferAcceptedCardWidget extends StatefulWidget {
+  const MyOfferAcceptedCardWidget({Key? key}) : super(key: key);
 
   @override
-  _BuyOfferReceivedCardWidgetState createState() =>
-      _BuyOfferReceivedCardWidgetState();
+  _MyOfferAcceptedCardWidgetState createState() =>
+      _MyOfferAcceptedCardWidgetState();
 }
 
-class _BuyOfferReceivedCardWidgetState
-    extends State<BuyOfferReceivedCardWidget> {
+class _MyOfferAcceptedCardWidgetState extends State<MyOfferAcceptedCardWidget> {
   @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
@@ -23,9 +22,11 @@ class _BuyOfferReceivedCardWidgetState
       padding: EdgeInsetsDirectional.fromSTEB(16, 12, 16, 0),
       child: InkWell(
         onTap: () async {
-          context.pushNamed('ReceivedOfferChatScreen');
+          context.pushNamed('SentOfferChatScreen');
         },
         child: Container(
+          width: MediaQuery.of(context).size.width,
+          height: 100,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
             boxShadow: [
@@ -41,13 +42,12 @@ class _BuyOfferReceivedCardWidgetState
             padding: EdgeInsetsDirectional.fromSTEB(8, 8, 12, 8),
             child: Row(
               mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
                   width: 4,
-                  height: 40,
+                  height: double.infinity,
                   decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).primaryColor,
+                    color: FlutterFlowTheme.of(context).alertGreen,
                     borderRadius: BorderRadius.circular(4),
                   ),
                 ),
@@ -55,8 +55,8 @@ class _BuyOfferReceivedCardWidgetState
                   child: Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
                     child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Wrap(
@@ -70,13 +70,13 @@ class _BuyOfferReceivedCardWidgetState
                           clipBehavior: Clip.none,
                           children: [
                             Text(
-                              'Offer Received',
+                              'Offer Accepted',
                               style: FlutterFlowTheme.of(context)
                                   .bodyText1
                                   .override(
                                     fontFamily: 'Urbanist',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryColor,
+                                    color:
+                                        FlutterFlowTheme.of(context).alertGreen,
                                     fontWeight: FontWeight.w500,
                                   ),
                             ),
@@ -84,7 +84,7 @@ class _BuyOfferReceivedCardWidgetState
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(4, 0, 0, 0),
                               child: Text(
-                                'Buy',
+                                '8 Hrs Ago',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyText1
                                     .override(
@@ -98,8 +98,35 @@ class _BuyOfferReceivedCardWidgetState
                             ),
                           ],
                         ),
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
+                              child: Text(
+                                'Seulgi',
+                                style: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Urbanist',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                    ),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(4, 4, 0, 0),
+                              child: Text(
+                                '28 REASONS',
+                                style: FlutterFlowTheme.of(context).bodyText2,
+                              ),
+                            ),
+                          ],
+                        ),
                         Text(
-                          '+ view itsgoindownnn\'s offer',
+                          '+ view your offer',
                           style: FlutterFlowTheme.of(context)
                               .bodyText1
                               .override(
@@ -110,6 +137,15 @@ class _BuyOfferReceivedCardWidgetState
                         ),
                       ],
                     ),
+                  ),
+                ),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(15),
+                  child: Image.network(
+                    'https://media.karousell.com/media/photos/products/2022/10/13/wttwtb_red_velvet_seulgi_28_re_1665650222_27bbe90c_progressive.jpg',
+                    width: 75,
+                    height: 100,
+                    fit: BoxFit.cover,
                   ),
                 ),
               ],

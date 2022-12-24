@@ -312,7 +312,7 @@ class _PhotocardDetailsWidgetState extends State<PhotocardDetailsWidget> {
                                               height: MediaQuery.of(context)
                                                       .size
                                                       .height *
-                                                  0.8,
+                                                  0.85,
                                               child: PhotocardDetailsWidget(),
                                             ),
                                           );
@@ -338,7 +338,7 @@ class _PhotocardDetailsWidgetState extends State<PhotocardDetailsWidget> {
                                               height: MediaQuery.of(context)
                                                       .size
                                                       .height *
-                                                  0.8,
+                                                  0.85,
                                               child: PhotocardDetailsWidget(),
                                             ),
                                           );
@@ -364,7 +364,7 @@ class _PhotocardDetailsWidgetState extends State<PhotocardDetailsWidget> {
                                               height: MediaQuery.of(context)
                                                       .size
                                                       .height *
-                                                  0.8,
+                                                  0.85,
                                               child: PhotocardDetailsWidget(),
                                             ),
                                           );
@@ -390,7 +390,7 @@ class _PhotocardDetailsWidgetState extends State<PhotocardDetailsWidget> {
                                               height: MediaQuery.of(context)
                                                       .size
                                                       .height *
-                                                  0.8,
+                                                  0.85,
                                               child: PhotocardDetailsWidget(),
                                             ),
                                           );
@@ -416,7 +416,7 @@ class _PhotocardDetailsWidgetState extends State<PhotocardDetailsWidget> {
                                               height: MediaQuery.of(context)
                                                       .size
                                                       .height *
-                                                  0.8,
+                                                  0.85,
                                               child: PhotocardDetailsWidget(),
                                             ),
                                           );
@@ -442,7 +442,7 @@ class _PhotocardDetailsWidgetState extends State<PhotocardDetailsWidget> {
                                               height: MediaQuery.of(context)
                                                       .size
                                                       .height *
-                                                  0.8,
+                                                  0.85,
                                               child: PhotocardDetailsWidget(),
                                             ),
                                           );
@@ -468,7 +468,33 @@ class _PhotocardDetailsWidgetState extends State<PhotocardDetailsWidget> {
                                               height: MediaQuery.of(context)
                                                       .size
                                                       .height *
-                                                  0.8,
+                                                  0.85,
+                                              child: PhotocardDetailsWidget(),
+                                            ),
+                                          );
+                                        },
+                                      ).then((value) => setState(() {}));
+                                    },
+                                    child: PhotocardThumbnailWidget(),
+                                  ),
+                                  InkWell(
+                                    onTap: () async {
+                                      Navigator.pop(context);
+                                      await showModalBottomSheet(
+                                        isScrollControlled: true,
+                                        backgroundColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                        context: context,
+                                        builder: (context) {
+                                          return Padding(
+                                            padding: MediaQuery.of(context)
+                                                .viewInsets,
+                                            child: Container(
+                                              height: MediaQuery.of(context)
+                                                      .size
+                                                      .height *
+                                                  0.85,
                                               child: PhotocardDetailsWidget(),
                                             ),
                                           );

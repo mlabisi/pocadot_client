@@ -168,6 +168,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => OffersScreenWidget(),
             ),
             FFRoute(
+              name: 'ReceivedOfferChatScreen',
+              path: 'receivedOfferChatScreen',
+              builder: (context, params) => ReceivedOfferChatScreenWidget(),
+            ),
+            FFRoute(
               name: 'ChangePasswordScreen',
               path: 'changePasswordScreen',
               builder: (context, params) => ChangePasswordScreenWidget(),
@@ -176,6 +181,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'DeleteAccountScreen',
               path: 'deleteAccountScreen',
               builder: (context, params) => DeleteAccountScreenWidget(),
+            ),
+            FFRoute(
+              name: 'SentOfferChatScreen',
+              path: 'sentOfferChatScreen',
+              builder: (context, params) => SentOfferChatScreenWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),

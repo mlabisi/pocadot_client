@@ -87,8 +87,8 @@ class _SuggestionPreferencesWidgetState
                                   .override(
                                     fontFamily: 'Urbanist',
                                     color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    fontWeight: FontWeight.bold,
+                                        .primaryText,
+                                    fontWeight: FontWeight.w600,
                                   ),
                             ),
                           ],
@@ -104,7 +104,7 @@ class _SuggestionPreferencesWidgetState
                   ),
                   Divider(
                     thickness: 1,
-                    color: FlutterFlowTheme.of(context).secondaryText,
+                    color: FlutterFlowTheme.of(context).greyscale200,
                   ),
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
@@ -121,8 +121,8 @@ class _SuggestionPreferencesWidgetState
                                   .override(
                                     fontFamily: 'Urbanist',
                                     color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    fontWeight: FontWeight.bold,
+                                        .primaryText,
+                                    fontWeight: FontWeight.w600,
                                   ),
                             ),
                           ],

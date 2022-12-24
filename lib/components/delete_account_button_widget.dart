@@ -29,13 +29,6 @@ class _DeleteAccountButtonWidgetState extends State<DeleteAccountButtonWidget>
         width: double.infinity,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).primaryBackground,
-          boxShadow: [
-            BoxShadow(
-              blurRadius: 0,
-              color: FlutterFlowTheme.of(context).greyscale200,
-              offset: Offset(0, 1),
-            )
-          ],
         ),
         child: Padding(
           padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),

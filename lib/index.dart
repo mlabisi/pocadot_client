@@ -33,7 +33,11 @@ export 'my_listing_screen/my_listing_screen_widget.dart'
     show MyListingScreenWidget;
 export 'biases_screen/biases_screen_widget.dart' show BiasesScreenWidget;
 export 'offers_screen/offers_screen_widget.dart' show OffersScreenWidget;
+export 'received_offer_chat_screen/received_offer_chat_screen_widget.dart'
+    show ReceivedOfferChatScreenWidget;
 export 'change_password_screen/change_password_screen_widget.dart'
     show ChangePasswordScreenWidget;
 export 'delete_account_screen/delete_account_screen_widget.dart'
     show DeleteAccountScreenWidget;
+export 'sent_offer_chat_screen/sent_offer_chat_screen_widget.dart'
+    show SentOfferChatScreenWidget;

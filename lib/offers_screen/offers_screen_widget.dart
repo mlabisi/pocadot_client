@@ -1,7 +1,7 @@
-import '../components/offer_accepted_card_widget.dart';
-import '../components/offer_cancelled_card_widget.dart';
+import '../components/my_offer_accepted_card_widget.dart';
+import '../components/my_offer_cancelled_card_widget.dart';
+import '../components/my_offer_rejected_card_widget.dart';
 import '../components/offer_made_card_widget.dart';
-import '../components/offer_rejected_card_widget.dart';
 import '../flutter_flow/flutter_flow_choice_chips.dart';
 import '../flutter_flow/flutter_flow_drop_down.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
@@ -271,9 +271,9 @@ class _OffersScreenWidgetState extends State<OffersScreenWidget> {
                     scrollDirection: Axis.vertical,
                     children: [
                       OfferMadeCardWidget(),
-                      OfferAcceptedCardWidget(),
-                      OfferRejectedCardWidget(),
-                      OfferCancelledCardWidget(),
+                      MyOfferAcceptedCardWidget(),
+                      MyOfferRejectedCardWidget(),
+                      MyOfferCancelledCardWidget(),
                     ],
                   ),
                 ],

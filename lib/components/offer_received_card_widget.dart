@@ -5,16 +5,15 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class BuyOfferReceivedCardWidget extends StatefulWidget {
-  const BuyOfferReceivedCardWidget({Key? key}) : super(key: key);
+class OfferReceivedCardWidget extends StatefulWidget {
+  const OfferReceivedCardWidget({Key? key}) : super(key: key);
 
   @override
-  _BuyOfferReceivedCardWidgetState createState() =>
-      _BuyOfferReceivedCardWidgetState();
+  _OfferReceivedCardWidgetState createState() =>
+      _OfferReceivedCardWidgetState();
 }
 
-class _BuyOfferReceivedCardWidgetState
-    extends State<BuyOfferReceivedCardWidget> {
+class _OfferReceivedCardWidgetState extends State<OfferReceivedCardWidget> {
   @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
@@ -26,6 +25,8 @@ class _BuyOfferReceivedCardWidgetState
           context.pushNamed('ReceivedOfferChatScreen');
         },
         child: Container(
+          width: MediaQuery.of(context).size.width,
+          height: 100,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
             boxShadow: [
@@ -41,11 +42,10 @@ class _BuyOfferReceivedCardWidgetState
             padding: EdgeInsetsDirectional.fromSTEB(8, 8, 12, 8),
             child: Row(
               mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
                   width: 4,
-                  height: 40,
+                  height: double.infinity,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).primaryColor,
                     borderRadius: BorderRadius.circular(4),
@@ -55,8 +55,8 @@ class _BuyOfferReceivedCardWidgetState
                   child: Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
                     child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Wrap(
@@ -84,7 +84,7 @@ class _BuyOfferReceivedCardWidgetState
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(4, 0, 0, 0),
                               child: Text(
-                                'Buy',
+                                'Trade',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyText1
                                     .override(
@@ -98,8 +98,36 @@ class _BuyOfferReceivedCardWidgetState
                             ),
                           ],
                         ),
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
+                              child: Text(
+                                'Nayeon',
+                                style: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Urbanist',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                    ),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(4, 4, 0, 0),
+                              child: Text(
+                                'IM NAYEON',
+                                style: FlutterFlowTheme.of(context).bodyText2,
+                              ),
+                            ),
+                          ],
+                        ),
                         Text(
-                          '+ view itsgoindownnn\'s offer',
+                          '+ view nayeonpop\'s offer',
                           style: FlutterFlowTheme.of(context)
                               .bodyText1
                               .override(
@@ -110,6 +138,15 @@ class _BuyOfferReceivedCardWidgetState
                         ),
                       ],
                     ),
+                  ),
+                ),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(15),
+                  child: Image.asset(
+                    'assets/images/nayeon.png',
+                    width: 75,
+                    height: 100,
+                    fit: BoxFit.cover,
                   ),
                 ),
               ],

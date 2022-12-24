@@ -207,7 +207,7 @@ class _PhotocardDetailsBlockWidgetState
                                                   fontFamily: 'Urbanist',
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .primaryBackground,
+                                                      .white,
                                                   fontSize: 12,
                                                   fontWeight: FontWeight.bold,
                                                 ),
@@ -240,7 +240,7 @@ class _PhotocardDetailsBlockWidgetState
                                                 fontFamily: 'Urbanist',
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
+                                                        .white,
                                                 fontSize: 12,
                                                 fontWeight: FontWeight.bold,
                                               ),
@@ -308,7 +308,7 @@ class _PhotocardDetailsBlockWidgetState
                                                     fontFamily: 'Urbanist',
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .primaryBackground,
+                                                        .white,
                                                     fontSize: 12,
                                                     fontWeight: FontWeight.bold,
                                                   ),
@@ -341,7 +341,7 @@ class _PhotocardDetailsBlockWidgetState
                                                   fontFamily: 'Urbanist',
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .primaryBackground,
+                                                      .white,
                                                   fontSize: 12,
                                                   fontWeight: FontWeight.bold,
                                                 ),
@@ -405,7 +405,7 @@ class _PhotocardDetailsBlockWidgetState
                                                   fontFamily: 'Urbanist',
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .primaryBackground,
+                                                      .white,
                                                   fontSize: 12,
                                                   fontWeight: FontWeight.bold,
                                                 ),
@@ -473,7 +473,7 @@ class _PhotocardDetailsBlockWidgetState
                                                     fontFamily: 'Urbanist',
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .primaryBackground,
+                                                        .white,
                                                     fontSize: 12,
                                                     fontWeight: FontWeight.bold,
                                                   ),
@@ -506,7 +506,7 @@ class _PhotocardDetailsBlockWidgetState
                                                   fontFamily: 'Urbanist',
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .primaryBackground,
+                                                      .white,
                                                   fontSize: 12,
                                                   fontWeight: FontWeight.bold,
                                                 ),

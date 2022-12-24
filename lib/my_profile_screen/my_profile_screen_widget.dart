@@ -1,9 +1,9 @@
 import '../components/listing_row_widget.dart';
+import '../components/my_offer_accepted_card_widget.dart';
+import '../components/my_offer_cancelled_card_widget.dart';
+import '../components/my_offer_rejected_card_widget.dart';
 import '../components/notifications_button_widget.dart';
-import '../components/offer_accepted_card_widget.dart';
-import '../components/offer_cancelled_card_widget.dart';
 import '../components/offer_made_card_widget.dart';
-import '../components/offer_rejected_card_widget.dart';
 import '../components/profile_description_widget.dart';
 import '../components/profile_header_widget.dart';
 import '../flutter_flow/flutter_flow_choice_chips.dart';
@@ -428,80 +428,85 @@ class _MyProfileScreenWidgetState extends State<MyProfileScreenWidget> {
                                         ),
                                       ),
                                       Expanded(
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            InkWell(
-                                              onTap: () async {
-                                                context.pushNamed(
-                                                    'MyListingScreen');
-                                              },
-                                              child: ListingRowWidget(),
-                                            ),
-                                            InkWell(
-                                              onTap: () async {
-                                                context.pushNamed(
-                                                    'MyListingScreen');
-                                              },
-                                              child: ListingRowWidget(),
-                                            ),
-                                            InkWell(
-                                              onTap: () async {
-                                                context.pushNamed(
-                                                    'MyListingScreen');
-                                              },
-                                              child: ListingRowWidget(),
-                                            ),
-                                            InkWell(
-                                              onTap: () async {
-                                                context.pushNamed(
-                                                    'MyListingScreen');
-                                              },
-                                              child: ListingRowWidget(),
-                                            ),
-                                            InkWell(
-                                              onTap: () async {
-                                                context.pushNamed(
-                                                    'MyListingScreen');
-                                              },
-                                              child: ListingRowWidget(),
-                                            ),
-                                            InkWell(
-                                              onTap: () async {
-                                                context.pushNamed(
-                                                    'MyListingScreen');
-                                              },
-                                              child: ListingRowWidget(),
-                                            ),
-                                            InkWell(
-                                              onTap: () async {
-                                                context.pushNamed(
-                                                    'MyListingScreen');
-                                              },
-                                              child: ListingRowWidget(),
-                                            ),
-                                            InkWell(
-                                              onTap: () async {
-                                                context.pushNamed(
-                                                    'MyListingScreen');
-                                              },
-                                              child: ListingRowWidget(),
-                                            ),
-                                            InkWell(
-                                              onTap: () async {
-                                                context.pushNamed(
-                                                    'MyListingScreen');
-                                              },
-                                              child: ListingRowWidget(),
-                                            ),
-                                            InkWell(
-                                              onTap: () async {
-                                                context.pushNamed(
-                                                    'MyListingScreen');
-                                              },
-                                              child: ListingRowWidget(),
-                                            ),
-                                          ],
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0, 0, 0, 32),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              InkWell(
+                                                onTap: () async {
+                                                  context.pushNamed(
+                                                      'MyListingScreen');
+                                                },
+                                                child: ListingRowWidget(),
+                                              ),
+                                              InkWell(
+                                                onTap: () async {
+                                                  context.pushNamed(
+                                                      'MyListingScreen');
+                                                },
+                                                child: ListingRowWidget(),
+                                              ),
+                                              InkWell(
+                                                onTap: () async {
+                                                  context.pushNamed(
+                                                      'MyListingScreen');
+                                                },
+                                                child: ListingRowWidget(),
+                                              ),
+                                              InkWell(
+                                                onTap: () async {
+                                                  context.pushNamed(
+                                                      'MyListingScreen');
+                                                },
+                                                child: ListingRowWidget(),
+                                              ),
+                                              InkWell(
+                                                onTap: () async {
+                                                  context.pushNamed(
+                                                      'MyListingScreen');
+                                                },
+                                                child: ListingRowWidget(),
+                                              ),
+                                              InkWell(
+                                                onTap: () async {
+                                                  context.pushNamed(
+                                                      'MyListingScreen');
+                                                },
+                                                child: ListingRowWidget(),
+                                              ),
+                                              InkWell(
+                                                onTap: () async {
+                                                  context.pushNamed(
+                                                      'MyListingScreen');
+                                                },
+                                                child: ListingRowWidget(),
+                                              ),
+                                              InkWell(
+                                                onTap: () async {
+                                                  context.pushNamed(
+                                                      'MyListingScreen');
+                                                },
+                                                child: ListingRowWidget(),
+                                              ),
+                                              InkWell(
+                                                onTap: () async {
+                                                  context.pushNamed(
+                                                      'MyListingScreen');
+                                                },
+                                                child: ListingRowWidget(),
+                                              ),
+                                              InkWell(
+                                                onTap: () async {
+                                                  context.pushNamed(
+                                                      'MyListingScreen');
+                                                },
+                                                child: ListingRowWidget(),
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ],
@@ -700,7 +705,7 @@ class _MyProfileScreenWidgetState extends State<MyProfileScreenWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            16, 8, 16, 0),
+                                            16, 16, 16, 8),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -719,22 +724,6 @@ class _MyProfileScreenWidgetState extends State<MyProfileScreenWidget> {
                                                                 .primaryText,
                                                       ),
                                             ),
-                                            FlutterFlowIconButton(
-                                              borderColor: Colors.transparent,
-                                              borderRadius: 30,
-                                              borderWidth: 1,
-                                              buttonSize: 40,
-                                              icon: Icon(
-                                                FFIcons.kswap,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryColor,
-                                                size: 20,
-                                              ),
-                                              onPressed: () {
-                                                print('IconButton pressed ...');
-                                              },
-                                            ),
                                           ],
                                         ),
                                       ),
@@ -744,9 +733,9 @@ class _MyProfileScreenWidgetState extends State<MyProfileScreenWidget> {
                                         scrollDirection: Axis.vertical,
                                         children: [
                                           OfferMadeCardWidget(),
-                                          OfferAcceptedCardWidget(),
-                                          OfferRejectedCardWidget(),
-                                          OfferCancelledCardWidget(),
+                                          MyOfferAcceptedCardWidget(),
+                                          MyOfferRejectedCardWidget(),
+                                          MyOfferCancelledCardWidget(),
                                         ],
                                       ),
                                     ],

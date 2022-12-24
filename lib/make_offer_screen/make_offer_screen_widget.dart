@@ -156,7 +156,7 @@ class _MakeOfferScreenWidgetState extends State<MakeOfferScreenWidget> {
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: FlutterFlowTheme.of(context)
-                                              .greyscale700,
+                                              .secondaryBackground,
                                           width: 1,
                                         ),
                                         borderRadius: BorderRadius.circular(12),
@@ -164,7 +164,7 @@ class _MakeOfferScreenWidgetState extends State<MakeOfferScreenWidget> {
                                       focusedBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: FlutterFlowTheme.of(context)
-                                              .greyscale700,
+                                              .secondaryBackground,
                                           width: 1,
                                         ),
                                         borderRadius: BorderRadius.circular(12),
@@ -185,7 +185,7 @@ class _MakeOfferScreenWidgetState extends State<MakeOfferScreenWidget> {
                                       ),
                                       filled: true,
                                       fillColor: FlutterFlowTheme.of(context)
-                                          .tertiaryColor,
+                                          .secondaryBackground,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
@@ -256,9 +256,10 @@ class _MakeOfferScreenWidgetState extends State<MakeOfferScreenWidget> {
                                         ),
                                     hintText: 'Select one of your listings',
                                     fillColor: FlutterFlowTheme.of(context)
-                                        .tertiaryColor,
+                                        .secondaryBackground,
                                     elevation: 2,
-                                    borderColor: Colors.transparent,
+                                    borderColor: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
                                     borderWidth: 0,
                                     borderRadius: 0,
                                     margin: EdgeInsetsDirectional.fromSTEB(
@@ -314,7 +315,7 @@ class _MakeOfferScreenWidgetState extends State<MakeOfferScreenWidget> {
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: FlutterFlowTheme.of(context)
-                                              .greyscale700,
+                                              .secondaryBackground,
                                           width: 1,
                                         ),
                                         borderRadius: BorderRadius.circular(12),
@@ -322,7 +323,7 @@ class _MakeOfferScreenWidgetState extends State<MakeOfferScreenWidget> {
                                       focusedBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: FlutterFlowTheme.of(context)
-                                              .greyscale700,
+                                              .secondaryBackground,
                                           width: 1,
                                         ),
                                         borderRadius: BorderRadius.circular(12),
@@ -343,7 +344,7 @@ class _MakeOfferScreenWidgetState extends State<MakeOfferScreenWidget> {
                                       ),
                                       filled: true,
                                       fillColor: FlutterFlowTheme.of(context)
-                                          .tertiaryColor,
+                                          .secondaryBackground,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
