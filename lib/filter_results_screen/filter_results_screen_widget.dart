@@ -106,8 +106,8 @@ class _FilterResultsScreenWidgetState extends State<FilterResultsScreenWidget> {
                                       .secondaryBackground,
                                   borderRadius: BorderRadius.circular(24),
                                   border: Border.all(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
+                                    color:
+                                        FlutterFlowTheme.of(context).alternate,
                                     width: 1,
                                   ),
                                 ),
@@ -206,8 +206,8 @@ class _FilterResultsScreenWidgetState extends State<FilterResultsScreenWidget> {
                                       .secondaryBackground,
                                   borderRadius: BorderRadius.circular(24),
                                   border: Border.all(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
+                                    color:
+                                        FlutterFlowTheme.of(context).alternate,
                                     width: 1,
                                   ),
                                 ),
@@ -466,8 +466,8 @@ class _FilterResultsScreenWidgetState extends State<FilterResultsScreenWidget> {
                                       .secondaryBackground,
                                   borderRadius: BorderRadius.circular(24),
                                   border: Border.all(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
+                                    color:
+                                        FlutterFlowTheme.of(context).alternate,
                                     width: 1,
                                   ),
                                 ),
@@ -565,8 +565,8 @@ class _FilterResultsScreenWidgetState extends State<FilterResultsScreenWidget> {
                                       .secondaryBackground,
                                   borderRadius: BorderRadius.circular(24),
                                   border: Border.all(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
+                                    color:
+                                        FlutterFlowTheme.of(context).alternate,
                                     width: 1,
                                   ),
                                 ),
@@ -736,7 +736,7 @@ class _FilterResultsScreenWidgetState extends State<FilterResultsScreenWidget> {
                                               fontFamily: 'Urbanist',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .primaryText,
+                                                      .white,
                                               fontWeight: FontWeight.bold,
                                             ),
                                         borderSide: BorderSide(

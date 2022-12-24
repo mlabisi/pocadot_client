@@ -102,6 +102,10 @@ class _SuggestionPreferencesWidgetState
                       ],
                     ),
                   ),
+                  Divider(
+                    thickness: 1,
+                    color: FlutterFlowTheme.of(context).secondaryText,
+                  ),
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
                     child: Column(
