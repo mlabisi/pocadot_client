@@ -179,7 +179,7 @@ class _CollectionDetailsWidgetState extends State<CollectionDetailsWidget> {
                                   ),
                             ),
                             Text(
-                              'Listings',
+                              'In Wishlist',
                               style: FlutterFlowTheme.of(context)
                                   .bodyText1
                                   .override(
