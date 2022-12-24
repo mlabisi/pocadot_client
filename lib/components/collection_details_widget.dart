@@ -10,14 +10,15 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class IdolActionsWidget extends StatefulWidget {
-  const IdolActionsWidget({Key? key}) : super(key: key);
+class CollectionDetailsWidget extends StatefulWidget {
+  const CollectionDetailsWidget({Key? key}) : super(key: key);
 
   @override
-  _IdolActionsWidgetState createState() => _IdolActionsWidgetState();
+  _CollectionDetailsWidgetState createState() =>
+      _CollectionDetailsWidgetState();
 }
 
-class _IdolActionsWidgetState extends State<IdolActionsWidget> {
+class _CollectionDetailsWidgetState extends State<CollectionDetailsWidget> {
   String? dropDownValue;
   TextEditingController? textController;
 
@@ -75,6 +76,10 @@ class _IdolActionsWidgetState extends State<IdolActionsWidget> {
                             style: FlutterFlowTheme.of(context).title3,
                           ),
                         ],
+                      ),
+                      Text(
+                        'papagowon\'s Collection',
+                        style: FlutterFlowTheme.of(context).bodyText1,
                       ),
                       Divider(
                         thickness: 1,

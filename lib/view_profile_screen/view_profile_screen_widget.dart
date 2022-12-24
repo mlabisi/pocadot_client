@@ -1,4 +1,4 @@
-import '../components/idol_actions_widget.dart';
+import '../components/collection_details_widget.dart';
 import '../components/idol_card_widget.dart';
 import '../components/listing_card_widget.dart';
 import '../components/profile_description_widget.dart';
@@ -658,7 +658,7 @@ class _ViewProfileScreenWidgetState extends State<ViewProfileScreenWidget> {
                                                                   .height *
                                                               0.4,
                                                       child:
-                                                          IdolActionsWidget(),
+                                                          CollectionDetailsWidget(),
                                                     ),
                                                   );
                                                 },
@@ -688,7 +688,7 @@ class _ViewProfileScreenWidgetState extends State<ViewProfileScreenWidget> {
                                                                   .height *
                                                               0.4,
                                                       child:
-                                                          IdolActionsWidget(),
+                                                          CollectionDetailsWidget(),
                                                     ),
                                                   );
                                                 },
@@ -718,7 +718,7 @@ class _ViewProfileScreenWidgetState extends State<ViewProfileScreenWidget> {
                                                                   .height *
                                                               0.4,
                                                       child:
-                                                          IdolActionsWidget(),
+                                                          CollectionDetailsWidget(),
                                                     ),
                                                   );
                                                 },
@@ -748,7 +748,7 @@ class _ViewProfileScreenWidgetState extends State<ViewProfileScreenWidget> {
                                                                   .height *
                                                               0.4,
                                                       child:
-                                                          IdolActionsWidget(),
+                                                          CollectionDetailsWidget(),
                                                     ),
                                                   );
                                                 },
@@ -778,7 +778,7 @@ class _ViewProfileScreenWidgetState extends State<ViewProfileScreenWidget> {
                                                                   .height *
                                                               0.4,
                                                       child:
-                                                          IdolActionsWidget(),
+                                                          CollectionDetailsWidget(),
                                                     ),
                                                   );
                                                 },
@@ -808,7 +808,7 @@ class _ViewProfileScreenWidgetState extends State<ViewProfileScreenWidget> {
                                                                   .height *
                                                               0.4,
                                                       child:
-                                                          IdolActionsWidget(),
+                                                          CollectionDetailsWidget(),
                                                     ),
                                                   );
                                                 },
@@ -838,7 +838,7 @@ class _ViewProfileScreenWidgetState extends State<ViewProfileScreenWidget> {
                                                                   .height *
                                                               0.4,
                                                       child:
-                                                          IdolActionsWidget(),
+                                                          CollectionDetailsWidget(),
                                                     ),
                                                   );
                                                 },
@@ -868,7 +868,7 @@ class _ViewProfileScreenWidgetState extends State<ViewProfileScreenWidget> {
                                                                   .height *
                                                               0.4,
                                                       child:
-                                                          IdolActionsWidget(),
+                                                          CollectionDetailsWidget(),
                                                     ),
                                                   );
                                                 },
@@ -898,7 +898,7 @@ class _ViewProfileScreenWidgetState extends State<ViewProfileScreenWidget> {
                                                                   .height *
                                                               0.4,
                                                       child:
-                                                          IdolActionsWidget(),
+                                                          CollectionDetailsWidget(),
                                                     ),
                                                   );
                                                 },
