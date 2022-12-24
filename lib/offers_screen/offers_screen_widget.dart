@@ -24,8 +24,9 @@ class _OffersScreenWidgetState extends State<OffersScreenWidget> {
   String? choiceChipsValue;
   TextEditingController? textController;
   String? dropDownValue;
-  final formKey = GlobalKey<FormState>();
+  final _unfocusNode = FocusNode();
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  final formKey = GlobalKey<FormState>();
 
   @override
   void initState() {
@@ -35,6 +36,7 @@ class _OffersScreenWidgetState extends State<OffersScreenWidget> {
 
   @override
   void dispose() {
+    _unfocusNode.dispose();
     textController?.dispose();
     super.dispose();
   }
@@ -77,7 +79,7 @@ class _OffersScreenWidgetState extends State<OffersScreenWidget> {
       ),
       body: SafeArea(
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [

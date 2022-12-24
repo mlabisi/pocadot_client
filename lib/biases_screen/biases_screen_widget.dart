@@ -7,7 +7,6 @@ import '../flutter_flow/flutter_flow_util.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -20,6 +19,7 @@ class BiasesScreenWidget extends StatefulWidget {
 
 class _BiasesScreenWidgetState extends State<BiasesScreenWidget> {
   TextEditingController? textController;
+  final _unfocusNode = FocusNode();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -30,6 +30,7 @@ class _BiasesScreenWidgetState extends State<BiasesScreenWidget> {
 
   @override
   void dispose() {
+    _unfocusNode.dispose();
     textController?.dispose();
     super.dispose();
   }
@@ -72,7 +73,7 @@ class _BiasesScreenWidgetState extends State<BiasesScreenWidget> {
       ),
       body: SafeArea(
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: Stack(
             children: [
               Padding(
@@ -240,13 +241,6 @@ class _BiasesScreenWidgetState extends State<BiasesScreenWidget> {
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
-                            boxShadow: [
-                              BoxShadow(
-                                color:
-                                    FlutterFlowTheme.of(context).greyscale200,
-                                offset: Offset(0, -2),
-                              )
-                            ],
                             borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(0),
                               bottomRight: Radius.circular(0),
@@ -261,9 +255,10 @@ class _BiasesScreenWidgetState extends State<BiasesScreenWidget> {
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                FaIcon(
-                                  FontAwesomeIcons.chevronUp,
-                                  color: Colors.black,
+                                Icon(
+                                  FFIcons.karrowUp2,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
                                   size: 16,
                                 ),
                                 Row(

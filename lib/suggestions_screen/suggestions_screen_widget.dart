@@ -19,6 +19,7 @@ class SuggestionsScreenWidget extends StatefulWidget {
 }
 
 class _SuggestionsScreenWidgetState extends State<SuggestionsScreenWidget> {
+  final _unfocusNode = FocusNode();
   final scaffoldKey = GlobalKey<ScaffoldState>();
   late SwipeableCardSectionController swipeableStackController;
 
@@ -26,6 +27,12 @@ class _SuggestionsScreenWidgetState extends State<SuggestionsScreenWidget> {
   void initState() {
     super.initState();
     swipeableStackController = SwipeableCardSectionController();
+  }
+
+  @override
+  void dispose() {
+    _unfocusNode.dispose();
+    super.dispose();
   }
 
   @override
@@ -67,7 +74,7 @@ class _SuggestionsScreenWidgetState extends State<SuggestionsScreenWidget> {
         elevation: 2,
       ),
       body: GestureDetector(
-        onTap: () => FocusScope.of(context).unfocus(),
+        onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
         child: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height * 1,

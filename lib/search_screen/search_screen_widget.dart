@@ -19,6 +19,7 @@ class SearchScreenWidget extends StatefulWidget {
 class _SearchScreenWidgetState extends State<SearchScreenWidget> {
   String? dropDownValue;
   TextEditingController? textController;
+  final _unfocusNode = FocusNode();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -29,6 +30,7 @@ class _SearchScreenWidgetState extends State<SearchScreenWidget> {
 
   @override
   void dispose() {
+    _unfocusNode.dispose();
     textController?.dispose();
     super.dispose();
   }
@@ -89,7 +91,7 @@ class _SearchScreenWidgetState extends State<SearchScreenWidget> {
       ),
       body: SafeArea(
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [

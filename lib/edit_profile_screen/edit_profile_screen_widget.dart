@@ -21,6 +21,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
   TextEditingController? textController3;
   TextEditingController? textController4;
   TextEditingController? textController5;
+  final _unfocusNode = FocusNode();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -35,6 +36,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
 
   @override
   void dispose() {
+    _unfocusNode.dispose();
     textController1?.dispose();
     textController2?.dispose();
     textController3?.dispose();
@@ -81,7 +83,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
       ),
       body: SafeArea(
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
@@ -879,13 +881,6 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: FlutterFlowTheme.of(context)
-                                          .greyscale200,
-                                      offset: Offset(0, -2),
-                                    )
-                                  ],
                                 ),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
@@ -914,7 +909,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                                 fontFamily: 'Urbanist',
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
+                                                        .primaryText,
                                                 fontWeight: FontWeight.bold,
                                               ),
                                           borderSide: BorderSide(

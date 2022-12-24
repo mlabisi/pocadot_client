@@ -19,6 +19,7 @@ class _MakeOfferScreenWidgetState extends State<MakeOfferScreenWidget> {
   String? dropDownValue;
   TextEditingController? textController1;
   TextEditingController? textController2;
+  final _unfocusNode = FocusNode();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -30,6 +31,7 @@ class _MakeOfferScreenWidgetState extends State<MakeOfferScreenWidget> {
 
   @override
   void dispose() {
+    _unfocusNode.dispose();
     textController1?.dispose();
     textController2?.dispose();
     super.dispose();
@@ -41,9 +43,9 @@ class _MakeOfferScreenWidgetState extends State<MakeOfferScreenWidget> {
 
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         automaticallyImplyLeading: false,
         leading: FlutterFlowIconButton(
           borderColor: Colors.transparent,
@@ -73,7 +75,7 @@ class _MakeOfferScreenWidgetState extends State<MakeOfferScreenWidget> {
       ),
       body: SafeArea(
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: Stack(
             children: [
               SingleChildScrollView(
@@ -373,12 +375,6 @@ class _MakeOfferScreenWidgetState extends State<MakeOfferScreenWidget> {
                       height: MediaQuery.of(context).size.height * 0.1,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        boxShadow: [
-                          BoxShadow(
-                            color: FlutterFlowTheme.of(context).greyscale200,
-                            offset: Offset(0, -2),
-                          )
-                        ],
                       ),
                       child: Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
@@ -402,7 +398,7 @@ class _MakeOfferScreenWidgetState extends State<MakeOfferScreenWidget> {
                                     .override(
                                       fontFamily: 'Urbanist',
                                       color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
+                                          .primaryText,
                                       fontWeight: FontWeight.bold,
                                     ),
                                 borderSide: BorderSide(

@@ -20,6 +20,7 @@ class CollectionScreenWidget extends StatefulWidget {
 class _CollectionScreenWidgetState extends State<CollectionScreenWidget> {
   String? dropDownValue;
   TextEditingController? textController;
+  final _unfocusNode = FocusNode();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -30,6 +31,7 @@ class _CollectionScreenWidgetState extends State<CollectionScreenWidget> {
 
   @override
   void dispose() {
+    _unfocusNode.dispose();
     textController?.dispose();
     super.dispose();
   }
@@ -74,7 +76,7 @@ class _CollectionScreenWidgetState extends State<CollectionScreenWidget> {
       ),
       body: SafeArea(
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 52),
             child: Column(

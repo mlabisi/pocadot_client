@@ -25,7 +25,14 @@ class MyListingScreenWidget extends StatefulWidget {
 
 class _MyListingScreenWidgetState extends State<MyListingScreenWidget> {
   PageController? pageViewController;
+  final _unfocusNode = FocusNode();
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void dispose() {
+    _unfocusNode.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +81,7 @@ class _MyListingScreenWidgetState extends State<MyListingScreenWidget> {
       ),
       body: SafeArea(
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: Stack(
             children: [
               Padding(
@@ -607,12 +614,6 @@ class _MyListingScreenWidgetState extends State<MyListingScreenWidget> {
                       height: MediaQuery.of(context).size.height * 0.1,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        boxShadow: [
-                          BoxShadow(
-                            color: FlutterFlowTheme.of(context).greyscale200,
-                            offset: Offset(0, -2),
-                          )
-                        ],
                       ),
                       child: Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
@@ -636,7 +637,7 @@ class _MyListingScreenWidgetState extends State<MyListingScreenWidget> {
                                     .override(
                                       fontFamily: 'Urbanist',
                                       color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
+                                          .primaryText,
                                       fontWeight: FontWeight.bold,
                                     ),
                                 borderSide: BorderSide(

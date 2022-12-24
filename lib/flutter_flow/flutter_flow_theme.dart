@@ -46,7 +46,6 @@ abstract class FlutterFlowTheme {
   late Color background;
   late Color greyscale900;
   late Color greyscale700;
-  late Color btnText;
   late Color alertRed;
   late Color customColor4;
   late Color backgroundComponents;
@@ -98,7 +97,6 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color background = Color(0xFFF6F7FF);
   late Color greyscale900 = Color(0xFF212121);
   late Color greyscale700 = Color(0xFF616161);
-  late Color btnText = Color(0xFFFFFFFF);
   late Color alertRed = Color(0xFFDF3F3F);
   late Color customColor4 = Color(0xFF090F13);
   late Color backgroundComponents = Color(0xFF1D2428);
@@ -213,7 +211,6 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color background = Color(0xFFF6F7FF);
   late Color greyscale900 = Color(0xFF212121);
   late Color greyscale700 = Color(0xFF616161);
-  late Color btnText = Color(0xFFFFFFFF);
   late Color alertRed = Color(0xFFDF3F3F);
   late Color customColor4 = Color(0xFF090F13);
   late Color backgroundComponents = Color(0xFF1D2428);
@@ -228,7 +225,7 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color orange = Color(0xFFFF981F);
   late Color customColor3 = Color(0xFFDF3F3F);
   late Color customColor1 = Color(0xFF452FB7);
-  late Color greyscale50 = Color(0xFF97CCE5);
+  late Color greyscale50 = Color(0xFFFAFAFA);
 }
 
 extension TextStyleHelper on TextStyle {

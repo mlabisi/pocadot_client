@@ -25,6 +25,7 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
   bool? checkboxValue2;
   TextEditingController? textController2;
   bool? switchValue;
+  final _unfocusNode = FocusNode();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -36,6 +37,7 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
 
   @override
   void dispose() {
+    _unfocusNode.dispose();
     textController1?.dispose();
     textController2?.dispose();
     super.dispose();
@@ -49,7 +51,7 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         automaticallyImplyLeading: false,
         leading: FlutterFlowIconButton(
           borderColor: Colors.transparent,
@@ -79,7 +81,7 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
       ),
       body: SafeArea(
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
@@ -1061,13 +1063,6 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: FlutterFlowTheme.of(context)
-                                          .greyscale200,
-                                      offset: Offset(0, -2),
-                                    )
-                                  ],
                                 ),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
@@ -1125,7 +1120,7 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                                 fontFamily: 'Urbanist',
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
+                                                        .primaryText,
                                                 fontWeight: FontWeight.bold,
                                               ),
                                           borderSide: BorderSide(

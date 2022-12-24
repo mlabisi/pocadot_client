@@ -24,6 +24,7 @@ class _FilterResultsScreenWidgetState extends State<FilterResultsScreenWidget> {
   TextEditingController? textController2;
   List<String>? checkboxGroupValues2;
   String? radioButtonValue;
+  final _unfocusNode = FocusNode();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -35,6 +36,7 @@ class _FilterResultsScreenWidgetState extends State<FilterResultsScreenWidget> {
 
   @override
   void dispose() {
+    _unfocusNode.dispose();
     textController1?.dispose();
     textController2?.dispose();
     super.dispose();
@@ -78,7 +80,7 @@ class _FilterResultsScreenWidgetState extends State<FilterResultsScreenWidget> {
       ),
       body: SafeArea(
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
@@ -105,7 +107,7 @@ class _FilterResultsScreenWidgetState extends State<FilterResultsScreenWidget> {
                                   borderRadius: BorderRadius.circular(24),
                                   border: Border.all(
                                     color: FlutterFlowTheme.of(context)
-                                        .greyscale200,
+                                        .primaryBackground,
                                     width: 1,
                                   ),
                                 ),
@@ -205,7 +207,7 @@ class _FilterResultsScreenWidgetState extends State<FilterResultsScreenWidget> {
                                   borderRadius: BorderRadius.circular(24),
                                   border: Border.all(
                                     color: FlutterFlowTheme.of(context)
-                                        .greyscale200,
+                                        .primaryBackground,
                                     width: 1,
                                   ),
                                 ),
@@ -465,7 +467,7 @@ class _FilterResultsScreenWidgetState extends State<FilterResultsScreenWidget> {
                                   borderRadius: BorderRadius.circular(24),
                                   border: Border.all(
                                     color: FlutterFlowTheme.of(context)
-                                        .greyscale200,
+                                        .primaryBackground,
                                     width: 1,
                                   ),
                                 ),
@@ -564,7 +566,7 @@ class _FilterResultsScreenWidgetState extends State<FilterResultsScreenWidget> {
                                   borderRadius: BorderRadius.circular(24),
                                   border: Border.all(
                                     color: FlutterFlowTheme.of(context)
-                                        .greyscale200,
+                                        .primaryBackground,
                                     width: 1,
                                   ),
                                 ),
@@ -680,13 +682,6 @@ class _FilterResultsScreenWidgetState extends State<FilterResultsScreenWidget> {
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: FlutterFlowTheme.of(context)
-                                        .greyscale200,
-                                    offset: Offset(0, -2),
-                                  )
-                                ],
                               ),
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
@@ -741,7 +736,7 @@ class _FilterResultsScreenWidgetState extends State<FilterResultsScreenWidget> {
                                               fontFamily: 'Urbanist',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
+                                                      .primaryText,
                                               fontWeight: FontWeight.bold,
                                             ),
                                         borderSide: BorderSide(

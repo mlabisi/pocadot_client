@@ -30,8 +30,9 @@ class _MyProfileScreenWidgetState extends State<MyProfileScreenWidget> {
   String? dropDownValue;
   String? choiceChipsValue2;
   TextEditingController? textController2;
-  final formKey1 = GlobalKey<FormState>();
+  final _unfocusNode = FocusNode();
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  final formKey1 = GlobalKey<FormState>();
   final formKey2 = GlobalKey<FormState>();
 
   @override
@@ -43,6 +44,7 @@ class _MyProfileScreenWidgetState extends State<MyProfileScreenWidget> {
 
   @override
   void dispose() {
+    _unfocusNode.dispose();
     textController1?.dispose();
     textController2?.dispose();
     super.dispose();
@@ -126,7 +128,7 @@ class _MyProfileScreenWidgetState extends State<MyProfileScreenWidget> {
           builder: (context) {
             return SafeArea(
               child: GestureDetector(
-                onTap: () => FocusScope.of(context).unfocus(),
+                onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
                 child: ListView(
                   padding: EdgeInsets.zero,
                   scrollDirection: Axis.vertical,

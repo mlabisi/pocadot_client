@@ -28,8 +28,9 @@ class _ViewProfileScreenWidgetState extends State<ViewProfileScreenWidget> {
   String? dropDownValue1;
   String? dropDownValue2;
   TextEditingController? textController2;
-  final formKey = GlobalKey<FormState>();
+  final _unfocusNode = FocusNode();
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  final formKey = GlobalKey<FormState>();
 
   @override
   void initState() {
@@ -40,6 +41,7 @@ class _ViewProfileScreenWidgetState extends State<ViewProfileScreenWidget> {
 
   @override
   void dispose() {
+    _unfocusNode.dispose();
     textController1?.dispose();
     textController2?.dispose();
     super.dispose();
@@ -107,7 +109,7 @@ class _ViewProfileScreenWidgetState extends State<ViewProfileScreenWidget> {
       ),
       body: SafeArea(
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.max,

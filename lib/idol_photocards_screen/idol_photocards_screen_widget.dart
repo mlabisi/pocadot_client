@@ -22,6 +22,7 @@ class _IdolPhotocardsScreenWidgetState
     extends State<IdolPhotocardsScreenWidget> {
   String? dropDownValue;
   TextEditingController? textController;
+  final _unfocusNode = FocusNode();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -32,6 +33,7 @@ class _IdolPhotocardsScreenWidgetState
 
   @override
   void dispose() {
+    _unfocusNode.dispose();
     textController?.dispose();
     super.dispose();
   }
@@ -66,7 +68,7 @@ class _IdolPhotocardsScreenWidgetState
       ),
       body: SafeArea(
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: Padding(
             padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
             child: SingleChildScrollView(

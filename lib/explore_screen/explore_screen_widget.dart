@@ -17,6 +17,7 @@ class ExploreScreenWidget extends StatefulWidget {
 
 class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
   TextEditingController? textController;
+  final _unfocusNode = FocusNode();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -27,6 +28,7 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
 
   @override
   void dispose() {
+    _unfocusNode.dispose();
     textController?.dispose();
     super.dispose();
   }
@@ -71,7 +73,7 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
       ),
       body: SafeArea(
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [

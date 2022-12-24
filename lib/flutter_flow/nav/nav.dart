@@ -143,11 +143,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => MakeOfferScreenWidget(),
             ),
             FFRoute(
-              name: 'MyListingScreen',
-              path: 'myListingScreen',
-              builder: (context, params) => MyListingScreenWidget(),
-            ),
-            FFRoute(
               name: 'EditProfileScreen',
               path: 'editProfileScreen',
               builder: (context, params) => EditProfileScreenWidget(),
@@ -156,6 +151,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'SettingsScreen',
               path: 'settingsScreen',
               builder: (context, params) => SettingsScreenWidget(),
+            ),
+            FFRoute(
+              name: 'MyListingScreen',
+              path: 'myListingScreen',
+              builder: (context, params) => MyListingScreenWidget(),
             ),
             FFRoute(
               name: 'BiasesScreen',
@@ -171,6 +171,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'ChangePasswordScreen',
               path: 'changePasswordScreen',
               builder: (context, params) => ChangePasswordScreenWidget(),
+            ),
+            FFRoute(
+              name: 'DeleteAccountScreen',
+              path: 'deleteAccountScreen',
+              builder: (context, params) => DeleteAccountScreenWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),

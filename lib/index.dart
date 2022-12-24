@@ -26,12 +26,14 @@ export 'filter_results_screen/filter_results_screen_widget.dart'
     show FilterResultsScreenWidget;
 export 'make_offer_screen/make_offer_screen_widget.dart'
     show MakeOfferScreenWidget;
-export 'my_listing_screen/my_listing_screen_widget.dart'
-    show MyListingScreenWidget;
 export 'edit_profile_screen/edit_profile_screen_widget.dart'
     show EditProfileScreenWidget;
 export 'settings_screen/settings_screen_widget.dart' show SettingsScreenWidget;
+export 'my_listing_screen/my_listing_screen_widget.dart'
+    show MyListingScreenWidget;
 export 'biases_screen/biases_screen_widget.dart' show BiasesScreenWidget;
 export 'offers_screen/offers_screen_widget.dart' show OffersScreenWidget;
 export 'change_password_screen/change_password_screen_widget.dart'
     show ChangePasswordScreenWidget;
+export 'delete_account_screen/delete_account_screen_widget.dart'
+    show DeleteAccountScreenWidget;

@@ -18,12 +18,27 @@ class FFAppState extends ChangeNotifier {
     _testToggle = prefs.getBool('ff_testToggle') ?? _testToggle;
   }
 
+  static bool _shouldNotify = true;
+  void _maybeNotifyListeners() {
+    if (_shouldNotify) notifyListeners();
+  }
+
+  // Update FFAppState without notifying and rebuilding all widgets.
+  static void updateSilently(VoidCallback callback) {
+    try {
+      _shouldNotify = false;
+      callback();
+    } finally {
+      _shouldNotify = true;
+    }
+  }
+
   late SharedPreferences prefs;
 
   bool _testToggle = false;
   bool get testToggle => _testToggle;
   set testToggle(bool _value) {
-    notifyListeners();
+    _maybeNotifyListeners();
     _testToggle = _value;
     prefs.setBool('ff_testToggle', _value);
   }
