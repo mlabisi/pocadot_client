@@ -262,73 +262,74 @@ class _MyListingsScreenWidgetState extends State<MyListingsScreenWidget> {
                 ),
               ),
               Expanded(
-                child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 32),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      InkWell(
+                child: ListView(
+                  padding: EdgeInsets.zero,
+                  scrollDirection: Axis.vertical,
+                  children: [
+                    InkWell(
+                      onTap: () async {
+                        context.pushNamed('MyListingScreen');
+                      },
+                      child: ListingRowWidget(),
+                    ),
+                    InkWell(
+                      onTap: () async {
+                        context.pushNamed('MyListingScreen');
+                      },
+                      child: ListingRowWidget(),
+                    ),
+                    InkWell(
+                      onTap: () async {
+                        context.pushNamed('MyListingScreen');
+                      },
+                      child: ListingRowWidget(),
+                    ),
+                    InkWell(
+                      onTap: () async {
+                        context.pushNamed('MyListingScreen');
+                      },
+                      child: ListingRowWidget(),
+                    ),
+                    InkWell(
+                      onTap: () async {
+                        context.pushNamed('MyListingScreen');
+                      },
+                      child: ListingRowWidget(),
+                    ),
+                    InkWell(
+                      onTap: () async {
+                        context.pushNamed('MyListingScreen');
+                      },
+                      child: ListingRowWidget(),
+                    ),
+                    InkWell(
+                      onTap: () async {
+                        context.pushNamed('MyListingScreen');
+                      },
+                      child: ListingRowWidget(),
+                    ),
+                    InkWell(
+                      onTap: () async {
+                        context.pushNamed('MyListingScreen');
+                      },
+                      child: ListingRowWidget(),
+                    ),
+                    InkWell(
+                      onTap: () async {
+                        context.pushNamed('MyListingScreen');
+                      },
+                      child: ListingRowWidget(),
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 16),
+                      child: InkWell(
                         onTap: () async {
                           context.pushNamed('MyListingScreen');
                         },
                         child: ListingRowWidget(),
                       ),
-                      InkWell(
-                        onTap: () async {
-                          context.pushNamed('MyListingScreen');
-                        },
-                        child: ListingRowWidget(),
-                      ),
-                      InkWell(
-                        onTap: () async {
-                          context.pushNamed('MyListingScreen');
-                        },
-                        child: ListingRowWidget(),
-                      ),
-                      InkWell(
-                        onTap: () async {
-                          context.pushNamed('MyListingScreen');
-                        },
-                        child: ListingRowWidget(),
-                      ),
-                      InkWell(
-                        onTap: () async {
-                          context.pushNamed('MyListingScreen');
-                        },
-                        child: ListingRowWidget(),
-                      ),
-                      InkWell(
-                        onTap: () async {
-                          context.pushNamed('MyListingScreen');
-                        },
-                        child: ListingRowWidget(),
-                      ),
-                      InkWell(
-                        onTap: () async {
-                          context.pushNamed('MyListingScreen');
-                        },
-                        child: ListingRowWidget(),
-                      ),
-                      InkWell(
-                        onTap: () async {
-                          context.pushNamed('MyListingScreen');
-                        },
-                        child: ListingRowWidget(),
-                      ),
-                      InkWell(
-                        onTap: () async {
-                          context.pushNamed('MyListingScreen');
-                        },
-                        child: ListingRowWidget(),
-                      ),
-                      InkWell(
-                        onTap: () async {
-                          context.pushNamed('MyListingScreen');
-                        },
-                        child: ListingRowWidget(),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ],
