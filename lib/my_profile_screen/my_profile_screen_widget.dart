@@ -369,7 +369,7 @@ class _MyProfileScreenWidgetState extends State<MyProfileScreenWidget> {
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Text(
-                                              '5 Listings',
+                                              '9 Listings',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .subtitle2

@@ -65,7 +65,7 @@ class _MoreScreenWidgetState extends State<MoreScreenWidget> {
               children: [
                 InkWell(
                   onTap: () async {
-                    context.pushNamed('SearchScreen');
+                    context.pushNamed('MyListingsScreen');
                   },
                   child: MyListingsRowWidget(),
                 ),

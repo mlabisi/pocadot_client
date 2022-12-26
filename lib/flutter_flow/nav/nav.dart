@@ -191,6 +191,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'SentOfferChatScreen',
               path: 'sentOfferChatScreen',
               builder: (context, params) => SentOfferChatScreenWidget(),
+            ),
+            FFRoute(
+              name: 'MyListingsScreen',
+              path: 'myListingsScreen',
+              builder: (context, params) => MyListingsScreenWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),

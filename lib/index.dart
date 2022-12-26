@@ -42,3 +42,5 @@ export 'delete_account_screen/delete_account_screen_widget.dart'
     show DeleteAccountScreenWidget;
 export 'sent_offer_chat_screen/sent_offer_chat_screen_widget.dart'
     show SentOfferChatScreenWidget;
+export 'my_listings_screen/my_listings_screen_widget.dart'
+    show MyListingsScreenWidget;
