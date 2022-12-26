@@ -171,7 +171,12 @@ class _WishlistScreenWidgetState extends State<WishlistScreenWidget> {
                         ),
                       ),
                       FlutterFlowDropDown<String>(
-                        options: ['A - Z', 'Most Recent', 'Oldest', ''],
+                        options: [
+                          'Release Name (A - Z)',
+                          'Release Date (Most Recent)',
+                          'Release Date (Oldest)',
+                          ''
+                        ],
                         onChanged: (val) => setState(() => dropDownValue = val),
                         width: MediaQuery.of(context).size.width * 0.4,
                         textStyle: FlutterFlowTheme.of(context)
