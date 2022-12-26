@@ -10,6 +10,7 @@ export 'collection_screen/collection_screen_widget.dart'
     show CollectionScreenWidget;
 export 'idol_photocards_screen/idol_photocards_screen_widget.dart'
     show IdolPhotocardsScreenWidget;
+export 'wishlist_screen/wishlist_screen_widget.dart' show WishlistScreenWidget;
 export 'more_screen/more_screen_widget.dart' show MoreScreenWidget;
 export 'notifications_screen/notifications_screen_widget.dart'
     show NotificationsScreenWidget;

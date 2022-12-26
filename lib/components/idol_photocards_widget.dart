@@ -1,5 +1,6 @@
 import '../components/photocard_details_widget.dart';
 import '../components/photocard_thumbnail_widget.dart';
+import '../components/unowned_photocard_thumbnail_widget.dart';
 import '../flutter_flow/flutter_flow_expanded_image_view.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -216,28 +217,7 @@ class _IdolPhotocardsWidgetState extends State<IdolPhotocardsWidget> {
                           ),
                         ],
                       ),
-                      Stack(
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(16),
-                            child: Image.network(
-                              'https://pocadot.b-cdn.net/recTLCAdgnX8FQU6e.png',
-                              width: MediaQuery.of(context).size.width * 0.16,
-                              height: MediaQuery.of(context).size.height * 0.12,
-                              fit: BoxFit.fitHeight,
-                            ),
-                          ),
-                          if (true)
-                            Container(
-                              width: MediaQuery.of(context).size.width * 0.16,
-                              height: MediaQuery.of(context).size.height * 0.12,
-                              decoration: BoxDecoration(
-                                color: Color(0xCC212121),
-                                borderRadius: BorderRadius.circular(12),
-                              ),
-                            ),
-                        ],
-                      ),
+                      UnownedPhotocardThumbnailWidget(),
                       Stack(
                         children: [
                           InkWell(
@@ -252,14 +232,14 @@ class _IdolPhotocardsWidgetState extends State<IdolPhotocardsWidget> {
                                       fit: BoxFit.contain,
                                     ),
                                     allowRotation: false,
-                                    tag: 'imageTag5',
+                                    tag: 'imageTag4',
                                     useHeroAnimation: true,
                                   ),
                                 ),
                               );
                             },
                             child: Hero(
-                              tag: 'imageTag5',
+                              tag: 'imageTag4',
                               transitionOnUserGestures: true,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(16),
@@ -298,14 +278,14 @@ class _IdolPhotocardsWidgetState extends State<IdolPhotocardsWidget> {
                                       fit: BoxFit.contain,
                                     ),
                                     allowRotation: false,
-                                    tag: 'imageTag6',
+                                    tag: 'imageTag5',
                                     useHeroAnimation: true,
                                   ),
                                 ),
                               );
                             },
                             child: Hero(
-                              tag: 'imageTag6',
+                              tag: 'imageTag5',
                               transitionOnUserGestures: true,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(16),
@@ -344,14 +324,14 @@ class _IdolPhotocardsWidgetState extends State<IdolPhotocardsWidget> {
                                       fit: BoxFit.contain,
                                     ),
                                     allowRotation: false,
-                                    tag: 'imageTag7',
+                                    tag: 'imageTag6',
                                     useHeroAnimation: true,
                                   ),
                                 ),
                               );
                             },
                             child: Hero(
-                              tag: 'imageTag7',
+                              tag: 'imageTag6',
                               transitionOnUserGestures: true,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(16),

@@ -96,6 +96,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => IdolPhotocardsScreenWidget(),
             ),
             FFRoute(
+              name: 'WishlistScreen',
+              path: 'wishlistScreen',
+              builder: (context, params) => WishlistScreenWidget(),
+            ),
+            FFRoute(
               name: 'MoreScreen',
               path: 'moreScreen',
               builder: (context, params) => params.isEmpty

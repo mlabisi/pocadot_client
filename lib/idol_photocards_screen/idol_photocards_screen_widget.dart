@@ -109,8 +109,8 @@ class _IdolPhotocardsScreenWidgetState
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
                           child: FFButtonWidget(
-                            onPressed: () {
-                              print('Button pressed ...');
+                            onPressed: () async {
+                              context.pushNamed('WishlistScreen');
                             },
                             text: 'View Wishlist',
                             options: FFButtonOptions(
@@ -213,30 +213,35 @@ class _IdolPhotocardsScreenWidgetState
                         ),
                       ),
                       Expanded(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Text(
-                              '17',
-                              style: FlutterFlowTheme.of(context)
-                                  .subtitle2
-                                  .override(
-                                    fontFamily: 'Urbanist',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                  ),
-                            ),
-                            Text(
-                              'In Wishlist',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyText1
-                                  .override(
-                                    fontFamily: 'Urbanist',
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                  ),
-                            ),
-                          ],
+                        child: InkWell(
+                          onTap: () async {
+                            context.pushNamed('WishlistScreen');
+                          },
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Text(
+                                '17',
+                                style: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Urbanist',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                    ),
+                              ),
+                              Text(
+                                'In Wishlist',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'Urbanist',
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                    ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ],
