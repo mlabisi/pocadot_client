@@ -70,7 +70,22 @@ class _MyListingsScreenWidgetState extends State<MyListingsScreenWidget> {
                 fontSize: 22,
               ),
         ),
-        actions: [],
+        actions: [
+          FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30,
+            borderWidth: 1,
+            buttonSize: 60,
+            icon: Icon(
+              FFIcons.kplus,
+              color: FlutterFlowTheme.of(context).primaryColor,
+              size: 30,
+            ),
+            onPressed: () async {
+              context.pushNamed('AddListingScreen');
+            },
+          ),
+        ],
         centerTitle: false,
         elevation: 2,
       ),

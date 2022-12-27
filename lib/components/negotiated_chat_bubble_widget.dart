@@ -60,7 +60,7 @@ class _NegotiatedChatBubbleWidgetState
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 8),
                         child: Text(
-                          '\"Can you go higher on the price? Can you trade a different Gowon PC? I already have that one.',
+                          '\"Can you go higher on the price? Can you trade a different Gowon PC? I already have that one.\"',
                           style: FlutterFlowTheme.of(context).bodyText1,
                         ),
                       ),

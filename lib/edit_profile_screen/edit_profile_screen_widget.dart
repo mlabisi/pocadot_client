@@ -378,7 +378,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                           0, 8, 0, 8),
                                       child: TextFormField(
                                         controller: textController1,
-                                        autofocus: true,
+                                        readOnly: true,
                                         obscureText: false,
                                         decoration: InputDecoration(
                                           hintText: 'foReVe',
@@ -512,7 +512,6 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                           0, 8, 0, 8),
                                       child: TextFormField(
                                         controller: textController2,
-                                        autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(
                                           hintText:
@@ -625,7 +624,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
                                         clipBehavior: Clip.none,
                                         children: [
                                           Text(
-                                            'Your social media links will be displayed on your profile, right below your description.',
+                                            'Your social media links will be displayed on your profile, right below your description. All social links are optional.',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyText1,
                                           ),

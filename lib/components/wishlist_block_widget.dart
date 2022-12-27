@@ -1,4 +1,5 @@
 import '../components/photocard_details_widget.dart';
+import '../components/photocard_thumbnail_widget.dart';
 import '../flutter_flow/flutter_flow_expanded_image_view.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -44,8 +45,8 @@ class _WishlistBlockWidgetState extends State<WishlistBlockWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0, 1, 1, 1),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(6),
-                      child: Image.network(
-                        'https://w.namu.la/s/3ff2d410c2a58eb25ad6bb715447a6f1b115d78b722aaebf57352af91c5e4507eebe9f9cfbbba5828ae5b7ac1ac0c7981f426315074397def9b0f2473ba1a9085c09917715b1fb82e98efa054d96801a46744bbf7985d1ce9ac0439003a52ef96144ada61621633a26fa150081557b4f',
+                      child: Image.asset(
+                        'assets/images/i_love.jpeg',
                         width: 80,
                         height: 80,
                         fit: BoxFit.cover,
@@ -119,31 +120,23 @@ class _WishlistBlockWidgetState extends State<WishlistBlockWidget> {
                         onTap: () async {
                           await showModalBottomSheet(
                             isScrollControlled: true,
-                            backgroundColor: Colors.transparent,
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).primaryBackground,
                             enableDrag: false,
                             context: context,
                             builder: (context) {
                               return Padding(
                                 padding: MediaQuery.of(context).viewInsets,
-                                child: PhotocardDetailsWidget(),
+                                child: Container(
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.85,
+                                  child: PhotocardDetailsWidget(),
+                                ),
                               );
                             },
                           ).then((value) => setState(() {}));
                         },
-                        child: Stack(
-                          children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(16),
-                              child: Image.network(
-                                'https://pocadot.b-cdn.net/recTLCAdgnX8FQU6e.png',
-                                width: MediaQuery.of(context).size.width * 0.16,
-                                height:
-                                    MediaQuery.of(context).size.height * 0.12,
-                                fit: BoxFit.fitHeight,
-                              ),
-                            ),
-                          ],
-                        ),
+                        child: PhotocardThumbnailWidget(),
                       ),
                       Stack(
                         children: [
@@ -159,14 +152,14 @@ class _WishlistBlockWidgetState extends State<WishlistBlockWidget> {
                                       fit: BoxFit.contain,
                                     ),
                                     allowRotation: false,
-                                    tag: 'imageTag3',
+                                    tag: 'imageTag2',
                                     useHeroAnimation: true,
                                   ),
                                 ),
                               );
                             },
                             child: Hero(
-                              tag: 'imageTag3',
+                              tag: 'imageTag2',
                               transitionOnUserGestures: true,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(16),
@@ -197,14 +190,14 @@ class _WishlistBlockWidgetState extends State<WishlistBlockWidget> {
                                       fit: BoxFit.contain,
                                     ),
                                     allowRotation: false,
-                                    tag: 'imageTag4',
+                                    tag: 'imageTag3',
                                     useHeroAnimation: true,
                                   ),
                                 ),
                               );
                             },
                             child: Hero(
-                              tag: 'imageTag4',
+                              tag: 'imageTag3',
                               transitionOnUserGestures: true,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(16),
@@ -235,14 +228,14 @@ class _WishlistBlockWidgetState extends State<WishlistBlockWidget> {
                                       fit: BoxFit.contain,
                                     ),
                                     allowRotation: false,
-                                    tag: 'imageTag5',
+                                    tag: 'imageTag4',
                                     useHeroAnimation: true,
                                   ),
                                 ),
                               );
                             },
                             child: Hero(
-                              tag: 'imageTag5',
+                              tag: 'imageTag4',
                               transitionOnUserGestures: true,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(16),

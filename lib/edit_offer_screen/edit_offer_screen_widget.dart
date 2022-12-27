@@ -8,14 +8,14 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class MakeOfferScreenWidget extends StatefulWidget {
-  const MakeOfferScreenWidget({Key? key}) : super(key: key);
+class EditOfferScreenWidget extends StatefulWidget {
+  const EditOfferScreenWidget({Key? key}) : super(key: key);
 
   @override
-  _MakeOfferScreenWidgetState createState() => _MakeOfferScreenWidgetState();
+  _EditOfferScreenWidgetState createState() => _EditOfferScreenWidgetState();
 }
 
-class _MakeOfferScreenWidgetState extends State<MakeOfferScreenWidget> {
+class _EditOfferScreenWidgetState extends State<EditOfferScreenWidget> {
   String? dropDownValue;
   TextEditingController? textController1;
   TextEditingController? textController2;
@@ -53,16 +53,16 @@ class _MakeOfferScreenWidgetState extends State<MakeOfferScreenWidget> {
           borderWidth: 1,
           buttonSize: 55,
           icon: Icon(
-            Icons.close,
+            Icons.arrow_back_rounded,
             color: FlutterFlowTheme.of(context).primaryColor,
             size: 25,
           ),
-          onPressed: () async {
-            context.pop();
+          onPressed: () {
+            print('IconButton pressed ...');
           },
         ),
         title: Text(
-          'Make an Offer',
+          'Edit Your Offer',
           style: FlutterFlowTheme.of(context).title2.override(
                 fontFamily: 'Urbanist',
                 color: FlutterFlowTheme.of(context).primaryColor,
@@ -389,7 +389,7 @@ class _MakeOfferScreenWidgetState extends State<MakeOfferScreenWidget> {
                               onPressed: () {
                                 print('Button pressed ...');
                               },
-                              text: 'Make Offer',
+                              text: 'Send Edited Offer',
                               options: FFButtonOptions(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     16, 16, 16, 16),

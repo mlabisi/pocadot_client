@@ -1,5 +1,6 @@
 import '../components/change_password_row_widget.dart';
 import '../components/delete_account_button_widget.dart';
+import '../components/help_center_row_widget.dart';
 import '../components/logout_button_widget.dart';
 import '../components/logout_sheet_widget.dart';
 import '../components/my_biases_row_widget.dart';
@@ -92,6 +93,12 @@ class _MoreScreenWidgetState extends State<MoreScreenWidget> {
                     context.pushNamed('ChangePasswordScreen');
                   },
                   child: ChangePasswordRowWidget(),
+                ),
+                InkWell(
+                  onTap: () async {
+                    context.pushNamed('HelpCenterScreen');
+                  },
+                  child: HelpCenterRowWidget(),
                 ),
                 InkWell(
                   onTap: () async {

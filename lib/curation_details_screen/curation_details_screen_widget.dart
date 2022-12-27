@@ -8,16 +8,16 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class CollectionDetailScreenWidget extends StatefulWidget {
-  const CollectionDetailScreenWidget({Key? key}) : super(key: key);
+class CurationDetailsScreenWidget extends StatefulWidget {
+  const CurationDetailsScreenWidget({Key? key}) : super(key: key);
 
   @override
-  _CollectionDetailScreenWidgetState createState() =>
-      _CollectionDetailScreenWidgetState();
+  _CurationDetailsScreenWidgetState createState() =>
+      _CurationDetailsScreenWidgetState();
 }
 
-class _CollectionDetailScreenWidgetState
-    extends State<CollectionDetailScreenWidget> {
+class _CurationDetailsScreenWidgetState
+    extends State<CurationDetailsScreenWidget> {
   final _unfocusNode = FocusNode();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 

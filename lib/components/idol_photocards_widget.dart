@@ -50,8 +50,8 @@ class _IdolPhotocardsWidgetState extends State<IdolPhotocardsWidget> {
                       padding: EdgeInsetsDirectional.fromSTEB(0, 1, 1, 1),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(6),
-                        child: Image.network(
-                          'https://w.namu.la/s/3ff2d410c2a58eb25ad6bb715447a6f1b115d78b722aaebf57352af91c5e4507eebe9f9cfbbba5828ae5b7ac1ac0c7981f426315074397def9b0f2473ba1a9085c09917715b1fb82e98efa054d96801a46744bbf7985d1ce9ac0439003a52ef96144ada61621633a26fa150081557b4f',
+                        child: Image.asset(
+                          'assets/images/i_love.jpeg',
                           width: 80,
                           height: 80,
                           fit: BoxFit.cover,

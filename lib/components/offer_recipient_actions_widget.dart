@@ -1,3 +1,4 @@
+import '../components/negotiation_actions_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -42,8 +43,22 @@ class _OfferRecipientActionsWidgetState
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0, 0, 8, 0),
               child: FFButtonWidget(
-                onPressed: () {
-                  print('Button pressed ...');
+                onPressed: () async {
+                  await showModalBottomSheet(
+                    isScrollControlled: true,
+                    backgroundColor: Colors.transparent,
+                    enableDrag: false,
+                    context: context,
+                    builder: (context) {
+                      return Padding(
+                        padding: MediaQuery.of(context).viewInsets,
+                        child: Container(
+                          height: MediaQuery.of(context).size.height * 0.85,
+                          child: NegotiationActionsWidget(),
+                        ),
+                      );
+                    },
+                  ).then((value) => setState(() {}));
                 },
                 text: 'Negotiate',
                 options: FFButtonOptions(

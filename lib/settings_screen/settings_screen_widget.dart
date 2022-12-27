@@ -67,182 +67,165 @@ class _SettingsScreenWidgetState extends State<SettingsScreenWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16, 24, 16, 24),
+                padding: EdgeInsetsDirectional.fromSTEB(16, 24, 16, 0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 12),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Icon(
-                            FFIcons.knotification,
-                            color: FlutterFlowTheme.of(context).primaryText,
-                            size: 24,
-                          ),
-                          Expanded(
-                            child: Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
-                              child: Text(
-                                'Push Notifications',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyText1
-                                    .override(
-                                      fontFamily: 'Urbanist',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                              ),
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 12),
+                      child: InkWell(
+                        onTap: () async {
+                          context.pushNamed('PushNotificationsPrefs');
+                        },
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Icon(
+                              FFIcons.knotification,
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              size: 24,
                             ),
-                          ),
-                          Icon(
-                            FFIcons.karrowRight2,
-                            color: FlutterFlowTheme.of(context).primaryText,
-                            size: 24,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 12),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Icon(
-                            FFIcons.kprofile,
-                            color: FlutterFlowTheme.of(context).primaryText,
-                            size: 24,
-                          ),
-                          Expanded(
-                            child: Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
-                              child: Text(
-                                'Connected Accounts',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyText1
-                                    .override(
-                                      fontFamily: 'Urbanist',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                              ),
-                            ),
-                          ),
-                          Icon(
-                            FFIcons.karrowRight2,
-                            color: FlutterFlowTheme.of(context).primaryText,
-                            size: 24,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 12),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Icon(
-                            FFIcons.kchat,
-                            color: FlutterFlowTheme.of(context).primaryText,
-                            size: 24,
-                          ),
-                          Expanded(
-                            child: Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
-                              child: Text(
-                                'Language',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyText1
-                                    .override(
-                                      fontFamily: 'Urbanist',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
-                            child: Text(
-                              'English (US)',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyText1
-                                  .override(
-                                    fontFamily: 'Urbanist',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                            ),
-                          ),
-                          Icon(
-                            FFIcons.karrowRight2,
-                            color: FlutterFlowTheme.of(context).primaryText,
-                            size: 24,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Icon(
-                          FFIcons.kglobe,
-                          color: FlutterFlowTheme.of(context).primaryText,
-                          size: 24,
-                        ),
-                        Expanded(
-                          child: Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
-                            child: Text(
-                              'Country',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyText1
-                                  .override(
-                                    fontFamily: 'Urbanist',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
-                          child: Text(
-                            'United States',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyText1
-                                .override(
-                                  fontFamily: 'Urbanist',
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.normal,
+                            Expanded(
+                              child: Padding(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                                child: Text(
+                                  'Push Notifications',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyText1
+                                      .override(
+                                        fontFamily: 'Urbanist',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w500,
+                                      ),
                                 ),
-                          ),
+                              ),
+                            ),
+                            Icon(
+                              FFIcons.karrowRight2,
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              size: 24,
+                            ),
+                          ],
                         ),
-                        Icon(
-                          FFIcons.karrowRight2,
-                          color: FlutterFlowTheme.of(context).primaryText,
-                          size: 24,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 12),
+                      child: InkWell(
+                        onTap: () async {
+                          context.pushNamed('LanguageSettingsScreen');
+                        },
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Icon(
+                              FFIcons.kchat,
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              size: 24,
+                            ),
+                            Expanded(
+                              child: Padding(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                                child: Text(
+                                  'Language',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyText1
+                                      .override(
+                                        fontFamily: 'Urbanist',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                              child: Text(
+                                'English (US)',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'Urbanist',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                              ),
+                            ),
+                            Icon(
+                              FFIcons.karrowRight2,
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              size: 24,
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 12),
+                      child: InkWell(
+                        onTap: () async {
+                          context.pushNamed('CountrySettingsScreen');
+                        },
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Icon(
+                              FFIcons.kglobe,
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              size: 24,
+                            ),
+                            Expanded(
+                              child: Padding(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                                child: Text(
+                                  'Country',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyText1
+                                      .override(
+                                        fontFamily: 'Urbanist',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                              child: Text(
+                                'United States',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'Urbanist',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                              ),
+                            ),
+                            Icon(
+                              FFIcons.karrowRight2,
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              size: 24,
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
@@ -286,44 +269,7 @@ class _SettingsScreenWidgetState extends State<SettingsScreenWidget> {
                       ],
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 12),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Icon(
-                            FFIcons.klifebuoy,
-                            color: FlutterFlowTheme.of(context).primaryText,
-                            size: 24,
-                          ),
-                          Expanded(
-                            child: Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
-                              child: Text(
-                                'Help Center',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyText1
-                                    .override(
-                                      fontFamily: 'Urbanist',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                              ),
-                            ),
-                          ),
-                          Icon(
-                            FFIcons.karrowRight2,
-                            color: FlutterFlowTheme.of(context).primaryText,
-                            size: 24,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 8),
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 12),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -367,7 +313,7 @@ class _SettingsScreenWidgetState extends State<SettingsScreenWidget> {
                 endIndent: 16,
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16, 24, 16, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(16, 12, 16, 0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -394,7 +340,7 @@ class _SettingsScreenWidgetState extends State<SettingsScreenWidget> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 8),
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 12),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -430,7 +376,7 @@ class _SettingsScreenWidgetState extends State<SettingsScreenWidget> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 8),
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 12),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -466,7 +412,7 @@ class _SettingsScreenWidgetState extends State<SettingsScreenWidget> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 8),
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 12),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [

@@ -572,8 +572,8 @@ class _ViewListingScreenWidgetState extends State<ViewListingScreenWidget> {
                               showLoadingIndicator: false,
                             ),
                             FFButtonWidget(
-                              onPressed: () {
-                                print('Button pressed ...');
+                              onPressed: () async {
+                                context.pushNamed('MakeOfferScreen');
                               },
                               text: 'Make Offer',
                               icon: Icon(

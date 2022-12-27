@@ -17,21 +17,25 @@ export 'notifications_screen/notifications_screen_widget.dart'
 export 'add_listing_screen/add_listing_screen_widget.dart'
     show AddListingScreenWidget;
 export 'search_screen/search_screen_widget.dart' show SearchScreenWidget;
-export 'collection_detail_screen/collection_detail_screen_widget.dart'
-    show CollectionDetailScreenWidget;
+export 'curation_details_screen/curation_details_screen_widget.dart'
+    show CurationDetailsScreenWidget;
 export 'view_profile_screen/view_profile_screen_widget.dart'
     show ViewProfileScreenWidget;
 export 'view_listing_screen/view_listing_screen_widget.dart'
     show ViewListingScreenWidget;
 export 'filter_results_screen/filter_results_screen_widget.dart'
     show FilterResultsScreenWidget;
-export 'make_offer_screen/make_offer_screen_widget.dart'
-    show MakeOfferScreenWidget;
+export 'settings_screen/settings_screen_widget.dart' show SettingsScreenWidget;
 export 'edit_profile_screen/edit_profile_screen_widget.dart'
     show EditProfileScreenWidget;
-export 'settings_screen/settings_screen_widget.dart' show SettingsScreenWidget;
+export 'help_center_screen/help_center_screen_widget.dart'
+    show HelpCenterScreenWidget;
+export 'my_listings_screen/my_listings_screen_widget.dart'
+    show MyListingsScreenWidget;
 export 'my_listing_screen/my_listing_screen_widget.dart'
     show MyListingScreenWidget;
+export 'language_settings_screen/language_settings_screen_widget.dart'
+    show LanguageSettingsScreenWidget;
 export 'biases_screen/biases_screen_widget.dart' show BiasesScreenWidget;
 export 'offers_screen/offers_screen_widget.dart' show OffersScreenWidget;
 export 'received_offer_chat_screen/received_offer_chat_screen_widget.dart'
@@ -42,5 +46,15 @@ export 'delete_account_screen/delete_account_screen_widget.dart'
     show DeleteAccountScreenWidget;
 export 'sent_offer_chat_screen/sent_offer_chat_screen_widget.dart'
     show SentOfferChatScreenWidget;
-export 'my_listings_screen/my_listings_screen_widget.dart'
-    show MyListingsScreenWidget;
+export 'make_offer_screen/make_offer_screen_widget.dart'
+    show MakeOfferScreenWidget;
+export 'edit_offer_screen/edit_offer_screen_widget.dart'
+    show EditOfferScreenWidget;
+export 'push_notifications_prefs/push_notifications_prefs_widget.dart'
+    show PushNotificationsPrefsWidget;
+export 'country_settings_screen/country_settings_screen_widget.dart'
+    show CountrySettingsScreenWidget;
+export 'forgot_password_screen/forgot_password_screen_widget.dart'
+    show ForgotPasswordScreenWidget;
+export 'reset_password_screen/reset_password_screen_widget.dart'
+    show ResetPasswordScreenWidget;

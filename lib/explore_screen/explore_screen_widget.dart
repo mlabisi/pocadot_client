@@ -393,7 +393,7 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                             ),
                             InkWell(
                               onTap: () async {
-                                context.pushNamed('CollectionDetailScreen');
+                                context.pushNamed('CurationDetailsScreen');
                               },
                               child: Text(
                                 'See All',

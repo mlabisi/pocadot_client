@@ -123,9 +123,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => SearchScreenWidget(),
             ),
             FFRoute(
-              name: 'CollectionDetailScreen',
-              path: 'collectionDetailScreen',
-              builder: (context, params) => CollectionDetailScreenWidget(),
+              name: 'CurationDetailsScreen',
+              path: 'curationDetailsScreen',
+              builder: (context, params) => CurationDetailsScreenWidget(),
             ),
             FFRoute(
               name: 'ViewProfileScreen',
@@ -143,9 +143,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => FilterResultsScreenWidget(),
             ),
             FFRoute(
-              name: 'MakeOfferScreen',
-              path: 'makeOfferScreen',
-              builder: (context, params) => MakeOfferScreenWidget(),
+              name: 'SettingsScreen',
+              path: 'settingsScreen',
+              builder: (context, params) => SettingsScreenWidget(),
             ),
             FFRoute(
               name: 'EditProfileScreen',
@@ -153,14 +153,24 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => EditProfileScreenWidget(),
             ),
             FFRoute(
-              name: 'SettingsScreen',
-              path: 'settingsScreen',
-              builder: (context, params) => SettingsScreenWidget(),
+              name: 'HelpCenterScreen',
+              path: 'helpCenterScreen',
+              builder: (context, params) => HelpCenterScreenWidget(),
+            ),
+            FFRoute(
+              name: 'MyListingsScreen',
+              path: 'myListingsScreen',
+              builder: (context, params) => MyListingsScreenWidget(),
             ),
             FFRoute(
               name: 'MyListingScreen',
               path: 'myListingScreen',
               builder: (context, params) => MyListingScreenWidget(),
+            ),
+            FFRoute(
+              name: 'LanguageSettingsScreen',
+              path: 'languageSettingsScreen',
+              builder: (context, params) => LanguageSettingsScreenWidget(),
             ),
             FFRoute(
               name: 'BiasesScreen',
@@ -193,9 +203,34 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => SentOfferChatScreenWidget(),
             ),
             FFRoute(
-              name: 'MyListingsScreen',
-              path: 'myListingsScreen',
-              builder: (context, params) => MyListingsScreenWidget(),
+              name: 'MakeOfferScreen',
+              path: 'makeOfferScreen',
+              builder: (context, params) => MakeOfferScreenWidget(),
+            ),
+            FFRoute(
+              name: 'EditOfferScreen',
+              path: 'editOfferScreen',
+              builder: (context, params) => EditOfferScreenWidget(),
+            ),
+            FFRoute(
+              name: 'PushNotificationsPrefs',
+              path: 'pushNotificationsPrefs',
+              builder: (context, params) => PushNotificationsPrefsWidget(),
+            ),
+            FFRoute(
+              name: 'CountrySettingsScreen',
+              path: 'countrySettingsScreen',
+              builder: (context, params) => CountrySettingsScreenWidget(),
+            ),
+            FFRoute(
+              name: 'ForgotPasswordScreen',
+              path: 'forgotPasswordScreen',
+              builder: (context, params) => ForgotPasswordScreenWidget(),
+            ),
+            FFRoute(
+              name: 'ResetPasswordScreen',
+              path: 'resetPasswordScreen',
+              builder: (context, params) => ResetPasswordScreenWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),
