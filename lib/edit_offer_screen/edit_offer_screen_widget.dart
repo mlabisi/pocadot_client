@@ -386,8 +386,8 @@ class _EditOfferScreenWidgetState extends State<EditOfferScreenWidget> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             FFButtonWidget(
-                              onPressed: () {
-                                print('Button pressed ...');
+                              onPressed: () async {
+                                context.pop();
                               },
                               text: 'Send Edited Offer',
                               options: FFButtonOptions(

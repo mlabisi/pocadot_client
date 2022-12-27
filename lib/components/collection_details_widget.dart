@@ -35,8 +35,8 @@ class _CollectionDetailsWidgetState extends State<CollectionDetailsWidget> {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                   ),
-                  child: Image.network(
-                    'https://w.namu.la/s/521e6a9540f93408e76f33f197cfc781273af8c927d180ac1c8b969e2ffe7559c997bb0a0105476ca567a40ad7ee73763af3c034b990eb0bc9df1c91c9d2d0226237094190f37e187680fbfb2958ff1564babbb4c99ae8fe863c186c7090627a',
+                  child: Image.asset(
+                    'assets/images/yuqi.jpeg',
                     fit: BoxFit.cover,
                   ),
                 ),
