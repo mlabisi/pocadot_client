@@ -1,4 +1,5 @@
 import '../components/generic_alert_widget.dart';
+import '../components/password_changed_modal_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -453,8 +454,22 @@ class _ChangePasswordScreenWidgetState
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         FFButtonWidget(
-                          onPressed: () {
-                            print('Button pressed ...');
+                          onPressed: () async {
+                            await showModalBottomSheet(
+                              isScrollControlled: true,
+                              backgroundColor: Color(0x5A090F13),
+                              enableDrag: false,
+                              context: context,
+                              builder: (context) {
+                                return Padding(
+                                  padding: MediaQuery.of(context).viewInsets,
+                                  child: Container(
+                                    height: double.infinity,
+                                    child: PasswordChangedModalWidget(),
+                                  ),
+                                );
+                              },
+                            ).then((value) => setState(() {}));
                           },
                           text: 'Change Password',
                           options: FFButtonOptions(
