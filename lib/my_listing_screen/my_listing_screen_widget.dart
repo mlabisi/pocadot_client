@@ -1,3 +1,4 @@
+import '../components/delete_listing_modal_widget.dart';
 import '../components/listing_tag_widget.dart';
 import '../components/my_listing_description_block_widget.dart';
 import '../components/photocard_details_block_widget.dart';
@@ -442,8 +443,24 @@ class _MyListingScreenWidgetState extends State<MyListingScreenWidget> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             FFButtonWidget(
-                              onPressed: () {
-                                print('Button pressed ...');
+                              onPressed: () async {
+                                showModalBottomSheet(
+                                  isScrollControlled: true,
+                                  backgroundColor: Color(0x5A090F13),
+                                  isDismissible: false,
+                                  enableDrag: false,
+                                  context: context,
+                                  builder: (context) {
+                                    return Padding(
+                                      padding:
+                                          MediaQuery.of(context).viewInsets,
+                                      child: Container(
+                                        height: double.infinity,
+                                        child: DeleteListingModalWidget(),
+                                      ),
+                                    );
+                                  },
+                                ).then((value) => setState(() {}));
                               },
                               text: 'Cancel Listing',
                               options: FFButtonOptions(

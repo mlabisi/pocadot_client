@@ -311,7 +311,7 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                                       0, 8, 0, 8),
                                   child: InkWell(
                                     onTap: () async {
-                                      context.pushNamed('OffersScreen');
+                                      context.pushNamed('MyOffersScreen');
                                     },
                                     child: Container(
                                       width: MediaQuery.of(context).size.width *

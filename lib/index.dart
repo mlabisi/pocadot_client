@@ -37,7 +37,10 @@ export 'my_listing_screen/my_listing_screen_widget.dart'
 export 'language_settings_screen/language_settings_screen_widget.dart'
     show LanguageSettingsScreenWidget;
 export 'biases_screen/biases_screen_widget.dart' show BiasesScreenWidget;
-export 'offers_screen/offers_screen_widget.dart' show OffersScreenWidget;
+export 'make_offer_screen/make_offer_screen_widget.dart'
+    show MakeOfferScreenWidget;
+export 'my_offers_screen/my_offers_screen_widget.dart'
+    show MyOffersScreenWidget;
 export 'received_offer_chat_screen/received_offer_chat_screen_widget.dart'
     show ReceivedOfferChatScreenWidget;
 export 'change_password_screen/change_password_screen_widget.dart'
@@ -46,8 +49,6 @@ export 'delete_account_screen/delete_account_screen_widget.dart'
     show DeleteAccountScreenWidget;
 export 'sent_offer_chat_screen/sent_offer_chat_screen_widget.dart'
     show SentOfferChatScreenWidget;
-export 'make_offer_screen/make_offer_screen_widget.dart'
-    show MakeOfferScreenWidget;
 export 'edit_offer_screen/edit_offer_screen_widget.dart'
     show EditOfferScreenWidget;
 export 'push_notifications_prefs/push_notifications_prefs_widget.dart'

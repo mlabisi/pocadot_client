@@ -72,7 +72,7 @@ class _MoreScreenWidgetState extends State<MoreScreenWidget> {
                 ),
                 InkWell(
                   onTap: () async {
-                    context.pushNamed('OffersScreen');
+                    context.pushNamed('MyOffersScreen');
                   },
                   child: MyOffersRowWidget(),
                 ),

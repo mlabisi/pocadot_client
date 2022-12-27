@@ -147,49 +147,40 @@ class _MyProfileScreenWidgetState extends State<MyProfileScreenWidget> {
                                       ],
                                     ),
                                   ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 0, 32),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        InkWell(
-                                          onTap: () async {
-                                            context
-                                                .pushNamed('MyListingScreen');
-                                          },
-                                          child: ListingRowWidget(),
-                                        ),
-                                        InkWell(
-                                          onTap: () async {
-                                            context
-                                                .pushNamed('MyListingScreen');
-                                          },
-                                          child: ListingRowWidget(),
-                                        ),
-                                        InkWell(
-                                          onTap: () async {
-                                            context
-                                                .pushNamed('MyListingScreen');
-                                          },
-                                          child: ListingRowWidget(),
-                                        ),
-                                        InkWell(
-                                          onTap: () async {
-                                            context
-                                                .pushNamed('MyListingScreen');
-                                          },
-                                          child: ListingRowWidget(),
-                                        ),
-                                        InkWell(
-                                          onTap: () async {
-                                            context
-                                                .pushNamed('MyListingScreen');
-                                          },
-                                          child: ListingRowWidget(),
-                                        ),
-                                      ],
-                                    ),
+                                  Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      InkWell(
+                                        onTap: () async {
+                                          context.pushNamed('MyListingScreen');
+                                        },
+                                        child: ListingRowWidget(),
+                                      ),
+                                      InkWell(
+                                        onTap: () async {
+                                          context.pushNamed('MyListingScreen');
+                                        },
+                                        child: ListingRowWidget(),
+                                      ),
+                                      InkWell(
+                                        onTap: () async {
+                                          context.pushNamed('MyListingScreen');
+                                        },
+                                        child: ListingRowWidget(),
+                                      ),
+                                      InkWell(
+                                        onTap: () async {
+                                          context.pushNamed('MyListingScreen');
+                                        },
+                                        child: ListingRowWidget(),
+                                      ),
+                                      InkWell(
+                                        onTap: () async {
+                                          context.pushNamed('MyListingScreen');
+                                        },
+                                        child: ListingRowWidget(),
+                                      ),
+                                    ],
                                   ),
                                 ],
                               ),
@@ -217,7 +208,7 @@ class _MyProfileScreenWidgetState extends State<MyProfileScreenWidget> {
                                         ),
                                         InkWell(
                                           onTap: () async {
-                                            context.pushNamed('OffersScreen');
+                                            context.pushNamed('MyOffersScreen');
                                           },
                                           child: Text(
                                             'See All',

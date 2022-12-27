@@ -178,9 +178,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => BiasesScreenWidget(),
             ),
             FFRoute(
-              name: 'OffersScreen',
-              path: 'offersScreen',
-              builder: (context, params) => OffersScreenWidget(),
+              name: 'MakeOfferScreen',
+              path: 'makeOfferScreen',
+              builder: (context, params) => MakeOfferScreenWidget(),
+            ),
+            FFRoute(
+              name: 'MyOffersScreen',
+              path: 'myOffersScreen',
+              builder: (context, params) => MyOffersScreenWidget(),
             ),
             FFRoute(
               name: 'ReceivedOfferChatScreen',
@@ -201,11 +206,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'SentOfferChatScreen',
               path: 'sentOfferChatScreen',
               builder: (context, params) => SentOfferChatScreenWidget(),
-            ),
-            FFRoute(
-              name: 'MakeOfferScreen',
-              path: 'makeOfferScreen',
-              builder: (context, params) => MakeOfferScreenWidget(),
             ),
             FFRoute(
               name: 'EditOfferScreen',

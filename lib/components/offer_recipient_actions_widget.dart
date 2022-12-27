@@ -1,4 +1,6 @@
+import '../components/accept_offer_modal_widget.dart';
 import '../components/negotiation_actions_widget.dart';
+import '../components/reject_offer_modal_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -80,8 +82,23 @@ class _OfferRecipientActionsWidgetState
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0, 0, 8, 0),
               child: FFButtonWidget(
-                onPressed: () {
-                  print('Button pressed ...');
+                onPressed: () async {
+                  showModalBottomSheet(
+                    isScrollControlled: true,
+                    backgroundColor: Color(0x5A090F13),
+                    isDismissible: false,
+                    enableDrag: false,
+                    context: context,
+                    builder: (context) {
+                      return Padding(
+                        padding: MediaQuery.of(context).viewInsets,
+                        child: Container(
+                          height: double.infinity,
+                          child: AcceptOfferModalWidget(),
+                        ),
+                      );
+                    },
+                  ).then((value) => setState(() {}));
                 },
                 text: 'Accept',
                 options: FFButtonOptions(
@@ -101,8 +118,23 @@ class _OfferRecipientActionsWidgetState
               ),
             ),
             FFButtonWidget(
-              onPressed: () {
-                print('Button pressed ...');
+              onPressed: () async {
+                showModalBottomSheet(
+                  isScrollControlled: true,
+                  backgroundColor: Color(0x5A090F13),
+                  isDismissible: false,
+                  enableDrag: false,
+                  context: context,
+                  builder: (context) {
+                    return Padding(
+                      padding: MediaQuery.of(context).viewInsets,
+                      child: Container(
+                        height: double.infinity,
+                        child: RejectOfferModalWidget(),
+                      ),
+                    );
+                  },
+                ).then((value) => setState(() {}));
               },
               text: 'Reject',
               options: FFButtonOptions(

@@ -1,6 +1,5 @@
 import '../components/idol_card_widget.dart';
 import '../components/notifications_button_widget.dart';
-import '../flutter_flow/flutter_flow_drop_down.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -18,7 +17,6 @@ class CollectionScreenWidget extends StatefulWidget {
 }
 
 class _CollectionScreenWidgetState extends State<CollectionScreenWidget> {
-  String? dropDownValue;
   TextEditingController? textController;
   final _unfocusNode = FocusNode();
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -164,66 +162,20 @@ class _CollectionScreenWidgetState extends State<CollectionScreenWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Expanded(
-                                child: Text(
-                                  '9 Idols',
-                                  style: FlutterFlowTheme.of(context)
-                                      .subtitle2
-                                      .override(
-                                        fontFamily: 'Urbanist',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                      ),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 8, 0, 8),
+                                  child: Text(
+                                    '9 Idols',
+                                    style: FlutterFlowTheme.of(context)
+                                        .subtitle2
+                                        .override(
+                                          fontFamily: 'Urbanist',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
+                                  ),
                                 ),
-                              ),
-                              FlutterFlowDropDown<String>(
-                                options: [
-                                  'A - Z',
-                                  'Recently Listed',
-                                  'Price Low to High',
-                                  'Price High to Low',
-                                  'Oldest',
-                                  ''
-                                ],
-                                onChanged: (val) =>
-                                    setState(() => dropDownValue = val),
-                                width: MediaQuery.of(context).size.width * 0.4,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .bodyText1
-                                    .override(
-                                      fontFamily: 'Urbanist',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                    ),
-                                icon: Icon(
-                                  FFIcons.kswap,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryColor,
-                                  size: 15,
-                                ),
-                                fillColor: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
-                                elevation: 2,
-                                borderColor: Colors.transparent,
-                                borderWidth: 0,
-                                borderRadius: 0,
-                                margin:
-                                    EdgeInsetsDirectional.fromSTEB(4, 4, 12, 4),
-                                hidesUnderline: true,
-                              ),
-                              FlutterFlowIconButton(
-                                borderColor: Colors.transparent,
-                                borderRadius: 30,
-                                borderWidth: 1,
-                                buttonSize: 40,
-                                icon: Icon(
-                                  FFIcons.kfilter2,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryColor,
-                                  size: 22,
-                                ),
-                                onPressed: () async {
-                                  context.pushNamed('FilterResultsScreen');
-                                },
                               ),
                             ],
                           ),

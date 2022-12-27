@@ -1,3 +1,4 @@
+import '../components/listing_posted_modal_widget.dart';
 import '../flutter_flow/flutter_flow_drop_down.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -1104,8 +1105,25 @@ class _AddListingScreenWidgetState extends State<AddListingScreenWidget> {
                                         showLoadingIndicator: false,
                                       ),
                                       FFButtonWidget(
-                                        onPressed: () {
-                                          print('Button pressed ...');
+                                        onPressed: () async {
+                                          showModalBottomSheet(
+                                            isScrollControlled: true,
+                                            backgroundColor: Color(0x5A090F13),
+                                            isDismissible: false,
+                                            enableDrag: false,
+                                            context: context,
+                                            builder: (context) {
+                                              return Padding(
+                                                padding: MediaQuery.of(context)
+                                                    .viewInsets,
+                                                child: Container(
+                                                  height: double.infinity,
+                                                  child:
+                                                      ListingPostedModalWidget(),
+                                                ),
+                                              );
+                                            },
+                                          ).then((value) => setState(() {}));
                                         },
                                         text: 'Create',
                                         options: FFButtonOptions(

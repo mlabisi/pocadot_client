@@ -1,3 +1,4 @@
+import '../components/cancel_offer_modal_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -62,8 +63,23 @@ class _OfferSenderActionsWidgetState extends State<OfferSenderActionsWidget> {
               ),
             ),
             FFButtonWidget(
-              onPressed: () {
-                print('Button pressed ...');
+              onPressed: () async {
+                showModalBottomSheet(
+                  isScrollControlled: true,
+                  backgroundColor: Color(0x5A090F13),
+                  isDismissible: false,
+                  enableDrag: false,
+                  context: context,
+                  builder: (context) {
+                    return Padding(
+                      padding: MediaQuery.of(context).viewInsets,
+                      child: Container(
+                        height: double.infinity,
+                        child: CancelOfferModalWidget(),
+                      ),
+                    );
+                  },
+                ).then((value) => setState(() {}));
               },
               text: 'Cancel',
               options: FFButtonOptions(

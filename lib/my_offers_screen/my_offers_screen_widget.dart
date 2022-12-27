@@ -13,14 +13,14 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class OffersScreenWidget extends StatefulWidget {
-  const OffersScreenWidget({Key? key}) : super(key: key);
+class MyOffersScreenWidget extends StatefulWidget {
+  const MyOffersScreenWidget({Key? key}) : super(key: key);
 
   @override
-  _OffersScreenWidgetState createState() => _OffersScreenWidgetState();
+  _MyOffersScreenWidgetState createState() => _MyOffersScreenWidgetState();
 }
 
-class _OffersScreenWidgetState extends State<OffersScreenWidget> {
+class _MyOffersScreenWidgetState extends State<MyOffersScreenWidget> {
   String? choiceChipsValue;
   TextEditingController? textController;
   String? dropDownValue;

@@ -1,3 +1,4 @@
+import '../components/offer_made_modal_widget.dart';
 import '../flutter_flow/flutter_flow_drop_down.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -386,8 +387,24 @@ class _MakeOfferScreenWidgetState extends State<MakeOfferScreenWidget> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             FFButtonWidget(
-                              onPressed: () {
-                                print('Button pressed ...');
+                              onPressed: () async {
+                                showModalBottomSheet(
+                                  isScrollControlled: true,
+                                  backgroundColor: Color(0x5A090F13),
+                                  isDismissible: false,
+                                  enableDrag: false,
+                                  context: context,
+                                  builder: (context) {
+                                    return Padding(
+                                      padding:
+                                          MediaQuery.of(context).viewInsets,
+                                      child: Container(
+                                        height: double.infinity,
+                                        child: OfferMadeModalWidget(),
+                                      ),
+                                    );
+                                  },
+                                ).then((value) => setState(() {}));
                               },
                               text: 'Make Offer',
                               options: FFButtonOptions(
