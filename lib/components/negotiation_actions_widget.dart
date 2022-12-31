@@ -206,8 +206,8 @@ class _NegotiationActionsWidgetState extends State<NegotiationActionsWidget> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       FFButtonWidget(
-                        onPressed: () {
-                          print('Button pressed ...');
+                        onPressed: () async {
+                          Navigator.pop(context);
                         },
                         text: 'Send Negotiation',
                         options: FFButtonOptions(
