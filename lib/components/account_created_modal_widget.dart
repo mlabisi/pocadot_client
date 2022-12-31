@@ -28,6 +28,10 @@ class _AccountCreatedModalWidgetState extends State<AccountCreatedModalWidget> {
     return InkWell(
       onTap: () async {
         Navigator.pop(context);
+        if (Navigator.of(context).canPop()) {
+          context.pop();
+        }
+        context.pushNamed('SuggestionsScreen');
       },
       child: Column(
         mainAxisSize: MainAxisSize.max,

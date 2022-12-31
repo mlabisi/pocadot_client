@@ -1,3 +1,4 @@
+import '../components/account_created_modal_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -894,12 +895,32 @@ class _AuthSheetWidgetState extends State<AuthSheetWidget> {
                                                   child: FFButtonWidget(
                                                     onPressed: () async {
                                                       Navigator.pop(context);
-                                                      if (Navigator.of(context)
-                                                          .canPop()) {
-                                                        context.pop();
-                                                      }
-                                                      context.pushNamed(
-                                                          'SuggestionsScreen');
+                                                      await showModalBottomSheet(
+                                                        isScrollControlled:
+                                                            true,
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        enableDrag: false,
+                                                        context: context,
+                                                        builder: (context) {
+                                                          return Padding(
+                                                            padding:
+                                                                MediaQuery.of(
+                                                                        context)
+                                                                    .viewInsets,
+                                                            child: Container(
+                                                              height: MediaQuery.of(
+                                                                          context)
+                                                                      .size
+                                                                      .height *
+                                                                  1,
+                                                              child:
+                                                                  AccountCreatedModalWidget(),
+                                                            ),
+                                                          );
+                                                        },
+                                                      ).then((value) =>
+                                                          setState(() {}));
                                                     },
                                                     text: 'SIgn Up via Email',
                                                     options: FFButtonOptions(
