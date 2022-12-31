@@ -58,8 +58,8 @@ class _EditOfferScreenWidgetState extends State<EditOfferScreenWidget> {
             color: FlutterFlowTheme.of(context).primaryColor,
             size: 25,
           ),
-          onPressed: () {
-            print('IconButton pressed ...');
+          onPressed: () async {
+            context.pop();
           },
         ),
         title: Text(
