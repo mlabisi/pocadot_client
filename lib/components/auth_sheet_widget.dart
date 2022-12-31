@@ -331,7 +331,10 @@ class _AuthSheetWidgetState extends State<AuthSheetWidget> {
                                                   child: FFButtonWidget(
                                                     onPressed: () async {
                                                       Navigator.pop(context);
-
+                                                      if (Navigator.of(context)
+                                                          .canPop()) {
+                                                        context.pop();
+                                                      }
                                                       context.pushNamed(
                                                           'SuggestionsScreen');
                                                     },
@@ -611,8 +614,7 @@ class _AuthSheetWidgetState extends State<AuthSheetWidget> {
                               child: SingleChildScrollView(
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
+                                  mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -892,7 +894,10 @@ class _AuthSheetWidgetState extends State<AuthSheetWidget> {
                                                   child: FFButtonWidget(
                                                     onPressed: () async {
                                                       Navigator.pop(context);
-
+                                                      if (Navigator.of(context)
+                                                          .canPop()) {
+                                                        context.pop();
+                                                      }
                                                       context.pushNamed(
                                                           'SuggestionsScreen');
                                                     },

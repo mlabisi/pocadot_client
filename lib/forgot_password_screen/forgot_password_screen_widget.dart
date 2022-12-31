@@ -223,7 +223,7 @@ class _ForgotPasswordScreenWidgetState
                       children: [
                         FFButtonWidget(
                           onPressed: () async {
-                            await showModalBottomSheet(
+                            showModalBottomSheet(
                               isScrollControlled: true,
                               backgroundColor: Colors.transparent,
                               isDismissible: false,
