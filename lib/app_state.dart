@@ -15,7 +15,6 @@ class FFAppState extends ChangeNotifier {
 
   Future initializePersistedState() async {
     prefs = await SharedPreferences.getInstance();
-    _testToggle = prefs.getBool('ff_testToggle') ?? _testToggle;
   }
 
   void update(VoidCallback callback) {
@@ -25,11 +24,24 @@ class FFAppState extends ChangeNotifier {
 
   late SharedPreferences prefs;
 
-  bool _testToggle = false;
-  bool get testToggle => _testToggle;
-  set testToggle(bool _value) {
-    _testToggle = _value;
-    prefs.setBool('ff_testToggle', _value);
+  List<String> _viewProfileDropdown = ['Block', 'Report'];
+  List<String> get viewProfileDropdown => _viewProfileDropdown;
+  set viewProfileDropdown(List<String> _value) {
+    _viewProfileDropdown = _value;
+  }
+
+  void addToViewProfileDropdown(String _value) {
+    _viewProfileDropdown.add(_value);
+  }
+
+  void removeFromViewProfileDropdown(String _value) {
+    _viewProfileDropdown.remove(_value);
+  }
+
+  String _dropdownSelection = '';
+  String get dropdownSelection => _dropdownSelection;
+  set dropdownSelection(String _value) {
+    _dropdownSelection = _value;
   }
 }
 

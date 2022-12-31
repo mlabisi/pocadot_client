@@ -59,3 +59,5 @@ export 'forgot_password_screen/forgot_password_screen_widget.dart'
     show ForgotPasswordScreenWidget;
 export 'reset_password_screen/reset_password_screen_widget.dart'
     show ResetPasswordScreenWidget;
+export 'onboarding_screen/onboarding_screen_widget.dart'
+    show OnboardingScreenWidget;

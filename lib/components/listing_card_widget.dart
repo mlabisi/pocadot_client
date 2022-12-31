@@ -257,10 +257,13 @@ class _ListingCardWidgetState extends State<ListingCardWidget> {
                 ),
                 child: ToggleIcon(
                   onPressed: () async {
-                    setState(() =>
-                        FFAppState().testToggle = !FFAppState().testToggle);
+                    setState(
+                      () => FFAppState().viewProfileDropdown.contains('')
+                          ? FFAppState().viewProfileDropdown.remove('')
+                          : FFAppState().viewProfileDropdown.add(''),
+                    );
                   },
-                  value: FFAppState().testToggle,
+                  value: FFAppState().viewProfileDropdown.contains(''),
                   onIcon: Icon(
                     FFIcons.kheart,
                     color: FlutterFlowTheme.of(context).boldRed,

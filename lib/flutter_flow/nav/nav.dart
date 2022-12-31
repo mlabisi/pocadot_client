@@ -231,6 +231,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'ResetPasswordScreen',
               path: 'resetPasswordScreen',
               builder: (context, params) => ResetPasswordScreenWidget(),
+            ),
+            FFRoute(
+              name: 'OnboardingScreen',
+              path: 'onboardingScreen',
+              builder: (context, params) => OnboardingScreenWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),

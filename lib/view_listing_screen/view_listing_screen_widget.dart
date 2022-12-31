@@ -81,9 +81,12 @@ class _ViewListingScreenWidgetState extends State<ViewListingScreenWidget> {
           ToggleIcon(
             onPressed: () async {
               setState(
-                  () => FFAppState().testToggle = !FFAppState().testToggle);
+                () => FFAppState().viewProfileDropdown.contains('')
+                    ? FFAppState().viewProfileDropdown.remove('')
+                    : FFAppState().viewProfileDropdown.add(''),
+              );
             },
-            value: FFAppState().testToggle,
+            value: FFAppState().viewProfileDropdown.contains(''),
             onIcon: Icon(
               FFIcons.kheart,
               color: FlutterFlowTheme.of(context).primaryColor,
