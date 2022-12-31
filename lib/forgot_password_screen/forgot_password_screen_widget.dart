@@ -1,3 +1,4 @@
+import '../components/forgot_password_modal_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -182,16 +183,21 @@ class _ForgotPasswordScreenWidgetState
                           Padding(
                             padding:
                                 EdgeInsetsDirectional.fromSTEB(0, 0, 0, 16),
-                            child: Text(
-                              ' Sign In.',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyText1
-                                  .override(
-                                    fontFamily: 'Urbanist',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryColor,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                            child: InkWell(
+                              onTap: () async {
+                                context.pop();
+                              },
+                              child: Text(
+                                ' Sign In.',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'Urbanist',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryColor,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                              ),
                             ),
                           ),
                         ],
@@ -216,8 +222,24 @@ class _ForgotPasswordScreenWidgetState
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         FFButtonWidget(
-                          onPressed: () {
-                            print('Button pressed ...');
+                          onPressed: () async {
+                            await showModalBottomSheet(
+                              isScrollControlled: true,
+                              backgroundColor: Colors.transparent,
+                              isDismissible: false,
+                              enableDrag: false,
+                              context: context,
+                              builder: (context) {
+                                return Padding(
+                                  padding: MediaQuery.of(context).viewInsets,
+                                  child: Container(
+                                    height:
+                                        MediaQuery.of(context).size.height * 1,
+                                    child: ForgotPasswordModalWidget(),
+                                  ),
+                                );
+                              },
+                            ).then((value) => setState(() {}));
                           },
                           text: 'Send Email',
                           options: FFButtonOptions(

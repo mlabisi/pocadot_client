@@ -1,3 +1,4 @@
+import '../components/reset_password_modal_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -62,7 +63,10 @@ class _ResetPasswordScreenWidgetState extends State<ResetPasswordScreenWidget> {
             size: 25,
           ),
           onPressed: () async {
-            context.pop();
+            if (Navigator.of(context).canPop()) {
+              context.pop();
+            }
+            context.pushNamed('OnboardingScreen');
           },
         ),
         title: Text(
@@ -274,8 +278,25 @@ class _ResetPasswordScreenWidgetState extends State<ResetPasswordScreenWidget> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         FFButtonWidget(
-                          onPressed: () {
-                            print('Button pressed ...');
+                          onPressed: () async {
+                            Navigator.pop(context);
+                            await showModalBottomSheet(
+                              isScrollControlled: true,
+                              backgroundColor: Colors.transparent,
+                              isDismissible: false,
+                              enableDrag: false,
+                              context: context,
+                              builder: (context) {
+                                return Padding(
+                                  padding: MediaQuery.of(context).viewInsets,
+                                  child: Container(
+                                    height:
+                                        MediaQuery.of(context).size.height * 1,
+                                    child: ResetPasswordModalWidget(),
+                                  ),
+                                );
+                              },
+                            ).then((value) => setState(() {}));
                           },
                           text: 'Reset Password',
                           options: FFButtonOptions(
