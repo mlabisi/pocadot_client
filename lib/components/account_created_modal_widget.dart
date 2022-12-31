@@ -15,6 +15,13 @@ class AccountCreatedModalWidget extends StatefulWidget {
 
 class _AccountCreatedModalWidgetState extends State<AccountCreatedModalWidget> {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 

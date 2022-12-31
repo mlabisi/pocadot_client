@@ -15,6 +15,13 @@ class CancelOfferModalWidget extends StatefulWidget {
 
 class _CancelOfferModalWidgetState extends State<CancelOfferModalWidget> {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 

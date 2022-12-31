@@ -17,6 +17,13 @@ class OfferChatBubbleWidget extends StatefulWidget {
 
 class _OfferChatBubbleWidgetState extends State<OfferChatBubbleWidget> {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 

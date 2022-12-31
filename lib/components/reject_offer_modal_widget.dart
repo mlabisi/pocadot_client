@@ -15,6 +15,13 @@ class RejectOfferModalWidget extends StatefulWidget {
 
 class _RejectOfferModalWidgetState extends State<RejectOfferModalWidget> {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 

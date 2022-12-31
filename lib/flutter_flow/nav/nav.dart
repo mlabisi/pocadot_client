@@ -40,7 +40,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 ),
               ),
             )
-          : NavBarPage(),
+          : OnboardingScreenWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
@@ -55,7 +55,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                     ),
                   ),
                 )
-              : NavBarPage(),
+              : OnboardingScreenWidget(),
           routes: [
             FFRoute(
               name: 'SuggestionsScreen',

@@ -32,6 +32,7 @@ class _FilterResultsScreenWidgetState extends State<FilterResultsScreenWidget> {
     super.initState();
     textController1 = TextEditingController();
     textController2 = TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

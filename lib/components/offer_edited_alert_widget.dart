@@ -14,6 +14,13 @@ class OfferEditedAlertWidget extends StatefulWidget {
 
 class _OfferEditedAlertWidgetState extends State<OfferEditedAlertWidget> {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 

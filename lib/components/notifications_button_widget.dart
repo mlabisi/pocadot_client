@@ -16,6 +16,13 @@ class NotificationsButtonWidget extends StatefulWidget {
 
 class _NotificationsButtonWidgetState extends State<NotificationsButtonWidget> {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 

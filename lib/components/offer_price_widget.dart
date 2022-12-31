@@ -14,6 +14,13 @@ class OfferPriceWidget extends StatefulWidget {
 
 class _OfferPriceWidgetState extends State<OfferPriceWidget> {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 

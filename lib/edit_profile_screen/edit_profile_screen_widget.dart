@@ -32,6 +32,7 @@ class _EditProfileScreenWidgetState extends State<EditProfileScreenWidget> {
     textController3 = TextEditingController();
     textController4 = TextEditingController();
     textController5 = TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

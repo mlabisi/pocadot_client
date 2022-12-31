@@ -29,6 +29,7 @@ class _MyListingsScreenWidgetState extends State<MyListingsScreenWidget> {
   void initState() {
     super.initState();
     textController = TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

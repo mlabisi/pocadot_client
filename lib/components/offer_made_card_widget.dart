@@ -14,6 +14,13 @@ class OfferMadeCardWidget extends StatefulWidget {
 
 class _OfferMadeCardWidgetState extends State<OfferMadeCardWidget> {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 

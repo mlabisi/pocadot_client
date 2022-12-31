@@ -17,6 +17,13 @@ class NegotiatedOfferPhotocardThumbnailWidget extends StatefulWidget {
 class _NegotiatedOfferPhotocardThumbnailWidgetState
     extends State<NegotiatedOfferPhotocardThumbnailWidget> {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 

@@ -18,6 +18,13 @@ class MyListingDescriptionBlockWidget extends StatefulWidget {
 class _MyListingDescriptionBlockWidgetState
     extends State<MyListingDescriptionBlockWidget> {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 

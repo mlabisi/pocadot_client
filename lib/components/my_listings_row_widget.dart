@@ -19,6 +19,13 @@ class MyListingsRowWidget extends StatefulWidget {
 class _MyListingsRowWidgetState extends State<MyListingsRowWidget>
     with TickerProviderStateMixin {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 

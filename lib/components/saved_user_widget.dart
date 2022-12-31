@@ -18,6 +18,13 @@ class SavedUserWidget extends StatefulWidget {
 class _SavedUserWidgetState extends State<SavedUserWidget>
     with TickerProviderStateMixin {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 

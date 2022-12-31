@@ -16,6 +16,13 @@ class DeleteListingModalWidget extends StatefulWidget {
 
 class _DeleteListingModalWidgetState extends State<DeleteListingModalWidget> {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 

@@ -15,6 +15,13 @@ class OfferMadeModalWidget extends StatefulWidget {
 
 class _OfferMadeModalWidgetState extends State<OfferMadeModalWidget> {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 

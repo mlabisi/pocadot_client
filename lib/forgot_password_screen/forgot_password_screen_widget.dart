@@ -25,6 +25,7 @@ class _ForgotPasswordScreenWidgetState
   void initState() {
     super.initState();
     textController = TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

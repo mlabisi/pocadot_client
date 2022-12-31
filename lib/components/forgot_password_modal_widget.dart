@@ -16,6 +16,13 @@ class ForgotPasswordModalWidget extends StatefulWidget {
 
 class _ForgotPasswordModalWidgetState extends State<ForgotPasswordModalWidget> {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 

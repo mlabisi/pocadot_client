@@ -30,6 +30,7 @@ class _ResetPasswordScreenWidgetState extends State<ResetPasswordScreenWidget> {
     passwordVisibility1 = false;
     textController2 = TextEditingController();
     passwordVisibility2 = false;
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

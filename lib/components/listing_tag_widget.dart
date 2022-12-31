@@ -14,6 +14,13 @@ class ListingTagWidget extends StatefulWidget {
 
 class _ListingTagWidgetState extends State<ListingTagWidget> {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 

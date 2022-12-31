@@ -27,6 +27,7 @@ class _SuggestionsScreenWidgetState extends State<SuggestionsScreenWidget> {
   void initState() {
     super.initState();
     swipeableStackController = SwipeableCardSectionController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

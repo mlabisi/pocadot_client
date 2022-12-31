@@ -15,6 +15,13 @@ class SuggestionCardWidget extends StatefulWidget {
 
 class _SuggestionCardWidgetState extends State<SuggestionCardWidget> {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 

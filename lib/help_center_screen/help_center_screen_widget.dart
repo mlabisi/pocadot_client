@@ -23,6 +23,7 @@ class _HelpCenterScreenWidgetState extends State<HelpCenterScreenWidget> {
   void initState() {
     super.initState();
     textController = TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

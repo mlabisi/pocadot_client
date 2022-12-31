@@ -14,6 +14,13 @@ class SentChatBubbleWidget extends StatefulWidget {
 
 class _SentChatBubbleWidgetState extends State<SentChatBubbleWidget> {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 

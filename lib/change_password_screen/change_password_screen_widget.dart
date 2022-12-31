@@ -41,6 +41,7 @@ class _ChangePasswordScreenWidgetState
     passwordVisibility3 = false;
     textController4 = TextEditingController();
     passwordVisibility4 = false;
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

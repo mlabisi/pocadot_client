@@ -19,6 +19,13 @@ class MyBiasesRowWidget extends StatefulWidget {
 class _MyBiasesRowWidgetState extends State<MyBiasesRowWidget>
     with TickerProviderStateMixin {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 

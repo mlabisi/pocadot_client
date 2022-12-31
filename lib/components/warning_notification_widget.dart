@@ -20,6 +20,13 @@ class WarningNotificationWidget extends StatefulWidget {
 class _WarningNotificationWidgetState extends State<WarningNotificationWidget>
     with TickerProviderStateMixin {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 

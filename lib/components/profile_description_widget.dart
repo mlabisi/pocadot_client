@@ -17,6 +17,13 @@ class ProfileDescriptionWidget extends StatefulWidget {
 
 class _ProfileDescriptionWidgetState extends State<ProfileDescriptionWidget> {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 

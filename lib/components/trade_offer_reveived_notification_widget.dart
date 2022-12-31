@@ -16,6 +16,13 @@ class TradeOfferReveivedNotificationWidget extends StatefulWidget {
 class _TradeOfferReveivedNotificationWidgetState
     extends State<TradeOfferReveivedNotificationWidget> {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 

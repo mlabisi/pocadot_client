@@ -16,6 +16,13 @@ class PasswordChangedModalWidget extends StatefulWidget {
 class _PasswordChangedModalWidgetState
     extends State<PasswordChangedModalWidget> {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 

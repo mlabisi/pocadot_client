@@ -20,6 +20,13 @@ class DeleteAccountButtonWidget extends StatefulWidget {
 class _DeleteAccountButtonWidgetState extends State<DeleteAccountButtonWidget>
     with TickerProviderStateMixin {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 

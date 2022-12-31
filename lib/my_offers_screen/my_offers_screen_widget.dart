@@ -32,6 +32,7 @@ class _MyOffersScreenWidgetState extends State<MyOffersScreenWidget> {
   void initState() {
     super.initState();
     textController = TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

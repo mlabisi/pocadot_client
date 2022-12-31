@@ -14,6 +14,13 @@ class IdolCardWidget extends StatefulWidget {
 
 class _IdolCardWidgetState extends State<IdolCardWidget> {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 

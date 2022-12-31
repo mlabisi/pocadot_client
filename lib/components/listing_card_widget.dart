@@ -16,6 +16,13 @@ class ListingCardWidget extends StatefulWidget {
 
 class _ListingCardWidgetState extends State<ListingCardWidget> {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 

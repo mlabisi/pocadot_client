@@ -19,6 +19,13 @@ class InfoNotificationWidget extends StatefulWidget {
 class _InfoNotificationWidgetState extends State<InfoNotificationWidget>
     with TickerProviderStateMixin {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 

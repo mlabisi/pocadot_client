@@ -21,6 +21,13 @@ class _FilterPhotocardsWidgetState extends State<FilterPhotocardsWidget> {
   List<String>? checkboxGroupValues3;
 
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 

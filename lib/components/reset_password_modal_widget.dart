@@ -16,6 +16,13 @@ class ResetPasswordModalWidget extends StatefulWidget {
 
 class _ResetPasswordModalWidgetState extends State<ResetPasswordModalWidget> {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 

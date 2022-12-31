@@ -26,6 +26,7 @@ class _BiasesScreenWidgetState extends State<BiasesScreenWidget> {
   void initState() {
     super.initState();
     textController = TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

@@ -30,6 +30,13 @@ class _SentOfferChatScreenWidgetState extends State<SentOfferChatScreenWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   void dispose() {
     _unfocusNode.dispose();
     super.dispose();

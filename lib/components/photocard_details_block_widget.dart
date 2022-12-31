@@ -18,6 +18,13 @@ class PhotocardDetailsBlockWidget extends StatefulWidget {
 class _PhotocardDetailsBlockWidgetState
     extends State<PhotocardDetailsBlockWidget> {
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 

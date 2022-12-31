@@ -1,3 +1,4 @@
+import '../components/auth_sheet_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -18,6 +19,13 @@ class OnboardingScreenWidget extends StatefulWidget {
 class _OnboardingScreenWidgetState extends State<OnboardingScreenWidget> {
   PageController? pageViewController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -314,8 +322,23 @@ class _OnboardingScreenWidgetState extends State<OnboardingScreenWidget> {
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
                         child: FFButtonWidget(
-                          onPressed: () {
-                            print('Button pressed ...');
+                          onPressed: () async {
+                            await showModalBottomSheet(
+                              isScrollControlled: true,
+                              backgroundColor: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              context: context,
+                              builder: (context) {
+                                return Padding(
+                                  padding: MediaQuery.of(context).viewInsets,
+                                  child: Container(
+                                    height: MediaQuery.of(context).size.height *
+                                        0.75,
+                                    child: AuthSheetWidget(),
+                                  ),
+                                );
+                              },
+                            ).then((value) => setState(() {}));
                           },
                           text: 'Sign In',
                           options: FFButtonOptions(
@@ -339,8 +362,23 @@ class _OnboardingScreenWidgetState extends State<OnboardingScreenWidget> {
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(16, 8, 16, 0),
                         child: FFButtonWidget(
-                          onPressed: () {
-                            print('Button pressed ...');
+                          onPressed: () async {
+                            await showModalBottomSheet(
+                              isScrollControlled: true,
+                              backgroundColor: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              context: context,
+                              builder: (context) {
+                                return Padding(
+                                  padding: MediaQuery.of(context).viewInsets,
+                                  child: Container(
+                                    height: MediaQuery.of(context).size.height *
+                                        0.75,
+                                    child: AuthSheetWidget(),
+                                  ),
+                                );
+                              },
+                            ).then((value) => setState(() {}));
                           },
                           text: 'SIgn Up',
                           options: FFButtonOptions(
