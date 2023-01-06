@@ -42,11 +42,32 @@ class _CollectionScreenWidgetState extends State<CollectionScreenWidget> {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          print('FloatingActionButton pressed ...');
+        },
+        backgroundColor: FlutterFlowTheme.of(context).primaryColor,
+        elevation: 8,
+        child: FlutterFlowIconButton(
+          borderColor: Colors.transparent,
+          borderRadius: 30,
+          borderWidth: 1,
+          buttonSize: 60,
+          icon: Icon(
+            FFIcons.kfingerHeart,
+            color: FlutterFlowTheme.of(context).white,
+            size: 30,
+          ),
+          onPressed: () async {
+            context.pushNamed('BiasesScreen');
+          },
+        ),
+      ),
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         automaticallyImplyLeading: false,
         title: Text(
-          'Collection',
+          'My Collection',
           style: FlutterFlowTheme.of(context).title2.override(
                 fontFamily: 'Urbanist',
                 color: FlutterFlowTheme.of(context).primaryColor,
@@ -54,20 +75,6 @@ class _CollectionScreenWidgetState extends State<CollectionScreenWidget> {
               ),
         ),
         actions: [
-          FlutterFlowIconButton(
-            borderColor: Colors.transparent,
-            borderRadius: 30,
-            borderWidth: 1,
-            buttonSize: 60,
-            icon: Icon(
-              FFIcons.kfingerHeart,
-              color: FlutterFlowTheme.of(context).primaryColor,
-              size: 30,
-            ),
-            onPressed: () async {
-              context.pushNamed('BiasesScreen');
-            },
-          ),
           NotificationsButtonWidget(),
         ],
         centerTitle: false,

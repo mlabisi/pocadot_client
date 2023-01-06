@@ -61,3 +61,6 @@ export 'reset_password_screen/reset_password_screen_widget.dart'
     show ResetPasswordScreenWidget;
 export 'onboarding_screen/onboarding_screen_widget.dart'
     show OnboardingScreenWidget;
+export 'import_photocards/import_photocards_widget.dart'
+    show ImportPhotocardsWidget;
+export 'review_imports/review_imports_widget.dart' show ReviewImportsWidget;

@@ -1,4 +1,3 @@
-import '../components/generic_alert_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_radio_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -74,47 +73,46 @@ class _LanguageSettingsScreenWidgetState
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
-                child: GenericAlertWidget(),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
-                      child: FlutterFlowRadioButton(
-                        options: ['English (US)'].toList(),
-                        onChanged: (val) =>
-                            setState(() => radioButtonValue = val),
-                        optionHeight: 25,
-                        textStyle: FlutterFlowTheme.of(context)
-                            .bodyText1
-                            .override(
-                              fontFamily: 'Urbanist',
-                              color: FlutterFlowTheme.of(context).primaryText,
-                              fontSize: 16,
-                            ),
-                        buttonPosition: RadioButtonPosition.left,
-                        direction: Axis.vertical,
-                        radioButtonColor:
-                            FlutterFlowTheme.of(context).primaryColor,
-                        inactiveRadioButtonColor:
-                            FlutterFlowTheme.of(context).primaryColor,
-                        toggleable: false,
-                        horizontalAlignment: WrapAlignment.start,
-                        verticalAlignment: WrapCrossAlignment.start,
+          child: Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
+                        child: FlutterFlowRadioButton(
+                          options: ['English (US)'].toList(),
+                          onChanged: (val) =>
+                              setState(() => radioButtonValue = val),
+                          optionHeight: 25,
+                          textStyle: FlutterFlowTheme.of(context)
+                              .bodyText1
+                              .override(
+                                fontFamily: 'Urbanist',
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                fontSize: 16,
+                              ),
+                          buttonPosition: RadioButtonPosition.left,
+                          direction: Axis.vertical,
+                          radioButtonColor:
+                              FlutterFlowTheme.of(context).primaryColor,
+                          inactiveRadioButtonColor:
+                              FlutterFlowTheme.of(context).primaryColor,
+                          toggleable: false,
+                          horizontalAlignment: WrapAlignment.start,
+                          verticalAlignment: WrapCrossAlignment.start,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

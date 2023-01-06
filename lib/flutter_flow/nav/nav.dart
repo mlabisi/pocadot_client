@@ -236,6 +236,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'OnboardingScreen',
               path: 'onboardingScreen',
               builder: (context, params) => OnboardingScreenWidget(),
+            ),
+            FFRoute(
+              name: 'ImportPhotocards',
+              path: 'importPhotocards',
+              builder: (context, params) => ImportPhotocardsWidget(),
+            ),
+            FFRoute(
+              name: 'ReviewImports',
+              path: 'reviewImports',
+              builder: (context, params) => ReviewImportsWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),

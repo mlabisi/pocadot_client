@@ -64,7 +64,22 @@ class _IdolPhotocardsScreenWidgetState
             context.pop();
           },
         ),
-        actions: [],
+        actions: [
+          FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30,
+            borderWidth: 1,
+            buttonSize: 60,
+            icon: Icon(
+              FFIcons.kscan,
+              color: FlutterFlowTheme.of(context).primaryColor,
+              size: 30,
+            ),
+            onPressed: () async {
+              context.pushNamed('ImportPhotocards');
+            },
+          ),
+        ],
         centerTitle: false,
         elevation: 2,
       ),
