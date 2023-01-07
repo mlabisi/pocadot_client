@@ -186,11 +186,74 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                                       0, 8, 4, 8),
                                   child: InkWell(
                                     onTap: () async {
+                                      context.pushNamed('MyListingsScreen');
+                                    },
+                                    child: Container(
+                                      width: MediaQuery.of(context).size.width *
+                                          0.2,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        boxShadow: [
+                                          BoxShadow(
+                                            blurRadius: 4,
+                                            color: Color(0x230E151B),
+                                            offset: Offset(0, 2),
+                                          )
+                                        ],
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            8, 16, 8, 16),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Icon(
+                                              FFIcons.karrowUpSquare,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryColor,
+                                              size: 24,
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0, 4, 0, 0),
+                                              child: Text(
+                                                'Posted',
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .subtitle2
+                                                    .override(
+                                                      fontFamily: 'Urbanist',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryColor,
+                                                      fontSize: 16,
+                                                    ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 8, 4, 8),
+                                  child: InkWell(
+                                    onTap: () async {
                                       context.pushNamed('SearchScreen');
                                     },
                                     child: Container(
                                       width: MediaQuery.of(context).size.width *
-                                          0.25,
+                                          0.2,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
@@ -253,7 +316,7 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                                     },
                                     child: Container(
                                       width: MediaQuery.of(context).size.width *
-                                          0.25,
+                                          0.2,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
@@ -316,7 +379,7 @@ class _ExploreScreenWidgetState extends State<ExploreScreenWidget> {
                                     },
                                     child: Container(
                                       width: MediaQuery.of(context).size.width *
-                                          0.25,
+                                          0.2,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
